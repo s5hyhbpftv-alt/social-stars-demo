@@ -1,0 +1,143 @@
+{
+ "услуги": {},
+ "кейсы": {
+  "bla-bla-bla-test": {
+   "имя": "бла бла бла тест",
+   "лид": "",
+   "титул": "бла бла бла тест – кейс Social Stars",
+   "описание": "",
+   "тема": {
+    "секции": {
+     "герой": {},
+     "кадры": {
+      "margin": "80px 0px 80px"
+     }
+    },
+    "сетки": {
+     "кадрыНовые": {
+      "gridTemplateColumns": "repeat(1, 1fr)",
+      "gap": "20px"
+     }
+    },
+    "container-bg-top": {
+     "backgroundImage": "url(\"/uploads/2026/04/5341134.png\")",
+     "borderRadius": "20px",
+     "padding": "100px 0px 100px 100px"
+    },
+    "text-prew": {
+     "gap": "40px"
+    },
+    "name-preview": {
+     "fontSize": "65px",
+     "lineHeight": "71.5px",
+     "color": "rgb(51, 51, 51)",
+     "fontWeight": "500"
+    },
+    "text-prew-diskrip": {
+     "fontSize": "22px",
+     "lineHeight": "26.4px",
+     "color": "rgb(51, 51, 51)",
+     "margin": "0px"
+    },
+    "button-info": {
+     "padding": "20px 30px",
+     "fontSize": "18px",
+     "lineHeight": "18px",
+     "borderRadius": "10px",
+     "backgroundColor": "rgb(255, 255, 255)",
+     "color": "rgb(0, 0, 0)"
+    },
+    "h2": {
+     "fontSize": "50px",
+     "lineHeight": "60px",
+     "color": "rgb(51, 51, 51)",
+     "margin": "8px 0px 16px"
+    },
+    "h3": {
+     "fontSize": "30px",
+     "lineHeight": "30px",
+     "color": "rgb(51, 51, 51)",
+     "margin": "8px 0px 16px"
+    },
+    "all_text_cases p": {
+     "fontSize": "18px",
+     "lineHeight": "28.8px",
+     "color": "rgb(17, 17, 17)",
+     "margin": "0px 0px 14.4px"
+    },
+    "text-items-blok": {
+     "fontSize": "18px",
+     "lineHeight": "28.8px",
+     "color": "rgb(17, 17, 17)",
+     "margin": "0px 0px 14.4px"
+    },
+    "verticals-item": {
+     "padding": "40px",
+     "backgroundColor": "rgb(243, 244, 245)",
+     "borderRadius": "20px",
+     "fontSize": "18px",
+     "lineHeight": "25.2px"
+    },
+    "verticals-item-photo": {
+     "gap": "20px"
+    }
+   },
+   "секции": [
+    {
+     "вид": "секция",
+     "имя": "герой",
+     "узлы": [
+      {
+       "вид": "панель",
+       "тон": "герой",
+       "узлы": [
+        {
+         "вид": "заголовок",
+         "уровень": 1,
+         "строки": [
+          "бла бла бла тест"
+         ]
+        },
+        {
+         "вид": "кнопка",
+         "текст": "Получить консультацию"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "вид": "секция",
+     "имя": "кадры",
+     "узлы": [
+      {
+       "вид": "сетка",
+       "сетка": "кадрыНовые",
+       "узлы": [
+        {
+         "вид": "ячейка",
+         "кадр": true,
+         "узлы": [
+          {
+           "вид": "кадр",
+           "путь": "/uploads/admin/1788270041027-untitled-logo-16-basic-bg-file.jpg",
+           "высота": "358px",
+           "подгон": "cover"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "публикации": [],
+ "направления": {},
+ "скрытые": {
+  "услуги": [],
+  "кейсы": [],
+  "публикации": []
+ }
+}
