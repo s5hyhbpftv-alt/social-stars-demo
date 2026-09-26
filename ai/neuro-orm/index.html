@@ -21,14 +21,16 @@
   <link rel="stylesheet" href="/social-stars-demo/ai/ai.css" />
   <style>
     /* как рождается ответ */
-    .birth{display:grid;grid-template-columns:1fr 1.35fr 1fr;gap:32px;align-items:center}
+    .birth{display:grid;grid-template-columns:1fr 1.35fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
+    .birth .wire.bad{stroke:#d9978d}
+    .birth .pulse{r:2.6}
     .card{background:var(--white);border:1px solid var(--mist);border-radius:var(--r-lg);padding:24px 26px}
     .card small{display:block;font-size:14px;color:var(--slate);margin-bottom:10px}
     .card p{font-size:19px;letter-spacing:-.01em;line-height:1.45}
     .card.answer{background:var(--ink);border-color:var(--ink);color:#eef1f6}
     .card.answer small{color:#a9b1c0}
     .card.answer p{font-size:16.5px;line-height:1.6;color:#d3d9e3}
-    .card.answer mark{background:rgba(194,87,75,.28);color:#ffd2cc;padding:0 3px;border-radius:3px}
+    .card.answer mark{background:linear-gradient(rgba(194,87,75,.34),rgba(194,87,75,.34)) no-repeat 0 0/100% 100%;color:#ffd2cc;padding:0 3px;border-radius:3px}
     .card.answer sup{color:#e0c3a4;font-size:11px}
     .srcs{list-style:none;display:grid;gap:8px}
     .srcs li{display:grid;grid-template-columns:1fr 96px 40px;gap:14px;align-items:center;padding:12px 16px;border-radius:var(--r-md);background:var(--white);border:1px solid var(--mist);font-size:15px}
@@ -92,7 +94,7 @@
     .who li{padding-left:18px;position:relative}
     .who li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--mist-2)}
 
-    @media (max-width:1024px){ .birth,.scan-grid,.report{grid-template-columns:1fr} }
+    @media (max-width:1024px){ .birth,.scan-grid,.report{grid-template-columns:1fr} .birth .wires{display:none} }
     @media (max-width:860px){ .ba,.who{grid-template-columns:1fr} .diff{grid-template-columns:1fr 1fr} }
     @media (max-width:600px){
       .srcs li{grid-template-columns:1fr 56px 36px;gap:10px;padding:12px}
@@ -106,22 +108,23 @@
 <body data-service="Нейро-ORM">
 <!-- @intro -->
 <div class="intro" id="intro" role="presentation">
+  <div class="intro-bg"></div>
   <div class="intro-stage" aria-hidden="true">
-    <div class="intro-star">
-      <svg viewBox="0 0 100 91.2">
-        <defs>
-          <clipPath id="ss-clip"><use href="#ss-p0"/><use href="#ss-p1"/><use href="#ss-p2"/></clipPath>
-          <linearGradient id="ss-sheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-        </defs>
-        <use href="#ss-star"/>
-        <g clip-path="url(#ss-clip)"><rect class="intro-sheen" x="-40" y="-10" width="34" height="120" fill="url(#ss-sheen)" transform="skewX(-18)"/></g>
-      </svg>
-    </div>
+    <svg class="intro-star" viewBox="0 0 100 91.2">
+      <defs>
+        <clipPath id="ss-clip"><use href="#ss-p0"/><use href="#ss-p1"/><use href="#ss-p2"/></clipPath>
+        <linearGradient id="ss-sheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".7"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+      </defs>
+      <g class="is-lines"></g>
+      <use class="is-fill" href="#ss-star"/>
+      <g clip-path="url(#ss-clip)"><rect class="intro-sheen" x="-40" y="-10" width="26" height="120" fill="url(#ss-sheen)" transform="skewX(-16)"/></g>
+      <g class="is-dots"></g>
+    </svg>
     <div class="intro-word">
-      <svg class="iw-social" viewBox="0 0 66.97 11.77"><use href="#ss-social"/></svg>
-      <svg class="iw-stars" viewBox="0 0 61.26 11.78"><use href="#ss-stars"/></svg>
+      <span class="iw-m"><svg class="iw-social" viewBox="0 0 66.97 11.77"><use href="#ss-social"/></svg></span>
+      <span class="iw-m"><svg class="iw-stars" viewBox="0 0 61.26 11.78"><use href="#ss-stars"/></svg></span>
     </div>
-    <svg class="intro-ai" viewBox="0 0 15.95 11.78"><use href="#ss-ai"/></svg>
+    <div class="intro-ai-row"><i class="intro-rule"></i><svg class="intro-ai" viewBox="0 0 15.95 11.78"><use href="#ss-ai"/></svg><i class="intro-rule"></i></div>
   </div>
   <button class="intro-skip" type="button">Пропустить</button>
 </div>
@@ -133,17 +136,70 @@
   if (seen) { el.remove(); return; }
   root.classList.add('intro-on');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let done = false;
-  const leave = () => {
-    if (done) return; done = true;
-    el.classList.add('is-leaving');
-    dispatchEvent(new Event('ss-intro-done'));
-    setTimeout(() => { root.classList.remove('intro-on'); el.remove(); }, reduce ? 300 : 850);
-    ['keydown', 'wheel', 'touchstart'].forEach(t => removeEventListener(t, leave));
+  let started = false, finished = false, skip = () => {};
+  const signal = () => { if (!started) { started = true; dispatchEvent(new Event('ss-intro-done')); } };
+  const finish = () => { if (finished) return; finished = true; signal(); root.classList.remove('intro-on'); el.remove(); };
+  // запасной путь без GSAP: короткое проявление и растворение
+  const plain = delay => {
+    root.classList.add('intro-plain');
+    skip = () => { el.classList.add('is-leaving'); signal(); setTimeout(finish, 450); };
+    setTimeout(skip, delay);
   };
-  const t = setTimeout(leave, reduce ? 900 : 3700);
-  el.addEventListener('click', () => { clearTimeout(t); leave(); });
-  ['keydown', 'wheel', 'touchstart'].forEach(ev => addEventListener(ev, () => { clearTimeout(t); leave(); }, { passive: true, once: true }));
+  const play = () => {
+    const g = window.gsap;
+    if (!g || reduce) return plain(reduce ? 700 : 1400);
+    const q = s => el.querySelector(s), NS = 'http://www.w3.org/2000/svg';
+    const star = q('.intro-star'), dotsG = q('.is-dots'), linesG = q('.is-lines');
+    // точки-звёзды садятся на контур знака: логотип собирается как созвездие
+    let seed = 20140; const R = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+    const paths = ['ss-p0', 'ss-p1', 'ss-p2'].map(id => document.getElementById(id)).filter(Boolean);
+    const total = paths.reduce((s, p) => s + p.getTotalLength(), 0), pts = [];
+    paths.forEach(p => {
+      const len = p.getTotalLength(), n = Math.max(8, Math.round(72 * len / total));
+      for (let i = 0; i < n; i++) { const a = p.getPointAtLength(len * i / n); pts.push({ x: a.x, y: a.y }); }
+      const l = document.createElementNS(NS, 'path'); l.setAttribute('d', p.getAttribute('d')); linesG.appendChild(l);
+    });
+    const dots = pts.map(pt => {
+      const c = document.createElementNS(NS, 'circle'), ang = R() * Math.PI * 2, rad = 70 + R() * 90;
+      pt.sx = 50 + Math.cos(ang) * rad; pt.sy = 46 + Math.sin(ang) * rad * .8;
+      c.setAttribute('cx', pt.x.toFixed(2)); c.setAttribute('cy', pt.y.toFixed(2)); c.setAttribute('r', (.8 + R() * .9).toFixed(2)); dotsG.appendChild(c); return c;
+    });
+    const lines = linesG.children, words = el.querySelectorAll('.iw-m svg');
+    root.classList.add('intro-go');
+    const tl = g.timeline({ delay: .2 });
+    tl.fromTo(dots, { x: i => pts[i].sx - pts[i].x, y: i => pts[i].sy - pts[i].y, opacity: 0 },
+        { x: 0, y: 0, opacity: 1, duration: 1.4, ease: 'expo.out', stagger: { amount: .5, from: 'random' } })
+      .fromTo(lines, { drawSVG: '0%' }, { drawSVG: '100%', duration: 1.2, ease: 'power2.inOut', stagger: .1 }, .6)
+      .fromTo(star, { scale: .94 }, { scale: 1, duration: 1.8, ease: 'expo.out', transformOrigin: '50% 50%' }, 1.3)
+      .fromTo(q('.is-fill'), { opacity: 0 }, { opacity: 1, duration: 1, ease: 'power2.out' }, 1.45)
+      .to([dots, lines], { opacity: 0, duration: .7, ease: 'power1.out' }, 1.65)
+      .fromTo(q('.intro-sheen'), { x: -30 }, { x: 150, duration: 1.2, ease: 'power2.inOut' }, 2.05)
+      .fromTo(words, { yPercent: 118 }, { yPercent: 0, duration: 1.1, ease: 'expo.out', stagger: .12 }, 1.8)
+      .fromTo(el.querySelectorAll('.intro-rule'), { scaleX: 0 }, { scaleX: 1, duration: .9, ease: 'expo.out' }, 2.3)
+      .fromTo(q('.intro-ai'), { opacity: 0, y: 3 }, { opacity: 1, y: 0, duration: .7, ease: 'power2.out' }, 2.4)
+      .addLabel('exit', 3.4)
+      .add(() => fly(), 'exit');
+    // выход: части логотипа перелетают на свои места в шапке
+    const fly = () => {
+      el.classList.add('is-flying');
+      const pairs = [[star, '.hdr .brand-star'], [words[0], '.hdr .bw-social'], [words[1], '.hdr .bw-stars'], [q('.intro-ai'), '.hdr .brand-ai']];
+      const out = g.timeline({ onComplete: finish });
+      out.to([q('.intro-skip'), ...el.querySelectorAll('.intro-rule')], { opacity: 0, duration: .3 }, 0);
+      pairs.forEach(([a, sel], i) => {
+        const b = document.querySelector(sel);
+        if (!b || !b.getClientRects().length) { out.to(a, { opacity: 0, duration: .5 }, 0); return; }
+        const ra = a.getBoundingClientRect(), rb = b.getBoundingClientRect();
+        out.to(a, { x: '+=' + (rb.left - ra.left), y: '+=' + (rb.top - ra.top), scale: rb.width / ra.width * g.getProperty(a, 'scale'),
+          transformOrigin: '0 0', duration: 1.15, ease: 'expo.inOut' }, i * .04);
+      });
+      out.to(q('.intro-bg'), { opacity: 0, duration: .75, ease: 'power2.inOut' }, .55)
+         .add(signal, .45);
+    };
+    skip = () => { if (tl.time() < tl.labels.exit) { tl.timeScale(1.6); tl.seek('exit'); } };
+  };
+  el.addEventListener('click', () => skip());
+  ['keydown', 'wheel', 'touchstart'].forEach(ev => addEventListener(ev, () => skip(), { passive: true, once: true }));
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', play, { once: true }); else play();
 })();
 </script>
 <!-- /@intro -->
@@ -300,18 +356,18 @@
     <div class="wrap">
       <div class="head">
         <h2 class="t-h2">Нейросеть не думает о вас. Она пересказывает источники</h2>
-        <p class="t-lead">Одна старая статья с большим весом может определять ответ годами. Поэтому работать нужно не с моделью, а с тем, на что она опирается.</p>
+        <p class="t-lead">Одна старая статья может годами определять ответ. Работать нужно с источниками.</p>
       </div>
-      <div class="birth">
-        <div class="card"><small>Вопрос человека</small><p>«Что известно о компании „Альфа Логистик“?»</p></div>
+      <div class="birth" data-wires="q>s1:dash q>s2:dash q>s3:dash q>s4:dash q>s5:dash s1>a:3.2:bad s2>a:2.2 s3>a:1.9 s4>a:1.6 s5>a:1.5" data-marks>
+        <div class="card" data-n="q"><small>Вопрос человека</small><p>«Что известно о компании „Альфа Логистик“?»</p></div>
         <ol class="srcs" aria-label="Источники ответа и их вес">
-          <li class="neg"><span>Статья о судебном споре, 2019<small>деловое издание</small></span><span class="w"><i style="width:82%"></i></span><span class="p">32%</span></li>
-          <li><span>Официальный сайт<small>устаревшая страница о компании</small></span><span class="w"><i style="width:55%"></i></span><span class="p">21%</span></li>
-          <li><span>Сайт отзывов<small>рейтинг 3,1</small></span><span class="w"><i style="width:48%"></i></span><span class="p">18%</span></li>
-          <li><span>Справочник компаний<small>старый адрес</small></span><span class="w"><i style="width:40%"></i></span><span class="p">15%</span></li>
-          <li><span>Отраслевой форум<small>обсуждения</small></span><span class="w"><i style="width:34%"></i></span><span class="p">14%</span></li>
+          <li data-n="s1" class="neg"><span>Статья о судебном споре, 2019<small>деловое издание</small></span><span class="w"><i style="width:82%"></i></span><span class="p">32%</span></li>
+          <li data-n="s2"><span>Официальный сайт<small>устаревшая страница о компании</small></span><span class="w"><i style="width:55%"></i></span><span class="p">21%</span></li>
+          <li data-n="s3"><span>Сайт отзывов<small>рейтинг 3,1</small></span><span class="w"><i style="width:48%"></i></span><span class="p">18%</span></li>
+          <li data-n="s4"><span>Справочник компаний<small>старый адрес</small></span><span class="w"><i style="width:40%"></i></span><span class="p">15%</span></li>
+          <li data-n="s5"><span>Отраслевой форум<small>обсуждения</small></span><span class="w"><i style="width:34%"></i></span><span class="p">14%</span></li>
         </ol>
-        <div class="card answer"><small>Ответ модели</small><p>«Альфа Логистик — транспортная компания из Москвы. <mark>В 2019 году была ответчиком в суде</mark><sup>1</sup>, отзывы клиентов смешанные<sup>3</sup>. Офис на <mark>ул. Старая, 5</mark><sup>4</sup>».</p></div>
+        <div class="card answer" data-n="a"><small>Ответ модели</small><p data-marks-text>«Альфа Логистик — транспортная компания из Москвы. <mark>В 2019 году была ответчиком в суде</mark><sup>1</sup>, отзывы клиентов смешанные<sup>3</sup>. Офис на <mark>ул. Старая, 5</mark><sup>4</sup>».</p></div>
       </div>
       <p class="note">Компания и источники вымышлены, веса условные. На аудите мы строим такую карту для каждой модели и каждого важного вопроса о вас.</p>
     </div>
@@ -565,8 +621,15 @@
 </footer>
 <!-- /@footer -->
 
+<!-- @scripts -->
+<script src="/social-stars-demo/ai/vendor/gsap.min.js" defer></script>
+<script src="/social-stars-demo/ai/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/social-stars-demo/ai/vendor/DrawSVGPlugin.min.js" defer></script>
+<script src="/social-stars-demo/ai/vendor/MotionPathPlugin.min.js" defer></script>
 <script src="/social-stars-demo/ai/sky.js" defer></script>
 <script src="/social-stars-demo/ai/ai.js" defer></script>
+<script src="/social-stars-demo/ai/motion.js" defer></script>
+<!-- /@scripts -->
 <script>
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;

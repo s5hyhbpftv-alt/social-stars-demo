@@ -40,6 +40,10 @@
 
     /* границы самостоятельности */
     .bounds{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+    .ctl-top{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;align-items:center;margin-bottom:72px}
+    .ctl-top .node{justify-self:center}
+    .ctl-top .hub{grid-column:2}
+    .ctl-top [data-n="in"]{grid-column:1;justify-self:start}
     .bounds h3{font-size:22px;font-weight:400;letter-spacing:-.015em;margin:18px 0 14px}
     .bounds ul{list-style:none;display:grid;gap:10px;color:var(--ink-2)}
     .bounds li{padding-left:18px;position:relative}
@@ -49,29 +53,30 @@
     .meter i.f{background:var(--ink)}
     .meter-cap{font-size:14px;color:var(--slate);margin-top:8px}
 
-    @media (max-width:860px){ .bounds{grid-template-columns:1fr;gap:36px} }
+    @media (max-width:860px){ .bounds{grid-template-columns:1fr;gap:36px} .ctl .wires{display:none} .ctl-top{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px} }
     @media (max-width:600px){ .log{font-size:14px;padding:16px 14px 8px;min-height:420px} .log li{grid-template-columns:58px 12px 1fr;gap:8px} }
   </style>
 </head>
 <body data-service="ИИ-агенты">
 <!-- @intro -->
 <div class="intro" id="intro" role="presentation">
+  <div class="intro-bg"></div>
   <div class="intro-stage" aria-hidden="true">
-    <div class="intro-star">
-      <svg viewBox="0 0 100 91.2">
-        <defs>
-          <clipPath id="ss-clip"><use href="#ss-p0"/><use href="#ss-p1"/><use href="#ss-p2"/></clipPath>
-          <linearGradient id="ss-sheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-        </defs>
-        <use href="#ss-star"/>
-        <g clip-path="url(#ss-clip)"><rect class="intro-sheen" x="-40" y="-10" width="34" height="120" fill="url(#ss-sheen)" transform="skewX(-18)"/></g>
-      </svg>
-    </div>
+    <svg class="intro-star" viewBox="0 0 100 91.2">
+      <defs>
+        <clipPath id="ss-clip"><use href="#ss-p0"/><use href="#ss-p1"/><use href="#ss-p2"/></clipPath>
+        <linearGradient id="ss-sheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".7"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+      </defs>
+      <g class="is-lines"></g>
+      <use class="is-fill" href="#ss-star"/>
+      <g clip-path="url(#ss-clip)"><rect class="intro-sheen" x="-40" y="-10" width="26" height="120" fill="url(#ss-sheen)" transform="skewX(-16)"/></g>
+      <g class="is-dots"></g>
+    </svg>
     <div class="intro-word">
-      <svg class="iw-social" viewBox="0 0 66.97 11.77"><use href="#ss-social"/></svg>
-      <svg class="iw-stars" viewBox="0 0 61.26 11.78"><use href="#ss-stars"/></svg>
+      <span class="iw-m"><svg class="iw-social" viewBox="0 0 66.97 11.77"><use href="#ss-social"/></svg></span>
+      <span class="iw-m"><svg class="iw-stars" viewBox="0 0 61.26 11.78"><use href="#ss-stars"/></svg></span>
     </div>
-    <svg class="intro-ai" viewBox="0 0 15.95 11.78"><use href="#ss-ai"/></svg>
+    <div class="intro-ai-row"><i class="intro-rule"></i><svg class="intro-ai" viewBox="0 0 15.95 11.78"><use href="#ss-ai"/></svg><i class="intro-rule"></i></div>
   </div>
   <button class="intro-skip" type="button">Пропустить</button>
 </div>
@@ -83,17 +88,70 @@
   if (seen) { el.remove(); return; }
   root.classList.add('intro-on');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let done = false;
-  const leave = () => {
-    if (done) return; done = true;
-    el.classList.add('is-leaving');
-    dispatchEvent(new Event('ss-intro-done'));
-    setTimeout(() => { root.classList.remove('intro-on'); el.remove(); }, reduce ? 300 : 850);
-    ['keydown', 'wheel', 'touchstart'].forEach(t => removeEventListener(t, leave));
+  let started = false, finished = false, skip = () => {};
+  const signal = () => { if (!started) { started = true; dispatchEvent(new Event('ss-intro-done')); } };
+  const finish = () => { if (finished) return; finished = true; signal(); root.classList.remove('intro-on'); el.remove(); };
+  // запасной путь без GSAP: короткое проявление и растворение
+  const plain = delay => {
+    root.classList.add('intro-plain');
+    skip = () => { el.classList.add('is-leaving'); signal(); setTimeout(finish, 450); };
+    setTimeout(skip, delay);
   };
-  const t = setTimeout(leave, reduce ? 900 : 3700);
-  el.addEventListener('click', () => { clearTimeout(t); leave(); });
-  ['keydown', 'wheel', 'touchstart'].forEach(ev => addEventListener(ev, () => { clearTimeout(t); leave(); }, { passive: true, once: true }));
+  const play = () => {
+    const g = window.gsap;
+    if (!g || reduce) return plain(reduce ? 700 : 1400);
+    const q = s => el.querySelector(s), NS = 'http://www.w3.org/2000/svg';
+    const star = q('.intro-star'), dotsG = q('.is-dots'), linesG = q('.is-lines');
+    // точки-звёзды садятся на контур знака: логотип собирается как созвездие
+    let seed = 20140; const R = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+    const paths = ['ss-p0', 'ss-p1', 'ss-p2'].map(id => document.getElementById(id)).filter(Boolean);
+    const total = paths.reduce((s, p) => s + p.getTotalLength(), 0), pts = [];
+    paths.forEach(p => {
+      const len = p.getTotalLength(), n = Math.max(8, Math.round(72 * len / total));
+      for (let i = 0; i < n; i++) { const a = p.getPointAtLength(len * i / n); pts.push({ x: a.x, y: a.y }); }
+      const l = document.createElementNS(NS, 'path'); l.setAttribute('d', p.getAttribute('d')); linesG.appendChild(l);
+    });
+    const dots = pts.map(pt => {
+      const c = document.createElementNS(NS, 'circle'), ang = R() * Math.PI * 2, rad = 70 + R() * 90;
+      pt.sx = 50 + Math.cos(ang) * rad; pt.sy = 46 + Math.sin(ang) * rad * .8;
+      c.setAttribute('cx', pt.x.toFixed(2)); c.setAttribute('cy', pt.y.toFixed(2)); c.setAttribute('r', (.8 + R() * .9).toFixed(2)); dotsG.appendChild(c); return c;
+    });
+    const lines = linesG.children, words = el.querySelectorAll('.iw-m svg');
+    root.classList.add('intro-go');
+    const tl = g.timeline({ delay: .2 });
+    tl.fromTo(dots, { x: i => pts[i].sx - pts[i].x, y: i => pts[i].sy - pts[i].y, opacity: 0 },
+        { x: 0, y: 0, opacity: 1, duration: 1.4, ease: 'expo.out', stagger: { amount: .5, from: 'random' } })
+      .fromTo(lines, { drawSVG: '0%' }, { drawSVG: '100%', duration: 1.2, ease: 'power2.inOut', stagger: .1 }, .6)
+      .fromTo(star, { scale: .94 }, { scale: 1, duration: 1.8, ease: 'expo.out', transformOrigin: '50% 50%' }, 1.3)
+      .fromTo(q('.is-fill'), { opacity: 0 }, { opacity: 1, duration: 1, ease: 'power2.out' }, 1.45)
+      .to([dots, lines], { opacity: 0, duration: .7, ease: 'power1.out' }, 1.65)
+      .fromTo(q('.intro-sheen'), { x: -30 }, { x: 150, duration: 1.2, ease: 'power2.inOut' }, 2.05)
+      .fromTo(words, { yPercent: 118 }, { yPercent: 0, duration: 1.1, ease: 'expo.out', stagger: .12 }, 1.8)
+      .fromTo(el.querySelectorAll('.intro-rule'), { scaleX: 0 }, { scaleX: 1, duration: .9, ease: 'expo.out' }, 2.3)
+      .fromTo(q('.intro-ai'), { opacity: 0, y: 3 }, { opacity: 1, y: 0, duration: .7, ease: 'power2.out' }, 2.4)
+      .addLabel('exit', 3.4)
+      .add(() => fly(), 'exit');
+    // выход: части логотипа перелетают на свои места в шапке
+    const fly = () => {
+      el.classList.add('is-flying');
+      const pairs = [[star, '.hdr .brand-star'], [words[0], '.hdr .bw-social'], [words[1], '.hdr .bw-stars'], [q('.intro-ai'), '.hdr .brand-ai']];
+      const out = g.timeline({ onComplete: finish });
+      out.to([q('.intro-skip'), ...el.querySelectorAll('.intro-rule')], { opacity: 0, duration: .3 }, 0);
+      pairs.forEach(([a, sel], i) => {
+        const b = document.querySelector(sel);
+        if (!b || !b.getClientRects().length) { out.to(a, { opacity: 0, duration: .5 }, 0); return; }
+        const ra = a.getBoundingClientRect(), rb = b.getBoundingClientRect();
+        out.to(a, { x: '+=' + (rb.left - ra.left), y: '+=' + (rb.top - ra.top), scale: rb.width / ra.width * g.getProperty(a, 'scale'),
+          transformOrigin: '0 0', duration: 1.15, ease: 'expo.inOut' }, i * .04);
+      });
+      out.to(q('.intro-bg'), { opacity: 0, duration: .75, ease: 'power2.inOut' }, .55)
+         .add(signal, .45);
+    };
+    skip = () => { if (tl.time() < tl.labels.exit) { tl.timeScale(1.6); tl.seek('exit'); } };
+  };
+  el.addEventListener('click', () => skip());
+  ['keydown', 'wheel', 'touchstart'].forEach(ev => addEventListener(ev, () => skip(), { passive: true, once: true }));
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', play, { once: true }); else play();
 })();
 </script>
 <!-- /@intro -->
@@ -282,27 +340,30 @@
     <div class="wrap">
       <div class="head">
         <h2 class="t-h2">Агент знает, где остановиться</h2>
-        <p class="t-lead">До запуска вместе решаем, что агент делает сам, что — с подтверждением, а что остаётся за людьми. Каждое действие попадает в журнал.</p>
+        <p class="t-lead">Границы задаём до запуска. Каждое действие попадает в журнал.</p>
       </div>
-      <div class="bounds">
+      <div class="ctl" data-wires="in>ag ag>b1:1.8 ag>b2 ag>b3:dash">
+      <div class="ctl-top" aria-hidden="true"><span class="node" data-n="in"><svg class="ic"><use href="#i-inbox"/></svg>Входящая задача</span><span class="node hub" data-n="ag"><svg class="ic"><use href="#i-assistant"/></svg>ИИ‑агент</span></div>
+      <div class="bounds" data-bars>
         <div>
-          <div class="meter" aria-hidden="true"><i class="f"></i><i class="f"></i><i class="f"></i></div>
+          <div class="meter" aria-hidden="true" data-n="b1"><i class="f" data-bar></i><i class="f" data-bar></i><i class="f" data-bar></i></div>
           <p class="meter-cap">Полная самостоятельность</p>
           <h3>Делает сам</h3>
           <ul><li>Разбирает входящие и заполняет CRM</li><li>Отвечает на типовые вопросы по базе знаний</li><li>Готовит черновики писем, КП и отчётов</li><li>Ставит задачи и напоминания</li></ul>
         </div>
         <div>
-          <div class="meter" aria-hidden="true"><i class="f"></i><i class="f"></i><i></i></div>
+          <div class="meter" aria-hidden="true" data-n="b2"><i class="f" data-bar></i><i class="f" data-bar></i><i></i></div>
           <p class="meter-cap">Нужно подтверждение</p>
           <h3>С подтверждением</h3>
           <ul><li>Отправка КП и договора клиенту</li><li>Изменение этапа и суммы сделки</li><li>Скидка в пределах лимита</li><li>Публичный ответ от имени компании</li></ul>
         </div>
         <div>
-          <div class="meter" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="meter" aria-hidden="true" data-n="b3"><i></i><i></i><i></i></div>
           <p class="meter-cap">Агент не участвует</p>
           <h3>Только человек</h3>
           <ul><li>Платежи и финансовые решения</li><li>Нестандартные условия и конфликты</li><li>Кадровые решения</li><li>Всё, что вы решите оставить людям</li></ul>
         </div>
+      </div>
       </div>
     </div>
   </section>
@@ -469,8 +530,15 @@
 </footer>
 <!-- /@footer -->
 
+<!-- @scripts -->
+<script src="/social-stars-demo/ai/vendor/gsap.min.js" defer></script>
+<script src="/social-stars-demo/ai/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/social-stars-demo/ai/vendor/DrawSVGPlugin.min.js" defer></script>
+<script src="/social-stars-demo/ai/vendor/MotionPathPlugin.min.js" defer></script>
 <script src="/social-stars-demo/ai/sky.js" defer></script>
 <script src="/social-stars-demo/ai/ai.js" defer></script>
+<script src="/social-stars-demo/ai/motion.js" defer></script>
+<!-- /@scripts -->
 <script>
 (() => {
   const S = {
