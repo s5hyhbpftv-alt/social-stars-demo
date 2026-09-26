@@ -2,147 +2,437 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>ИИ-агенты и автоматизация бизнес-процессов — Social Stars AI</title>
-  <meta name="description" content="Внедрение ИИ-агентов в продажи, поддержку, документооборот и HR. RAG по базе знаний, n8n, LangGraph, интеграция с amoCRM, Битрикс24, 1С. On-prem и 152-ФЗ." />
-  <link rel="icon" type="image/svg+xml" href="/social-stars-demo/favicon.svg" />
+  <meta name="theme-color" content="#f3f5f8" />
+  <title>ИИ-агенты для бизнеса — Social Stars AI</title>
+  <meta name="description" content="Внедряем ИИ-агентов в продажи, поддержку, документооборот и HR: база знаний, интеграция с amoCRM, Битрикс24 и 1С. Пилот за 2–4 недели, российские модели и собственный контур по 152-ФЗ." />
   <link rel="canonical" href="https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/agents/" />
+  <link rel="icon" type="image/svg+xml" href="/social-stars-demo/favicon.svg" />
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Social Stars" />
-  <meta property="og:title" content="ИИ-агенты и автоматизация бизнес-процессов — Social Stars AI" />
-  <meta property="og:description" content="Внедрение ИИ-агентов в продажи, поддержку, документооборот и HR. RAG по базе знаний, n8n, LangGraph, интеграция с amoCRM, Битрикс24, 1С. On-prem и 152-ФЗ." />
+  <meta property="og:title" content="ИИ-агенты для бизнеса — Social Stars AI" />
+  <meta property="og:description" content="Агенты берут рутину продаж, поддержки и документов. Пилот за 2–4 недели." />
   <meta property="og:url" content="https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/agents/" />
   <meta property="og:image" content="https://s5hyhbpftv-alt.github.io/social-stars-demo/media/og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "ИИ-агенты", "description": "Внедрение ИИ-агентов в продажи, поддержку, документооборот и HR. RAG по базе знаний, n8n, LangGraph, интеграция с amoCRM, Битрикс24, 1С. On-prem и 152-ФЗ.", "url": "https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/agents/", "areaServed": "RU", "provider": {"@id": "https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/#service"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Social Stars", "item": "https://s5hyhbpftv-alt.github.io/social-stars-demo/"}, {"@type": "ListItem", "position": 2, "name": "Social Stars AI", "item": "https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/"}, {"@type": "ListItem", "position": 3, "name": "ИИ-агенты", "item": "https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/agents/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Чем агент отличается от чат-бота?", "acceptedAnswer": {"@type": "Answer", "text": "Чат-бот ведёт по заранее заданному сценарию. Агент понимает задачу, сам выбирает инструменты — CRM, почту, базу знаний — и доводит работу до результата в заданных границах."}}, {"@type": "Question", "name": "Какие модели используете?", "acceptedAnswer": {"@type": "Answer", "text": "Подбираем под задачу и требования к данным: GigaChat, YandexGPT, open-source модели в российском облаке или на ваших серверах, а при допустимости — зарубежные модели."}}, {"@type": "Question", "name": "Что если агент ошибётся?", "acceptedAnswer": {"@type": "Answer", "text": "Для действий с последствиями — отправки клиенту, изменения сделки, платежей — ставим подтверждение человеком. Все действия записываются в журнал."}}, {"@type": "Question", "name": "Нужен ли свой ИТ-отдел?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Мы берём на себя разработку и поддержку, а вашей команде даём понятную панель и обучение."}}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"ИИ-агенты и автоматизация бизнес-процессов","url":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/agents/","areaServed":"RU","provider":{"@type":"Organization","name":"Social Stars","url":"https://s5hyhbpftv-alt.github.io/social-stars-demo/"},"offers":{"@type":"Offer","priceCurrency":"RUB","price":"350000","description":"Пилот на одном процессе"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Social Stars AI","item":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/"},{"@type":"ListItem","position":2,"name":"ИИ-агенты","item":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/agents/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Чем агент отличается от чат-бота?","acceptedAnswer":{"@type":"Answer","text":"Чат-бот ведёт по заранее заданному сценарию. Агент понимает задачу, сам выбирает инструменты — CRM, почту, базу знаний — и доводит работу до результата в заданных границах."}},{"@type":"Question","name":"Какие модели используете?","acceptedAnswer":{"@type":"Answer","text":"Подбираем под задачу и требования к данным: GigaChat, YandexGPT, открытые модели в российском облаке или на серверах клиента, а если это допустимо — зарубежные модели."}},{"@type":"Question","name":"Что если агент ошибётся?","acceptedAnswer":{"@type":"Answer","text":"Действия с последствиями агент выполняет только после подтверждения человеком. Все действия записываются в журнал, качество проверяется на реальных обращениях до запуска."}},{"@type":"Question","name":"Нужен ли свой ИТ-отдел?","acceptedAnswer":{"@type":"Answer","text":"Нет. Разработку и поддержку берём на себя, команде даём понятную панель и обучение."}}]}]}</script>
   <link rel="stylesheet" href="/social-stars-demo/ai/ai.css" />
+  <style>
+    /* пример: вкладки отделов + журнал агента */
+    .seg{display:inline-flex;flex-wrap:wrap;gap:4px;padding:4px;border-radius:12px;background:var(--porcelain-2);margin-bottom:16px}
+    .seg button{height:40px;padding:0 16px;border:0;border-radius:8px;background:none;cursor:pointer;font-size:15px;color:var(--ink-2);transition:background .15s,color .15s}
+    .seg button[aria-selected="true"]{background:var(--white);color:var(--ink);box-shadow:0 1px 2px rgba(27,33,48,.12)}
+    .log{list-style:none;padding:20px 22px 12px;min-height:340px;font-size:15px;line-height:1.55}
+    .log li{display:grid;grid-template-columns:70px 18px 1fr;gap:10px;padding:6px 0;opacity:0;transition:opacity .35s}
+    .log li.on{opacity:1}
+    .log time{color:#6f7a8e;font-variant-numeric:tabular-nums}
+    .log .k{width:8px;height:8px;border-radius:50%;margin-top:.55em;background:#6f7a8e}
+    .log .in .k{background:#7ea2e0}.log .tool .k{background:#c7a47f}.log .ok .k{background:#5fb584}
+    .log .wait .k{background:#e3b25c;box-shadow:0 0 0 4px rgba(227,178,92,.18)}
+    .log .wait span:last-child{color:#f0d49c}
+    .log b{font-weight:500;color:#e8cfb2}
+    .log-foot{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;padding:14px 22px 18px;border-top:1px solid #262d3d;font-size:14px;color:#8a93a5}
+    .log-foot strong{font-weight:500;color:#dfe4ec}
+    .log-foot button{margin-left:auto;background:none;border:1px solid #384157;border-radius:8px;color:#dfe4ec;height:34px;padding:0 12px;cursor:pointer;font-size:13.5px}
+    .log-foot button:hover{border-color:#8a93a5}
+
+    /* границы самостоятельности */
+    .bounds{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+    .bounds h3{font-size:22px;font-weight:400;letter-spacing:-.015em;margin:18px 0 14px}
+    .bounds ul{list-style:none;display:grid;gap:10px;color:var(--ink-2)}
+    .bounds li{padding-left:18px;position:relative}
+    .bounds li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--mist-2)}
+    .meter{display:flex;gap:4px;max-width:160px}
+    .meter i{flex:1;height:4px;border-radius:2px;background:var(--mist)}
+    .meter i.f{background:var(--ink)}
+    .meter-cap{font-size:14px;color:var(--slate);margin-top:8px}
+
+    @media (max-width:860px){ .bounds{grid-template-columns:1fr;gap:36px} }
+    @media (max-width:600px){ .log{font-size:14px;padding:16px 14px 8px;min-height:420px} .log li{grid-template-columns:58px 12px 1fr;gap:8px} }
+  </style>
 </head>
-<body>
-<!-- Сгенерировано tools/build_ai_pages.py — правьте контент там, а не здесь. -->
-<header class="nav" id="nav">
+<body data-service="ИИ-агенты">
+<!-- @header -->
+<a class="skip" href="#main">Перейти к содержимому</a>
+<header class="hdr">
   <div class="wrap">
-    <a class="logo" href="/social-stars-demo/ai/" aria-label="Social Stars AI — главная"><img src="/social-stars-demo/favicon.svg" alt="" width="26" height="27" />Social Stars <b>AI</b></a>
-    <nav aria-label="Разделы">
-      <ul class="nav-links">
-        <li><a href="/social-stars-demo/ai/#services">Все услуги</a></li>
-        <li><a href="#includes">Что входит</a></li>
-        <li><a href="#pricing">Цены</a></li>
-        <li><a href="#faq">FAQ</a></li>
+    <a class="brand" href="/social-stars-demo/ai/"><img src="/social-stars-demo/favicon.svg" alt="" width="22" height="23" /><span>Social Stars <em>AI</em></span></a>
+    <nav aria-label="Основное меню">
+      <ul class="menu">
+        <li><button type="button" data-mega-btn aria-expanded="false" aria-controls="mega">Услуги <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m3 4.5 3 3 3-3"/></svg></button></li>
+        <li><a href="/social-stars-demo/ai/neuro-orm/">Нейро-ORM</a></li>
+        <li><a href="/social-stars-demo/cases/">Кейсы</a></li>
+        <li><a href="/social-stars-demo/contacts/">Контакты</a></li>
       </ul>
     </nav>
-    <a class="btn btn-gold" href="#lead">Бесплатный AI-аудит</a>
+    <a class="btn btn-primary btn-desk" href="#lead">Получить аудит</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Открыть меню"><span></span><span></span></button>
+    <div class="mega" id="mega">
+      <a class="feature" href="/social-stars-demo/ai/growth-os/"><b>AI Growth OS</b><span>Сайт, агенты, аватар, поиск и репутация — одна система роста с оплатой за результат</span></a>
+      <a href="/social-stars-demo/ai/sites/"><b>AI-сайты</b><span>Сайт, который находят люди и цитируют нейросети</span></a>
+      <a href="/social-stars-demo/ai/agents/"><b>ИИ-агенты</b><span>Рутина продаж, поддержки и документов — агентам</span></a>
+      <a href="/social-stars-demo/ai/avatars/"><b>Цифровые аватары</b><span>Эксперт говорит каждый день без съёмок</span></a>
+      <a href="/social-stars-demo/ai/seo-geo/"><b>SEO и GEO</b><span>В поиске и в ответе нейросети</span></a>
+      <a href="/social-stars-demo/ai/neuro-orm/"><b>Нейро-ORM</b><span>Что нейросети говорят о компании</span></a>
+      <a href="/social-stars-demo/ai/content/"><b>Контент-завод</b><span>Регулярный контент без раздувания штата</span></a>
+      <a href="/social-stars-demo/ai/transformation/"><b>AI-трансформация</b><span>Стратегия, правила и обучение команд</span></a>
+      <a href="/social-stars-demo/ai/"><b>Все направления</b><span>Обзор, калькулятор и сравнение с рынком</span></a>
+    </div>
   </div>
 </header>
+<div class="mnav" id="mnav">
+  <ul>
+    <li><a href="/social-stars-demo/ai/">Все направления</a></li>
+    <li><a href="/social-stars-demo/ai/growth-os/">AI Growth OS</a></li>
+    <li><a href="/social-stars-demo/ai/sites/">AI-сайты</a></li>
+    <li><a href="/social-stars-demo/ai/agents/">ИИ-агенты</a></li>
+    <li><a href="/social-stars-demo/ai/avatars/">Цифровые аватары</a></li>
+    <li><a href="/social-stars-demo/ai/seo-geo/">SEO и GEO</a></li>
+    <li><a href="/social-stars-demo/ai/neuro-orm/">Нейро-ORM</a></li>
+    <li><a href="/social-stars-demo/ai/content/">Контент-завод</a></li>
+    <li><a href="/social-stars-demo/ai/transformation/">AI-трансформация</a></li>
+  </ul>
+  <div class="mnav-foot">
+    <a class="btn btn-primary btn-block" href="#lead">Получить аудит</a>
+    <a href="tel:+79854009299">+7 985 400 92 99</a>
+    <a href="mailto:info@social-stars.ru">info@social-stars.ru</a>
+  </div>
+</div>
+<!-- /@header -->
 
-<main>
-  <section class="hero page">
-    <div class="orb a"></div><div class="orb b"></div>
+<main id="main">
+  <section class="hero">
     <div class="wrap">
-      <nav class="crumbs" aria-label="Хлебные крошки"><a href="/social-stars-demo/">Social Stars</a><span>/</span><a href="/social-stars-demo/ai/">Social Stars AI</a><span>/</span><span aria-current="page">ИИ-агенты</span></nav>
-      <span class="eyebrow">Social Stars AI · ИИ-агенты</span>
-      <h1>ИИ-агенты, которые <em>берут рутину на себя</em></h1>
-      <p class="hero-lead">Не чат-бот с кнопками, а цифровые сотрудники: читают почту и документы, работают в CRM, готовят ответы и отчёты. В ключевых точках решение остаётся за человеком.</p>
-      <div class="hero-cta">
-        <a class="btn btn-gold" href="#lead">Обсудить задачу</a>
-        <a class="btn btn-ghost" href="#pricing">Смотреть цены</a>
-      </div>
-      <div class="facts"><div><span>Пилот</span><b>2–4 недели</b></div><div><span>Стоимость</span><b>от 350 000 ₽</b></div><div><span>Контур</span><b>облако · РФ-облако · on-prem</b></div></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Задачи</span><h2>Какие процессы мы автоматизируем</h2></div></div>
-      <div class="cards"><div class="card reveal"><h3>Заявки теряются</h3><p>Лиды ждут ответа часами, менеджеры не успевают квалифицировать и вносить данные в CRM.</p></div><div class="card reveal"><h3>Поддержка перегружена</h3><p>Типовые вопросы съедают время, сложные обращения ждут в общей очереди.</p></div><div class="card reveal"><h3>Документы вручную</h3><p>Договоры, счета, акты и КП проверяются и заполняются людьми.</p></div><div class="card reveal"><h3>Знания в головах</h3><p>Ответы на вопросы разбросаны по чатам, папкам и отдельным сотрудникам.</p></div></div>
-    </div>
-  </section>
-
-  <section class="alt" id="includes">
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Что входит</span><h2>Всё, что нужно для результата</h2></div><p>Работаем под ключ: от стратегии до поддержки. Состав адаптируем под задачу после аудита.</p></div>
-      <div class="cards c3"><div class="card reveal"><span class="k">01</span><h3>Аудит процессов</h3><p>Находим задачи с максимальным эффектом и считаем экономию до начала работ.</p></div><div class="card reveal"><span class="k">02</span><h3>Проектирование агента</h3><p>Роли, инструменты, границы полномочий, точки проверки человеком.</p></div><div class="card reveal"><span class="k">03</span><h3>База знаний (RAG)</h3><p>Подключаем регламенты, базы и документы — агент отвечает с опорой на источники.</p></div><div class="card reveal"><span class="k">04</span><h3>Интеграции</h3><p>amoCRM, Битрикс24, 1С, почта, телефония, Telegram, внутренние API.</p></div><div class="card reveal"><span class="k">05</span><h3>Безопасность</h3><p>Российские модели или on-prem, журнал действий, разграничение доступа.</p></div><div class="card reveal"><span class="k">06</span><h3>Поддержка и развитие</h3><p>Мониторинг качества, дообучение, новые сценарии по мере роста.</p></div></div>
-    </div>
-  </section>
-
-  <section class="dark">
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Сценарии по отделам</span><h2>Где агенты дают эффект быстрее всего</h2></div><p>Типовые сценарии, с которых мы начинаем пилот.</p></div>
-      <div class="tbl-wrap reveal"><table><thead><tr><th>Отдел</th><th>Что делает агент</th><th>Что измеряем</th></tr></thead><tbody><tr><td><b>Продажи</b></td><td>Квалифицирует входящие заявки, заполняет CRM, готовит КП и напоминает о следующем шаге</td><td>Скорость ответа, конверсия в сделку</td></tr><tr><td><b>Поддержка</b></td><td>Отвечает на типовые вопросы по базе знаний, сложные передаёт человеку с резюме</td><td>Доля решённых без оператора, CSAT</td></tr><tr><td><b>Документы</b></td><td>Извлекает данные из договоров и счетов, сверяет с 1С, отмечает риски</td><td>Время обработки, число ошибок</td></tr><tr><td><b>HR</b></td><td>Отбирает резюме, проводит первичное интервью, отвечает сотрудникам по регламентам</td><td>Время закрытия вакансии</td></tr><tr><td><b>Маркетинг</b></td><td>Мониторит упоминания, готовит черновики постов и отчёты по кампаниям</td><td>Часы команды, охват</td></tr><tr><td><b>Руководство</b></td><td>Собирает ежедневную сводку из CRM, почты и чатов с приоритетами</td><td>Время на подготовку отчётов</td></tr></tbody></table></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Как работаем</span><h2>Этапы и сроки</h2></div></div>
-      <div class="process"><div class="step reveal"><h3>Аудит</h3><p>Разбираем 3–5 процессов, выбираем один для пилота, фиксируем метрику «до».</p><span class="t">до 48 часов</span></div><div class="step reveal"><h3>Пилот</h3><p>Агент на одном процессе с реальными данными и проверкой человеком.</p><span class="t">2–4 недели</span></div><div class="step reveal"><h3>Масштаб</h3><p>Переносим подход на соседние процессы, связываем агентов между собой.</p><span class="t">1–3 месяца</span></div><div class="step reveal"><h3>Поддержка</h3><p>Мониторинг, дообучение, отчёт об экономии каждый месяц.</p><span class="t">ежемесячно</span></div></div>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Метрики</span><h2>Что мы измеряем</h2></div><p>Фиксируем значения «до» на старте и показываем динамику в ежемесячном отчёте.</p></div>
-      <div class="metrics"><div class="reveal"><b>Часы, освобождённые у команды</b><span>по журналу действий агента</span></div><div class="reveal"><b>Скорость реакции</b><span>время от обращения до ответа</span></div><div class="reveal"><b>Доля автоматических решений</b><span>без участия человека</span></div><div class="reveal"><b>Качество</b><span>оценка ответов и доля эскалаций</span></div><div class="reveal"><b>Конверсия</b><span>для сценариев продаж</span></div><div class="reveal"><b>Окупаемость</b><span>экономия против стоимости владения</span></div></div>
-    </div>
-  </section>
-
-  <section class="pricing" id="pricing">
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Цены</span><h2>Пакеты</h2></div><p>Ориентиры для старта. Итоговая смета — после бесплатного аудита.</p></div>
-      <div class="plans p3"><div class="plan reveal"><h3>Пилот</h3><div class="price">от 350 000 ₽</div><p>Один процесс, измеримый результат. Поддержка — от 90 000 ₽/мес.</p><ul><li>Аудит процесса</li><li>Агент + RAG</li><li>1–2 интеграции</li><li>Метрики до/после</li></ul><a class="btn btn-dark" href="#lead">Обсудить</a></div><div class="plan hot reveal"><span class="badge">Популярный</span><h3>Мультиагентная система</h3><div class="price">от 1 200 000 ₽</div><p>Несколько агентов, связанных общей базой знаний.</p><ul><li>3–5 сценариев</li><li>Оркестрация</li><li>Панель мониторинга</li><li>Обучение команды</li></ul><a class="btn btn-gold" href="#lead">Обсудить</a></div><div class="plan reveal"><h3>Enterprise / on-prem</h3><div class="price">от 3 000 000 ₽</div><p>Контур внутри периметра компании.</p><ul><li>Российские или open-source модели</li><li>Развёртывание у клиента</li><li>Журнал и аудит</li><li>SLA</li></ul><a class="btn btn-dark" href="#lead">Обсудить</a></div></div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="wrap">
-      <div class="sec-head" style="justify-content:center;text-align:center"><div><span class="eyebrow">FAQ</span><h2>Частые вопросы</h2></div></div>
-      <div class="faq"><details><summary>Чем агент отличается от чат-бота?</summary><p>Чат-бот ведёт по заранее заданному сценарию. Агент понимает задачу, сам выбирает инструменты — CRM, почту, базу знаний — и доводит работу до результата в заданных границах.</p></details><details><summary>Какие модели используете?</summary><p>Подбираем под задачу и требования к данным: GigaChat, YandexGPT, open-source модели в российском облаке или на ваших серверах, а при допустимости — зарубежные модели.</p></details><details><summary>Что если агент ошибётся?</summary><p>Для действий с последствиями — отправки клиенту, изменения сделки, платежей — ставим подтверждение человеком. Все действия записываются в журнал.</p></details><details><summary>Нужен ли свой ИТ-отдел?</summary><p>Нет. Мы берём на себя разработку и поддержку, а вашей команде даём понятную панель и обучение.</p></details></div>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Другие направления</span><h2>Сильнее вместе</h2></div><p>Модули Social Stars AI усиливают друг друга. Комплекс — <a href="/social-stars-demo/ai/growth-os/">AI Growth OS</a>.</p></div>
-      <div class="xlinks"><a href="/social-stars-demo/ai/sites/"><b>AI-сайты</b><span>от 290 000 ₽</span></a><a href="/social-stars-demo/ai/avatars/"><b>Цифровые аватары</b><span>от 150 000 ₽</span></a><a href="/social-stars-demo/ai/seo-geo/"><b>SEO + GEO</b><span>от 180 000 ₽/мес</span></a><a href="/social-stars-demo/ai/neuro-orm/"><b>Нейро-ORM</b><span>от 250 000 ₽/мес</span></a><a href="/social-stars-demo/ai/content/"><b>AI-контент-завод</b><span>от 200 000 ₽/мес</span></a><a href="/social-stars-demo/ai/transformation/"><b>AI-трансформация</b><span>от 500 000 ₽</span></a><a href="/social-stars-demo/ai/growth-os/"><b>AI Growth OS</b><span>от 1,5 млн ₽ + ретейнер</span></a></div>
-    </div>
-  </section>
-
-  <section class="lead" id="lead">
-    <div class="orb a"></div>
-    <div class="wrap lead-grid">
-      <div>
-        <span class="eyebrow">Бесплатный AI-аудит</span>
-        <h2>Обсудим вашу задачу</h2>
-        <p class="lead-lead">За 48 часов пришлём отчёт: как вас видят нейросети и какие процессы дадут быстрый эффект от ИИ.</p>
-        <div class="contacts">
-          <a href="tel:+79854009299">+7 985 400 92 99</a>
-          <a href="mailto:info@social-stars.ru">info@social-stars.ru</a>
-          <span style="color:rgba(255,255,255,.5);font-size:15px">Москва, ул. Лесная, 57, стр. 4</span>
+      <div class="hero-text">
+        <nav class="crumbs" aria-label="Вы здесь"><a href="/social-stars-demo/ai/">Social Stars AI</a><span aria-hidden="true">/</span><span aria-current="page">ИИ-агенты</span></nav>
+        <h1 class="t-hero">ИИ-агенты, которые берут рутину на себя</h1>
+        <p class="t-lead">Агент читает почту и документы, работает в CRM и 1С, готовит ответы и отчёты. Решения с последствиями он оставляет человеку.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#lead">Разобрать мой процесс</a>
+          <a class="btn btn-line" href="#example">Посмотреть пример</a>
         </div>
       </div>
-      <form id="form" novalidate>
-        <input class="inp" name="name" placeholder="Имя" autocomplete="name" required aria-label="Имя" />
-        <input class="inp" name="contact" placeholder="Телефон или Telegram" autocomplete="tel" required aria-label="Телефон или Telegram" />
-        <input class="inp" name="company" placeholder="Компания и сайт" aria-label="Компания и сайт" />
-        <fieldset>
-          <legend>Что интересно</legend>
-          <div class="chips"><label><input type="checkbox" name="i" value="AI-сайт" data-k="site" /><span>AI-сайт</span></label><label><input type="checkbox" name="i" value="ИИ-агенты" data-k="agents" checked /><span>ИИ-агенты</span></label><label><input type="checkbox" name="i" value="Аватар" data-k="avatar" /><span>Аватар</span></label><label><input type="checkbox" name="i" value="SEO + GEO" data-k="geo" /><span>SEO + GEO</span></label><label><input type="checkbox" name="i" value="Нейро-ORM" data-k="orm" /><span>Нейро-ORM</span></label><label><input type="checkbox" name="i" value="Контент-завод" data-k="content" /><span>Контент-завод</span></label><label><input type="checkbox" name="i" value="AI-трансформация" data-k="transform" /><span>AI-трансформация</span></label><label><input type="checkbox" name="i" value="AI Growth OS" data-k="os" /><span>AI Growth OS</span></label></div>
-        </fieldset>
-        <button class="btn btn-gold" type="submit">Получить аудит</button>
-        <p class="form-msg" id="form-msg" role="status"></p>
-        <p class="consent">Нажимая кнопку, вы соглашаетесь с <a href="/social-stars-demo/privacy-policy/">политикой конфиденциальности</a>.</p>
-      </form>
+      <div class="hero-sky" data-sky="network" data-sky-scale=".86" role="img" aria-label="Созвездие: агент в центре связан с инструментами — CRM, базой знаний, 1С, почтой"></div>
+    </div>
+    <div class="wrap hero-facts">
+      <dl class="facts">
+        <div><dt>Пилот</dt><dd>2–4 недели на одном процессе</dd></div>
+        <div><dt>Стоимость пилота</dt><dd>от 350 000 ₽</dd></div>
+        <div><dt>Где работает</dt><dd>облако, РФ-облако или ваш сервер</dd></div>
+      </dl>
     </div>
   </section>
+
+  <nav class="subnav" aria-label="Разделы страницы">
+    <div class="wrap">
+      <a href="#tasks">Задачи</a>
+      <a href="#example">Пример</a>
+      <a href="#control">Контроль</a>
+      <a href="#includes">Состав работ</a>
+      <a href="#process">Этапы</a>
+      <a href="#pricing">Цены</a>
+      <a href="#faq">Вопросы</a>
+      <a class="btn btn-ink" href="#lead">Обсудить</a>
+    </div>
+  </nav>
+
+  <section class="section" id="tasks">
+    <div class="wrap">
+      <div class="head"><h2 class="t-h2">Где компании теряют время каждый день</h2></div>
+      <div class="pairs">
+        <div><h3>Заявки остывают</h3><p>Лид ждёт ответа часами: менеджеры не успевают разобрать обращения и внести данные в CRM.</p></div>
+        <div><h3>Поддержка отвечает на одно и то же</h3><p>Типовые вопросы занимают большую часть смены, а сложные ждут в общей очереди.</p></div>
+        <div><h3>Документы проверяют вручную</h3><p>Договоры, счета и акты сверяют люди — медленно и с ошибками при переносе в 1С.</p></div>
+        <div><h3>Знания живут в головах</h3><p>Ответы разбросаны по чатам и папкам. Уходит сотрудник — уходит опыт.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band" id="example">
+    <div class="wrap">
+      <div class="head split">
+        <h2 class="t-h2">Как агент работает в отделе</h2>
+        <p class="t-lead">Типовой сценарий пилота: какие данные агент берёт, что делает сам и где останавливается, чтобы спросить человека.</p>
+      </div>
+      <div class="seg" role="tablist" aria-label="Отдел">
+        <button role="tab" id="t-sales" aria-controls="panel" aria-selected="true" data-s="sales">Продажи</button>
+        <button role="tab" id="t-support" aria-controls="panel" aria-selected="false" tabindex="-1" data-s="support">Поддержка</button>
+        <button role="tab" id="t-docs" aria-controls="panel" aria-selected="false" tabindex="-1" data-s="docs">Документы</button>
+        <button role="tab" id="t-hr" aria-controls="panel" aria-selected="false" tabindex="-1" data-s="hr">Подбор персонала</button>
+        <button role="tab" id="t-ceo" aria-controls="panel" aria-selected="false" tabindex="-1" data-s="ceo">Руководитель</button>
+      </div>
+      <div class="ui" id="panel" role="tabpanel" aria-labelledby="t-sales">
+        <div class="ui-top"><i></i><i></i><i></i><span id="c-title">Журнал агента продаж — пример</span></div>
+        <ol class="log" id="log"></ol>
+        <div class="log-foot"><span>Что измеряем: <strong id="c-metrics"></strong></span><button type="button" id="replay">Показать снова</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="control">
+    <div class="wrap">
+      <div class="head">
+        <h2 class="t-h2">Агент знает, где остановиться</h2>
+        <p class="t-lead">До запуска вместе решаем, что агент делает сам, что — с подтверждением, а что остаётся за людьми. Каждое действие попадает в журнал.</p>
+      </div>
+      <div class="bounds">
+        <div>
+          <div class="meter" aria-hidden="true"><i class="f"></i><i class="f"></i><i class="f"></i></div>
+          <p class="meter-cap">Полная самостоятельность</p>
+          <h3>Делает сам</h3>
+          <ul><li>Разбирает входящие и заполняет CRM</li><li>Отвечает на типовые вопросы по базе знаний</li><li>Готовит черновики писем, КП и отчётов</li><li>Ставит задачи и напоминания</li></ul>
+        </div>
+        <div>
+          <div class="meter" aria-hidden="true"><i class="f"></i><i class="f"></i><i></i></div>
+          <p class="meter-cap">Нужно подтверждение</p>
+          <h3>С подтверждением</h3>
+          <ul><li>Отправка КП и договора клиенту</li><li>Изменение этапа и суммы сделки</li><li>Скидка в пределах лимита</li><li>Публичный ответ от имени компании</li></ul>
+        </div>
+        <div>
+          <div class="meter" aria-hidden="true"><i></i><i></i><i></i></div>
+          <p class="meter-cap">Агент не участвует</p>
+          <h3>Только человек</h3>
+          <ul><li>Платежи и финансовые решения</li><li>Нестандартные условия и конфликты</li><li>Кадровые решения</li><li>Всё, что вы решите оставить людям</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band" id="includes">
+    <div class="wrap">
+      <div class="head"><h2 class="t-h2">Что входит в работу</h2></div>
+      <ul class="rows">
+        <li><h3>Аудит процессов</h3><p>Находим задачи с наибольшим эффектом и считаем экономию до начала работ.</p></li>
+        <li><h3>Проектирование агента</h3><p>Роли, инструменты, границы полномочий и точки проверки человеком.</p></li>
+        <li><h3>База знаний</h3><p>Подключаем регламенты, прайсы и документы — агент отвечает со ссылкой на источник.</p></li>
+        <li><h3>Интеграции</h3><p>amoCRM, Битрикс24, 1С, почта, телефония, Telegram и ваши внутренние системы.</p></li>
+        <li><h3>Проверка качества</h3><p>Прогоняем агента на реальных обращениях до того, как он заговорит с клиентами.</p></li>
+        <li><h3>Где хранятся данные</h3><p>Облако — для быстрого старта. GigaChat или YandexGPT — чтобы данные не покидали РФ. Открытые модели на ваших серверах — для банков и госсектора.</p></li>
+        <li><h3>Поддержка</h3><p>Мониторинг, дообучение, новые сценарии и ежемесячный отчёт об экономии.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section band" id="process" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><h2 class="t-h2">Первый результат — через месяц</h2></div>
+      <ol class="steps">
+        <li><span class="when">До 48 часов</span><h3>Аудит</h3><p>Разбираем 3–5 процессов, выбираем один для пилота и фиксируем метрику «до».</p></li>
+        <li><span class="when">2–4 недели</span><h3>Пилот</h3><p>Агент работает на реальных данных под присмотром человека.</p></li>
+        <li><span class="when">1–3 месяца</span><h3>Масштаб</h3><p>Подключаем соседние процессы и связываем агентов между собой.</p></li>
+        <li><span class="when">Каждый месяц</span><h3>Поддержка</h3><p>Мониторинг, дообучение и отчёт об экономии.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <div class="wrap">
+      <div class="head split"><h2 class="t-h2">Цены</h2><p class="t-lead">Ориентиры для старта. Точную смету пришлём после аудита.</p></div>
+      <div class="plans">
+        <article class="plan">
+          <h3>Пилот</h3>
+          <div class="price">от 350 000 ₽<small>и поддержка от 90 000 ₽ в месяц</small></div>
+          <p>Один процесс и измеримый результат.</p>
+          <ul><li>Аудит процесса</li><li>Агент и база знаний</li><li>Одна-две интеграции</li><li>Метрики до и после</li></ul>
+          <a class="btn btn-line" href="#lead" data-pick="ИИ-агенты">Обсудить пилот</a>
+        </article>
+        <article class="plan main">
+          <span class="badge">Выбирают чаще</span>
+          <h3>Команда агентов</h3>
+          <div class="price">от 1 200 000 ₽<small>три–пять сценариев</small></div>
+          <p>Несколько агентов с общей базой знаний и панелью качества.</p>
+          <ul><li>Связка агентов</li><li>Панель качества</li><li>Интеграции с CRM и 1С</li><li>Обучение команды</li></ul>
+          <a class="btn btn-primary" href="#lead" data-pick="ИИ-агенты">Обсудить команду агентов</a>
+        </article>
+        <article class="plan">
+          <h3>Собственный контур</h3>
+          <div class="price">от 3 000 000 ₽<small>внутри вашей инфраструктуры</small></div>
+          <p>Для банков, госсектора и закрытых данных.</p>
+          <ul><li>Российские или открытые модели</li><li>Развёртывание у вас</li><li>Журнал действий и аудит</li><li>Гарантии по уровню сервиса</li></ul>
+          <a class="btn btn-line" href="#lead" data-pick="ИИ-агенты">Обсудить контур</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="head"><h2 class="t-h2">Вопросы</h2></div>
+      <div class="faq">
+        <details><summary>Чем агент отличается от чат-бота?</summary><div class="a"><p>Чат-бот ведёт по заранее заданному сценарию. Агент понимает задачу, сам выбирает инструменты — CRM, почту, базу знаний — и доводит работу до результата в заданных границах.</p></div></details>
+        <details><summary>Какие модели используете?</summary><div class="a"><p>Подбираем под задачу и требования к данным: GigaChat, YandexGPT, открытые модели в российском облаке или на ваших серверах, а если это допустимо — зарубежные модели.</p></div></details>
+        <details><summary>Что если агент ошибётся?</summary><div class="a"><p>Действия с последствиями агент выполняет только после подтверждения человеком. Все действия записываются в журнал, а качество проверяем на реальных обращениях до запуска.</p></div></details>
+        <details><summary>Нужен ли свой ИТ-отдел?</summary><div class="a"><p>Нет. Разработку и поддержку берём на себя, команде даём понятную панель и обучение.</p></div></details>
+      </div>
+      <a class="next" href="/social-stars-demo/ai/avatars/" style="margin-top:clamp(64px,8vw,112px)"><span>Следующее направление</span><strong>Цифровые аватары</strong></a>
+    </div>
+  </section>
+
+<!-- @cta -->
+<section class="cta" id="lead" aria-labelledby="lead-title">
+  <div class="wrap cta-grid">
+    <div>
+      <h2 class="t-h2" id="lead-title">Бесплатный AI‑аудит за 48 часов</h2>
+      <ul>
+        <li>Что о вас отвечают Алиса AI, GigaChat, ChatGPT и ещё три модели</li>
+        <li>Три процесса, где ИИ даст эффект быстрее всего</li>
+        <li>Сроки и бюджет — без обязательств</li>
+      </ul>
+      <div class="contacts">
+        <a href="tel:+79854009299">+7 985 400 92 99</a>
+        <a href="mailto:info@social-stars.ru">info@social-stars.ru</a>
+        <span>Москва, ул. Лесная, 57, стр. 4</span>
+      </div>
+    </div>
+    <form class="form" data-lead novalidate>
+      <div class="two">
+        <div class="field"><label for="f-name">Имя</label><input id="f-name" name="name" autocomplete="name" required /><p class="err">Напишите, как к вам обращаться</p></div>
+        <div class="field"><label for="f-contact">Телефон или Telegram</label><input id="f-contact" name="contact" autocomplete="tel" required /><p class="err">Оставьте контакт, чтобы мы прислали аудит</p></div>
+      </div>
+      <div class="field"><label for="f-company">Компания и сайт</label><input id="f-company" name="company" autocomplete="organization" /></div>
+      <div class="field"><label for="f-task">Задача</label><textarea id="f-task" name="task" placeholder="Например: нас путают с конкурентом в ответах нейросетей"></textarea></div>
+      <fieldset>
+        <legend>Что интересно</legend>
+        <div class="chips">
+          <label><input type="checkbox" name="i" value="AI-сайт" /><span>AI-сайт</span></label>
+          <label><input type="checkbox" name="i" value="ИИ-агенты" /><span>ИИ-агенты</span></label>
+          <label><input type="checkbox" name="i" value="Аватар" /><span>Аватар</span></label>
+          <label><input type="checkbox" name="i" value="SEO и GEO" /><span>SEO и GEO</span></label>
+          <label><input type="checkbox" name="i" value="Нейро-ORM" /><span>Нейро-ORM</span></label>
+          <label><input type="checkbox" name="i" value="Контент-завод" /><span>Контент-завод</span></label>
+          <label><input type="checkbox" name="i" value="AI-трансформация" /><span>AI-трансформация</span></label>
+          <label><input type="checkbox" name="i" value="AI Growth OS" /><span>AI Growth OS</span></label>
+        </div>
+      </fieldset>
+      <button class="btn btn-primary btn-block" type="submit">Получить аудит</button>
+      <p class="consent">Отправляя заявку, вы соглашаетесь с <a class="link" href="/social-stars-demo/privacy-policy/">политикой конфиденциальности</a>.</p>
+      <div class="form-done" tabindex="-1" role="status">
+        <h3 class="t-h3">Письмо с заявкой готово</h3>
+        <p class="t-small">Мы открыли его в вашем почтовом приложении — осталось нажать «Отправить». Если приложение не открылось, позвоните: <a class="link" href="tel:+79854009299">+7 985 400 92 99</a>.</p>
+      </div>
+    </form>
+  </div>
+</section>
+<!-- /@cta -->
 </main>
 
-<footer>
+<!-- @footer -->
+<footer class="ftr">
   <div class="wrap">
-    <span>© Social Stars AI · направление <a href="/social-stars-demo/">Social Stars</a></span>
-    <span><a href="/social-stars-demo/ai/">Все услуги</a> · <a href="/social-stars-demo/contacts/">Контакты</a> · <a href="/social-stars-demo/privacy-policy/">Политика конфиденциальности</a></span>
+    <div class="ftr-grid">
+      <div class="about">
+        <a class="brand" href="/social-stars-demo/ai/"><img src="/social-stars-demo/favicon.svg" alt="" width="22" height="23" /><span>Social Stars <em>AI</em></span></a>
+        <p>Направление Social Stars. 12 лет в репутации и продвижении — теперь с ИИ в каждой услуге.</p>
+      </div>
+      <div>
+        <h4>Услуги</h4>
+        <ul>
+          <li><a href="/social-stars-demo/ai/sites/">AI-сайты</a></li>
+          <li><a href="/social-stars-demo/ai/agents/">ИИ-агенты</a></li>
+          <li><a href="/social-stars-demo/ai/avatars/">Цифровые аватары</a></li>
+          <li><a href="/social-stars-demo/ai/seo-geo/">SEO и GEO</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>&nbsp;</h4>
+        <ul>
+          <li><a href="/social-stars-demo/ai/neuro-orm/">Нейро-ORM</a></li>
+          <li><a href="/social-stars-demo/ai/content/">Контент-завод</a></li>
+          <li><a href="/social-stars-demo/ai/transformation/">AI-трансформация</a></li>
+          <li><a href="/social-stars-demo/ai/growth-os/">AI Growth OS</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Связаться</h4>
+        <ul>
+          <li><a href="tel:+79854009299">+7 985 400 92 99</a></li>
+          <li><a href="mailto:info@social-stars.ru">info@social-stars.ru</a></li>
+          <li>Москва, ул. Лесная, 57, стр. 4</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ftr-bottom">
+      <span>© Social Stars, 2026</span>
+      <span><a href="/social-stars-demo/">Сайт Social Stars</a>&nbsp;&nbsp;&nbsp;<a href="/social-stars-demo/privacy-policy/">Политика конфиденциальности</a></span>
+    </div>
   </div>
 </footer>
+<!-- /@footer -->
+
+<script src="/social-stars-demo/ai/sky.js" defer></script>
 <script src="/social-stars-demo/ai/ai.js" defer></script>
+<script>
+(() => {
+  const S = {
+    sales: { t: 'Журнал агента продаж — пример', m: 'скорость ответа, конверсия в сделку, заполненность CRM', l: [
+      ['in', '09:14', 'Новая заявка с сайта: «Нужна поставка 40 штук, какие сроки?»'],
+      ['tool', '09:14', 'Нашёл клиента в CRM: <b>ООО «Альфа»</b>, две прошлые сделки'],
+      ['tool', '09:14', 'Проверил остаток в 1С: <b>52 штуки</b> на складе'],
+      ['tool', '09:14', 'Нашёл в регламенте условия опта: <b>скидка 7%</b> от 40 штук'],
+      ['ok', '09:15', 'Подготовил КП: 40 штук, скидка 7%, отгрузка за 3 дня'],
+      ['wait', '09:15', 'Жду подтверждения менеджера перед отправкой клиенту'],
+      ['ok', '09:21', 'Менеджер подтвердил. КП отправлено, звонок назначен через 2 дня'],
+    ]},
+    support: { t: 'Журнал агента поддержки — пример', m: 'доля решённых без оператора, время ответа, оценка клиента', l: [
+      ['in', '11:02', 'Telegram: «Не приходит код для входа в личный кабинет»'],
+      ['tool', '11:02', 'Нашёл в базе знаний статью <b>«Код входа не приходит»</b>'],
+      ['tool', '11:02', 'Проверил клиента: тариф «Бизнес», телефон подтверждён'],
+      ['ok', '11:02', 'Отправил инструкцию по шагам'],
+      ['in', '11:05', 'Клиент: «Не помогло»'],
+      ['wait', '11:05', 'Передаю специалисту второй линии вместе с кратким пересказом диалога'],
+      ['ok', '11:05', 'Клиенту: «Подключили специалиста, ответим в течение 15 минут»'],
+    ]},
+    docs: { t: 'Журнал агента по документам — пример', m: 'время обработки, ошибки при переносе, найденные риски', l: [
+      ['in', '15:30', 'Входящий договор поставки на 14 страниц от ООО «Вектор»'],
+      ['tool', '15:30', 'Извлёк условия: сумма <b>2,4 млн ₽</b>, оплата через 60 дней'],
+      ['tool', '15:30', 'Сравнил с типовым договором: три отличия'],
+      ['wait', '15:30', 'Риск: отсрочка 60 дней вместо 30 по регламенту'],
+      ['wait', '15:30', 'Риск: неустойка 0,5% в день — выше лимита'],
+      ['tool', '15:31', 'Проверил контрагента в 1С: задолженностей нет'],
+      ['ok', '15:31', 'Отправил юристу сводку и предложенные правки'],
+    ]},
+    hr: { t: 'Журнал агента по подбору — пример', m: 'время закрытия вакансии, часы рекрутера', l: [
+      ['in', '10:00', 'Вакансия «Менеджер по продажам»: 186 новых откликов'],
+      ['tool', '10:01', 'Сверил резюме с требованиями: <b>31</b> подходящий кандидат'],
+      ['tool', '10:03', 'Задал первичные вопросы в чате: ответили 24'],
+      ['ok', '10:40', 'Собрал короткий список из 8 кандидатов с выдержками ответов'],
+      ['wait', '10:40', 'Рекрутер выбирает, кого пригласить'],
+      ['ok', '10:52', 'Отправил приглашения пятерым и забронировал время в календаре'],
+    ]},
+    ceo: { t: 'Журнал агента руководителя — пример', m: 'время на отчёты, скорость решений', l: [
+      ['in', '08:30', 'Утренняя сводка для руководителя'],
+      ['tool', '08:30', 'CRM за вчера: <b>+12 сделок</b>, три на этапе договора'],
+      ['tool', '08:30', 'Почта: два письма требуют вашего решения'],
+      ['tool', '08:30', 'Поддержка: 94% обращений решено в срок'],
+      ['tool', '08:30', 'Упоминания бренда: четыре, тон нейтральный'],
+      ['ok', '08:31', 'Сводка на один экран отправлена в Telegram'],
+    ]},
+  };
+  const log = document.getElementById('log'), title = document.getElementById('c-title'), met = document.getElementById('c-metrics'), panel = document.getElementById('panel');
+  const tabs = [...document.querySelectorAll('.seg [role="tab"]')];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let cur = 'sales', timers = [];
+  const play = key => {
+    cur = key; timers.forEach(clearTimeout); timers = [];
+    const s = S[key]; title.textContent = s.t; met.textContent = s.m;
+    log.innerHTML = s.l.map(([k, t, x]) => `<li class="${k}"><time>${t}</time><span class="k" aria-hidden="true"></span><span>${x}</span></li>`).join('');
+    [...log.children].forEach((li, i) => reduce ? li.classList.add('on') : timers.push(setTimeout(() => li.classList.add('on'), 200 + i * 450)));
+  };
+  const select = (b, focus) => {
+    tabs.forEach(t => { const on = t === b; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; });
+    panel.setAttribute('aria-labelledby', b.id); if (focus) b.focus(); play(b.dataset.s);
+  };
+  tabs.forEach((b, i) => {
+    b.addEventListener('click', () => select(b));
+    b.addEventListener('keydown', e => { const d = { ArrowRight: 1, ArrowLeft: -1 }[e.key]; if (d) { e.preventDefault(); select(tabs[(i + d + tabs.length) % tabs.length], true); } });
+  });
+  document.getElementById('replay').addEventListener('click', () => play(cur));
+  // журнал запускается, когда пример появляется на экране
+  const io = new IntersectionObserver(es => { if (es[0].isIntersecting) { play(cur); io.disconnect(); } }, { threshold: .35 });
+  io.observe(panel);
+})();
+</script>
 </body>
 </html>

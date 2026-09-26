@@ -2,147 +2,334 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>AI-контент-завод: посты, видео и рассылки на потоке — Social Stars AI</title>
-  <meta name="description" content="Производство контента на ИИ-агентах и цифровых аватарах: Telegram, VK, YouTube, email. Редакция утверждает, агенты готовят, аналитика показывает, что работает." />
-  <link rel="icon" type="image/svg+xml" href="/social-stars-demo/favicon.svg" />
+  <meta name="theme-color" content="#f3f5f8" />
+  <title>Контент-завод: посты, видео и рассылки на ИИ — Social Stars AI</title>
+  <meta name="description" content="Регулярный контент для Telegram, VK, YouTube и email: агенты собирают темы и пишут черновики, аватары озвучивают видео, редактор утверждает. От 200 000 ₽ в месяц." />
   <link rel="canonical" href="https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/content/" />
+  <link rel="icon" type="image/svg+xml" href="/social-stars-demo/favicon.svg" />
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Social Stars" />
-  <meta property="og:title" content="AI-контент-завод: посты, видео и рассылки на потоке — Social Stars AI" />
-  <meta property="og:description" content="Производство контента на ИИ-агентах и цифровых аватарах: Telegram, VK, YouTube, email. Редакция утверждает, агенты готовят, аналитика показывает, что работает." />
+  <meta property="og:title" content="Контент-завод — Social Stars AI" />
+  <meta property="og:description" content="Регулярный контент без раздувания штата." />
   <meta property="og:url" content="https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/content/" />
   <meta property="og:image" content="https://s5hyhbpftv-alt.github.io/social-stars-demo/media/og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "AI-контент-завод", "description": "Производство контента на ИИ-агентах и цифровых аватарах: Telegram, VK, YouTube, email. Редакция утверждает, агенты готовят, аналитика показывает, что работает.", "url": "https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/content/", "areaServed": "RU", "provider": {"@id": "https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/#service"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Social Stars", "item": "https://s5hyhbpftv-alt.github.io/social-stars-demo/"}, {"@type": "ListItem", "position": 2, "name": "Social Stars AI", "item": "https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/"}, {"@type": "ListItem", "position": 3, "name": "AI-контент-завод", "item": "https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/content/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Не будет ли контент «роботизированным»?", "acceptedAnswer": {"@type": "Answer", "text": "Каждый материал проходит через редактора, а агенты обучаются на вашем голосе бренда и лучших прошлых публикациях. Задача ИИ — скорость, задача человека — смысл."}}, {"@type": "Question", "name": "Кто утверждает публикации?", "acceptedAnswer": {"@type": "Answer", "text": "Вы определяете уровень контроля: от утверждения каждого поста до согласования только контент-плана."}}, {"@type": "Question", "name": "Можно ли использовать наших экспертов?", "acceptedAnswer": {"@type": "Answer", "text": "Да — через видеоклоны, интервью и расшифровки, которые агенты превращают в серию материалов."}}, {"@type": "Question", "name": "Маркируете ли ИИ-контент?", "acceptedAnswer": {"@type": "Answer", "text": "Да, в соответствии с требованиями площадок и законодательства."}}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"AI-контент-завод","url":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/content/","areaServed":"RU","provider":{"@type":"Organization","name":"Social Stars","url":"https://s5hyhbpftv-alt.github.io/social-stars-demo/"},"offers":{"@type":"Offer","priceCurrency":"RUB","price":"200000","description":"В месяц"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Social Stars AI","item":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/"},{"@type":"ListItem","position":2,"name":"Контент-завод","item":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/content/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Не будет ли контент звучать как робот?","acceptedAnswer":{"@type":"Answer","text":"Каждый материал проходит через редактора, а агенты учатся на голосе вашего бренда и лучших прошлых публикациях."}},{"@type":"Question","name":"Кто утверждает публикации?","acceptedAnswer":{"@type":"Answer","text":"Вы выбираете уровень контроля: от утверждения каждого поста до согласования только плана."}}]}]}</script>
   <link rel="stylesheet" href="/social-stars-demo/ai/ai.css" />
+  <style>
+    .who-does{width:100%;border-collapse:collapse;font-size:16px}
+    .who-does th,.who-does td{text-align:left;padding:18px 20px 18px 0;border-bottom:1px solid var(--mist);vertical-align:top}
+    .who-does thead th{font-weight:500;font-size:15px;color:var(--slate)}
+    .who-does tbody th{font-weight:400;font-size:19px;letter-spacing:-.01em;width:22%}
+    .who-does td:nth-child(2){width:20%}
+    .who-does td p{color:var(--slate)}
+    .by{display:inline-block;font-size:13.5px;padding:4px 10px;border-radius:var(--r-sm)}
+    .by.agent{background:var(--porcelain-2);color:var(--ink-2)}
+    .by.human{background:var(--bronze-soft);color:var(--bronze-2)}
+    .tbl{overflow-x:auto}
+
+    .week{display:grid;grid-template-columns:120px repeat(7,1fr);border:1px solid var(--mist);border-radius:var(--r-lg);overflow:hidden;background:var(--white);font-size:13.5px}
+    .week > div{padding:12px;border-right:1px solid var(--mist);border-bottom:1px solid var(--mist);min-height:72px}
+    .week > div:nth-child(8n){border-right:0}
+    .week .h{min-height:0;font-weight:500;color:var(--slate);background:var(--porcelain)}
+    .week .ch{font-weight:500;background:var(--porcelain);display:flex;align-items:center}
+    .week .it{display:block;padding:6px 8px;border-radius:var(--r-sm);background:var(--porcelain-2);line-height:1.35;margin-bottom:4px}
+    .week .it.v{background:var(--ink);color:#fff}
+    .week .it.e{background:var(--bronze-soft);color:#6f5236}
+    .legend{display:flex;flex-wrap:wrap;gap:20px;margin-top:16px;font-size:14px;color:var(--slate)}
+    .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:8px;vertical-align:-1px}
+
+    @media (max-width:1024px){ .week-wrap{overflow-x:auto} .week{min-width:900px} }
+    @media (max-width:860px){ .who-does{min-width:640px} }
+  </style>
 </head>
-<body>
-<!-- Сгенерировано tools/build_ai_pages.py — правьте контент там, а не здесь. -->
-<header class="nav" id="nav">
+<body data-service="Контент-завод">
+<!-- @header -->
+<a class="skip" href="#main">Перейти к содержимому</a>
+<header class="hdr">
   <div class="wrap">
-    <a class="logo" href="/social-stars-demo/ai/" aria-label="Social Stars AI — главная"><img src="/social-stars-demo/favicon.svg" alt="" width="26" height="27" />Social Stars <b>AI</b></a>
-    <nav aria-label="Разделы">
-      <ul class="nav-links">
-        <li><a href="/social-stars-demo/ai/#services">Все услуги</a></li>
-        <li><a href="#includes">Что входит</a></li>
-        <li><a href="#pricing">Цены</a></li>
-        <li><a href="#faq">FAQ</a></li>
+    <a class="brand" href="/social-stars-demo/ai/"><img src="/social-stars-demo/favicon.svg" alt="" width="22" height="23" /><span>Social Stars <em>AI</em></span></a>
+    <nav aria-label="Основное меню">
+      <ul class="menu">
+        <li><button type="button" data-mega-btn aria-expanded="false" aria-controls="mega">Услуги <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m3 4.5 3 3 3-3"/></svg></button></li>
+        <li><a href="/social-stars-demo/ai/neuro-orm/">Нейро-ORM</a></li>
+        <li><a href="/social-stars-demo/cases/">Кейсы</a></li>
+        <li><a href="/social-stars-demo/contacts/">Контакты</a></li>
       </ul>
     </nav>
-    <a class="btn btn-gold" href="#lead">Бесплатный AI-аудит</a>
+    <a class="btn btn-primary btn-desk" href="#lead">Получить аудит</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Открыть меню"><span></span><span></span></button>
+    <div class="mega" id="mega">
+      <a class="feature" href="/social-stars-demo/ai/growth-os/"><b>AI Growth OS</b><span>Сайт, агенты, аватар, поиск и репутация — одна система роста с оплатой за результат</span></a>
+      <a href="/social-stars-demo/ai/sites/"><b>AI-сайты</b><span>Сайт, который находят люди и цитируют нейросети</span></a>
+      <a href="/social-stars-demo/ai/agents/"><b>ИИ-агенты</b><span>Рутина продаж, поддержки и документов — агентам</span></a>
+      <a href="/social-stars-demo/ai/avatars/"><b>Цифровые аватары</b><span>Эксперт говорит каждый день без съёмок</span></a>
+      <a href="/social-stars-demo/ai/seo-geo/"><b>SEO и GEO</b><span>В поиске и в ответе нейросети</span></a>
+      <a href="/social-stars-demo/ai/neuro-orm/"><b>Нейро-ORM</b><span>Что нейросети говорят о компании</span></a>
+      <a href="/social-stars-demo/ai/content/"><b>Контент-завод</b><span>Регулярный контент без раздувания штата</span></a>
+      <a href="/social-stars-demo/ai/transformation/"><b>AI-трансформация</b><span>Стратегия, правила и обучение команд</span></a>
+      <a href="/social-stars-demo/ai/"><b>Все направления</b><span>Обзор, калькулятор и сравнение с рынком</span></a>
+    </div>
   </div>
 </header>
+<div class="mnav" id="mnav">
+  <ul>
+    <li><a href="/social-stars-demo/ai/">Все направления</a></li>
+    <li><a href="/social-stars-demo/ai/growth-os/">AI Growth OS</a></li>
+    <li><a href="/social-stars-demo/ai/sites/">AI-сайты</a></li>
+    <li><a href="/social-stars-demo/ai/agents/">ИИ-агенты</a></li>
+    <li><a href="/social-stars-demo/ai/avatars/">Цифровые аватары</a></li>
+    <li><a href="/social-stars-demo/ai/seo-geo/">SEO и GEO</a></li>
+    <li><a href="/social-stars-demo/ai/neuro-orm/">Нейро-ORM</a></li>
+    <li><a href="/social-stars-demo/ai/content/">Контент-завод</a></li>
+    <li><a href="/social-stars-demo/ai/transformation/">AI-трансформация</a></li>
+  </ul>
+  <div class="mnav-foot">
+    <a class="btn btn-primary btn-block" href="#lead">Получить аудит</a>
+    <a href="tel:+79854009299">+7 985 400 92 99</a>
+    <a href="mailto:info@social-stars.ru">info@social-stars.ru</a>
+  </div>
+</div>
+<!-- /@header -->
 
-<main>
-  <section class="hero page">
-    <div class="orb a"></div><div class="orb b"></div>
+<main id="main">
+  <section class="hero">
     <div class="wrap">
-      <nav class="crumbs" aria-label="Хлебные крошки"><a href="/social-stars-demo/">Social Stars</a><span>/</span><a href="/social-stars-demo/ai/">Social Stars AI</a><span>/</span><span aria-current="page">AI-контент-завод</span></nav>
-      <span class="eyebrow">Social Stars AI · AI-контент-завод</span>
-      <h1>AI-контент-завод: <em>в 5 раз больше контента той же командой</em></h1>
-      <p class="hero-lead">Агенты собирают темы, пишут черновики и адаптируют под площадки, аватары озвучивают видео, редактор утверждает. Вы получаете стабильный поток качественного контента без раздувания штата.</p>
-      <div class="hero-cta">
-        <a class="btn btn-gold" href="#lead">Обсудить задачу</a>
-        <a class="btn btn-ghost" href="#pricing">Смотреть цены</a>
-      </div>
-      <div class="facts"><div><span>Запуск</span><b>2 недели</b></div><div><span>Стоимость</span><b>от 200 000 ₽/мес</b></div><div><span>Площадки</span><b>Telegram · VK · YouTube · email</b></div></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Задачи</span><h2>С чем приходят к нам</h2></div></div>
-      <div class="cards"><div class="card reveal"><h3>Контент нерегулярный</h3><p>Каналы ведутся рывками, аудитория теряет интерес.</p></div><div class="card reveal"><h3>Команда перегружена</h3><p>Один SMM-специалист на пять площадок.</p></div><div class="card reveal"><h3>Видео — дорого</h3><p>Хочется больше роликов, но продакшен не масштабируется.</p></div><div class="card reveal"><h3>Непонятно, что работает</h3><p>Публикации есть, связи с заявками — нет.</p></div></div>
-    </div>
-  </section>
-
-  <section class="alt" id="includes">
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Что входит</span><h2>Всё, что нужно для результата</h2></div><p>Работаем под ключ: от стратегии до поддержки. Состав адаптируем под задачу после аудита.</p></div>
-      <div class="cards c3"><div class="card reveal"><span class="k">01</span><h3>Редакционная стратегия</h3><p>Темы, рубрики, голос бренда, контент-план на квартал.</p></div><div class="card reveal"><span class="k">02</span><h3>Агенты-исследователи</h3><p>Мониторинг новостей, трендов и вопросов аудитории.</p></div><div class="card reveal"><span class="k">03</span><h3>Черновики и адаптация</h3><p>Один материал — версии для каждой площадки.</p></div><div class="card reveal"><span class="k">04</span><h3>Видео на аватарах</h3><p>Ролики без съёмок голосом и лицом эксперта.</p></div><div class="card reveal"><span class="k">05</span><h3>Редактура и согласование</h3><p>Каждая публикация проходит через человека.</p></div><div class="card reveal"><span class="k">06</span><h3>Аналитика</h3><p>Что читают, что приводит заявки, что убрать.</p></div></div>
-    </div>
-  </section>
-
-  <section class="dark">
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Конвейер</span><h2>Как устроен контент-завод</h2></div><p>Человек отвечает за смысл и качество, агенты — за скорость и объём.</p></div>
-      <div class="flow reveal"><div><b>Сигналы</b><span>новости, тренды, вопросы</span></div><div><b>Темы</b><span>агент предлагает, редактор выбирает</span></div><div><b>Черновик</b><span>агент пишет по голосу бренда</span></div><div><b>Редактура</b><span>человек правит и утверждает</span></div><div><b>Форматы</b><span>пост, видео на аватаре, рассылка</span></div><div><b>Аналитика</b><span>что сработало — в следующий план</span></div></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Как работаем</span><h2>Этапы и сроки</h2></div></div>
-      <div class="process"><div class="step reveal"><h3>Стратегия</h3><p>Аудит каналов, голос бренда, рубрики и KPI.</p><span class="t">1 неделя</span></div><div class="step reveal"><h3>Настройка</h3><p>Агенты, шаблоны, аватар, процесс согласования.</p><span class="t">1 неделя</span></div><div class="step reveal"><h3>Производство</h3><p>Публикации по плану, видео, рассылки.</p><span class="t">ежедневно</span></div><div class="step reveal"><h3>Оптимизация</h3><p>Разбор аналитики и обновление плана.</p><span class="t">ежемесячно</span></div></div>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Метрики</span><h2>Что мы измеряем</h2></div><p>Фиксируем значения «до» на старте и показываем динамику в ежемесячном отчёте.</p></div>
-      <div class="metrics"><div class="reveal"><b>Объём публикаций</b><span>в неделю по площадкам</span></div><div class="reveal"><b>Охват и вовлечённость</b><span>ER, репосты, комментарии</span></div><div class="reveal"><b>Рост аудитории</b><span>подписчики и отписки</span></div><div class="reveal"><b>Заявки из контента</b><span>по UTM и промокодам</span></div><div class="reveal"><b>Стоимость единицы контента</b><span>против прежней модели</span></div><div class="reveal"><b>Время на согласование</b><span>от черновика до публикации</span></div></div>
-    </div>
-  </section>
-
-  <section class="pricing" id="pricing">
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Цены</span><h2>Пакеты</h2></div><p>Ориентиры для старта. Итоговая смета — после бесплатного аудита.</p></div>
-      <div class="plans p3"><div class="plan reveal"><h3>Старт</h3><div class="price">от 200 000 ₽/мес</div><p>Две площадки и регулярный поток.</p><ul><li>До 30 публикаций</li><li>2 площадки</li><li>4 видео на аватаре</li><li>Отчёт</li></ul><a class="btn btn-dark" href="#lead">Обсудить</a></div><div class="plan hot reveal"><span class="badge">Популярный</span><h3>Бизнес</h3><div class="price">от 400 000 ₽/мес</div><p>Полноценная редакция для бренда.</p><ul><li>До 80 публикаций</li><li>4 площадки</li><li>12 видео</li><li>Email-рассылки</li></ul><a class="btn btn-gold" href="#lead">Обсудить</a></div><div class="plan reveal"><h3>Медиа</h3><div class="price">от 800 000 ₽/мес</div><p>Медиа-проект уровня издания.</p><ul><li>Без лимита площадок</li><li>Ежедневное видео</li><li>Посевы у блогеров</li><li>Выделенный редактор</li></ul><a class="btn btn-dark" href="#lead">Обсудить</a></div></div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="wrap">
-      <div class="sec-head" style="justify-content:center;text-align:center"><div><span class="eyebrow">FAQ</span><h2>Частые вопросы</h2></div></div>
-      <div class="faq"><details><summary>Не будет ли контент «роботизированным»?</summary><p>Каждый материал проходит через редактора, а агенты обучаются на вашем голосе бренда и лучших прошлых публикациях. Задача ИИ — скорость, задача человека — смысл.</p></details><details><summary>Кто утверждает публикации?</summary><p>Вы определяете уровень контроля: от утверждения каждого поста до согласования только контент-плана.</p></details><details><summary>Можно ли использовать наших экспертов?</summary><p>Да — через видеоклоны, интервью и расшифровки, которые агенты превращают в серию материалов.</p></details><details><summary>Маркируете ли ИИ-контент?</summary><p>Да, в соответствии с требованиями площадок и законодательства.</p></details></div>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Другие направления</span><h2>Сильнее вместе</h2></div><p>Модули Social Stars AI усиливают друг друга. Комплекс — <a href="/social-stars-demo/ai/growth-os/">AI Growth OS</a>.</p></div>
-      <div class="xlinks"><a href="/social-stars-demo/ai/sites/"><b>AI-сайты</b><span>от 290 000 ₽</span></a><a href="/social-stars-demo/ai/agents/"><b>ИИ-агенты</b><span>от 350 000 ₽</span></a><a href="/social-stars-demo/ai/avatars/"><b>Цифровые аватары</b><span>от 150 000 ₽</span></a><a href="/social-stars-demo/ai/seo-geo/"><b>SEO + GEO</b><span>от 180 000 ₽/мес</span></a><a href="/social-stars-demo/ai/neuro-orm/"><b>Нейро-ORM</b><span>от 250 000 ₽/мес</span></a><a href="/social-stars-demo/ai/transformation/"><b>AI-трансформация</b><span>от 500 000 ₽</span></a><a href="/social-stars-demo/ai/growth-os/"><b>AI Growth OS</b><span>от 1,5 млн ₽ + ретейнер</span></a></div>
-    </div>
-  </section>
-
-  <section class="lead" id="lead">
-    <div class="orb a"></div>
-    <div class="wrap lead-grid">
-      <div>
-        <span class="eyebrow">Бесплатный AI-аудит</span>
-        <h2>Обсудим вашу задачу</h2>
-        <p class="lead-lead">За 48 часов пришлём отчёт: как вас видят нейросети и какие процессы дадут быстрый эффект от ИИ.</p>
-        <div class="contacts">
-          <a href="tel:+79854009299">+7 985 400 92 99</a>
-          <a href="mailto:info@social-stars.ru">info@social-stars.ru</a>
-          <span style="color:rgba(255,255,255,.5);font-size:15px">Москва, ул. Лесная, 57, стр. 4</span>
+      <div class="hero-text">
+        <nav class="crumbs" aria-label="Вы здесь"><a href="/social-stars-demo/ai/">Social Stars AI</a><span aria-hidden="true">/</span><span aria-current="page">Контент-завод</span></nav>
+        <h1 class="t-hero">Регулярный контент без раздувания штата</h1>
+        <p class="t-lead">Агенты собирают темы, пишут черновики и готовят версии для каждой площадки. Аватары озвучивают видео. Редактор отвечает за смысл и утверждает каждую публикацию.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#lead">Обсудить контент</a>
+          <a class="btn btn-line" href="#week">Пример недели</a>
         </div>
       </div>
-      <form id="form" novalidate>
-        <input class="inp" name="name" placeholder="Имя" autocomplete="name" required aria-label="Имя" />
-        <input class="inp" name="contact" placeholder="Телефон или Telegram" autocomplete="tel" required aria-label="Телефон или Telegram" />
-        <input class="inp" name="company" placeholder="Компания и сайт" aria-label="Компания и сайт" />
-        <fieldset>
-          <legend>Что интересно</legend>
-          <div class="chips"><label><input type="checkbox" name="i" value="AI-сайт" data-k="site" /><span>AI-сайт</span></label><label><input type="checkbox" name="i" value="ИИ-агенты" data-k="agents" /><span>ИИ-агенты</span></label><label><input type="checkbox" name="i" value="Аватар" data-k="avatar" /><span>Аватар</span></label><label><input type="checkbox" name="i" value="SEO + GEO" data-k="geo" /><span>SEO + GEO</span></label><label><input type="checkbox" name="i" value="Нейро-ORM" data-k="orm" /><span>Нейро-ORM</span></label><label><input type="checkbox" name="i" value="Контент-завод" data-k="content" checked /><span>Контент-завод</span></label><label><input type="checkbox" name="i" value="AI-трансформация" data-k="transform" /><span>AI-трансформация</span></label><label><input type="checkbox" name="i" value="AI Growth OS" data-k="os" /><span>AI Growth OS</span></label></div>
-        </fieldset>
-        <button class="btn btn-gold" type="submit">Получить аудит</button>
-        <p class="form-msg" id="form-msg" role="status"></p>
-        <p class="consent">Нажимая кнопку, вы соглашаетесь с <a href="/social-stars-demo/privacy-policy/">политикой конфиденциальности</a>.</p>
-      </form>
+      <div class="hero-sky" data-sky="flow" data-sky-scale=".95" role="img" aria-label="Созвездие-поток: идеи сходятся в одну точку и расходятся публикациями по площадкам"></div>
+    </div>
+    <div class="wrap hero-facts">
+      <dl class="facts">
+        <div><dt>Запуск</dt><dd>за две недели</dd></div>
+        <div><dt>Стоимость</dt><dd>от 200 000 ₽ в месяц</dd></div>
+        <div><dt>Площадки</dt><dd>Telegram, VK, YouTube, рассылки</dd></div>
+      </dl>
     </div>
   </section>
+
+  <nav class="subnav" aria-label="Разделы страницы">
+    <div class="wrap">
+      <a href="#tasks">Задачи</a>
+      <a href="#pipeline">Кто что делает</a>
+      <a href="#week">Пример недели</a>
+      <a href="#process">Этапы</a>
+      <a href="#pricing">Цены</a>
+      <a href="#faq">Вопросы</a>
+      <a class="btn btn-ink" href="#lead">Обсудить</a>
+    </div>
+  </nav>
+
+  <section class="section" id="tasks">
+    <div class="wrap">
+      <div class="head"><h2 class="t-h2">С чем к нам приходят</h2></div>
+      <div class="pairs">
+        <div><h3>Публикации выходят рывками</h3><p>Две недели тишины, потом пять постов за день — аудитория теряет интерес.</p></div>
+        <div><h3>Один человек на пять площадок</h3><p>SMM-специалист не успевает делать хорошо, поэтому делает быстро.</p></div>
+        <div><h3>Видео слишком дорогое</h3><p>Каждый ролик — съёмка, монтаж и неделя согласований.</p></div>
+        <div><h3>Непонятно, что работает</h3><p>Публикации есть, а связи с заявками и продажами не видно.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band" id="pipeline">
+    <div class="wrap">
+      <div class="head">
+        <h2 class="t-h2">Кто что делает</h2>
+        <p class="t-lead">Агенты отвечают за скорость и объём, люди — за смысл и качество. Ни один материал не публикуется без редактора.</p>
+      </div>
+      <div class="tbl">
+        <table class="who-does">
+          <thead><tr><th scope="col">Этап</th><th scope="col">Кто</th><th scope="col">Что происходит</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Темы</th><td><span class="by agent">Агент</span></td><td><p>Следит за новостями отрасли, вопросами клиентов и трендами, предлагает темы на неделю.</p></td></tr>
+            <tr><th scope="row">План</th><td><span class="by human">Редактор</span></td><td><p>Выбирает темы и формат, согласует план с вами.</p></td></tr>
+            <tr><th scope="row">Черновики</th><td><span class="by agent">Агент</span></td><td><p>Пишет тексты в голосе бренда и сразу готовит версии для каждой площадки.</p></td></tr>
+            <tr><th scope="row">Видео</th><td><span class="by agent">Аватар</span></td><td><p>Озвучивает сценарий голосом и лицом эксперта — без съёмки.</p></td></tr>
+            <tr><th scope="row">Проверка</th><td><span class="by human">Редактор</span></td><td><p>Правит, проверяет факты и утверждает публикацию.</p></td></tr>
+            <tr><th scope="row">Аналитика</th><td><span class="by agent">Агент</span></td><td><p>Собирает охваты, реакции и заявки, предлагает, что усилить в следующем плане.</p></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="week">
+    <div class="wrap">
+      <div class="head split">
+        <h2 class="t-h2">Так выглядит обычная неделя</h2>
+        <p class="t-lead">Пример плана для компании из сферы логистики на тарифе «Бизнес».</p>
+      </div>
+      <div class="week-wrap">
+        <div class="week" aria-label="Пример плана публикаций на неделю">
+          <div class="h"></div><div class="h">Пн</div><div class="h">Вт</div><div class="h">Ср</div><div class="h">Чт</div><div class="h">Пт</div><div class="h">Сб</div><div class="h">Вс</div>
+          <div class="ch">Telegram</div><div><span class="it">Разбор тарифа</span></div><div><span class="it">Вопрос недели</span></div><div><span class="it v">Видео: 3 ошибки при отправке</span></div><div><span class="it">Кейс клиента</span></div><div><span class="it">Итоги недели</span></div><div></div><div></div>
+          <div class="ch">VK</div><div></div><div><span class="it">Кейс клиента</span></div><div></div><div><span class="it v">Видео: как упаковать груз</span></div><div></div><div><span class="it">Опрос</span></div><div></div>
+          <div class="ch">YouTube</div><div></div><div></div><div><span class="it v">Эксперт отвечает, 8 мин</span></div><div></div><div></div><div></div><div></div>
+          <div class="ch">Рассылка</div><div></div><div></div><div></div><div><span class="it e">Дайджест для клиентов</span></div><div></div><div></div><div></div>
+        </div>
+      </div>
+      <div class="legend"><span><i style="background:var(--porcelain-2)"></i>Пост</span><span><i style="background:var(--ink)"></i>Видео на аватаре</span><span><i style="background:var(--bronze-soft)"></i>Рассылка</span></div>
+    </div>
+  </section>
+
+  <section class="section band" id="process">
+    <div class="wrap">
+      <div class="head"><h2 class="t-h2">Запуск за две недели</h2></div>
+      <ol class="steps">
+        <li><span class="when">1 неделя</span><h3>Стратегия</h3><p>Разбор площадок, голос бренда, рубрики и цели.</p></li>
+        <li><span class="when">1 неделя</span><h3>Настройка</h3><p>Агенты, шаблоны, аватар и порядок согласования.</p></li>
+        <li><span class="when">Каждый день</span><h3>Публикации</h3><p>Посты, видео и рассылки по плану.</p></li>
+        <li><span class="when">Каждый месяц</span><h3>Разбор</h3><p>Что сработало, что убрать, план на месяц.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <div class="wrap">
+      <div class="head"><h2 class="t-h2">Цены</h2></div>
+      <div class="plans">
+        <article class="plan">
+          <h3>Старт</h3>
+          <div class="price">от 200 000 ₽<small>в месяц</small></div>
+          <p>Две площадки и регулярность.</p>
+          <ul><li>До 30 публикаций</li><li>Две площадки</li><li>Четыре видео на аватаре</li><li>Ежемесячный отчёт</li></ul>
+          <a class="btn btn-line" href="#lead" data-pick="Контент-завод">Обсудить старт</a>
+        </article>
+        <article class="plan main">
+          <span class="badge">Выбирают чаще</span>
+          <h3>Бизнес</h3>
+          <div class="price">от 400 000 ₽<small>в месяц</small></div>
+          <p>Полноценная редакция бренда.</p>
+          <ul><li>До 80 публикаций</li><li>Четыре площадки</li><li>12 видео на аватаре</li><li>Рассылки</li></ul>
+          <a class="btn btn-primary" href="#lead" data-pick="Контент-завод">Обсудить тариф</a>
+        </article>
+        <article class="plan">
+          <h3>Медиа</h3>
+          <div class="price">от 800 000 ₽<small>в месяц</small></div>
+          <p>Контент на уровне издания.</p>
+          <ul><li>Любые площадки</li><li>Видео каждый день</li><li>Посевы у блогеров</li><li>Выделенный редактор</li></ul>
+          <a class="btn btn-line" href="#lead" data-pick="Контент-завод">Обсудить</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="head"><h2 class="t-h2">Вопросы</h2></div>
+      <div class="faq">
+        <details><summary>Не будет ли контент звучать как робот?</summary><div class="a"><p>Каждый материал проходит через редактора, а агенты учатся на голосе вашего бренда и лучших прошлых публикациях. ИИ отвечает за скорость, человек — за смысл.</p></div></details>
+        <details><summary>Кто утверждает публикации?</summary><div class="a"><p>Вы выбираете уровень контроля: от утверждения каждого поста до согласования только плана.</p></div></details>
+        <details><summary>Можно ли использовать наших экспертов?</summary><div class="a"><p>Да — через видеоклоны, интервью и расшифровки, которые агенты превращают в серию материалов.</p></div></details>
+        <details><summary>Вы маркируете ИИ-контент?</summary><div class="a"><p>Да, по правилам площадок и закона.</p></div></details>
+      </div>
+      <a class="next" href="/social-stars-demo/ai/transformation/" style="margin-top:clamp(64px,8vw,112px)"><span>Следующее направление</span><strong>AI-трансформация</strong></a>
+    </div>
+  </section>
+
+<!-- @cta -->
+<section class="cta" id="lead" aria-labelledby="lead-title">
+  <div class="wrap cta-grid">
+    <div>
+      <h2 class="t-h2" id="lead-title">Бесплатный AI‑аудит за 48 часов</h2>
+      <ul>
+        <li>Что о вас отвечают Алиса AI, GigaChat, ChatGPT и ещё три модели</li>
+        <li>Три процесса, где ИИ даст эффект быстрее всего</li>
+        <li>Сроки и бюджет — без обязательств</li>
+      </ul>
+      <div class="contacts">
+        <a href="tel:+79854009299">+7 985 400 92 99</a>
+        <a href="mailto:info@social-stars.ru">info@social-stars.ru</a>
+        <span>Москва, ул. Лесная, 57, стр. 4</span>
+      </div>
+    </div>
+    <form class="form" data-lead novalidate>
+      <div class="two">
+        <div class="field"><label for="f-name">Имя</label><input id="f-name" name="name" autocomplete="name" required /><p class="err">Напишите, как к вам обращаться</p></div>
+        <div class="field"><label for="f-contact">Телефон или Telegram</label><input id="f-contact" name="contact" autocomplete="tel" required /><p class="err">Оставьте контакт, чтобы мы прислали аудит</p></div>
+      </div>
+      <div class="field"><label for="f-company">Компания и сайт</label><input id="f-company" name="company" autocomplete="organization" /></div>
+      <div class="field"><label for="f-task">Задача</label><textarea id="f-task" name="task" placeholder="Например: нас путают с конкурентом в ответах нейросетей"></textarea></div>
+      <fieldset>
+        <legend>Что интересно</legend>
+        <div class="chips">
+          <label><input type="checkbox" name="i" value="AI-сайт" /><span>AI-сайт</span></label>
+          <label><input type="checkbox" name="i" value="ИИ-агенты" /><span>ИИ-агенты</span></label>
+          <label><input type="checkbox" name="i" value="Аватар" /><span>Аватар</span></label>
+          <label><input type="checkbox" name="i" value="SEO и GEO" /><span>SEO и GEO</span></label>
+          <label><input type="checkbox" name="i" value="Нейро-ORM" /><span>Нейро-ORM</span></label>
+          <label><input type="checkbox" name="i" value="Контент-завод" /><span>Контент-завод</span></label>
+          <label><input type="checkbox" name="i" value="AI-трансформация" /><span>AI-трансформация</span></label>
+          <label><input type="checkbox" name="i" value="AI Growth OS" /><span>AI Growth OS</span></label>
+        </div>
+      </fieldset>
+      <button class="btn btn-primary btn-block" type="submit">Получить аудит</button>
+      <p class="consent">Отправляя заявку, вы соглашаетесь с <a class="link" href="/social-stars-demo/privacy-policy/">политикой конфиденциальности</a>.</p>
+      <div class="form-done" tabindex="-1" role="status">
+        <h3 class="t-h3">Письмо с заявкой готово</h3>
+        <p class="t-small">Мы открыли его в вашем почтовом приложении — осталось нажать «Отправить». Если приложение не открылось, позвоните: <a class="link" href="tel:+79854009299">+7 985 400 92 99</a>.</p>
+      </div>
+    </form>
+  </div>
+</section>
+<!-- /@cta -->
 </main>
 
-<footer>
+<!-- @footer -->
+<footer class="ftr">
   <div class="wrap">
-    <span>© Social Stars AI · направление <a href="/social-stars-demo/">Social Stars</a></span>
-    <span><a href="/social-stars-demo/ai/">Все услуги</a> · <a href="/social-stars-demo/contacts/">Контакты</a> · <a href="/social-stars-demo/privacy-policy/">Политика конфиденциальности</a></span>
+    <div class="ftr-grid">
+      <div class="about">
+        <a class="brand" href="/social-stars-demo/ai/"><img src="/social-stars-demo/favicon.svg" alt="" width="22" height="23" /><span>Social Stars <em>AI</em></span></a>
+        <p>Направление Social Stars. 12 лет в репутации и продвижении — теперь с ИИ в каждой услуге.</p>
+      </div>
+      <div>
+        <h4>Услуги</h4>
+        <ul>
+          <li><a href="/social-stars-demo/ai/sites/">AI-сайты</a></li>
+          <li><a href="/social-stars-demo/ai/agents/">ИИ-агенты</a></li>
+          <li><a href="/social-stars-demo/ai/avatars/">Цифровые аватары</a></li>
+          <li><a href="/social-stars-demo/ai/seo-geo/">SEO и GEO</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>&nbsp;</h4>
+        <ul>
+          <li><a href="/social-stars-demo/ai/neuro-orm/">Нейро-ORM</a></li>
+          <li><a href="/social-stars-demo/ai/content/">Контент-завод</a></li>
+          <li><a href="/social-stars-demo/ai/transformation/">AI-трансформация</a></li>
+          <li><a href="/social-stars-demo/ai/growth-os/">AI Growth OS</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Связаться</h4>
+        <ul>
+          <li><a href="tel:+79854009299">+7 985 400 92 99</a></li>
+          <li><a href="mailto:info@social-stars.ru">info@social-stars.ru</a></li>
+          <li>Москва, ул. Лесная, 57, стр. 4</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ftr-bottom">
+      <span>© Social Stars, 2026</span>
+      <span><a href="/social-stars-demo/">Сайт Social Stars</a>&nbsp;&nbsp;&nbsp;<a href="/social-stars-demo/privacy-policy/">Политика конфиденциальности</a></span>
+    </div>
   </div>
 </footer>
+<!-- /@footer -->
+
+<script src="/social-stars-demo/ai/sky.js" defer></script>
 <script src="/social-stars-demo/ai/ai.js" defer></script>
 </body>
 </html>

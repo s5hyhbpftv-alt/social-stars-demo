@@ -2,147 +2,352 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>AI Growth OS: комплексная система роста на ИИ — Social Stars AI</title>
-  <meta name="description" content="Флагманский комплекс Social Stars AI: AI-сайт, ИИ-агенты продаж и поддержки, аватар основателя, SEO + GEO и нейро-ORM с общим дашбордом и KPI." />
-  <link rel="icon" type="image/svg+xml" href="/social-stars-demo/favicon.svg" />
+  <meta name="theme-color" content="#f3f5f8" />
+  <title>AI Growth OS — система роста на ИИ · Social Stars AI</title>
+  <meta name="description" content="Флагманский комплекс Social Stars AI: сайт, ИИ-агенты продаж и поддержки, аватар основателя, SEO и GEO, нейро-ORM. Одна команда, одна панель показателей, оплата с привязкой к результату." />
   <link rel="canonical" href="https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/growth-os/" />
+  <link rel="icon" type="image/svg+xml" href="/social-stars-demo/favicon.svg" />
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Social Stars" />
-  <meta property="og:title" content="AI Growth OS: комплексная система роста на ИИ — Social Stars AI" />
-  <meta property="og:description" content="Флагманский комплекс Social Stars AI: AI-сайт, ИИ-агенты продаж и поддержки, аватар основателя, SEO + GEO и нейро-ORM с общим дашбордом и KPI." />
+  <meta property="og:title" content="AI Growth OS — Social Stars AI" />
+  <meta property="og:description" content="Сайт, агенты, аватар, поиск и репутация — одна система роста." />
   <meta property="og:url" content="https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/growth-os/" />
   <meta property="og:image" content="https://s5hyhbpftv-alt.github.io/social-stars-demo/media/og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "AI Growth OS", "description": "Флагманский комплекс Social Stars AI: AI-сайт, ИИ-агенты продаж и поддержки, аватар основателя, SEO + GEO и нейро-ORM с общим дашбордом и KPI.", "url": "https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/growth-os/", "areaServed": "RU", "provider": {"@id": "https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/#service"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Social Stars", "item": "https://s5hyhbpftv-alt.github.io/social-stars-demo/"}, {"@type": "ListItem", "position": 2, "name": "Social Stars AI", "item": "https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/"}, {"@type": "ListItem", "position": 3, "name": "AI Growth OS", "item": "https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/growth-os/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Можно ли начать с одного модуля?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Многие клиенты начинают с AI-аудита или пилота агента, а затем подключают остальные модули — вложения сохраняются."}}, {"@type": "Question", "name": "Как устроен KPI?", "acceptedAnswer": {"@type": "Answer", "text": "На старте фиксируем базовые значения — лиды, стоимость клиента, AI-видимость, часы рутины. Часть вознаграждения может зависеть от их роста."}}, {"@type": "Question", "name": "Кто управляет проектом?", "acceptedAnswer": {"@type": "Answer", "text": "Персональный руководитель проекта и команда: стратег, AI-инженер, разработчики, SEO/GEO-специалист, продюсер контента."}}, {"@type": "Question", "name": "Сколько длится контракт?", "acceptedAnswer": {"@type": "Answer", "text": "Минимальный горизонт — 6 месяцев: за это время система успевает показать эффект во всех модулях."}}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"AI Growth OS","url":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/growth-os/","areaServed":"RU","provider":{"@type":"Organization","name":"Social Stars","url":"https://s5hyhbpftv-alt.github.io/social-stars-demo/"},"offers":{"@type":"Offer","priceCurrency":"RUB","price":"1500000","description":"Запуск системы"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Social Stars AI","item":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/"},{"@type":"ListItem","position":2,"name":"AI Growth OS","item":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/growth-os/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Можно ли начать с одного модуля?","acceptedAnswer":{"@type":"Answer","text":"Да. Многие начинают с аудита или пилота агента и подключают остальные модули позже — вложения сохраняются."}},{"@type":"Question","name":"Как оплата связана с результатом?","acceptedAnswer":{"@type":"Answer","text":"На старте фиксируем исходные значения: заявки, стоимость клиента, AI-видимость, часы рутины. Часть оплаты может зависеть от их роста."}}]}]}</script>
   <link rel="stylesheet" href="/social-stars-demo/ai/ai.css" />
+  <style>
+    .journey{list-style:none;display:grid;grid-template-columns:repeat(6,1fr);gap:0;counter-reset:j;border-top:1px solid var(--mist)}
+    .journey li{counter-increment:j;padding:22px 20px 0 0;display:grid;gap:8px;align-content:start;position:relative}
+    .journey li::before{content:counter(j);font-size:40px;font-weight:200;letter-spacing:-.04em;color:var(--bronze);line-height:1}
+    .journey b{font-weight:400;font-size:19px;letter-spacing:-.01em}
+    .journey span{font-size:14.5px;color:var(--slate)}
+    .journey a{font-size:14.5px}
+
+    .dash{background:var(--white);border:1px solid var(--mist);border-radius:var(--r-lg);overflow:hidden}
+    .dash-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:16px 22px;border-bottom:1px solid var(--mist);font-size:14.5px;color:var(--slate)}
+    .dash-top b{font-weight:500;color:var(--ink)}
+    .tiles{display:grid;grid-template-columns:repeat(4,1fr)}
+    .tiles div{padding:22px;border-right:1px solid var(--mist)}
+    .tiles div:last-child{border-right:0}
+    .tiles small{display:block;font-size:14px;color:var(--slate)}
+    .tiles b{display:block;font-size:clamp(28px,3vw,38px);font-weight:300;letter-spacing:-.03em;margin:6px 0 2px}
+    .tiles span{font-size:13.5px;color:var(--ok)}
+    .funnel{padding:22px;border-top:1px solid var(--mist);display:grid;gap:10px}
+    .funnel .row{display:grid;grid-template-columns:200px 1fr 90px;gap:16px;align-items:center;font-size:15px}
+    .funnel .bar{height:10px;border-radius:5px;background:var(--porcelain-2);overflow:hidden}
+    .funnel .bar i{display:block;height:100%;background:var(--ink)}
+    .funnel .row:last-child .bar i{background:var(--bronze)}
+    .funnel .v{text-align:right;font-variant-numeric:tabular-nums}
+    .dash-note{margin-top:14px;font-size:14px;color:var(--slate)}
+
+    .modules{list-style:none;border-top:1px solid var(--mist)}
+    .modules a{display:grid;grid-template-columns:minmax(200px,4fr) 6fr 2fr;gap:24px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--mist);text-decoration:none;transition:background .2s}
+    .modules a:hover b{color:var(--bronze-2)}
+    .modules b{font-weight:300;font-size:clamp(24px,2.4vw,32px);letter-spacing:-.03em;transition:color .2s}
+    .modules p{color:var(--slate)}
+    .modules span{text-align:right;font-size:15px;color:var(--ink-2)}
+
+    @media (max-width:1024px){ .journey{grid-template-columns:repeat(3,1fr);row-gap:32px} .tiles{grid-template-columns:1fr 1fr} .tiles div:nth-child(2){border-right:0} .tiles div:nth-child(-n+2){border-bottom:1px solid var(--mist)} }
+    @media (max-width:760px){
+      .journey{grid-template-columns:1fr 1fr}
+      .funnel .row{grid-template-columns:1fr 70px;gap:6px 12px}
+      .funnel .bar{grid-column:1/-1;order:3}
+      .modules a{grid-template-columns:1fr;gap:6px}
+      .modules span{text-align:left}
+    }
+  </style>
 </head>
-<body>
-<!-- Сгенерировано tools/build_ai_pages.py — правьте контент там, а не здесь. -->
-<header class="nav" id="nav">
+<body data-service="AI Growth OS">
+<!-- @header -->
+<a class="skip" href="#main">Перейти к содержимому</a>
+<header class="hdr">
   <div class="wrap">
-    <a class="logo" href="/social-stars-demo/ai/" aria-label="Social Stars AI — главная"><img src="/social-stars-demo/favicon.svg" alt="" width="26" height="27" />Social Stars <b>AI</b></a>
-    <nav aria-label="Разделы">
-      <ul class="nav-links">
-        <li><a href="/social-stars-demo/ai/#services">Все услуги</a></li>
-        <li><a href="#includes">Что входит</a></li>
-        <li><a href="#pricing">Цены</a></li>
-        <li><a href="#faq">FAQ</a></li>
+    <a class="brand" href="/social-stars-demo/ai/"><img src="/social-stars-demo/favicon.svg" alt="" width="22" height="23" /><span>Social Stars <em>AI</em></span></a>
+    <nav aria-label="Основное меню">
+      <ul class="menu">
+        <li><button type="button" data-mega-btn aria-expanded="false" aria-controls="mega">Услуги <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m3 4.5 3 3 3-3"/></svg></button></li>
+        <li><a href="/social-stars-demo/ai/neuro-orm/">Нейро-ORM</a></li>
+        <li><a href="/social-stars-demo/cases/">Кейсы</a></li>
+        <li><a href="/social-stars-demo/contacts/">Контакты</a></li>
       </ul>
     </nav>
-    <a class="btn btn-gold" href="#lead">Бесплатный AI-аудит</a>
+    <a class="btn btn-primary btn-desk" href="#lead">Получить аудит</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Открыть меню"><span></span><span></span></button>
+    <div class="mega" id="mega">
+      <a class="feature" href="/social-stars-demo/ai/growth-os/"><b>AI Growth OS</b><span>Сайт, агенты, аватар, поиск и репутация — одна система роста с оплатой за результат</span></a>
+      <a href="/social-stars-demo/ai/sites/"><b>AI-сайты</b><span>Сайт, который находят люди и цитируют нейросети</span></a>
+      <a href="/social-stars-demo/ai/agents/"><b>ИИ-агенты</b><span>Рутина продаж, поддержки и документов — агентам</span></a>
+      <a href="/social-stars-demo/ai/avatars/"><b>Цифровые аватары</b><span>Эксперт говорит каждый день без съёмок</span></a>
+      <a href="/social-stars-demo/ai/seo-geo/"><b>SEO и GEO</b><span>В поиске и в ответе нейросети</span></a>
+      <a href="/social-stars-demo/ai/neuro-orm/"><b>Нейро-ORM</b><span>Что нейросети говорят о компании</span></a>
+      <a href="/social-stars-demo/ai/content/"><b>Контент-завод</b><span>Регулярный контент без раздувания штата</span></a>
+      <a href="/social-stars-demo/ai/transformation/"><b>AI-трансформация</b><span>Стратегия, правила и обучение команд</span></a>
+      <a href="/social-stars-demo/ai/"><b>Все направления</b><span>Обзор, калькулятор и сравнение с рынком</span></a>
+    </div>
   </div>
 </header>
+<div class="mnav" id="mnav">
+  <ul>
+    <li><a href="/social-stars-demo/ai/">Все направления</a></li>
+    <li><a href="/social-stars-demo/ai/growth-os/">AI Growth OS</a></li>
+    <li><a href="/social-stars-demo/ai/sites/">AI-сайты</a></li>
+    <li><a href="/social-stars-demo/ai/agents/">ИИ-агенты</a></li>
+    <li><a href="/social-stars-demo/ai/avatars/">Цифровые аватары</a></li>
+    <li><a href="/social-stars-demo/ai/seo-geo/">SEO и GEO</a></li>
+    <li><a href="/social-stars-demo/ai/neuro-orm/">Нейро-ORM</a></li>
+    <li><a href="/social-stars-demo/ai/content/">Контент-завод</a></li>
+    <li><a href="/social-stars-demo/ai/transformation/">AI-трансформация</a></li>
+  </ul>
+  <div class="mnav-foot">
+    <a class="btn btn-primary btn-block" href="#lead">Получить аудит</a>
+    <a href="tel:+79854009299">+7 985 400 92 99</a>
+    <a href="mailto:info@social-stars.ru">info@social-stars.ru</a>
+  </div>
+</div>
+<!-- /@header -->
 
-<main>
-  <section class="hero page">
-    <div class="orb a"></div><div class="orb b"></div>
+<main id="main">
+  <section class="hero">
     <div class="wrap">
-      <nav class="crumbs" aria-label="Хлебные крошки"><a href="/social-stars-demo/">Social Stars</a><span>/</span><a href="/social-stars-demo/ai/">Social Stars AI</a><span>/</span><span aria-current="page">AI Growth OS</span></nav>
-      <span class="eyebrow">Social Stars AI · AI Growth OS</span>
-      <h1>AI Growth OS: <em>вся система роста в одних руках</em></h1>
-      <p class="hero-lead">Сайт, агенты, аватар, поиск и репутация работают как один механизм: спрос приходит из поиска и нейросетей, аватар прогревает, агенты обрабатывают, нейро-ORM защищает. Одна команда, один дашборд, KPI на результат.</p>
-      <div class="hero-cta">
-        <a class="btn btn-gold" href="#lead">Обсудить задачу</a>
-        <a class="btn btn-ghost" href="#pricing">Смотреть цены</a>
-      </div>
-      <div class="facts"><div><span>Запуск</span><b>6–10 недель</b></div><div><span>Стоимость</span><b>от 1,5 млн ₽ + ретейнер</b></div><div><span>KPI</span><b>лиды · AI-видимость · экономия</b></div></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Задачи</span><h2>Для кого AI Growth OS</h2></div></div>
-      <div class="cards"><div class="card reveal"><h3>Много подрядчиков</h3><p>Сайт, SEO, SMM и автоматизация у разных команд, которые не видят общую картину.</p></div><div class="card reveal"><h3>Нет сквозных цифр</h3><p>Непонятно, какой канал приносит деньги.</p></div><div class="card reveal"><h3>Быстрый рост</h3><p>Спрос растёт, а отдел продаж и поддержка — нет.</p></div><div class="card reveal"><h3>Репутация — актив</h3><p>Для бренда или первого лица ошибка в публичном поле стоит дорого.</p></div></div>
-    </div>
-  </section>
-
-  <section class="alt" id="includes">
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Что входит</span><h2>Всё, что нужно для результата</h2></div><p>Работаем под ключ: от стратегии до поддержки. Состав адаптируем под задачу после аудита.</p></div>
-      <div class="cards c3"><div class="card reveal"><span class="k">01</span><h3>AI-сайт</h3><p>Готов к нейровыдаче, со встроенным консультантом.</p></div><div class="card reveal"><span class="k">02</span><h3>ИИ-агенты</h3><p>Продажи и поддержка с интеграцией в CRM.</p></div><div class="card reveal"><span class="k">03</span><h3>Аватар основателя</h3><p>Регулярные видео без съёмок.</p></div><div class="card reveal"><span class="k">04</span><h3>SEO + GEO</h3><p>Спрос из поиска и ответов нейросетей.</p></div><div class="card reveal"><span class="k">05</span><h3>Нейро-ORM</h3><p>Контроль того, что о вас говорят модели и СМИ.</p></div><div class="card reveal"><span class="k">06</span><h3>Дашборд и команда</h3><p>Сквозная аналитика и персональная команда проекта.</p></div></div>
-    </div>
-  </section>
-
-  <section class="dark">
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Как модули работают вместе</span><h2>Путь клиента в AI Growth OS</h2></div><p>Каждый модуль усиливает следующий — поэтому комплекс работает лучше, чем те же услуги по отдельности.</p></div>
-      <div class="flow reveal"><div><b>Спрос</b><span>SEO + GEO приводят из поиска и нейросетей</span></div><div><b>Доверие</b><span>нейро-ORM и публикации</span></div><div><b>Прогрев</b><span>видео на аватаре основателя</span></div><div><b>Диалог</b><span>ИИ-консультант на сайте</span></div><div><b>Сделка</b><span>агент квалифицирует и ведёт в CRM</span></div><div><b>Рост</b><span>дашборд и новые гипотезы</span></div></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Как работаем</span><h2>Этапы и сроки</h2></div></div>
-      <div class="process"><div class="step reveal"><h3>AI-аудит</h3><p>Видимость, процессы, воронка, расчёт эффекта.</p><span class="t">1 неделя</span></div><div class="step reveal"><h3>Проектирование</h3><p>Архитектура модулей, KPI, план запуска.</p><span class="t">1–2 недели</span></div><div class="step reveal"><h3>Запуск</h3><p>Сайт, агенты, аватар, GEO и мониторинг — поэтапно.</p><span class="t">4–8 недель</span></div><div class="step reveal"><h3>Управление ростом</h3><p>Еженедельные спринты, ежемесячный отчёт по KPI.</p><span class="t">ретейнер</span></div></div>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Метрики</span><h2>Что мы измеряем</h2></div><p>Фиксируем значения «до» на старте и показываем динамику в ежемесячном отчёте.</p></div>
-      <div class="metrics"><div class="reveal"><b>Лиды и продажи</b><span>по сквозной аналитике</span></div><div class="reveal"><b>Стоимость клиента</b><span>CAC по каналам</span></div><div class="reveal"><b>Индекс AI-видимости</b><span>в 6+ нейросетях</span></div><div class="reveal"><b>Скорость обработки</b><span>от заявки до контакта</span></div><div class="reveal"><b>Экономия ФОТ</b><span>часы, снятые агентами</span></div><div class="reveal"><b>Репутация</b><span>тональность в СМИ и ответах моделей</span></div></div>
-    </div>
-  </section>
-
-  <section class="pricing" id="pricing">
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Цены</span><h2>Пакеты</h2></div><p>Ориентиры для старта. Итоговая смета — после бесплатного аудита.</p></div>
-      <div class="plans p3"><div class="plan reveal"><h3>Старт</h3><div class="price">от 1 500 000 ₽</div><p>Запуск ядра системы. Ретейнер — от 350 000 ₽/мес.</p><ul><li>AI-сайт</li><li>1 агент продаж</li><li>SEO + GEO</li><li>Дашборд</li></ul><a class="btn btn-dark" href="#lead">Обсудить</a></div><div class="plan hot reveal"><span class="badge">Популярный</span><h3>Рост</h3><div class="price">от 3 000 000 ₽</div><p>Все модули для среднего бизнеса.</p><ul><li>Всё из «Старт»</li><li>Агент поддержки</li><li>Аватар основателя</li><li>Нейро-ORM</li></ul><a class="btn btn-gold" href="#lead">Обсудить</a></div><div class="plan reveal"><h3>Enterprise</h3><div class="price">индивидуально</div><p>Для крупного бизнеса и госсектора.</p><ul><li>On-prem контур</li><li>Несколько брендов</li><li>Лидеры мнений</li><li>SLA и выделенная команда</li></ul><a class="btn btn-dark" href="#lead">Обсудить</a></div></div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="wrap">
-      <div class="sec-head" style="justify-content:center;text-align:center"><div><span class="eyebrow">FAQ</span><h2>Частые вопросы</h2></div></div>
-      <div class="faq"><details><summary>Можно ли начать с одного модуля?</summary><p>Да. Многие клиенты начинают с AI-аудита или пилота агента, а затем подключают остальные модули — вложения сохраняются.</p></details><details><summary>Как устроен KPI?</summary><p>На старте фиксируем базовые значения — лиды, стоимость клиента, AI-видимость, часы рутины. Часть вознаграждения может зависеть от их роста.</p></details><details><summary>Кто управляет проектом?</summary><p>Персональный руководитель проекта и команда: стратег, AI-инженер, разработчики, SEO/GEO-специалист, продюсер контента.</p></details><details><summary>Сколько длится контракт?</summary><p>Минимальный горизонт — 6 месяцев: за это время система успевает показать эффект во всех модулях.</p></details></div>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Другие направления</span><h2>Сильнее вместе</h2></div><p>Модули Social Stars AI усиливают друг друга. Комплекс — <a href="/social-stars-demo/ai/growth-os/">AI Growth OS</a>.</p></div>
-      <div class="xlinks"><a href="/social-stars-demo/ai/sites/"><b>AI-сайты</b><span>от 290 000 ₽</span></a><a href="/social-stars-demo/ai/agents/"><b>ИИ-агенты</b><span>от 350 000 ₽</span></a><a href="/social-stars-demo/ai/avatars/"><b>Цифровые аватары</b><span>от 150 000 ₽</span></a><a href="/social-stars-demo/ai/seo-geo/"><b>SEO + GEO</b><span>от 180 000 ₽/мес</span></a><a href="/social-stars-demo/ai/neuro-orm/"><b>Нейро-ORM</b><span>от 250 000 ₽/мес</span></a><a href="/social-stars-demo/ai/content/"><b>AI-контент-завод</b><span>от 200 000 ₽/мес</span></a><a href="/social-stars-demo/ai/transformation/"><b>AI-трансформация</b><span>от 500 000 ₽</span></a></div>
-    </div>
-  </section>
-
-  <section class="lead" id="lead">
-    <div class="orb a"></div>
-    <div class="wrap lead-grid">
-      <div>
-        <span class="eyebrow">Бесплатный AI-аудит</span>
-        <h2>Обсудим вашу задачу</h2>
-        <p class="lead-lead">За 48 часов пришлём отчёт: как вас видят нейросети и какие процессы дадут быстрый эффект от ИИ.</p>
-        <div class="contacts">
-          <a href="tel:+79854009299">+7 985 400 92 99</a>
-          <a href="mailto:info@social-stars.ru">info@social-stars.ru</a>
-          <span style="color:rgba(255,255,255,.5);font-size:15px">Москва, ул. Лесная, 57, стр. 4</span>
+      <div class="hero-text">
+        <nav class="crumbs" aria-label="Вы здесь"><a href="/social-stars-demo/ai/">Social Stars AI</a><span aria-hidden="true">/</span><span aria-current="page">AI Growth OS</span></nav>
+        <h1 class="t-hero">Сайт, агенты, аватар, поиск и репутация — одна система</h1>
+        <p class="t-lead">Спрос приходит из поиска и нейросетей, аватар основателя вызывает доверие, агенты обрабатывают заявки, нейро-ORM защищает репутацию. Одна команда, одна панель показателей, оплата с привязкой к результату.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#lead">Обсудить систему</a>
+          <a class="btn btn-line" href="#journey">Как это работает</a>
         </div>
       </div>
-      <form id="form" novalidate>
-        <input class="inp" name="name" placeholder="Имя" autocomplete="name" required aria-label="Имя" />
-        <input class="inp" name="contact" placeholder="Телефон или Telegram" autocomplete="tel" required aria-label="Телефон или Telegram" />
-        <input class="inp" name="company" placeholder="Компания и сайт" aria-label="Компания и сайт" />
-        <fieldset>
-          <legend>Что интересно</legend>
-          <div class="chips"><label><input type="checkbox" name="i" value="AI-сайт" data-k="site" /><span>AI-сайт</span></label><label><input type="checkbox" name="i" value="ИИ-агенты" data-k="agents" /><span>ИИ-агенты</span></label><label><input type="checkbox" name="i" value="Аватар" data-k="avatar" /><span>Аватар</span></label><label><input type="checkbox" name="i" value="SEO + GEO" data-k="geo" /><span>SEO + GEO</span></label><label><input type="checkbox" name="i" value="Нейро-ORM" data-k="orm" /><span>Нейро-ORM</span></label><label><input type="checkbox" name="i" value="Контент-завод" data-k="content" /><span>Контент-завод</span></label><label><input type="checkbox" name="i" value="AI-трансформация" data-k="transform" /><span>AI-трансформация</span></label><label><input type="checkbox" name="i" value="AI Growth OS" data-k="os" checked /><span>AI Growth OS</span></label></div>
-        </fieldset>
-        <button class="btn btn-gold" type="submit">Получить аудит</button>
-        <p class="form-msg" id="form-msg" role="status"></p>
-        <p class="consent">Нажимая кнопку, вы соглашаетесь с <a href="/social-stars-demo/privacy-policy/">политикой конфиденциальности</a>.</p>
-      </form>
+      <div class="hero-sky" data-sky="orbit" data-sky-scale=".9" role="img" aria-label="Созвездие-система: ядро в центре и три орбиты модулей"></div>
+    </div>
+    <div class="wrap hero-facts">
+      <dl class="facts">
+        <div><dt>Запуск</dt><dd>за 6–10 недель</dd></div>
+        <div><dt>Старт</dt><dd>от 1,5 млн ₽ и ежемесячная оплата</dd></div>
+        <div><dt>Показатели</dt><dd>заявки, AI-видимость, экономия</dd></div>
+      </dl>
     </div>
   </section>
+
+  <nav class="subnav" aria-label="Разделы страницы">
+    <div class="wrap">
+      <a href="#journey">Путь клиента</a>
+      <a href="#dashboard">Панель показателей</a>
+      <a href="#modules">Модули</a>
+      <a href="#process">Этапы</a>
+      <a href="#pricing">Цены</a>
+      <a href="#faq">Вопросы</a>
+      <a class="btn btn-ink" href="#lead">Обсудить</a>
+    </div>
+  </nav>
+
+  <section class="section" id="journey">
+    <div class="wrap">
+      <div class="head">
+        <h2 class="t-h2">Путь клиента через систему</h2>
+        <p class="t-lead">Каждый модуль усиливает следующий. Поэтому вместе они дают больше, чем те же услуги у разных подрядчиков.</p>
+      </div>
+      <ol class="journey">
+        <li><b>Спрос</b><span>Человек ищет в Яндексе или спрашивает нейросеть</span><a class="link" href="/social-stars-demo/ai/seo-geo/">SEO и GEO</a></li>
+        <li><b>Доверие</b><span>В ответах — точные факты и сильные стороны</span><a class="link" href="/social-stars-demo/ai/neuro-orm/">Нейро-ORM</a></li>
+        <li><b>Знакомство</b><span>Видео основателя объясняет продукт</span><a class="link" href="/social-stars-demo/ai/avatars/">Аватар</a></li>
+        <li><b>Разговор</b><span>Консультант на сайте отвечает сразу</span><a class="link" href="/social-stars-demo/ai/sites/">AI-сайт</a></li>
+        <li><b>Сделка</b><span>Агент уточняет задачу и ведёт в CRM</span><a class="link" href="/social-stars-demo/ai/agents/">ИИ-агенты</a></li>
+        <li><b>Рост</b><span>Контент удерживает клиентов, панель показывает эффект</span><a class="link" href="/social-stars-demo/ai/content/">Контент-завод</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section band" id="dashboard">
+    <div class="wrap">
+      <div class="head split">
+        <h2 class="t-h2">Одна панель вместо пяти отчётов</h2>
+        <p class="t-lead">Руководитель видит заявки, стоимость клиента, видимость в нейросетях и сэкономленные часы в одном месте.</p>
+      </div>
+      <div class="dash">
+        <div class="dash-top"><b>Панель AI Growth OS</b><span>Пример интерфейса, демонстрационные данные за месяц</span></div>
+        <div class="tiles">
+          <div><small>Заявки</small><b>1 284</b><span>+38% к исходному</span></div>
+          <div><small>Стоимость клиента</small><b>4 120 ₽</b><span>−22%</span></div>
+          <div><small>Индекс AI-видимости</small><b>67</b><span>+25 пунктов</span></div>
+          <div><small>Часы, снятые агентами</small><b>1 940</b><span>≈ 11 ставок</span></div>
+        </div>
+        <div class="funnel" aria-label="Воронка: посетители, диалоги с консультантом, заявки, сделки">
+          <div class="row"><span>Посетители из поиска и нейросетей</span><span class="bar"><i style="width:100%"></i></span><span class="v">41 200</span></div>
+          <div class="row"><span>Диалоги с консультантом</span><span class="bar"><i style="width:42%"></i></span><span class="v">5 830</span></div>
+          <div class="row"><span>Заявки</span><span class="bar"><i style="width:19%"></i></span><span class="v">1 284</span></div>
+          <div class="row"><span>Сделки</span><span class="bar"><i style="width:7%"></i></span><span class="v">312</span></div>
+        </div>
+      </div>
+      <p class="dash-note">Цифры показывают формат панели и не являются обещанием результата.</p>
+    </div>
+  </section>
+
+  <section class="section" id="modules">
+    <div class="wrap">
+      <div class="head"><h2 class="t-h2">Модули системы</h2></div>
+      <ul class="modules">
+        <li><a href="/social-stars-demo/ai/sites/"><b>AI-сайт</b><p>Готов к нейровыдаче, со встроенным консультантом.</p><span>от 290 000 ₽</span></a></li>
+        <li><a href="/social-stars-demo/ai/agents/"><b>ИИ-агенты</b><p>Продажи и поддержка со связью с CRM.</p><span>от 350 000 ₽</span></a></li>
+        <li><a href="/social-stars-demo/ai/avatars/"><b>Аватар основателя</b><p>Регулярные видео без съёмок.</p><span>от 150 000 ₽</span></a></li>
+        <li><a href="/social-stars-demo/ai/seo-geo/"><b>SEO и GEO</b><p>Спрос из поиска и ответов нейросетей.</p><span>от 180 000 ₽ в месяц</span></a></li>
+        <li><a href="/social-stars-demo/ai/neuro-orm/"><b>Нейро-ORM</b><p>Контроль того, что о вас говорят модели и СМИ.</p><span>от 250 000 ₽ в месяц</span></a></li>
+        <li><a href="/social-stars-demo/ai/content/"><b>Контент-завод</b><p>Регулярные публикации и рассылки.</p><span>от 200 000 ₽ в месяц</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="process">
+    <div class="wrap">
+      <div class="head"><h2 class="t-h2">Запуск за 6–10 недель</h2></div>
+      <ol class="steps">
+        <li><span class="when">1 неделя</span><h3>Аудит</h3><p>Видимость, процессы, воронка и расчёт эффекта.</p></li>
+        <li><span class="when">1–2 недели</span><h3>Проект</h3><p>Состав модулей, показатели, план запуска.</p></li>
+        <li><span class="when">4–8 недель</span><h3>Запуск</h3><p>Сайт, агенты, аватар, GEO и мониторинг — по очереди.</p></li>
+        <li><span class="when">Каждую неделю</span><h3>Рост</h3><p>Короткие циклы улучшений и ежемесячный отчёт.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section band" id="pricing">
+    <div class="wrap">
+      <div class="head"><h2 class="t-h2">Цены</h2></div>
+      <div class="plans">
+        <article class="plan">
+          <h3>Старт</h3>
+          <div class="price">от 1 500 000 ₽<small>и от 350 000 ₽ в месяц</small></div>
+          <p>Ядро системы.</p>
+          <ul><li>AI-сайт</li><li>Агент продаж</li><li>SEO и GEO</li><li>Панель показателей</li></ul>
+          <a class="btn btn-line" href="#lead" data-pick="AI Growth OS">Обсудить старт</a>
+        </article>
+        <article class="plan main">
+          <span class="badge">Все модули</span>
+          <h3>Рост</h3>
+          <div class="price">от 3 000 000 ₽<small>и ежемесячное сопровождение</small></div>
+          <p>Полная система для среднего бизнеса.</p>
+          <ul><li>Всё из «Старта»</li><li>Агент поддержки</li><li>Аватар основателя</li><li>Нейро-ORM</li></ul>
+          <a class="btn btn-primary" href="#lead" data-pick="AI Growth OS">Обсудить систему</a>
+        </article>
+        <article class="plan">
+          <h3>Для крупных компаний</h3>
+          <div class="price">индивидуально<small>после аудита</small></div>
+          <p>Для крупного бизнеса и госсектора.</p>
+          <ul><li>Собственный контур</li><li>Несколько брендов</li><li>Лидеры мнений</li><li>Выделенная команда</li></ul>
+          <a class="btn btn-line" href="#lead" data-pick="AI Growth OS">Обсудить</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band" id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><h2 class="t-h2">Вопросы</h2></div>
+      <div class="faq">
+        <details><summary>Можно ли начать с одного модуля?</summary><div class="a"><p>Да. Многие начинают с аудита или пилота агента и подключают остальные модули позже — вложения сохраняются.</p></div></details>
+        <details><summary>Как оплата связана с результатом?</summary><div class="a"><p>На старте фиксируем исходные значения: заявки, стоимость клиента, AI-видимость, часы рутины. Часть оплаты может зависеть от их роста.</p></div></details>
+        <details><summary>Кто ведёт проект?</summary><div class="a"><p>Руководитель проекта и команда: стратег, инженер по ИИ, разработчики, специалист по SEO и GEO, продюсер контента.</p></div></details>
+        <details><summary>Какой минимальный срок?</summary><div class="a"><p>Полгода: за это время система успевает показать эффект во всех модулях.</p></div></details>
+      </div>
+      <a class="next" href="/social-stars-demo/ai/" style="margin-top:clamp(64px,8vw,112px)"><span>Все направления</span><strong>Social Stars AI</strong></a>
+    </div>
+  </section>
+
+<!-- @cta -->
+<section class="cta" id="lead" aria-labelledby="lead-title">
+  <div class="wrap cta-grid">
+    <div>
+      <h2 class="t-h2" id="lead-title">Бесплатный AI‑аудит за 48 часов</h2>
+      <ul>
+        <li>Что о вас отвечают Алиса AI, GigaChat, ChatGPT и ещё три модели</li>
+        <li>Три процесса, где ИИ даст эффект быстрее всего</li>
+        <li>Сроки и бюджет — без обязательств</li>
+      </ul>
+      <div class="contacts">
+        <a href="tel:+79854009299">+7 985 400 92 99</a>
+        <a href="mailto:info@social-stars.ru">info@social-stars.ru</a>
+        <span>Москва, ул. Лесная, 57, стр. 4</span>
+      </div>
+    </div>
+    <form class="form" data-lead novalidate>
+      <div class="two">
+        <div class="field"><label for="f-name">Имя</label><input id="f-name" name="name" autocomplete="name" required /><p class="err">Напишите, как к вам обращаться</p></div>
+        <div class="field"><label for="f-contact">Телефон или Telegram</label><input id="f-contact" name="contact" autocomplete="tel" required /><p class="err">Оставьте контакт, чтобы мы прислали аудит</p></div>
+      </div>
+      <div class="field"><label for="f-company">Компания и сайт</label><input id="f-company" name="company" autocomplete="organization" /></div>
+      <div class="field"><label for="f-task">Задача</label><textarea id="f-task" name="task" placeholder="Например: нас путают с конкурентом в ответах нейросетей"></textarea></div>
+      <fieldset>
+        <legend>Что интересно</legend>
+        <div class="chips">
+          <label><input type="checkbox" name="i" value="AI-сайт" /><span>AI-сайт</span></label>
+          <label><input type="checkbox" name="i" value="ИИ-агенты" /><span>ИИ-агенты</span></label>
+          <label><input type="checkbox" name="i" value="Аватар" /><span>Аватар</span></label>
+          <label><input type="checkbox" name="i" value="SEO и GEO" /><span>SEO и GEO</span></label>
+          <label><input type="checkbox" name="i" value="Нейро-ORM" /><span>Нейро-ORM</span></label>
+          <label><input type="checkbox" name="i" value="Контент-завод" /><span>Контент-завод</span></label>
+          <label><input type="checkbox" name="i" value="AI-трансформация" /><span>AI-трансформация</span></label>
+          <label><input type="checkbox" name="i" value="AI Growth OS" /><span>AI Growth OS</span></label>
+        </div>
+      </fieldset>
+      <button class="btn btn-primary btn-block" type="submit">Получить аудит</button>
+      <p class="consent">Отправляя заявку, вы соглашаетесь с <a class="link" href="/social-stars-demo/privacy-policy/">политикой конфиденциальности</a>.</p>
+      <div class="form-done" tabindex="-1" role="status">
+        <h3 class="t-h3">Письмо с заявкой готово</h3>
+        <p class="t-small">Мы открыли его в вашем почтовом приложении — осталось нажать «Отправить». Если приложение не открылось, позвоните: <a class="link" href="tel:+79854009299">+7 985 400 92 99</a>.</p>
+      </div>
+    </form>
+  </div>
+</section>
+<!-- /@cta -->
 </main>
 
-<footer>
+<!-- @footer -->
+<footer class="ftr">
   <div class="wrap">
-    <span>© Social Stars AI · направление <a href="/social-stars-demo/">Social Stars</a></span>
-    <span><a href="/social-stars-demo/ai/">Все услуги</a> · <a href="/social-stars-demo/contacts/">Контакты</a> · <a href="/social-stars-demo/privacy-policy/">Политика конфиденциальности</a></span>
+    <div class="ftr-grid">
+      <div class="about">
+        <a class="brand" href="/social-stars-demo/ai/"><img src="/social-stars-demo/favicon.svg" alt="" width="22" height="23" /><span>Social Stars <em>AI</em></span></a>
+        <p>Направление Social Stars. 12 лет в репутации и продвижении — теперь с ИИ в каждой услуге.</p>
+      </div>
+      <div>
+        <h4>Услуги</h4>
+        <ul>
+          <li><a href="/social-stars-demo/ai/sites/">AI-сайты</a></li>
+          <li><a href="/social-stars-demo/ai/agents/">ИИ-агенты</a></li>
+          <li><a href="/social-stars-demo/ai/avatars/">Цифровые аватары</a></li>
+          <li><a href="/social-stars-demo/ai/seo-geo/">SEO и GEO</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>&nbsp;</h4>
+        <ul>
+          <li><a href="/social-stars-demo/ai/neuro-orm/">Нейро-ORM</a></li>
+          <li><a href="/social-stars-demo/ai/content/">Контент-завод</a></li>
+          <li><a href="/social-stars-demo/ai/transformation/">AI-трансформация</a></li>
+          <li><a href="/social-stars-demo/ai/growth-os/">AI Growth OS</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Связаться</h4>
+        <ul>
+          <li><a href="tel:+79854009299">+7 985 400 92 99</a></li>
+          <li><a href="mailto:info@social-stars.ru">info@social-stars.ru</a></li>
+          <li>Москва, ул. Лесная, 57, стр. 4</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ftr-bottom">
+      <span>© Social Stars, 2026</span>
+      <span><a href="/social-stars-demo/">Сайт Social Stars</a>&nbsp;&nbsp;&nbsp;<a href="/social-stars-demo/privacy-policy/">Политика конфиденциальности</a></span>
+    </div>
   </div>
 </footer>
+<!-- /@footer -->
+
+<script src="/social-stars-demo/ai/sky.js" defer></script>
 <script src="/social-stars-demo/ai/ai.js" defer></script>
 </body>
 </html>
