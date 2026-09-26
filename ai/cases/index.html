@@ -5,53 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#f3f5f8" />
-  <title>AI-трансформация компании: стратегия и обучение — Social Stars AI</title>
-  <meta name="description" content="Стратегия внедрения ИИ, разбор процессов, дорожная карта, правила работы с данными, обучение сотрудников и общая библиотека агентов. Проверьте уровень зрелости компании за минуту." />
-  <link rel="canonical" href="https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/transformation/" />
+  <title>Кейсы — Social Stars AI</title>
+  <meta name="description" content="Как Social Stars AI применяет ИИ-агентов, AI-сайты, цифровые аватары, SEO и GEO и нейро-ORM: пять примеров из логистики, медицины, производства, госсектора и девелопмента." />
+  <link rel="canonical" href="https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/cases/" />
   <link rel="icon" type="image/svg+xml" href="/social-stars-demo/favicon.svg" />
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Social Stars" />
-  <meta property="og:title" content="AI-трансформация — Social Stars AI" />
-  <meta property="og:description" content="Компания, в которой ИИ работает в каждом отделе." />
-  <meta property="og:url" content="https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/transformation/" />
+  <meta property="og:title" content="Кейсы — Social Stars AI" />
+  <meta property="og:description" content="Пять примеров: заявки, репутация, видео, поддержка граждан и система роста." />
+  <meta property="og:url" content="https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/cases/" />
   <meta property="og:image" content="https://s5hyhbpftv-alt.github.io/social-stars-demo/media/og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"AI-трансформация компании","url":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/transformation/","areaServed":"RU","provider":{"@type":"Organization","name":"Social Stars","url":"https://s5hyhbpftv-alt.github.io/social-stars-demo/"},"offers":{"@type":"Offer","priceCurrency":"RUB","price":"500000","description":"Стратегическая сессия"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Social Stars AI","item":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/"},{"@type":"ListItem","position":2,"name":"AI-трансформация","item":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/transformation/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Кому нужна трансформация, а кому достаточно одного агента?","acceptedAnswer":{"@type":"Answer","text":"Если задача в одном процессе — начните с пилота ИИ-агента. Если ИИ нужен во многих отделах и важны правила и безопасность — нужна программа трансформации."}},{"@type":"Question","name":"Это сократит штат?","acceptedAnswer":{"@type":"Answer","text":"Цель — снять рутину и расти без пропорционального роста команды. Как использовать освободившееся время, решает компания."}}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":"Кейсы Social Stars AI","url":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/cases/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Social Stars AI","item":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/"},{"@type":"ListItem","position":2,"name":"Кейсы","item":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/cases/"}]}]}</script>
   <link rel="stylesheet" href="/social-stars-demo/ai/ai.css" />
   <style>
-    .quiz{display:grid;grid-template-columns:7fr 5fr;gap:clamp(32px,5vw,72px);align-items:start}
-    .q{border:0;padding:0;margin:0 0 28px}
-    .q legend{font-size:19px;letter-spacing:-.01em;margin-bottom:12px;padding:0}
-    .q legend span{color:var(--slate);margin-right:10px;font-variant-numeric:tabular-nums}
-    .opts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-    .opts label{position:relative;cursor:pointer}
-    .opts input{position:absolute;opacity:0;width:1px;height:1px}
-    .opts span{display:flex;align-items:center;min-height:52px;height:100%;padding:10px 14px;border-radius:var(--r-md);border:1px solid var(--mist-2);background:var(--white);font-size:14.5px;line-height:1.35;transition:border-color .15s,background .15s,color .15s}
-    .opts label:hover span{border-color:var(--ink)}
-    .opts input:checked + span{background:var(--ink);border-color:var(--ink);color:#fff}
-    .opts input:focus-visible + span{outline:2px solid var(--bronze);outline-offset:2px}
-    .result{position:sticky;top:calc(var(--hdr) + 80px);background:var(--white);border:1px solid var(--mist);border-radius:var(--r-lg);padding:clamp(24px,3vw,36px);display:grid;gap:16px}
-    .result small{font-size:14px;color:var(--slate)}
-    .result .lvl{font-size:clamp(34px,3.6vw,48px);font-weight:300;letter-spacing:-.035em;line-height:1.05}
-    .result p{color:var(--slate)}
-    .ladder{display:flex;gap:6px}
-    .ladder i{flex:1;height:6px;border-radius:3px;background:var(--porcelain-2);transition:background .3s}
-    .ladder i.on{background:var(--ink)}
-    .ladder i.now{background:var(--bronze)}
-    .progress-note{font-size:14px;color:var(--slate)}
+    .demo-note{display:flex;gap:12px;align-items:flex-start;max-width:36em;padding:14px 16px;border-radius:var(--r-md);background:var(--white);border:1px solid var(--mist);font-size:15px;color:var(--ink-2)}
+    .demo-note::before{content:"";flex:none;width:8px;height:8px;margin-top:.55em;border-radius:50%;background:var(--bronze)}
 
-    .levels{list-style:none;border-top:1px solid var(--mist)}
-    .levels li{display:grid;grid-template-columns:140px 240px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid var(--mist);align-items:baseline}
-    .levels b{font-weight:400;font-size:21px;letter-spacing:-.015em}
-    .levels span{font-size:15px;color:var(--slate)}
-    .levels p{color:var(--slate)}
+    .filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+    .filter button{height:40px;padding:0 14px;border-radius:var(--r-md);border:1px solid var(--mist-2);background:var(--white);font-size:15px;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+    .filter button:hover{border-color:var(--ink)}
+    .filter button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+    .count{font-size:14.5px;color:var(--slate);margin-bottom:clamp(32px,4vw,48px)}
 
-    @media (max-width:1024px){ .quiz{grid-template-columns:1fr} .result{position:static} }
-    @media (max-width:760px){ .opts{grid-template-columns:1fr} .levels li{grid-template-columns:1fr;gap:4px} }
+    .cases{display:grid;gap:0;border-top:1px solid var(--mist)}
+    .case{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,5vw,80px);padding:clamp(48px,6vw,80px) 0;border-bottom:1px solid var(--mist)}
+    .case[hidden]{display:none}
+    .case-side{display:grid;gap:20px;align-content:start}
+    .case-side .ind{font-size:15px;color:var(--slate)}
+    .case-side h2{font-size:clamp(28px,3vw,42px);line-height:1.08;letter-spacing:-.035em}
+    .case-side dl{display:grid;gap:14px;padding-top:20px;border-top:1px solid var(--mist)}
+    .case-side dt{font-size:14px;color:var(--slate)}
+    .case-side dd{margin-top:2px}
+    .case-side dd a{margin-right:10px}
+    .case-body{display:grid;gap:26px;align-content:start}
+    .case-body h3{font-size:14.5px;font-weight:500;letter-spacing:0;color:var(--slate);margin-bottom:6px}
+    .case-body p{color:var(--ink-2);max-width:40em}
+    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--mist);border:1px solid var(--mist);border-radius:var(--r-lg);overflow:hidden;margin-top:6px}
+    .metrics div{background:var(--white);padding:20px 22px;display:grid;gap:6px;align-content:start}
+    .metrics b{font-size:clamp(26px,2.6vw,34px);font-weight:300;letter-spacing:-.03em;line-height:1.1}
+    .metrics s{font-size:15px;color:var(--slate);text-decoration-thickness:1px}
+    .metrics span{font-size:14px;color:var(--slate)}
+    .empty{padding:48px 0;color:var(--slate)}
+
+    @media (max-width:900px){ .case{grid-template-columns:1fr} }
+    @media (max-width:600px){ .metrics{grid-template-columns:1fr} }
   </style>
 </head>
-<body data-service="AI-трансформация">
+<body>
 <!-- @intro -->
 <div class="intro" id="intro" role="presentation">
   <div class="intro-stage" aria-hidden="true">
@@ -113,7 +115,7 @@
 <a class="skip" href="#main">Перейти к содержимому</a>
 <header class="hdr">
   <div class="wrap">
-    <a class="brand" href="/social-stars-demo/ai/" aria-label="Social Stars AI — на главную направления"><svg class="brand-star" viewBox="0 0 100 91.2" aria-hidden="true"><use href="#ss-star"/></svg><span class="brand-word" aria-hidden="true"><svg class="bw-social" viewBox="0 0 66.97 11.77"><use href="#ss-social"/></svg><svg class="bw-stars" viewBox="0 0 61.26 11.78"><use href="#ss-stars"/></svg></span><span class="brand-sep" aria-hidden="true"></span><svg class="brand-ai" viewBox="0 0 15.95 11.78" aria-hidden="true"><use href="#ss-ai"/></svg></a>
+    <a class="brand" href="/social-stars-demo/ai/" aria-label="Social Stars AI — на главную направления"><svg class="brand-star" viewBox="0 0 100 91.2" aria-hidden="true"><use href="#ss-star"/></svg><span class="brand-word" aria-hidden="true"><svg class="bw-social" viewBox="0 0 66.97 11.77"><use href="#ss-social"/></svg><svg class="bw-stars" viewBox="0 0 61.26 11.78"><use href="#ss-stars"/></svg></span><span class="brand-sep" aria-hidden="true"></span><svg class="brand-ai" viewBox="0 0 15.95 11.78" aria-hidden="true"><use href="#ss-ai"/></svg></a>
     <nav aria-label="Основное меню">
       <ul class="menu">
         <li><button type="button" data-mega-btn aria-expanded="false" aria-controls="mega">Услуги <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m3 4.5 3 3 3-3"/></svg></button></li>
@@ -162,160 +164,143 @@
   <section class="hero">
     <div class="wrap">
       <div class="hero-text">
-        <nav class="crumbs" aria-label="Вы здесь"><a href="/social-stars-demo/ai/">Social Stars AI</a><span aria-hidden="true">/</span><span aria-current="page">AI-трансформация</span></nav>
-        <h1 class="t-hero">Компания, в которой ИИ работает в каждом отделе</h1>
-        <p class="t-lead">Сильные компании перестраиваются так, чтобы у каждой команды были свои агенты и общие правила. Проходим этот путь вместе: от стратегической сессии до работающих инструментов у сотрудников.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#test">Проверить уровень компании</a>
-          <a class="btn btn-line" href="#lead">Обсудить стратегию</a>
-        </div>
+        <nav class="crumbs" aria-label="Вы здесь"><a href="/social-stars-demo/ai/">Social Stars AI</a><span aria-hidden="true">/</span><span aria-current="page">Кейсы</span></nav>
+        <h1 class="t-hero">Кейсы</h1>
+        <p class="t-lead">Пять отраслей, пять задач: от заявок, на которые отвечали по четыре часа, до старого скандала в ответах нейросетей.</p>
+        <p class="demo-note">Это демонстрационные кейсы: компании обезличены, цифры показывают типичный результат для таких задач. По мере завершения проектов заменим их реальными.</p>
       </div>
-      <div class="hero-sky" data-sky="stairs" data-sky-scale=".86" role="img" aria-label="Созвездие-лестница из пяти ступеней, на вершине — звезда"></div>
-    </div>
-    <div class="wrap hero-facts">
-      <dl class="facts">
-        <div><dt>Стратегия</dt><dd>за 2–4 недели</dd></div>
-        <div><dt>Стратегическая сессия</dt><dd>от 500 000 ₽</dd></div>
-        <div><dt>Форматы</dt><dd>сессии, обучение, внедрение</dd></div>
-      </dl>
+      <div class="hero-sky" data-sky="clusters" data-sky-scale=".86" role="img" aria-label="Пять небольших созвездий — по одному на каждый кейс"></div>
     </div>
   </section>
 
-  <nav class="subnav" aria-label="Разделы страницы">
+  <section class="section" style="padding-top:0">
     <div class="wrap">
-      <a href="#test">Проверка уровня</a>
-      <a href="#levels">Уровни</a>
-      <a href="#includes">Состав работ</a>
-      <a href="#process">Этапы</a>
-      <a href="#pricing">Цены</a>
-      <a href="#faq">Вопросы</a>
-      <a class="btn btn-ink" href="#lead">Обсудить</a>
-    </div>
-  </nav>
-
-  <section class="section" id="test">
-    <div class="wrap">
-      <div class="head">
-        <h2 class="t-h2">Где ваша компания сейчас</h2>
-        <p class="t-lead">Шесть вопросов, одна минута. Результат покажет уровень зрелости и следующий шаг.</p>
+      <div class="filter" role="group" aria-label="Показать кейсы по услуге">
+        <button type="button" data-f="all" aria-pressed="true">Все</button>
+        <button type="button" data-f="sites" aria-pressed="false">AI-сайты</button>
+        <button type="button" data-f="agents" aria-pressed="false">ИИ-агенты</button>
+        <button type="button" data-f="avatars" aria-pressed="false">Аватары</button>
+        <button type="button" data-f="geo" aria-pressed="false">SEO и GEO</button>
+        <button type="button" data-f="orm" aria-pressed="false">Нейро-ORM</button>
+        <button type="button" data-f="content" aria-pressed="false">Контент-завод</button>
+        <button type="button" data-f="os" aria-pressed="false">AI Growth OS</button>
       </div>
-      <div class="quiz">
-        <form id="quiz">
-          <fieldset class="q"><legend><span>1</span>Как сотрудники пользуются ИИ?</legend><div class="opts">
-            <label><input type="radio" name="q1" value="0" /><span>Каждый как хочет или никак</span></label>
-            <label><input type="radio" name="q1" value="1" /><span>Есть разрешённые сервисы</span></label>
-            <label><input type="radio" name="q1" value="2" /><span>ИИ встроен в рабочие процессы</span></label></div></fieldset>
-          <fieldset class="q"><legend><span>2</span>Есть ли правила работы с данными в ИИ?</legend><div class="opts">
-            <label><input type="radio" name="q2" value="0" /><span>Нет</span></label>
-            <label><input type="radio" name="q2" value="1" /><span>Есть общие рекомендации</span></label>
-            <label><input type="radio" name="q2" value="2" /><span>Утверждённая политика и контроль</span></label></div></fieldset>
-          <fieldset class="q"><legend><span>3</span>Сколько процессов автоматизировано агентами?</legend><div class="opts">
-            <label><input type="radio" name="q3" value="0" /><span>Ни одного</span></label>
-            <label><input type="radio" name="q3" value="1" /><span>Один-два пилота</span></label>
-            <label><input type="radio" name="q3" value="2" /><span>В нескольких отделах</span></label></div></fieldset>
-          <fieldset class="q"><legend><span>4</span>Где живут знания компании?</legend><div class="opts">
-            <label><input type="radio" name="q4" value="0" /><span>В головах и чатах</span></label>
-            <label><input type="radio" name="q4" value="1" /><span>В папках и вики</span></label>
-            <label><input type="radio" name="q4" value="2" /><span>В базе, к которой подключены агенты</span></label></div></fieldset>
-          <fieldset class="q"><legend><span>5</span>Обучали ли сотрудников работе с ИИ?</legend><div class="opts">
-            <label><input type="radio" name="q5" value="0" /><span>Нет</span></label>
-            <label><input type="radio" name="q5" value="1" /><span>Разово, по желанию</span></label>
-            <label><input type="radio" name="q5" value="2" /><span>Системно, по ролям</span></label></div></fieldset>
-          <fieldset class="q"><legend><span>6</span>Измеряете ли эффект от ИИ?</legend><div class="opts">
-            <label><input type="radio" name="q6" value="0" /><span>Нет</span></label>
-            <label><input type="radio" name="q6" value="1" /><span>Оцениваем на глаз</span></label>
-            <label><input type="radio" name="q6" value="2" /><span>Есть метрики в деньгах и часах</span></label></div></fieldset>
-        </form>
-        <aside class="result" aria-live="polite">
-          <small id="r-count">Ответьте на вопросы — результат появится здесь</small>
-          <div class="ladder" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-          <div class="lvl" id="r-lvl">Уровень —</div>
-          <p id="r-text">Пять уровней: от отдельных экспериментов до компании, где процессы изначально строятся вокруг агентов.</p>
-          <a class="btn btn-primary" href="#lead" data-pick="AI-трансформация" id="r-btn">Обсудить следующий шаг</a>
-        </aside>
-      </div>
-    </div>
-  </section>
+      <p class="count" id="count" aria-live="polite">Показаны все 5 кейсов</p>
 
-  <section class="section band" id="levels">
-    <div class="wrap">
-      <div class="head"><h2 class="t-h2">Пять уровней зрелости</h2></div>
-      <ol class="levels">
-        <li><span>Уровень 0</span><b>Стихийно</b><p>Отдельные сотрудники пробуют ИИ на свой страх и риск, данные могут утекать.</p></li>
-        <li><span>Уровень 1</span><b>Инструменты</b><p>Есть разрешённые сервисы и базовые правила.</p></li>
-        <li><span>Уровень 2</span><b>Пилоты</b><p>Агенты работают в одном-двух процессах, эффект измерен.</p></li>
-        <li><span>Уровень 3</span><b>Масштаб</b><p>Агенты в большинстве отделов, общая база знаний и обучение.</p></li>
-        <li><span>Уровень 4</span><b>ИИ в основе</b><p>Процессы изначально строятся вокруг агентов, у каждой команды — своя библиотека навыков.</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="section" id="includes">
-    <div class="wrap">
-      <div class="head"><h2 class="t-h2">Что входит в работу</h2></div>
-      <ul class="rows">
-        <li><h3>Стратегическая сессия</h3><p>С руководством: цели, ограничения, приоритеты.</p></li>
-        <li><h3>Разбор процессов</h3><p>Карта задач по отделам с оценкой эффекта и сложности.</p></li>
-        <li><h3>Дорожная карта</h3><p>Пилоты, масштабирование, бюджет и показатели на 12 месяцев.</p></li>
-        <li><h3>Правила и безопасность</h3><p>Политика работы с ИИ, данные, требования 152-ФЗ.</p></li>
-        <li><h3>Обучение команд</h3><p>Практические программы для руководителей и сотрудников на их собственных задачах.</p></li>
-        <li><h3>Библиотека агентов</h3><p>Общие агенты и навыки, доступные всей компании.</p></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section" id="process">
-    <div class="wrap">
-      <div class="head"><h2 class="t-h2">Путь на год</h2></div>
-      <ol class="steps">
-        <li><span class="when">1–2 недели</span><h3>Диагностика</h3><p>Интервью, разбор процессов, оценка уровня.</p></li>
-        <li><span class="when">1–2 недели</span><h3>Стратегия</h3><p>Сессия с руководством, дорожная карта, бюджет.</p></li>
-        <li><span class="when">1–3 месяца</span><h3>Пилоты и обучение</h3><p>Первые агенты и программы для сотрудников.</p></li>
-        <li><span class="when">3–12 месяцев</span><h3>Масштаб</h3><p>Библиотека агентов, внутренняя экспертиза, показатели.</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="section band" id="pricing">
-    <div class="wrap">
-      <div class="head"><h2 class="t-h2">Цены</h2></div>
-      <div class="plans">
-        <article class="plan">
-          <h3>Стратегическая сессия</h3>
-          <div class="price">от 500 000 ₽<small>2–4 недели</small></div>
-          <p>Диагностика и дорожная карта.</p>
-          <ul><li>Интервью и разбор процессов</li><li>Сессия с руководством</li><li>Дорожная карта</li><li>Расчёт эффекта</li></ul>
-          <a class="btn btn-line" href="#lead" data-pick="AI-трансформация">Обсудить сессию</a>
+      <div class="cases">
+        <article class="case" data-tags="agents sites">
+          <div class="case-side">
+            <span class="ind">Логистика, B2B, Москва</span>
+            <h2>Ответ на заявку за 3 минуты вместо 4 часов</h2>
+            <dl>
+              <div><dt>Срок</dt><dd>10 недель</dd></div>
+              <div><dt>Услуги</dt><dd><a class="link" href="/social-stars-demo/ai/agents/">ИИ-агенты</a><a class="link" href="/social-stars-demo/ai/sites/">AI-сайт</a></dd></div>
+            </dl>
+          </div>
+          <div class="case-body">
+            <div><h3>Задача</h3><p>Грузоперевозчик получал до 300 заявок в неделю из почты, сайта и Telegram. Менеджеры отвечали в среднем через четыре часа, часть заявок терялась, а в CRM попадала половина данных.</p></div>
+            <div><h3>Что сделали</h3><p>Запустили агента продаж: он разбирает входящие, находит клиента в amoCRM, проверяет тарифы и свободный транспорт в 1С и готовит коммерческое предложение. Менеджер подтверждает и отправляет в один клик. На сайт добавили консультанта, который считает стоимость доставки.</p></div>
+            <div><h3>Результат</h3>
+              <div class="metrics">
+                <div><s>4 часа</s><b>3 минуты</b><span>среднее время первого ответа</span></div>
+                <div><s>18%</s><b>24%</b><span>конверсия заявки в сделку</span></div>
+                <div><b>2,1</b><span>ставки менеджеров освободились для крупных клиентов</span></div>
+              </div>
+            </div>
+          </div>
         </article>
-        <article class="plan">
-          <h3>Обучение команд</h3>
-          <div class="price">от 150 000 ₽<small>за группу до 20 человек</small></div>
-          <p>Практика на ваших задачах.</p>
-          <ul><li>Для руководителей и сотрудников</li><li>Материалы и записи</li><li>Домашние задания</li><li>Сертификат</li></ul>
-          <a class="btn btn-line" href="#lead" data-pick="AI-трансформация">Обсудить обучение</a>
+
+        <article class="case" data-tags="orm geo">
+          <div class="case-side">
+            <span class="ind">Сеть стоматологических клиник, Санкт-Петербург</span>
+            <h2>Старый скандал исчез из ответов пяти нейросетей из шести</h2>
+            <dl>
+              <div><dt>Срок</dt><dd>6 месяцев</dd></div>
+              <div><dt>Услуги</dt><dd><a class="link" href="/social-stars-demo/ai/neuro-orm/">Нейро-ORM</a><a class="link" href="/social-stars-demo/ai/seo-geo/">SEO и GEO</a></dd></div>
+            </dl>
+          </div>
+          <div class="case-body">
+            <div><h3>Задача</h3><p>На вопрос «какую клинику выбрать» нейросети пересказывали жалобу трёхлетней давности, путали адреса и почти не упоминали врачей. Пациенты приходили на консультацию с вопросами о давно закрытой истории.</p></div>
+            <div><h3>Что сделали</h3><p>Проверили ответы шести моделей на 340 вопросов и построили карту источников. Исправили данные в справочниках и на картах, переписали страницы врачей и услуг под ответы нейросетей, опубликовали материалы с главврачом в отраслевых изданиях.</p></div>
+            <div><h3>Результат</h3>
+              <div class="metrics">
+                <div><s>38</s><b>71</b><span>индекс AI-видимости</span></div>
+                <div><s>6 из 6</s><b>1 из 6</b><span>моделей упоминают старую жалобу</span></div>
+                <div><b>+24%</b><span>записей на приём из поиска и нейросетей</span></div>
+              </div>
+            </div>
+          </div>
         </article>
-        <article class="plan main">
-          <span class="badge">Полный путь</span>
-          <h3>Программа трансформации</h3>
-          <div class="price">от 2 000 000 ₽<small>сопровождение 6–12 месяцев</small></div>
-          <p>От стратегии до масштаба.</p>
-          <ul><li>Стратегия и пилоты</li><li>Библиотека агентов</li><li>Внутренняя экспертиза</li><li>Показатели эффекта</li></ul>
-          <a class="btn btn-primary" href="#lead" data-pick="AI-трансформация">Обсудить программу</a>
+
+        <article class="case" data-tags="avatars content">
+          <div class="case-side">
+            <span class="ind">Производство оборудования, экспорт в СНГ и ОАЭ</span>
+            <h2>Генеральный директор говорит на пяти языках — без единой съёмки</h2>
+            <dl>
+              <div><dt>Срок</dt><dd>3 месяца</dd></div>
+              <div><dt>Услуги</dt><dd><a class="link" href="/social-stars-demo/ai/avatars/">Цифровые аватары</a><a class="link" href="/social-stars-demo/ai/content/">Контент-завод</a></dd></div>
+            </dl>
+          </div>
+          <div class="case-body">
+            <div><h3>Задача</h3><p>Выход на рынки Казахстана, Узбекистана и ОАЭ требовал видео на местных языках. Директор — лучший спикер компании, но на съёмки у него не было времени, а каждый ролик с подрядчиком стоил как небольшой проект.</p></div>
+            <div><h3>Что сделали</h3><p>Записали образ и голос директора за один день, собрали редакцию на агентах: темы, сценарии и версии для каждой площадки. Ролики переводили на казахский, узбекский, английский и арабский тем же голосом, перевод проверяли носители языка.</p></div>
+            <div><h3>Результат</h3>
+              <div class="metrics">
+                <div><b>48</b><span>роликов за квартал на пяти языках</span></div>
+                <div><b>−80%</b><span>стоимость одного ролика</span></div>
+                <div><b>×2</b><span>заявок из Казахстана и Узбекистана</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="case" data-tags="agents">
+          <div class="case-side">
+            <span class="ind">Региональный центр обслуживания граждан</span>
+            <h2>Шесть обращений из десяти решаются без оператора</h2>
+            <dl>
+              <div><dt>Срок</dt><dd>4 месяца</dd></div>
+              <div><dt>Услуги</dt><dd><a class="link" href="/social-stars-demo/ai/agents/">ИИ-агенты</a><a class="link" href="/social-stars-demo/ai/transformation/">AI-трансформация</a></dd></div>
+            </dl>
+          </div>
+          <div class="case-body">
+            <div><h3>Задача</h3><p>Горячая линия и чат не справлялись с сезонными пиками: ответ по типовому вопросу о документах занимал до двух дней. Данные граждан нельзя было передавать во внешние сервисы.</p></div>
+            <div><h3>Что сделали</h3><p>Развернули агента поддержки на открытой модели внутри инфраструктуры заказчика, подключили базу регламентов и статусы заявлений. Сложные обращения агент передаёт специалисту вместе с кратким пересказом. Обучили сотрудников работе с агентом.</p></div>
+            <div><h3>Результат</h3>
+              <div class="metrics">
+                <div><b>62%</b><span>обращений решено без оператора</span></div>
+                <div><s>2 дня</s><b>4 минуты</b><span>среднее время ответа</span></div>
+                <div><b>0</b><span>передач данных за пределы контура</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="case" data-tags="os sites agents avatars geo orm">
+          <div class="case-side">
+            <span class="ind">Девелопер жилья, Московская область</span>
+            <h2>Одна система вместо пяти подрядчиков — и лид дешевле на четверть</h2>
+            <dl>
+              <div><dt>Срок</dt><dd>6 месяцев</dd></div>
+              <div><dt>Услуги</dt><dd><a class="link" href="/social-stars-demo/ai/growth-os/">AI Growth OS</a></dd></div>
+            </dl>
+          </div>
+          <div class="case-body">
+            <div><h3>Задача</h3><p>Сайт, реклама, SMM, колл-центр и работа с отзывами были у разных подрядчиков. Никто не видел общую картину, стоимость лида росла, а нейросети советовали покупателям соседние жилые комплексы.</p></div>
+            <div><h3>Что сделали</h3><p>Собрали AI Growth OS: новый сайт проекта с консультантом, агентов для первичной обработки заявок и записи на показ, видео от лица основателя, GEO по запросам о районе и нейро-ORM. Все показатели свели в одну панель.</p></div>
+            <div><h3>Результат</h3>
+              <div class="metrics">
+                <div><b>−27%</b><span>стоимость лида</span></div>
+                <div><b>+18%</b><span>сделок за полгода</span></div>
+                <div><s>29</s><b>64</b><span>индекс AI-видимости</span></div>
+              </div>
+            </div>
+          </div>
         </article>
       </div>
-    </div>
-  </section>
+      <p class="empty" id="empty" hidden>По этой услуге кейсов пока нет — расскажем о похожих проектах на звонке.</p>
 
-  <section class="section band" id="faq" style="padding-top:0">
-    <div class="wrap">
-      <div class="head"><h2 class="t-h2">Вопросы</h2></div>
-      <div class="faq">
-        <details><summary>Кому нужна трансформация, а кому хватит одного агента?</summary><div class="a"><p>Если задача в одном процессе — начните с пилота ИИ-агента. Если ИИ нужен во многих отделах и важны правила и безопасность — нужна программа трансформации.</p></div></details>
-        <details><summary>Это сократит штат?</summary><div class="a"><p>Цель — снять рутину и расти без пропорционального роста команды. Как использовать освободившееся время, решает компания.</p></div></details>
-        <details><summary>Работаете с госсектором?</summary><div class="a"><p>Да. У Social Stars много проектов для государственных заказчиков, включая требования к данным и российским моделям.</p></div></details>
-        <details><summary>Как оценить эффект до начала?</summary><div class="a"><p>На диагностике считаем эффект по каждому процессу и выбираем пилоты с лучшим соотношением эффекта и сложности.</p></div></details>
-      </div>
-      <a class="next" href="/social-stars-demo/ai/growth-os/" style="margin-top:clamp(64px,8vw,112px)"><span>Флагманский комплекс</span><strong>AI Growth OS</strong></a>
+      <a class="next" href="/social-stars-demo/ai/" style="margin-top:clamp(64px,8vw,112px)"><span>Все направления</span><strong>Social Stars AI</strong></a>
     </div>
   </section>
 
@@ -372,7 +357,7 @@
   <div class="wrap">
     <div class="ftr-grid">
       <div class="about">
-        <a class="brand" href="/social-stars-demo/ai/" aria-label="Social Stars AI — на главную направления"><svg class="brand-star" viewBox="0 0 100 91.2" aria-hidden="true"><use href="#ss-star"/></svg><span class="brand-word" aria-hidden="true"><svg class="bw-social" viewBox="0 0 66.97 11.77"><use href="#ss-social"/></svg><svg class="bw-stars" viewBox="0 0 61.26 11.78"><use href="#ss-stars"/></svg></span><span class="brand-sep" aria-hidden="true"></span><svg class="brand-ai" viewBox="0 0 15.95 11.78" aria-hidden="true"><use href="#ss-ai"/></svg></a>
+        <a class="brand" href="/social-stars-demo/ai/" aria-label="Social Stars AI — на главную направления"><svg class="brand-star" viewBox="0 0 100 91.2" aria-hidden="true"><use href="#ss-star"/></svg><span class="brand-word" aria-hidden="true"><svg class="bw-social" viewBox="0 0 66.97 11.77"><use href="#ss-social"/></svg><svg class="bw-stars" viewBox="0 0 61.26 11.78"><use href="#ss-stars"/></svg></span><span class="brand-sep" aria-hidden="true"></span><svg class="brand-ai" viewBox="0 0 15.95 11.78" aria-hidden="true"><use href="#ss-ai"/></svg></a>
         <p>Направление Social Stars. 12 лет в репутации и продвижении — теперь с ИИ в каждой услуге.</p>
       </div>
       <div>
@@ -415,25 +400,17 @@
 <script src="/social-stars-demo/ai/ai.js" defer></script>
 <script>
 (() => {
-  const L = [
-    ['Уровень 0 — стихийно', 'ИИ используют отдельные люди без правил. Первый шаг — разрешённые сервисы и политика работы с данными, затем один пилот с измеримым эффектом.'],
-    ['Уровень 1 — инструменты', 'Сервисы есть, но процессы прежние. Следующий шаг — выбрать один процесс с понятной метрикой и запустить пилот агента.'],
-    ['Уровень 2 — пилоты', 'Эффект доказан. Пора собрать общую базу знаний, обучить команды и перенести подход на соседние отделы.'],
-    ['Уровень 3 — масштаб', 'Агенты работают во многих отделах. Следующий шаг — общая библиотека агентов, внутренняя экспертиза и показатели эффекта в деньгах.'],
-    ['Уровень 4 — ИИ в основе', 'Вы среди лидеров. Поможем удержать темп: новые сценарии, аудит качества и безопасность.'],
-  ];
-  const form = document.getElementById('quiz'), N = 6;
-  const cnt = document.getElementById('r-count'), lvl = document.getElementById('r-lvl'), txt = document.getElementById('r-text');
-  const bars = [...document.querySelectorAll('.ladder i')];
-  form.addEventListener('change', () => {
-    const vals = [...new FormData(form).values()].map(Number);
-    const sum = vals.reduce((a, b) => a + b, 0);
-    if (vals.length < N) { cnt.textContent = `Отвечено ${vals.length} из ${N}`; return; }
-    const k = Math.min(4, Math.round(sum / 12 * 4));
-    cnt.textContent = 'Ваш результат';
-    lvl.textContent = L[k][0]; txt.textContent = L[k][1];
-    bars.forEach((b, i) => { b.className = i < k ? 'on' : i === k ? 'now' : ''; });
-  });
+  const btns = [...document.querySelectorAll('.filter button')], cases = [...document.querySelectorAll('.case')];
+  const count = document.getElementById('count'), empty = document.getElementById('empty');
+  const word = n => n % 10 === 1 && n % 100 !== 11 ? 'кейс' : [2, 3, 4].includes(n % 10) && ![12, 13, 14].includes(n % 100) ? 'кейса' : 'кейсов';
+  btns.forEach(b => b.addEventListener('click', () => {
+    const f = b.dataset.f;
+    btns.forEach(x => x.setAttribute('aria-pressed', x === b));
+    let n = 0;
+    cases.forEach(c => { const on = f === 'all' || c.dataset.tags.split(' ').includes(f); c.hidden = !on; if (on) n++; });
+    empty.hidden = n > 0;
+    count.textContent = f === 'all' ? `Показаны все ${n} ${word(n)}` : `Показано: ${n} ${word(n)}`;
+  }));
 })();
 </script>
 </body>
