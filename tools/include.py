@@ -3,7 +3,7 @@
 
 Страницы — обычный статический HTML. Общие блоки лежат в tools/partials/*.html
 и вставляются между маркерами:
-    <!-- @header -->…<!-- /@header -->   <!-- @cta -->…<!-- /@cta -->   <!-- @footer -->…<!-- /@footer -->
+    <!-- @intro -->…<!-- /@intro -->   <!-- @header -->…<!-- /@header -->   <!-- @cta -->…<!-- /@cta -->   <!-- @footer -->…<!-- /@footer -->
 Запуск из корня репозитория после правки партиалов:  python3 tools/include.py
 """
 import re
@@ -11,6 +11,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PARTS = {p.stem: p.read_text(encoding="utf-8").strip() for p in (ROOT / "tools" / "partials").glob("*.html")}
+# партиалы могут вставлять другие партиалы: {{имя}}
+for k, v in PARTS.items():
+    PARTS[k] = re.sub(r"\{\{([\w-]+)\}\}", lambda m: PARTS[m.group(1)], v)
 
 for page in sorted((ROOT / "ai").rglob("index.html")):
     src = page.read_text(encoding="utf-8")

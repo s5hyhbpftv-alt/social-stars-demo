@@ -1,0 +1,42 @@
+<div class="intro" id="intro" role="presentation">
+  <div class="intro-sky" aria-hidden="true"></div>
+  <div class="intro-stage" aria-hidden="true">
+    <div class="intro-star">
+      <svg viewBox="0 0 100 91.2">
+        <defs>
+          <clipPath id="ss-clip"><use href="#ss-p0"/><use href="#ss-p1"/><use href="#ss-p2"/></clipPath>
+          <linearGradient id="ss-sheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+        </defs>
+        <use href="#ss-star"/>
+        <g clip-path="url(#ss-clip)"><rect class="intro-sheen" x="-40" y="-10" width="34" height="120" fill="url(#ss-sheen)" transform="skewX(-18)"/></g>
+      </svg>
+    </div>
+    <div class="intro-floor"></div>
+    <div class="intro-word">
+      <svg class="iw-social" viewBox="0 0 66.97 11.77"><use href="#ss-social"/></svg>
+      <svg class="iw-stars" viewBox="0 0 61.26 11.78"><use href="#ss-stars"/></svg>
+    </div>
+    <div class="intro-sub"><span class="intro-line"></span><svg class="intro-ai" viewBox="0 0 15.95 11.78"><use href="#ss-ai"/></svg><span class="intro-line"></span></div>
+  </div>
+  <button class="intro-skip" type="button">Пропустить</button>
+</div>
+<script>
+(() => {
+  const el = document.getElementById('intro'), root = document.documentElement;
+  let seen = false;
+  try { seen = sessionStorage.getItem('ss-intro') === '1'; sessionStorage.setItem('ss-intro', '1'); } catch (e) {}
+  if (seen) { el.remove(); return; }
+  root.classList.add('intro-on');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let done = false;
+  const leave = () => {
+    if (done) return; done = true;
+    el.classList.add('is-leaving');
+    setTimeout(() => { root.classList.remove('intro-on'); el.remove(); }, reduce ? 300 : 1100);
+    ['keydown', 'wheel', 'touchstart'].forEach(t => removeEventListener(t, leave));
+  };
+  const t = setTimeout(leave, reduce ? 1000 : 3900);
+  el.addEventListener('click', () => { clearTimeout(t); leave(); });
+  ['keydown', 'wheel', 'touchstart'].forEach(ev => addEventListener(ev, () => { clearTimeout(t); leave(); }, { passive: true, once: true }));
+})();
+</script>
