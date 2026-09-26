@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Social Stars AI — сайты, ИИ-агенты, аватары и GEO</title>
+  <meta name="description" content="Social Stars AI: AI-сайты, внедрение ИИ-агентов в бизнес-процессы, цифровые аватары, SEO и продвижение в ответах нейросетей (GEO), репутация бренда в ChatGPT, Алисе и GigaChat." />
+  <link rel="icon" type="image/svg+xml" href="/social-stars-demo/favicon.svg" />
+  <link rel="canonical" href="https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Social Stars" />
+  <meta property="og:title" content="Social Stars AI — репутация и продажи в эпоху нейросетей" />
+  <meta property="og:description" content="AI-сайты, ИИ-агенты, цифровые аватары, SEO + GEO и нейро-ORM в одной команде." />
+  <meta property="og:url" content="https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/" />
+  <meta property="og:image" content="https://s5hyhbpftv-alt.github.io/social-stars-demo/media/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"ProfessionalService","@id":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/#service","name":"Social Stars AI","url":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/","parentOrganization":{"@id":"https://s5hyhbpftv-alt.github.io/social-stars-demo/#org"},"telephone":"+7 985 400 92 99","email":"info@social-stars.ru","areaServed":"RU","address":{"@type":"PostalAddress","addressLocality":"Москва","streetAddress":"ул. Лесная, 57, стр. 4","addressCountry":"RU"},
+     "hasOfferCatalog":{"@type":"OfferCatalog","name":"Услуги Social Stars AI","itemListElement":[
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"AI-сайты"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"ИИ-агенты и автоматизация бизнес-процессов"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Цифровые аватары"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"SEO и GEO-продвижение в нейросетях"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Нейро-ORM: репутация в ответах ИИ"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"AI-контент-завод"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"AI-трансформация и обучение команд"}}]}},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Что такое GEO?","acceptedAnswer":{"@type":"Answer","text":"GEO (Generative Engine Optimization) — оптимизация сайта и присутствия бренда в сети так, чтобы нейросети (Алиса AI, Яндекс Нейро, GigaChat, ChatGPT, Perplexity) цитировали и рекомендовали вас в своих ответах. GEO работает в связке с классическим SEO."}},
+      {"@type":"Question","name":"Что такое нейро-ORM?","acceptedAnswer":{"@type":"Answer","text":"Управление тем, что нейросети отвечают о компании или персоне: мониторинг ответов нескольких моделей, исправление первоисточников, наращивание достоверных упоминаний и вытеснение устаревшего негатива."}},
+      {"@type":"Question","name":"Можно ли внедрить ИИ без передачи данных за рубеж?","acceptedAnswer":{"@type":"Answer","text":"Да. Мы строим контур на российских моделях (GigaChat, YandexGPT) или open-source моделях в российском облаке либо на серверах клиента — с учётом 152-ФЗ."}},
+      {"@type":"Question","name":"Сколько длится внедрение ИИ-агента?","acceptedAnswer":{"@type":"Answer","text":"Аудит — до 48 часов, пилот на одном процессе — 2–4 недели, масштабирование — по дорожной карте."}}]}
+  ]}
+  </script>
+  <style>
+    @font-face{font-family:"Geologica Variable";font-style:normal;font-display:swap;font-weight:100 900;src:url(/social-stars-demo/assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2) format("woff2-variations");unicode-range:U+301,U+400-45F,U+490-491,U+4B0-4B1,U+2116}
+    @font-face{font-family:"Geologica Variable";font-style:normal;font-display:swap;font-weight:100 900;src:url(/social-stars-demo/assets/geologica-cyrillic-ext-wght-normal-C8B9Chlh.woff2) format("woff2-variations");unicode-range:U+460-52F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+    @font-face{font-family:"Geologica Variable";font-style:normal;font-display:swap;font-weight:100 900;src:url(/social-stars-demo/assets/geologica-latin-wght-normal-BBL8hQxZ.woff2) format("woff2-variations");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+    :root{
+      --ink:#111;--ink-2:#333;--muted:#6b6f76;--line:#e3e5e8;--bg:#fff;--bg-2:#f3f4f5;
+      --bronze:#b38d69;--sand:#cca88a;--gold:#dfbea5;--deep:#0c0b0a;--deep-2:#171513;--deep-line:#2b2622;
+      --radius:20px;--radius-sm:12px;
+      --max:1240px;
+      --font:"Geologica Variable","Geologica",system-ui,-apple-system,"Segoe UI",sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:inherit}
+    img,svg{display:block;max-width:100%}
+    h1,h2,h3{font-weight:500;letter-spacing:-.02em;margin:0}
+    p{margin:0}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);font-weight:500}
+    .eyebrow::before{content:"";width:18px;height:1px;background:currentColor}
+    section{padding:110px 0}
+    .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:56px;flex-wrap:wrap}
+    .sec-head h2{font-size:clamp(32px,4.4vw,56px);line-height:1.05;max-width:680px;margin-top:14px}
+    .sec-head p{max-width:400px;color:var(--muted)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:18px 28px;border-radius:12px;font:500 16px/1 var(--font);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .2s,background .2s,border-color .2s,color .2s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-gold{background:linear-gradient(135deg,var(--gold),var(--bronze));color:#1a130c}
+    .btn-ghost{border-color:rgba(255,255,255,.22);color:#fff}
+    .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+    .btn-dark{background:var(--ink);color:#fff}
+    :focus-visible{outline:2px solid var(--bronze);outline-offset:3px}
+
+    /* nav */
+    .nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+    .nav.solid{background:rgba(12,11,10,.95);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--deep-line)}
+    .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+    .logo{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-weight:500;font-size:18px;white-space:nowrap}
+    .logo img{width:26px;height:auto}
+    .logo b{font-weight:500;background:linear-gradient(135deg,var(--gold),var(--bronze));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+    .nav-links a{color:rgba(255,255,255,.72);text-decoration:none;font-size:15px}
+    .nav-links a:hover{color:#fff}
+    .nav .btn{padding:13px 20px;font-size:15px}
+    @media (max-width:980px){.nav-links{display:none}}
+
+    /* hero */
+    .hero{position:relative;background:var(--deep);color:#fff;padding:170px 0 90px;overflow:hidden;isolation:isolate}
+    .hero::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at 60% 40%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 60% 40%,#000 20%,transparent 75%)}
+    .orb{position:absolute;border-radius:50%;filter:blur(90px);z-index:-1;opacity:.55;animation:float 16s ease-in-out infinite}
+    .orb.a{width:520px;height:520px;background:#8a6340;top:-160px;right:-120px}
+    .orb.b{width:380px;height:380px;background:#3b2c20;bottom:-140px;left:-80px;animation-delay:-6s}
+    @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-40px,30px)}}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+    .hero h1{font-size:clamp(40px,6.2vw,84px);line-height:1;margin:22px 0 26px}
+    .hero h1 em{font-style:normal;background:linear-gradient(120deg,var(--gold),var(--bronze) 60%,#8a6a4b);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero-lead{font-size:20px;color:rgba(255,255,255,.72);max-width:600px}
+    .hero-cta{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:40px}
+    .hero-tags span{font-size:13px;padding:8px 14px;border:1px solid var(--deep-line);border-radius:100px;color:rgba(255,255,255,.66)}
+
+    .chat{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--deep-line);border-radius:24px;padding:22px;backdrop-filter:blur(8px);box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+    .chat-top{display:flex;align-items:center;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:18px}
+    .dots{display:flex;gap:6px}.dots i{width:9px;height:9px;border-radius:50%;background:var(--deep-line)}
+    .msg{padding:14px 16px;border-radius:16px;font-size:15px;line-height:1.5;margin-bottom:12px}
+    .msg.q{background:rgba(255,255,255,.08);margin-left:40px}
+    .msg.a{background:rgba(179,141,105,.1);border:1px solid rgba(179,141,105,.28);min-height:176px}
+    .msg.a .who{font-size:12px;color:var(--sand);margin-bottom:6px;letter-spacing:.06em;text-transform:uppercase}
+    .caret{display:inline-block;width:8px;height:1.1em;background:var(--gold);vertical-align:-3px;margin-left:2px;animation:blink 1s steps(1) infinite}
+    @keyframes blink{50%{opacity:0}}
+    .chat-note{font-size:12px;color:rgba(255,255,255,.4);margin-top:6px}
+    .models{display:flex;gap:6px;flex-wrap:wrap}
+    .models button{font:500 12px/1 var(--font);padding:7px 10px;border-radius:100px;border:1px solid var(--deep-line);background:transparent;color:rgba(255,255,255,.6);cursor:pointer}
+    .models button[aria-pressed="true"]{background:var(--bronze);border-color:var(--bronze);color:#1a130c}
+
+    .ticker{border-top:1px solid var(--deep-line);margin-top:80px;padding-top:28px;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+    .ticker-track{display:flex;gap:56px;width:max-content;animation:scroll 40s linear infinite}
+    .ticker span{color:rgba(255,255,255,.42);font-size:18px;white-space:nowrap}
+    @keyframes scroll{to{transform:translateX(-50%)}}
+
+    /* why now */
+    .why{background:var(--deep-2);color:#fff;padding:90px 0}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--deep-line);border:1px solid var(--deep-line);border-radius:var(--radius);overflow:hidden}
+    .stat{background:var(--deep-2);padding:36px 30px}
+    .stat b{display:block;font-size:clamp(34px,4vw,52px);font-weight:500;line-height:1;background:linear-gradient(135deg,var(--gold),var(--bronze));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px}
+    .stat p{color:rgba(255,255,255,.66);font-size:15px}
+    .stat small{display:block;margin-top:12px;color:rgba(255,255,255,.35);font-size:12px}
+    .why h2{font-size:clamp(28px,3.4vw,44px);line-height:1.1;max-width:880px;margin:14px 0 48px}
+
+    /* services */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .svc{position:relative;background:var(--bg-2);border-radius:var(--radius);padding:34px 32px 30px;display:flex;flex-direction:column;gap:14px;transition:transform .25s,box-shadow .25s;overflow:hidden}
+    .svc:hover{transform:translateY(-4px);box-shadow:0 24px 50px -24px rgba(0,0,0,.25)}
+    .svc .ico{width:52px;height:52px;border-radius:14px;background:#fff;display:grid;place-items:center;color:var(--bronze)}
+    .svc h3{font-size:24px;line-height:1.15;margin-top:8px}
+    .svc p{color:var(--muted);font-size:15.5px}
+    .svc ul{margin:4px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+    .svc li{font-size:12.5px;background:#fff;padding:6px 10px;border-radius:100px;color:var(--ink-2)}
+    .svc .num{position:absolute;top:26px;right:30px;font-size:14px;color:#b9bcc1}
+    .svc.flag{grid-column:span 2;background:var(--deep);color:#fff}
+    .svc.flag p{color:rgba(255,255,255,.66)}
+    .svc.flag .ico{background:rgba(179,141,105,.16);color:var(--gold)}
+    .svc.flag li{background:rgba(255,255,255,.08);color:rgba(255,255,255,.8)}
+    .svc.flag .num{color:var(--bronze)}
+    .svc.flag h3{font-size:32px}
+    .svc .more{margin-top:auto;padding-top:14px;font-size:14px;color:var(--bronze);text-decoration:none}
+
+    /* neuro-orm */
+    .norm{background:var(--bg-2)}
+    .norm-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .norm h2{font-size:clamp(32px,4.2vw,54px);line-height:1.05;margin:14px 0 22px}
+    .norm-lead{color:var(--muted);font-size:18px}
+    .steps{list-style:none;padding:0;margin:34px 0 0;display:grid;gap:14px;counter-reset:s}
+    .steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+    .steps li::before{content:counter(s,decimal-leading-zero);font-size:14px;color:var(--bronze);border:1px solid var(--sand);border-radius:10px;height:36px;display:grid;place-items:center}
+    .steps b{font-weight:500;display:block}
+    .steps span{color:var(--muted);font-size:15px}
+    .radar{background:#fff;border-radius:24px;padding:28px;box-shadow:0 30px 60px -30px rgba(0,0,0,.2)}
+    .radar h4{margin:0 0 4px;font-weight:500;font-size:18px}
+    .radar .sub{color:var(--muted);font-size:13px;margin-bottom:22px}
+    .bar{display:grid;grid-template-columns:120px 1fr 44px;gap:12px;align-items:center;margin-bottom:14px;font-size:14px}
+    .bar .track{height:10px;border-radius:10px;background:var(--bg-2);overflow:hidden}
+    .bar .fill{height:100%;width:0;border-radius:10px;background:linear-gradient(90deg,var(--sand),var(--bronze));transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+    .bar .v{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+    .radar .legend{display:flex;justify-content:space-between;border-top:1px solid var(--line);margin-top:20px;padding-top:16px;font-size:13px;color:var(--muted)}
+
+    /* compare */
+    .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius)}
+    table{width:100%;border-collapse:collapse;min-width:760px;font-size:15px}
+    th,td{padding:18px 22px;text-align:left;border-bottom:1px solid var(--line)}
+    thead th{font-weight:500;color:var(--muted);font-size:13px;letter-spacing:.06em;text-transform:uppercase;background:var(--bg-2)}
+    thead th.us{background:var(--deep);color:var(--gold)}
+    td.us{background:#fbf7f3;font-weight:500}
+    tbody tr:last-child td{border-bottom:0}
+    .y{color:#2f7d4f}.n{color:#b9bcc1}.p{color:#b07d2a}
+
+    /* calc */
+    .calc{background:var(--deep);color:#fff}
+    .calc .sec-head p{color:rgba(255,255,255,.6)}
+    .calc-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+    .panel{border:1px solid var(--deep-line);border-radius:var(--radius);padding:34px;background:var(--deep-2)}
+    .field{margin-bottom:28px}
+    .field label{display:flex;justify-content:space-between;font-size:15px;color:rgba(255,255,255,.78);margin-bottom:12px}
+    .field output{color:var(--gold);font-variant-numeric:tabular-nums}
+    input[type=range]{width:100%;appearance:none;-webkit-appearance:none;height:4px;border-radius:4px;background:var(--deep-line);outline-offset:6px}
+    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--gold);border:4px solid var(--deep);box-shadow:0 0 0 1px var(--bronze);cursor:pointer}
+    input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--gold);border:4px solid var(--deep);cursor:pointer}
+    .result{display:flex;flex-direction:column;gap:22px;background:linear-gradient(160deg,#2a1f16,var(--deep-2))}
+    .result .big{font-size:clamp(40px,5vw,62px);font-weight:500;line-height:1;background:linear-gradient(135deg,var(--gold),var(--bronze));-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums}
+    .result .lbl{font-size:14px;color:rgba(255,255,255,.55);margin-bottom:8px}
+    .result .row{display:grid;grid-template-columns:1fr 1fr;gap:16px;border-top:1px solid var(--deep-line);padding-top:20px}
+    .result .row b{display:block;font-size:26px;font-weight:500;font-variant-numeric:tabular-nums}
+    .result .fine{font-size:12px;color:rgba(255,255,255,.4);line-height:1.5}
+
+    /* process */
+    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:p}
+    .step{border-top:2px solid var(--ink);padding-top:24px;counter-increment:p}
+    .step::before{content:"0" counter(p);display:block;font-size:14px;color:var(--bronze);margin-bottom:20px}
+    .step h3{font-size:22px;margin-bottom:10px}
+    .step p{color:var(--muted);font-size:15px}
+    .step .t{display:inline-block;margin-top:16px;font-size:13px;background:var(--bg-2);padding:6px 12px;border-radius:100px}
+
+    /* pricing */
+    .pricing{background:var(--bg-2)}
+    .plans{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .plan{background:#fff;border-radius:var(--radius);padding:30px 26px;display:flex;flex-direction:column;gap:14px;border:1px solid transparent}
+    .plan h3{font-size:20px}
+    .plan .price{font-size:30px;font-weight:500;letter-spacing:-.02em}
+    .plan .price small{font-size:14px;color:var(--muted);font-weight:400}
+    .plan p{color:var(--muted);font-size:14.5px}
+    .plan ul{list-style:none;padding:0;margin:4px 0 8px;display:grid;gap:9px;font-size:14.5px}
+    .plan li{padding-left:24px;position:relative}
+    .plan li::before{content:"";position:absolute;left:0;top:7px;width:12px;height:7px;border-left:2px solid var(--bronze);border-bottom:2px solid var(--bronze);transform:rotate(-45deg)}
+    .plan .btn{margin-top:auto}
+    .plan.hot{background:var(--deep);color:#fff;border-color:var(--bronze);position:relative}
+    .plan.hot p,.plan.hot .price small{color:rgba(255,255,255,.6)}
+    .plan.hot .badge{position:absolute;top:-12px;left:26px;background:var(--bronze);color:#1a130c;font-size:12px;padding:5px 12px;border-radius:100px}
+    .note{margin-top:22px;font-size:13px;color:var(--muted)}
+
+    /* legacy */
+    .legacy-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:start}
+    .legacy h2{font-size:clamp(30px,3.8vw,48px);line-height:1.08;margin:14px 0 20px}
+    .legacy-lead{color:var(--muted)}
+    .kpis{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
+    .kpis div{background:var(--bg-2);border-radius:var(--radius-sm);padding:22px}
+    .kpis b{display:block;font-size:40px;font-weight:500;line-height:1;margin-bottom:6px}
+    .kpis span{font-size:14px;color:var(--muted)}
+    .links{display:grid;gap:10px}
+    .links a{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 26px;border:1px solid var(--line);border-radius:var(--radius-sm);text-decoration:none;transition:border-color .2s,background .2s}
+    .links a:hover{border-color:var(--bronze);background:#fbf7f3}
+    .links b{font-weight:500;display:block}
+    .links span{font-size:14px;color:var(--muted)}
+    .links i{font-style:normal;color:var(--bronze);font-size:20px}
+
+    /* faq */
+    .faq{max-width:900px;margin:0 auto}
+    details{border-bottom:1px solid var(--line);padding:24px 0}
+    summary{list-style:none;cursor:pointer;font-size:20px;font-weight:500;display:flex;justify-content:space-between;gap:20px}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"+";color:var(--bronze);font-size:26px;line-height:1;transition:transform .2s}
+    details[open] summary::after{transform:rotate(45deg)}
+    details p{color:var(--muted);margin-top:14px;max-width:760px}
+
+    /* lead */
+    .lead{background:var(--deep);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+    .lead .orb.a{top:auto;bottom:-260px;right:-160px}
+    .lead-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+    .lead h2{font-size:clamp(34px,4.6vw,60px);line-height:1.02;margin:14px 0 22px}
+    .lead-lead{color:rgba(255,255,255,.66);font-size:18px}
+    .contacts{margin-top:36px;display:grid;gap:8px;font-size:18px}
+    .contacts a{text-decoration:none;color:var(--gold)}
+    form{display:grid;gap:14px}
+    .inp{width:100%;padding:18px 20px;border-radius:12px;border:1px solid var(--deep-line);background:rgba(255,255,255,.04);color:#fff;font:400 16px var(--font)}
+    .inp::placeholder{color:rgba(255,255,255,.4)}
+    .inp:focus{outline:none;border-color:var(--bronze)}
+    fieldset{border:0;padding:0;margin:4px 0}
+    legend{font-size:14px;color:rgba(255,255,255,.6);margin-bottom:10px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chips label{cursor:pointer}
+    .chips input{position:absolute;opacity:0;pointer-events:none}
+    .chips span{display:inline-block;padding:10px 14px;border-radius:100px;border:1px solid var(--deep-line);font-size:14px;color:rgba(255,255,255,.72);transition:.2s}
+    .chips input:checked+span{background:var(--bronze);border-color:var(--bronze);color:#1a130c}
+    .chips input:focus-visible+span{outline:2px solid var(--gold);outline-offset:2px}
+    .consent{font-size:12px;color:rgba(255,255,255,.4)}
+    .consent a{color:rgba(255,255,255,.6)}
+    .form-msg{font-size:14px;color:var(--gold);min-height:1.2em}
+
+    footer{background:#070605;color:rgba(255,255,255,.45);padding:40px 0;font-size:14px}
+    footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    footer a{color:rgba(255,255,255,.65);text-decoration:none}
+
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+    .reveal.in{opacity:1;transform:none}
+
+    @media (max-width:1080px){
+      .services{grid-template-columns:1fr 1fr}
+      .svc.flag{grid-column:span 2}
+      .plans{grid-template-columns:1fr 1fr}
+      .stats{grid-template-columns:1fr 1fr}
+      .process{grid-template-columns:1fr 1fr;row-gap:44px}
+    }
+    @media (max-width:860px){
+      section{padding:80px 0}
+      .hero{padding:130px 0 70px}
+      .hero-grid,.norm-grid,.calc-grid,.legacy-grid,.lead-grid{grid-template-columns:1fr;gap:40px}
+      .services,.plans,.process{grid-template-columns:1fr}
+      .svc.flag{grid-column:auto}
+      .nav .btn{display:none}
+    }
+    @media (max-width:520px){
+      .wrap{padding:0 16px}
+      .stats{grid-template-columns:1fr}
+      .kpis{grid-template-columns:1fr 1fr}
+      .bar{grid-template-columns:92px 1fr 40px}
+      .panel{padding:24px}
+      .msg.q{margin-left:0}
+    }
+    @media (prefers-reduced-motion:reduce){
+      *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+      .reveal{opacity:1;transform:none}
+    }
+  </style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-web" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01M8 13l-2 2 2 2M16 13l2 2-2 2M13 12l-2 6"/></symbol>
+  <symbol id="i-agent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><circle cx="12" cy="13" r="3"/><path d="M12 7v3M10 15l-3.5 2M14 15l3.5 2"/></symbol>
+  <symbol id="i-avatar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="4"/><path d="M4.5 20c1.4-3.6 4.2-5 7.5-5s6.1 1.4 7.5 5"/><path d="M18 3l.7 1.5L20 5l-1.3.6L18 7l-.7-1.4L16 5l1.3-.5z"/></symbol>
+  <symbol id="i-geo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M8 10.5h5M10.5 8v5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-factory" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M10 9l5 2.5-5 2.5z"/><path d="M8 21h8"/></symbol>
+  <symbol id="i-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 3 3h1V4z"/><path d="M15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-3 3h-1V4z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.6 6.3L21 9l-5 4.4 1.5 6.6L12 16.8 6.5 20 8 13.4 3 9l6.4-.7z"/></symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Social Stars AI — наверх"><img src="/social-stars-demo/favicon.svg" alt="" width="26" height="27" />Social Stars <b>AI</b></a>
+    <nav aria-label="Разделы">
+      <ul class="nav-links">
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#neuro-orm">Нейро-ORM</a></li>
+        <li><a href="#roi">Калькулятор</a></li>
+        <li><a href="#pricing">Пакеты</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-gold" href="#lead">Бесплатный AI-аудит</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="orb a"></div><div class="orb b"></div>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Новое направление Social Stars</span>
+          <h1>Репутация и продажи <em>в эпоху нейросетей</em></h1>
+          <p class="hero-lead">AI-сайты, ИИ-агенты в бизнес-процессах, цифровые аватары, SEO + GEO и управление тем, что нейросети говорят о вашем бренде. Одна команда — один результат.</p>
+          <div class="hero-cta">
+            <a class="btn btn-gold" href="#lead">Получить AI-аудит за 48 часов</a>
+            <a class="btn btn-ghost" href="#roi">Посчитать экономию</a>
+          </div>
+          <div class="hero-tags">
+            <span>ИИ-агенты</span><span>AI-сайты</span><span>Цифровые аватары</span><span>SEO + GEO</span><span>Нейро-ORM</span><span>152-ФЗ</span>
+          </div>
+        </div>
+
+        <div class="chat" aria-label="Иллюстрация: ответ нейросети о бренде">
+          <div class="chat-top">
+            <div class="dots"><i></i><i></i><i></i></div>
+            <div class="models" role="group" aria-label="Нейросеть">
+              <button type="button" aria-pressed="true" data-m="Алиса AI">Алиса AI</button>
+              <button type="button" aria-pressed="false" data-m="GigaChat">GigaChat</button>
+              <button type="button" aria-pressed="false" data-m="ChatGPT">ChatGPT</button>
+            </div>
+          </div>
+          <div class="msg q">Кто в Москве может внедрить ИИ-агентов в продажи и заодно следить за репутацией компании?</div>
+          <div class="msg a"><div class="who" id="who">Алиса AI</div><span id="typed"></span><span class="caret"></span></div>
+          <p class="chat-note">Иллюстрация цели GEO: бренд — в ответе нейросети, с верными фактами.</p>
+        </div>
+      </div>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>Алиса AI</span><span>Яндекс Нейро</span><span>GigaChat</span><span>YandexGPT</span><span>ChatGPT</span><span>DeepSeek</span><span>Perplexity</span><span>n8n</span><span>LangGraph</span><span>amoCRM</span><span>Битрикс24</span><span>1С</span><span>Telegram</span><span>HeyGen</span>
+          <span>Алиса AI</span><span>Яндекс Нейро</span><span>GigaChat</span><span>YandexGPT</span><span>ChatGPT</span><span>DeepSeek</span><span>Perplexity</span><span>n8n</span><span>LangGraph</span><span>amoCRM</span><span>Битрикс24</span><span>1С</span><span>Telegram</span><span>HeyGen</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY NOW -->
+  <section class="why">
+    <div class="wrap">
+      <span class="eyebrow">Почему сейчас</span>
+      <h2 class="reveal">Клиенты больше не ищут — они спрашивают нейросеть. Бизнес, которого нет в её ответе, теряет спрос.</h2>
+      <div class="stats reveal">
+        <div class="stat"><b>316 млрд ₽</b><p>объём рынка ИИ в России по итогам 2025 года, +29,7% за год</p><small>TAdviser</small></div>
+        <div class="stat"><b>71%</b><p>крупных компаний РФ уже используют генеративный ИИ хотя бы в одной функции</p><small>Ведомости, 2026</small></div>
+        <div class="stat"><b>78%</b><p>из инвестирующих в ИИ уже фиксируют финансовую отдачу</p><small>Ведомости, 2026</small></div>
+        <div class="stat"><b>−65%</b><p>времени на запуск кампаний у агентств, перешедших на ИИ-агентов</p><small>Adweek, кейс Jellyfish</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="eyebrow">Что мы делаем</span><h2>Семь направлений — одна система роста</h2></div>
+        <p>Мировые лидеры разделены: одни делают сайты, другие — автоматизацию, третьи — аватары. Мы собираем всё в единый контур вокруг вашей выручки и репутации.</p>
+      </div>
+      <div class="services">
+        <article class="svc flag reveal">
+          <span class="num">★ флагман</span>
+          <div class="ico"><svg width="26" height="26"><use href="#i-star"/></svg></div>
+          <h3>AI Growth OS</h3>
+          <p>Комплекс «под ключ»: AI-сайт + ИИ-агенты продаж и поддержки + аватар основателя + SEO/GEO + нейро-ORM. Единый дашборд, KPI по лидам, видимости в нейросетях и экономии ФОТ.</p>
+          <ul><li>Стратегия</li><li>Внедрение</li><li>Контент</li><li>Аналитика</li><li>Поддержка 24/7</li></ul>
+        </article>
+        <article class="svc reveal">
+          <span class="num">01</span>
+          <div class="ico"><svg width="26" height="26"><use href="#i-web"/></svg></div>
+          <h3>AI-сайты</h3>
+          <p>Сайты, спроектированные сразу под поиск и нейросети: GEO-разметка, встроенный ИИ-консультант, связка с CRM и A/B-тесты.</p>
+          <ul><li>schema.org</li><li>llms.txt</li><li>ИИ-консультант</li></ul>
+        </article>
+        <article class="svc reveal">
+          <span class="num">02</span>
+          <div class="ico"><svg width="26" height="26"><use href="#i-agent"/></svg></div>
+          <h3>ИИ-агенты и автоматизация</h3>
+          <p>Агенты для продаж, поддержки, документов и HR. RAG по базе знаний, интеграция с amoCRM, Битрикс24, 1С и Telegram.</p>
+          <ul><li>n8n</li><li>LangGraph</li><li>RAG</li><li>On-prem</li></ul>
+          <a class="more" href="/social-stars-demo/razrabotka_chat-botov/">Наш опыт в чат-ботах →</a>
+        </article>
+        <article class="svc reveal">
+          <span class="num">03</span>
+          <div class="ico"><svg width="26" height="26"><use href="#i-avatar"/></svg></div>
+          <h3>Цифровые аватары</h3>
+          <p>Видеоклон эксперта или CEO, AI-блогер с нуля, интерактивный аватар-консультант на сайте и в мессенджерах. Только с согласия прототипа.</p>
+          <ul><li>Видеоклон</li><li>Голос</li><li>Интерактив</li></ul>
+          <a class="more" href="/social-stars-demo/sozdanie-blogera/">Создание блогера с нуля →</a>
+        </article>
+        <article class="svc reveal">
+          <span class="num">04</span>
+          <div class="ico"><svg width="26" height="26"><use href="#i-geo"/></svg></div>
+          <h3>SEO + GEO</h3>
+          <p>Классическое SEO и продвижение в ответах Алисы AI, Яндекс Нейро, GigaChat, ChatGPT и Perplexity.</p>
+          <ul><li>Яндекс</li><li>Google</li><li>Нейровыдача</li></ul>
+        </article>
+        <article class="svc reveal">
+          <span class="num">05</span>
+          <div class="ico"><svg width="26" height="26"><use href="#i-shield"/></svg></div>
+          <h3>Нейро-ORM</h3>
+          <p>Управляем тем, что нейросети отвечают о бренде и первых лицах. Продолжение нашей 12-летней экспертизы в ORM и SERM.</p>
+          <ul><li>Мониторинг 6+ моделей</li><li>Источники</li><li>Антикризис</li></ul>
+          <a class="more" href="#neuro-orm">Как это работает →</a>
+        </article>
+        <article class="svc reveal">
+          <span class="num">06</span>
+          <div class="ico"><svg width="26" height="26"><use href="#i-factory"/></svg></div>
+          <h3>AI-контент-завод</h3>
+          <p>Посты, видео и рассылки на потоке: агенты готовят, аватары озвучивают, редактор утверждает.</p>
+          <ul><li>Telegram</li><li>VK</li><li>YouTube</li><li>Email</li></ul>
+          <a class="more" href="/social-stars-demo/avtomatizaciya_social_setey/">Автоматизация соцсетей →</a>
+        </article>
+        <article class="svc reveal">
+          <span class="num">07</span>
+          <div class="ico"><svg width="26" height="26"><use href="#i-brain"/></svg></div>
+          <h3>AI-трансформация</h3>
+          <p>Аудит процессов, дорожная карта, обучение команд и внутренняя библиотека агентов — как в AI-native компаниях мирового уровня.</p>
+          <ul><li>Стратегия</li><li>Обучение</li><li>Governance</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEURO-ORM -->
+  <section class="norm" id="neuro-orm">
+    <div class="wrap norm-grid">
+      <div class="reveal">
+        <span class="eyebrow">Новая категория</span>
+        <h2>Нейро-ORM: репутация в ответах ИИ</h2>
+        <p class="norm-lead">Когда клиент спрашивает нейросеть о вашей компании, она собирает ответ из десятков источников — включая устаревшие и негативные. Мы делаем так, чтобы ответ был точным и работал на вас.</p>
+        <ol class="steps">
+          <li><div><b>Сканируем</b><span>Сотни запросов о бренде в Алисе AI, GigaChat, YandexGPT, ChatGPT, DeepSeek и Perplexity.</span></div></li>
+          <li><div><b>Находим первоисточники</b><span>Какие сайты, статьи и отзывы формируют ответ модели.</span></div></li>
+          <li><div><b>Исправляем и наращиваем</b><span>Контент, разметка, публикации в авторитетных СМИ и у лидеров мнений.</span></div></li>
+          <li><div><b>Контролируем</b><span>Ежемесячный индекс AI-видимости и алерты на новый негатив.</span></div></li>
+        </ol>
+      </div>
+      <div class="radar reveal" aria-label="Пример отчёта: индекс AI-видимости бренда">
+        <h4>Индекс AI-видимости</h4>
+        <p class="sub">Пример формата отчёта · демо-данные</p>
+        <div class="bar"><span>Алиса AI</span><div class="track"><div class="fill" data-w="72"></div></div><span class="v">72</span></div>
+        <div class="bar"><span>GigaChat</span><div class="track"><div class="fill" data-w="64"></div></div><span class="v">64</span></div>
+        <div class="bar"><span>YandexGPT</span><div class="track"><div class="fill" data-w="58"></div></div><span class="v">58</span></div>
+        <div class="bar"><span>ChatGPT</span><div class="track"><div class="fill" data-w="47"></div></div><span class="v">47</span></div>
+        <div class="bar"><span>DeepSeek</span><div class="track"><div class="fill" data-w="39"></div></div><span class="v">39</span></div>
+        <div class="bar"><span>Perplexity</span><div class="track"><div class="fill" data-w="51"></div></div><span class="v">51</span></div>
+        <div class="legend"><span>Упоминаемость · точность · тональность</span><span>0–100</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARE -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="eyebrow">Сравнение</span><h2>Чем мы отличаемся от рынка</h2></div>
+        <p>Мы изучили мировых лидеров — от Accenture Song и UiPath до HeyGen, UneeQ и WebFX — и собрали то, чего не хватает каждому из них по отдельности.</p>
+      </div>
+      <div class="tbl-wrap reveal">
+        <table>
+          <thead><tr><th>Возможность</th><th>Веб-студия</th><th>ИИ-интегратор</th><th>SaaS аватаров</th><th>SEO-агентство</th><th class="us">Social Stars AI</th></tr></thead>
+          <tbody>
+            <tr><td>Сайт под поиск и нейросети</td><td class="p">частично</td><td class="n">—</td><td class="n">—</td><td class="p">частично</td><td class="us y">да</td></tr>
+            <tr><td>ИИ-агенты в процессах и CRM</td><td class="n">—</td><td class="y">да</td><td class="n">—</td><td class="n">—</td><td class="us y">да</td></tr>
+            <tr><td>Аватары со сценариями и дистрибуцией</td><td class="n">—</td><td class="n">—</td><td class="p">только инструмент</td><td class="n">—</td><td class="us y">да</td></tr>
+            <tr><td>GEO в российских моделях</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="p">частично</td><td class="us y">да</td></tr>
+            <tr><td>Репутация бренда в ответах ИИ</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="us y">да</td></tr>
+            <tr><td>250 лидеров мнений для охвата</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="us y">да</td></tr>
+            <tr><td>Контур под 152-ФЗ и госзаказчиков</td><td class="n">—</td><td class="p">частично</td><td class="n">—</td><td class="n">—</td><td class="us y">да</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI CALC -->
+  <section class="calc" id="roi">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="eyebrow">Калькулятор</span><h2>Сколько вы теряете на рутине</h2></div>
+        <p>Грубая оценка экономии от ИИ-агентов. Точные цифры — после аудита ваших процессов.</p>
+      </div>
+      <div class="calc-grid">
+        <div class="panel">
+          <div class="field"><label for="c-people">Сотрудников с рутинными задачами <output id="o-people"></output></label><input type="range" id="c-people" min="1" max="300" value="20" /></div>
+          <div class="field"><label for="c-hours">Часов рутины в неделю на человека <output id="o-hours"></output></label><input type="range" id="c-hours" min="1" max="30" value="10" /></div>
+          <div class="field"><label for="c-rate">Стоимость часа сотрудника, ₽ <output id="o-rate"></output></label><input type="range" id="c-rate" min="300" max="5000" step="50" value="1200" /></div>
+          <div class="field" style="margin-bottom:0"><label for="c-share">Доля, которую возьмут агенты <output id="o-share"></output></label><input type="range" id="c-share" min="10" max="70" step="5" value="40" /></div>
+        </div>
+        <div class="panel result" aria-live="polite">
+          <div><div class="lbl">Потенциальная экономия в год</div><div class="big" id="r-year">—</div></div>
+          <div class="row">
+            <div><div class="lbl">В месяц</div><b id="r-month">—</b></div>
+            <div><div class="lbl">Освобождается часов/мес</div><b id="r-hours">—</b></div>
+          </div>
+          <div class="row">
+            <div><div class="lbl">Эквивалент ставок</div><b id="r-fte">—</b></div>
+            <div><div class="lbl">Окупаемость пилота</div><b id="r-payback">—</b></div>
+          </div>
+          <p class="fine">Расчёт: сотрудники × часы × 4,33 недели × стоимость часа × доля автоматизации. Окупаемость — для пилота 350 000 ₽ и поддержки 90 000 ₽/мес. Это ориентир, а не обещание результата.</p>
+          <a class="btn btn-gold" href="#lead">Проверить на моих процессах</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="eyebrow">Как мы работаем</span><h2>От аудита до результата — без долгих «трансформаций»</h2></div>
+      </div>
+      <div class="process">
+        <div class="step reveal"><h3>AI-аудит</h3><p>Что нейросети говорят о вас и какие 3 процесса дадут быстрый эффект от автоматизации.</p><span class="t">48 часов · бесплатно</span></div>
+        <div class="step reveal"><h3>Пилот</h3><p>Один процесс или один канал. Измеримая метрика до и после.</p><span class="t">2–4 недели</span></div>
+        <div class="step reveal"><h3>Масштаб</h3><p>Дорожная карта, агенты в соседних процессах, сайт, аватары, GEO.</p><span class="t">1–3 месяца</span></div>
+        <div class="step reveal"><h3>Рост</h3><p>Поддержка, дообучение агентов, ежемесячный индекс AI-видимости.</p><span class="t">ежемесячно</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="eyebrow">Пакеты</span><h2>Понятные цены на старт</h2></div>
+        <p>Фиксированный объём и сроки. Ориентиры — итоговая смета после аудита.</p>
+      </div>
+      <div class="plans">
+        <div class="plan reveal">
+          <h3>AI-сайт</h3>
+          <div class="price">от 290 000 <small>₽</small></div>
+          <p>Лендинг или корпоративный сайт, готовый к нейровыдаче.</p>
+          <ul><li>Дизайн и разработка</li><li>GEO-разметка и llms.txt</li><li>ИИ-консультант</li><li>Интеграция с CRM</li></ul>
+          <a class="btn btn-dark" href="#lead" data-pick="site">Обсудить</a>
+        </div>
+        <div class="plan reveal">
+          <h3>ИИ-агент</h3>
+          <div class="price">от 350 000 <small>₽</small></div>
+          <p>Пилот на одном процессе + поддержка от 90 000 ₽/мес.</p>
+          <ul><li>Аудит процесса</li><li>Агент + RAG</li><li>Интеграции</li><li>Метрики до/после</li></ul>
+          <a class="btn btn-dark" href="#lead" data-pick="agents">Обсудить</a>
+        </div>
+        <div class="plan reveal">
+          <h3>Аватар</h3>
+          <div class="price">от 150 000 <small>₽</small></div>
+          <p>Видеоклон эксперта. Интерактивный аватар — от 900 000 ₽.</p>
+          <ul><li>Съёмка и клон голоса</li><li>Сценарии</li><li>10 роликов на старт</li><li>Маркировка ИИ-контента</li></ul>
+          <a class="btn btn-dark" href="#lead" data-pick="avatar">Обсудить</a>
+        </div>
+        <div class="plan hot reveal">
+          <span class="badge">Флагман</span>
+          <h3>AI Growth OS</h3>
+          <div class="price">от 1,5 млн <small>₽ + ретейнер</small></div>
+          <p>Всё вместе, с KPI по лидам и AI-видимости.</p>
+          <ul><li>Сайт + агенты + аватар</li><li>SEO + GEO</li><li>Нейро-ORM</li><li>Персональная команда</li></ul>
+          <a class="btn btn-gold" href="#lead" data-pick="os">Обсудить</a>
+        </div>
+      </div>
+      <p class="note">SEO + GEO — от 180 000 ₽/мес · Нейро-ORM — от 250 000 ₽/мес · AI-контент-завод — от 200 000 ₽/мес · AI-трансформация — от 500 000 ₽.</p>
+    </div>
+  </section>
+
+  <!-- LEGACY -->
+  <section class="legacy">
+    <div class="wrap legacy-grid">
+      <div class="reveal">
+        <span class="eyebrow">Опыт Social Stars</span>
+        <h2>Не стартап без истории, а 12 лет в репутации и продвижении</h2>
+        <p class="legacy-lead">Правительство Москвы, SKOLKOVO, федеральные форумы и крупный бизнес. ИИ мы применяем давно — теперь выносим это в отдельное направление.</p>
+        <div class="kpis">
+          <div><b>12</b><span>лет на рынке</span></div>
+          <div><b>127</b><span>репутационных проектов</span></div>
+          <div><b>26</b><span>стран исследований</span></div>
+          <div><b>250</b><span>лидеров мнений в сети</span></div>
+        </div>
+      </div>
+      <div class="links reveal">
+        <a href="/social-stars-demo/follower_ai/"><div><b>Follower AI</b><span>Собственная платформа исследования Telegram-каналов</span></div><i>→</i></a>
+        <a href="/social-stars-demo/razrabotka_chat-botov/"><div><b>Разработка чат-ботов</b><span>Боты для бизнеса и госструктур</span></div><i>→</i></a>
+        <a href="/social-stars-demo/avtomatizaciya_social_setey/"><div><b>Автоматизация соцсетей</b><span>Контент и публикации на потоке</span></div><i>→</i></a>
+        <a href="/social-stars-demo/orm/"><div><b>ORM</b><span>Управление репутацией в интернете</span></div><i>→</i></a>
+        <a href="/social-stars-demo/serm/"><div><b>SERM</b><span>Репутация в поисковой выдаче</span></div><i>→</i></a>
+        <a href="/social-stars-demo/cases/"><div><b>Все кейсы</b><span>От ЛДПР до «Хоккейных пап»</span></div><i>→</i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head" style="justify-content:center;text-align:center"><div><span class="eyebrow">FAQ</span><h2>Частые вопросы</h2></div></div>
+      <div class="faq">
+        <details><summary>Что такое GEO и зачем оно, если есть SEO?</summary><p>GEO (Generative Engine Optimization) — оптимизация сайта и присутствия бренда так, чтобы нейросети цитировали и рекомендовали вас в ответах. Всё больше пользователей получают один готовый ответ от Алисы AI или ChatGPT вместо списка ссылок. GEO не заменяет SEO, а работает вместе с ним.</p></details>
+        <details><summary>Что такое нейро-ORM?</summary><p>Управление тем, что нейросети отвечают о компании или персоне: регулярный мониторинг ответов нескольких моделей, поиск первоисточников, исправление фактов, наращивание достоверных упоминаний и вытеснение устаревшего негатива.</p></details>
+        <details><summary>Можно ли внедрить ИИ без передачи данных за рубеж?</summary><p>Да. Строим контур на GigaChat, YandexGPT или open-source моделях в российском облаке либо на ваших серверах — с учётом 152-ФЗ и требований госзаказчиков.</p></details>
+        <details><summary>Не заменят ли агенты моих сотрудников?</summary><p>Агенты забирают повторяющуюся работу: разбор заявок, ответы на типовые вопросы, документы, отчёты. Люди остаются на решениях и сложных случаях — в ключевых точках процесса всегда есть проверка человеком.</p></details>
+        <details><summary>Законно ли делать аватар реального человека?</summary><p>Только с письменного согласия прототипа и с маркировкой ИИ-контента. Мы не создаём аватаров людей без их участия.</p></details>
+        <details><summary>Сколько длится внедрение?</summary><p>Аудит — до 48 часов, пилот на одном процессе — 2–4 недели, масштабирование — 1–3 месяца по дорожной карте.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD -->
+  <section class="lead" id="lead">
+    <div class="orb a"></div>
+    <div class="wrap lead-grid">
+      <div>
+        <span class="eyebrow">Бесплатный AI-аудит</span>
+        <h2>Узнайте, что нейросети говорят о вас</h2>
+        <p class="lead-lead">За 48 часов пришлём отчёт: как вас видят 5 нейросетей и какие 3 процесса можно автоматизировать в первую очередь.</p>
+        <div class="contacts">
+          <a href="tel:+79854009299">+7 985 400 92 99</a>
+          <a href="mailto:info@social-stars.ru">info@social-stars.ru</a>
+          <span style="color:rgba(255,255,255,.5);font-size:15px">Москва, ул. Лесная, 57, стр. 4</span>
+        </div>
+      </div>
+      <form id="form" novalidate>
+        <input class="inp" name="name" placeholder="Имя" autocomplete="name" required aria-label="Имя" />
+        <input class="inp" name="contact" placeholder="Телефон или Telegram" autocomplete="tel" required aria-label="Телефон или Telegram" />
+        <input class="inp" name="company" placeholder="Компания и сайт" aria-label="Компания и сайт" />
+        <fieldset>
+          <legend>Что интересно</legend>
+          <div class="chips">
+            <label><input type="checkbox" name="i" value="AI-сайт" data-k="site" /><span>AI-сайт</span></label>
+            <label><input type="checkbox" name="i" value="ИИ-агенты" data-k="agents" /><span>ИИ-агенты</span></label>
+            <label><input type="checkbox" name="i" value="Аватар" data-k="avatar" /><span>Аватар</span></label>
+            <label><input type="checkbox" name="i" value="SEO + GEO" data-k="geo" /><span>SEO + GEO</span></label>
+            <label><input type="checkbox" name="i" value="Нейро-ORM" data-k="orm" /><span>Нейро-ORM</span></label>
+            <label><input type="checkbox" name="i" value="AI Growth OS" data-k="os" /><span>AI Growth OS</span></label>
+          </div>
+        </fieldset>
+        <button class="btn btn-gold" type="submit">Получить аудит</button>
+        <p class="form-msg" id="form-msg" role="status"></p>
+        <p class="consent">Нажимая кнопку, вы соглашаетесь с <a href="/social-stars-demo/privacy-policy/">политикой конфиденциальности</a>.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Social Stars AI · направление <a href="/social-stars-demo/">Social Stars</a></span>
+    <span><a href="/social-stars-demo/contacts/">Контакты</a> · <a href="/social-stars-demo/privacy-policy/">Политика конфиденциальности</a></span>
+  </div>
+</footer>
+
+<script>
+(() => {
+  // nav background on scroll
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('solid', window.scrollY > 40);
+  onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+
+  // typed answer in hero chat
+  const answers = {
+    'Алиса AI': 'Можно обратиться в Social Stars AI: команда внедряет ИИ-агентов в продажи и поддержку с интеграцией в CRM, а также ведёт мониторинг репутации бренда в поиске и ответах нейросетей. У агентства 12 лет опыта в ORM и работе с крупным бизнесом.',
+    'GigaChat': 'Подходящий вариант — Social Stars AI. Они совмещают автоматизацию бизнес-процессов на ИИ-агентах с управлением репутацией, в том числе в ответах языковых моделей, и работают в контуре, соответствующем 152-ФЗ.',
+    'ChatGPT': 'Consider Social Stars AI (Moscow): they combine AI-agent automation for sales and support with reputation management — including how brands appear in AI assistants’ answers.'
+  };
+  const typed = document.getElementById('typed'), who = document.getElementById('who');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let timer;
+  function play(model) {
+    clearTimeout(timer); who.textContent = model; typed.textContent = '';
+    const text = answers[model];
+    if (reduce) { typed.textContent = text; return; }
+    let i = 0;
+    (function tick() { typed.textContent = text.slice(0, ++i); if (i < text.length) timer = setTimeout(tick, 16); })();
+  }
+  document.querySelectorAll('.models button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.models button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    play(b.dataset.m);
+  }));
+  play('Алиса AI');
+
+  // reveal + bars
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('in');
+    e.target.querySelectorAll('.fill').forEach(f => f.style.width = f.dataset.w + '%');
+    io.unobserve(e.target);
+  }), { threshold: .15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ROI calculator
+  const $ = id => document.getElementById(id);
+  const fmt = n => new Intl.NumberFormat('ru-RU').format(Math.round(n));
+  const money = n => n >= 1e6 ? (n / 1e6).toLocaleString('ru-RU', { maximumFractionDigits: 1 }) + ' млн ₽' : fmt(n) + ' ₽';
+  const PILOT = 350000, SUPPORT = 90000, WEEKS = 4.33, FTE_HOURS = 165;
+  function calc() {
+    const p = +$('c-people').value, h = +$('c-hours').value, r = +$('c-rate').value, s = +$('c-share').value / 100;
+    $('o-people').textContent = p; $('o-hours').textContent = h; $('o-rate').textContent = fmt(r) + ' ₽'; $('o-share').textContent = Math.round(s * 100) + '%';
+    const hours = p * h * WEEKS * s, month = hours * r;
+    $('r-hours').textContent = fmt(hours);
+    $('r-month').textContent = money(month);
+    $('r-year').textContent = money(month * 12);
+    $('r-fte').textContent = (hours / FTE_HOURS).toLocaleString('ru-RU', { maximumFractionDigits: 1 });
+    const net = month - SUPPORT;
+    $('r-payback').textContent = net <= 0 ? 'нужен аудит' : (PILOT / net < 1 ? '< 1 мес' : Math.ceil(PILOT / net) + ' мес');
+  }
+  ['c-people', 'c-hours', 'c-rate', 'c-share'].forEach(id => $(id).addEventListener('input', calc));
+  calc();
+
+  // preselect interest from pricing buttons
+  document.querySelectorAll('[data-pick]').forEach(a => a.addEventListener('click', () => {
+    const cb = document.querySelector('.chips input[data-k="' + a.dataset.pick + '"]');
+    if (cb) cb.checked = true;
+  }));
+
+  // lead form -> mailto (no backend on static hosting)
+  $('form').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = e.target, msg = $('form-msg');
+    if (!f.name.value.trim() || !f.contact.value.trim()) { msg.textContent = 'Укажите имя и контакт для связи.'; return; }
+    const interests = [...f.querySelectorAll('input[name="i"]:checked')].map(x => x.value).join(', ') || 'не указано';
+    const body = `Имя: ${f.name.value}\nКонтакт: ${f.contact.value}\nКомпания: ${f.company.value || '—'}\nИнтересы: ${interests}`;
+    location.href = 'mailto:info@social-stars.ru?subject=' + encodeURIComponent('Заявка на AI-аудит') + '&body=' + encodeURIComponent(body);
+    msg.textContent = 'Открываем почтовый клиент… Если он не открылся — позвоните нам: +7 985 400 92 99.';
+  });
+})();
+</script>
+</body>
+</html>
