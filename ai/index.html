@@ -27,6 +27,20 @@
     .stats b{display:block;font-size:clamp(44px,5vw,72px);font-weight:200;letter-spacing:-.05em;line-height:1}
     .stats p{margin-top:12px;color:var(--ink-2);max-width:22em}
     .stats small{display:block;margin-top:8px;font-size:13.5px;color:var(--slate)}
+    .stat .viz{height:132px;margin-bottom:28px}
+    .cols2{display:flex;align-items:flex-end;gap:10px;max-width:132px}
+    .cols2 span{flex:1;position:relative;align-self:flex-end}
+    .cols2 u{position:absolute;inset:0;background:var(--mist-2);border-radius:6px 6px 2px 2px}
+    .cols2 .now u{background:var(--bronze)}
+    .cols2 i{position:absolute;left:0;right:0;bottom:-24px;text-align:center;font-style:normal;font-size:12.5px;color:var(--slate)}
+    .cols2 em{position:absolute;left:50%;top:-26px;transform:translateX(-50%);font-style:normal;font-size:13px;font-weight:500;color:var(--bronze-2);white-space:nowrap}
+    .ring-wrap{position:relative;width:132px}
+    .ring-wrap b{position:absolute;inset:0;display:grid;place-items:center;font-size:32px!important;font-weight:300!important;letter-spacing:-.03em}
+    .cols-wrap{display:flex;align-items:flex-end;gap:22px}
+    .cols-wrap .cols2{width:96px;height:100%;flex:none}
+    .cols-wrap>b{font-size:32px!important;font-weight:300!important;letter-spacing:-.03em;white-space:nowrap;line-height:1.1!important}
+    .stat .viz{height:132px;margin-bottom:34px}
+    .stats p{margin-top:0}
 
     .index{list-style:none;border-top:1px solid var(--mist)}
     .index a{display:grid;grid-template-columns:120px minmax(200px,4fr) 5fr 2fr;gap:24px;align-items:baseline;padding:28px 0;border-bottom:1px solid var(--mist);text-decoration:none}
@@ -57,8 +71,13 @@
     .vs thead th{font-weight:500;color:var(--slate);font-size:14.5px}
     .vs thead th.us{color:var(--ink)}
     .vs tbody th{font-weight:400}
-    .vs td{color:var(--slate)}
-    .vs td.us{color:var(--ink);font-weight:500}
+    .vs td{text-align:center;padding-right:0}
+    .vs thead th:not(:first-child){text-align:center;padding-right:0}
+    .vs td.us,.vs th.us{background:var(--white)}
+    .vs thead th.us{border-radius:14px 14px 0 0;color:var(--ink);font-weight:500}
+    .vs tbody tr:last-child td.us{border-radius:0 0 14px 14px}
+    .legend{display:flex;gap:28px;margin-top:22px;font-size:14px;color:var(--slate)}
+    .legend>span{display:inline-flex;align-items:center;gap:10px}
     .tbl{overflow-x:auto}
 
 
@@ -69,22 +88,23 @@
 <body>
 <!-- @intro -->
 <div class="intro" id="intro" role="presentation">
+  <div class="intro-bg"></div>
   <div class="intro-stage" aria-hidden="true">
-    <div class="intro-star">
-      <svg viewBox="0 0 100 91.2">
-        <defs>
-          <clipPath id="ss-clip"><use href="#ss-p0"/><use href="#ss-p1"/><use href="#ss-p2"/></clipPath>
-          <linearGradient id="ss-sheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-        </defs>
-        <use href="#ss-star"/>
-        <g clip-path="url(#ss-clip)"><rect class="intro-sheen" x="-40" y="-10" width="34" height="120" fill="url(#ss-sheen)" transform="skewX(-18)"/></g>
-      </svg>
-    </div>
+    <svg class="intro-star" viewBox="0 0 100 91.2">
+      <defs>
+        <clipPath id="ss-clip"><use href="#ss-p0"/><use href="#ss-p1"/><use href="#ss-p2"/></clipPath>
+        <linearGradient id="ss-sheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".7"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+      </defs>
+      <g class="is-lines"></g>
+      <use class="is-fill" href="#ss-star"/>
+      <g clip-path="url(#ss-clip)"><rect class="intro-sheen" x="-40" y="-10" width="26" height="120" fill="url(#ss-sheen)" transform="skewX(-16)"/></g>
+      <g class="is-dots"></g>
+    </svg>
     <div class="intro-word">
-      <svg class="iw-social" viewBox="0 0 66.97 11.77"><use href="#ss-social"/></svg>
-      <svg class="iw-stars" viewBox="0 0 61.26 11.78"><use href="#ss-stars"/></svg>
+      <span class="iw-m"><svg class="iw-social" viewBox="0 0 66.97 11.77"><use href="#ss-social"/></svg></span>
+      <span class="iw-m"><svg class="iw-stars" viewBox="0 0 61.26 11.78"><use href="#ss-stars"/></svg></span>
     </div>
-    <svg class="intro-ai" viewBox="0 0 15.95 11.78"><use href="#ss-ai"/></svg>
+    <div class="intro-ai-row"><i class="intro-rule"></i><svg class="intro-ai" viewBox="0 0 15.95 11.78"><use href="#ss-ai"/></svg><i class="intro-rule"></i></div>
   </div>
   <button class="intro-skip" type="button">Пропустить</button>
 </div>
@@ -96,17 +116,70 @@
   if (seen) { el.remove(); return; }
   root.classList.add('intro-on');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let done = false;
-  const leave = () => {
-    if (done) return; done = true;
-    el.classList.add('is-leaving');
-    dispatchEvent(new Event('ss-intro-done'));
-    setTimeout(() => { root.classList.remove('intro-on'); el.remove(); }, reduce ? 300 : 850);
-    ['keydown', 'wheel', 'touchstart'].forEach(t => removeEventListener(t, leave));
+  let started = false, finished = false, skip = () => {};
+  const signal = () => { if (!started) { started = true; dispatchEvent(new Event('ss-intro-done')); } };
+  const finish = () => { if (finished) return; finished = true; signal(); root.classList.remove('intro-on'); el.remove(); };
+  // запасной путь без GSAP: короткое проявление и растворение
+  const plain = delay => {
+    root.classList.add('intro-plain');
+    skip = () => { el.classList.add('is-leaving'); signal(); setTimeout(finish, 450); };
+    setTimeout(skip, delay);
   };
-  const t = setTimeout(leave, reduce ? 900 : 3700);
-  el.addEventListener('click', () => { clearTimeout(t); leave(); });
-  ['keydown', 'wheel', 'touchstart'].forEach(ev => addEventListener(ev, () => { clearTimeout(t); leave(); }, { passive: true, once: true }));
+  const play = () => {
+    const g = window.gsap;
+    if (!g || reduce) return plain(reduce ? 700 : 1400);
+    const q = s => el.querySelector(s), NS = 'http://www.w3.org/2000/svg';
+    const star = q('.intro-star'), dotsG = q('.is-dots'), linesG = q('.is-lines');
+    // точки-звёзды садятся на контур знака: логотип собирается как созвездие
+    let seed = 20140; const R = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+    const paths = ['ss-p0', 'ss-p1', 'ss-p2'].map(id => document.getElementById(id)).filter(Boolean);
+    const total = paths.reduce((s, p) => s + p.getTotalLength(), 0), pts = [];
+    paths.forEach(p => {
+      const len = p.getTotalLength(), n = Math.max(8, Math.round(72 * len / total));
+      for (let i = 0; i < n; i++) { const a = p.getPointAtLength(len * i / n); pts.push({ x: a.x, y: a.y }); }
+      const l = document.createElementNS(NS, 'path'); l.setAttribute('d', p.getAttribute('d')); linesG.appendChild(l);
+    });
+    const dots = pts.map(pt => {
+      const c = document.createElementNS(NS, 'circle'), ang = R() * Math.PI * 2, rad = 70 + R() * 90;
+      pt.sx = 50 + Math.cos(ang) * rad; pt.sy = 46 + Math.sin(ang) * rad * .8;
+      c.setAttribute('cx', pt.x.toFixed(2)); c.setAttribute('cy', pt.y.toFixed(2)); c.setAttribute('r', (.8 + R() * .9).toFixed(2)); dotsG.appendChild(c); return c;
+    });
+    const lines = linesG.children, words = el.querySelectorAll('.iw-m svg');
+    root.classList.add('intro-go');
+    const tl = g.timeline({ delay: .2 });
+    tl.fromTo(dots, { x: i => pts[i].sx - pts[i].x, y: i => pts[i].sy - pts[i].y, opacity: 0 },
+        { x: 0, y: 0, opacity: 1, duration: 1.4, ease: 'expo.out', stagger: { amount: .5, from: 'random' } })
+      .fromTo(lines, { drawSVG: '0%' }, { drawSVG: '100%', duration: 1.2, ease: 'power2.inOut', stagger: .1 }, .6)
+      .fromTo(star, { scale: .94 }, { scale: 1, duration: 1.8, ease: 'expo.out', transformOrigin: '50% 50%' }, 1.3)
+      .fromTo(q('.is-fill'), { opacity: 0 }, { opacity: 1, duration: 1, ease: 'power2.out' }, 1.45)
+      .to([dots, lines], { opacity: 0, duration: .7, ease: 'power1.out' }, 1.65)
+      .fromTo(q('.intro-sheen'), { x: -30 }, { x: 150, duration: 1.2, ease: 'power2.inOut' }, 2.05)
+      .fromTo(words, { yPercent: 118 }, { yPercent: 0, duration: 1.1, ease: 'expo.out', stagger: .12 }, 1.8)
+      .fromTo(el.querySelectorAll('.intro-rule'), { scaleX: 0 }, { scaleX: 1, duration: .9, ease: 'expo.out' }, 2.3)
+      .fromTo(q('.intro-ai'), { opacity: 0, y: 3 }, { opacity: 1, y: 0, duration: .7, ease: 'power2.out' }, 2.4)
+      .addLabel('exit', 3.4)
+      .add(() => fly(), 'exit');
+    // выход: части логотипа перелетают на свои места в шапке
+    const fly = () => {
+      el.classList.add('is-flying');
+      const pairs = [[star, '.hdr .brand-star'], [words[0], '.hdr .bw-social'], [words[1], '.hdr .bw-stars'], [q('.intro-ai'), '.hdr .brand-ai']];
+      const out = g.timeline({ onComplete: finish });
+      out.to([q('.intro-skip'), ...el.querySelectorAll('.intro-rule')], { opacity: 0, duration: .3 }, 0);
+      pairs.forEach(([a, sel], i) => {
+        const b = document.querySelector(sel);
+        if (!b || !b.getClientRects().length) { out.to(a, { opacity: 0, duration: .5 }, 0); return; }
+        const ra = a.getBoundingClientRect(), rb = b.getBoundingClientRect();
+        out.to(a, { x: '+=' + (rb.left - ra.left), y: '+=' + (rb.top - ra.top), scale: rb.width / ra.width * g.getProperty(a, 'scale'),
+          transformOrigin: '0 0', duration: 1.15, ease: 'expo.inOut' }, i * .04);
+      });
+      out.to(q('.intro-bg'), { opacity: 0, duration: .75, ease: 'power2.inOut' }, .55)
+         .add(signal, .45);
+    };
+    skip = () => { if (tl.time() < tl.labels.exit) { tl.timeScale(1.6); tl.seek('exit'); } };
+  };
+  el.addEventListener('click', () => skip());
+  ['keydown', 'wheel', 'touchstart'].forEach(ev => addEventListener(ev, () => skip(), { passive: true, once: true }));
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', play, { once: true }); else play();
 })();
 </script>
 <!-- /@intro -->
@@ -257,9 +330,18 @@
         <h2 class="t-h2">Компании, которой нет в ответе нейросети, клиент может просто не узнать</h2>
       </div>
       <div class="stats">
-        <div><b>316 млрд ₽</b><p>объём рынка ИИ в России в 2025 году, рост почти на 30% за год</p><small>Источник: TAdviser</small></div>
-        <div><b>71%</b><p>крупных российских компаний уже используют генеративный ИИ хотя бы в одной функции</p><small>Источник: «Ведомости», 2026</small></div>
-        <div><b>78%</b><p>из тех, кто вкладывается в ИИ, уже видят финансовую отдачу</p><small>Источник: «Ведомости», 2026</small></div>
+        <div class="stat">
+          <div class="viz cols-wrap" data-cols><div class="cols2" aria-hidden="true"><span style="height:77%"><u data-col></u><i>2024</i></span><span class="now" style="height:100%"><u data-col></u><i>2025</i><em>+30%</em></span></div><b>316 млрд&nbsp;₽</b></div>
+          <p>рынок ИИ в России в 2025 году</p><small>TAdviser</small>
+        </div>
+        <div class="stat" data-ring>
+          <div class="viz ring-wrap"><svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="ring-t" cx="60" cy="60" r="54"/><circle class="ring-v" cx="60" cy="60" r="54" stroke-dasharray="240.9 339.29" data-v="71"/></svg><b data-count>71%</b></div>
+          <p>крупных компаний уже используют генеративный ИИ</p><small>«Ведомости», 2026</small>
+        </div>
+        <div class="stat" data-ring>
+          <div class="viz ring-wrap"><svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="ring-t" cx="60" cy="60" r="54"/><circle class="ring-v" cx="60" cy="60" r="54" stroke-dasharray="264.6 339.29" data-v="78"/></svg><b data-count>78%</b></div>
+          <p>из них уже видят финансовую отдачу</p><small>«Ведомости», 2026</small>
+        </div>
       </div>
     </div>
   </section>
@@ -318,19 +400,20 @@
         <p class="t-lead">Мы изучили мировых лидеров — от Accenture Song и UiPath до HeyGen и WebFX. Каждый силён в своём, но результат клиента складывается из всего сразу.</p>
       </div>
       <div class="tbl">
-        <table class="vs">
+        <table class="vs" data-matrix>
           <thead><tr><th scope="col"></th><th scope="col">Веб-студия</th><th scope="col">ИИ-интегратор</th><th scope="col">Сервис аватаров</th><th scope="col">SEO-агентство</th><th scope="col" class="us">Social Stars AI</th></tr></thead>
           <tbody>
-            <tr><th scope="row">Сайт для поиска и нейросетей</th><td>частично</td><td>нет</td><td>нет</td><td>частично</td><td class="us">да</td></tr>
-            <tr><th scope="row">ИИ-агенты в процессах и CRM</th><td>нет</td><td>да</td><td>нет</td><td>нет</td><td class="us">да</td></tr>
-            <tr><th scope="row">Аватар со сценариями и продвижением</th><td>нет</td><td>нет</td><td>только технология</td><td>нет</td><td class="us">да</td></tr>
-            <tr><th scope="row">GEO в российских моделях</th><td>нет</td><td>нет</td><td>нет</td><td>частично</td><td class="us">да</td></tr>
-            <tr><th scope="row">Репутация в ответах нейросетей</th><td>нет</td><td>нет</td><td>нет</td><td>нет</td><td class="us">да</td></tr>
-            <tr><th scope="row">250 лидеров мнений для охвата</th><td>нет</td><td>нет</td><td>нет</td><td>нет</td><td class="us">да</td></tr>
-            <tr><th scope="row">Работа по 152-ФЗ и с госзаказчиками</th><td>нет</td><td>частично</td><td>нет</td><td>нет</td><td class="us">да</td></tr>
+            <tr><th scope="row">Сайт для поиска и нейросетей</th><td><span class="dot p" data-c="c1" aria-hidden="true"></span><span class="sr-only">частично</span></td><td><span class="dot n" data-c="c2" aria-hidden="true"></span><span class="sr-only">нет</span></td><td><span class="dot n" data-c="c3" aria-hidden="true"></span><span class="sr-only">нет</span></td><td><span class="dot p" data-c="c4" aria-hidden="true"></span><span class="sr-only">частично</span></td><td class="us"><span class="dot y" data-c="c5" aria-hidden="true"></span><span class="sr-only">да</span></td></tr>
+            <tr><th scope="row">ИИ-агенты в процессах и CRM</th><td><span class="dot n" data-c="c1" aria-hidden="true"></span><span class="sr-only">нет</span></td><td><span class="dot y" data-c="c2" aria-hidden="true"></span><span class="sr-only">да</span></td><td><span class="dot n" data-c="c3" aria-hidden="true"></span><span class="sr-only">нет</span></td><td><span class="dot n" data-c="c4" aria-hidden="true"></span><span class="sr-only">нет</span></td><td class="us"><span class="dot y" data-c="c5" aria-hidden="true"></span><span class="sr-only">да</span></td></tr>
+            <tr><th scope="row">Аватар со сценариями и продвижением</th><td><span class="dot n" data-c="c1" aria-hidden="true"></span><span class="sr-only">нет</span></td><td><span class="dot n" data-c="c2" aria-hidden="true"></span><span class="sr-only">нет</span></td><td><span class="dot p" data-c="c3" aria-hidden="true"></span><span class="sr-only">только технология</span></td><td><span class="dot n" data-c="c4" aria-hidden="true"></span><span class="sr-only">нет</span></td><td class="us"><span class="dot y" data-c="c5" aria-hidden="true"></span><span class="sr-only">да</span></td></tr>
+            <tr><th scope="row">GEO в российских моделях</th><td><span class="dot n" data-c="c1" aria-hidden="true"></span><span class="sr-only">нет</span></td><td><span class="dot n" data-c="c2" aria-hidden="true"></span><span class="sr-only">нет</span></td><td><span class="dot n" data-c="c3" aria-hidden="true"></span><span class="sr-only">нет</span></td><td><span class="dot p" data-c="c4" aria-hidden="true"></span><span class="sr-only">частично</span></td><td class="us"><span class="dot y" data-c="c5" aria-hidden="true"></span><span class="sr-only">да</span></td></tr>
+            <tr><th scope="row">Репутация в ответах нейросетей</th><td><span class="dot n" data-c="c1" aria-hidden="true"></span><span class="sr-only">нет</span></td><td><span class="dot n" data-c="c2" aria-hidden="true"></span><span class="sr-only">нет</span></td><td><span class="dot n" data-c="c3" aria-hidden="true"></span><span class="sr-only">нет</span></td><td><span class="dot n" data-c="c4" aria-hidden="true"></span><span class="sr-only">нет</span></td><td class="us"><span class="dot y" data-c="c5" aria-hidden="true"></span><span class="sr-only">да</span></td></tr>
+            <tr><th scope="row">250 лидеров мнений для охвата</th><td><span class="dot n" data-c="c1" aria-hidden="true"></span><span class="sr-only">нет</span></td><td><span class="dot n" data-c="c2" aria-hidden="true"></span><span class="sr-only">нет</span></td><td><span class="dot n" data-c="c3" aria-hidden="true"></span><span class="sr-only">нет</span></td><td><span class="dot n" data-c="c4" aria-hidden="true"></span><span class="sr-only">нет</span></td><td class="us"><span class="dot y" data-c="c5" aria-hidden="true"></span><span class="sr-only">да</span></td></tr>
+            <tr><th scope="row">Работа по 152-ФЗ и с госзаказчиками</th><td><span class="dot n" data-c="c1" aria-hidden="true"></span><span class="sr-only">нет</span></td><td><span class="dot p" data-c="c2" aria-hidden="true"></span><span class="sr-only">частично</span></td><td><span class="dot n" data-c="c3" aria-hidden="true"></span><span class="sr-only">нет</span></td><td><span class="dot n" data-c="c4" aria-hidden="true"></span><span class="sr-only">нет</span></td><td class="us"><span class="dot y" data-c="c5" aria-hidden="true"></span><span class="sr-only">да</span></td></tr>
           </tbody>
         </table>
       </div>
+      <p class="legend" aria-hidden="true"><span><span class="dot y"></span>есть</span><span><span class="dot p"></span>частично</span><span><span class="dot n"></span>нет</span></p>
     </div>
   </section>
 
@@ -459,8 +542,15 @@
 </footer>
 <!-- /@footer -->
 
+<!-- @scripts -->
+<script src="/social-stars-demo/ai/vendor/gsap.min.js" defer></script>
+<script src="/social-stars-demo/ai/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/social-stars-demo/ai/vendor/DrawSVGPlugin.min.js" defer></script>
+<script src="/social-stars-demo/ai/vendor/MotionPathPlugin.min.js" defer></script>
 <script src="/social-stars-demo/ai/sky.js" defer></script>
 <script src="/social-stars-demo/ai/ai.js" defer></script>
+<script src="/social-stars-demo/ai/motion.js" defer></script>
+<!-- /@scripts -->
 <script>
 (() => {
   const $ = id => document.getElementById(id);

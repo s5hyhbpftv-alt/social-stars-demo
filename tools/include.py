@@ -3,7 +3,7 @@
 
 Страницы — обычный статический HTML. Общие блоки лежат в tools/partials/*.html
 и вставляются между маркерами:
-    <!-- @intro -->…<!-- /@intro -->   <!-- @header -->…<!-- /@header -->   <!-- @cta -->…<!-- /@cta -->   <!-- @footer -->…<!-- /@footer -->
+    <!-- @intro -->…<!-- /@intro -->   <!-- @header -->…<!-- /@header -->   <!-- @cta -->…<!-- /@cta -->   <!-- @footer -->…<!-- /@footer -->   <!-- @scripts -->…<!-- /@scripts -->
 Запуск из корня репозитория после правки партиалов:  python3 tools/include.py
 """
 import re
