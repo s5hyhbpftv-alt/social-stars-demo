@@ -6,48 +6,46 @@
   <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#f3f5f8" />
   <title>Кейсы — Social Stars AI</title>
-  <meta name="description" content="Как Social Stars AI применяет ИИ-агентов, AI-сайты, цифровые аватары, SEO и GEO и нейро-ORM: пять примеров из логистики, медицины, производства, госсектора и девелопмента." />
+  <meta name="description" content="Проекты Social Stars, из которых выросло направление AI: ИИ-платформа Follower AI в рекламе Москвы в 15 странах и для Московской недели интерьера и дизайна, контент-системы для экспертов, основателей и политиков." />
   <link rel="canonical" href="https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/cases/" />
   <link rel="icon" type="image/svg+xml" href="/social-stars-demo/favicon.svg" />
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Social Stars" />
   <meta property="og:title" content="Кейсы — Social Stars AI" />
-  <meta property="og:description" content="Пять примеров: заявки, репутация, видео, поддержка граждан и система роста." />
+  <meta property="og:description" content="Пять проектов, из которых выросло направление AI." />
   <meta property="og:url" content="https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/cases/" />
   <meta property="og:image" content="https://s5hyhbpftv-alt.github.io/social-stars-demo/media/og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":"Кейсы Social Stars AI","url":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/cases/"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Social Stars AI","item":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/"},{"@type":"ListItem","position":2,"name":"Кейсы","item":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/cases/"}]}]}</script>
   <link rel="stylesheet" href="/social-stars-demo/ai/ai.css" />
   <style>
-    .demo-note{display:flex;gap:12px;align-items:flex-start;max-width:36em;padding:14px 16px;border-radius:var(--r-md);background:var(--white);border:1px solid var(--mist);font-size:15px;color:var(--ink-2)}
-    .demo-note::before{content:"";flex:none;width:8px;height:8px;margin-top:.55em;border-radius:50%;background:var(--bronze)}
-
     .filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
     .filter button{height:40px;padding:0 14px;border-radius:var(--r-md);border:1px solid var(--mist-2);background:var(--white);font-size:15px;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
     .filter button:hover{border-color:var(--ink)}
     .filter button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
     .count{font-size:14.5px;color:var(--slate);margin-bottom:clamp(32px,4vw,48px)}
 
-    .cases{display:grid;gap:0;border-top:1px solid var(--mist)}
+    .cases{display:grid;border-top:1px solid var(--mist)}
     .case{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,5vw,80px);padding:clamp(48px,6vw,80px) 0;border-bottom:1px solid var(--mist)}
     .case[hidden]{display:none}
     .case-side{display:grid;gap:20px;align-content:start}
-    .case-side .ind{font-size:15px;color:var(--slate)}
+    .case-side .client{font-size:15px;color:var(--slate)}
     .case-side h2{font-size:clamp(28px,3vw,42px);line-height:1.08;letter-spacing:-.035em}
     .case-side dl{display:grid;gap:14px;padding-top:20px;border-top:1px solid var(--mist)}
     .case-side dt{font-size:14px;color:var(--slate)}
     .case-side dd{margin-top:2px}
-    .case-side dd a{margin-right:10px}
+    .case-side .award{display:inline-block;font-size:14px;padding:6px 10px;border-radius:var(--r-sm);background:var(--bronze-soft);color:var(--bronze-2)}
     .case-body{display:grid;gap:26px;align-content:start}
     .case-body h3{font-size:14.5px;font-weight:500;letter-spacing:0;color:var(--slate);margin-bottom:6px}
     .case-body p{color:var(--ink-2);max-width:40em}
     .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--mist);border:1px solid var(--mist);border-radius:var(--r-lg);overflow:hidden;margin-top:6px}
     .metrics div{background:var(--white);padding:20px 22px;display:grid;gap:6px;align-content:start}
     .metrics b{font-size:clamp(26px,2.6vw,34px);font-weight:300;letter-spacing:-.03em;line-height:1.1}
-    .metrics s{font-size:15px;color:var(--slate);text-decoration-thickness:1px}
     .metrics span{font-size:14px;color:var(--slate)}
-    .empty{padding:48px 0;color:var(--slate)}
+    .today{padding-top:18px;border-top:1px solid var(--mist);font-size:15px;color:var(--slate)}
+    .today a{color:var(--ink)}
+    .foot{margin-top:28px;font-size:13.5px;color:var(--slate);max-width:44em}
 
     @media (max-width:900px){ .case{grid-template-columns:1fr} }
     @media (max-width:600px){ .metrics{grid-template-columns:1fr} }
@@ -115,7 +113,7 @@
 <a class="skip" href="#main">Перейти к содержимому</a>
 <header class="hdr">
   <div class="wrap">
-    <a class="brand" href="/social-stars-demo/ai/" aria-label="Social Stars AI — на главную направления"><svg class="brand-star" viewBox="0 0 100 91.2" aria-hidden="true"><use href="#ss-star"/></svg><span class="brand-word" aria-hidden="true"><svg class="bw-social" viewBox="0 0 66.97 11.77"><use href="#ss-social"/></svg><svg class="bw-stars" viewBox="0 0 61.26 11.78"><use href="#ss-stars"/></svg></span><span class="brand-sep" aria-hidden="true"></span><svg class="brand-ai" viewBox="0 0 15.95 11.78" aria-hidden="true"><use href="#ss-ai"/></svg></a>
+    <a class="brand" href="/social-stars-demo/ai/" aria-label="Social Stars AI — на главную направления"><svg class="brand-star" viewBox="0 0 100 91.2" aria-hidden="true"><use href="#ss-star"/></svg><span class="brand-word" aria-hidden="true"><svg class="bw-social" viewBox="0 0 66.97 11.77"><use href="#ss-social"/></svg><svg class="bw-stars" viewBox="0 0 61.26 11.78"><use href="#ss-stars"/></svg></span><span class="brand-sep" aria-hidden="true"></span><svg class="brand-ai" viewBox="0 0 15.95 11.78" aria-hidden="true"><use href="#ss-ai"/></svg></a>
     <nav aria-label="Основное меню">
       <ul class="menu">
         <li><button type="button" data-mega-btn aria-expanded="false" aria-controls="mega">Услуги <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m3 4.5 3 3 3-3"/></svg></button></li>
@@ -166,8 +164,7 @@
       <div class="hero-text">
         <nav class="crumbs" aria-label="Вы здесь"><a href="/social-stars-demo/ai/">Social Stars AI</a><span aria-hidden="true">/</span><span aria-current="page">Кейсы</span></nav>
         <h1 class="t-hero">Кейсы</h1>
-        <p class="t-lead">Пять отраслей, пять задач: от заявок, на которые отвечали по четыре часа, до старого скандала в ответах нейросетей.</p>
-        <p class="demo-note">Это демонстрационные кейсы: компании обезличены, цифры показывают типичный результат для таких задач. По мере завершения проектов заменим их реальными.</p>
+        <p class="t-lead">Проекты Social Stars, из которых выросло направление AI: собственная ИИ-платформа для подбора блогеров, реклама Москвы в пятнадцати странах, контент-системы для экспертов, основателей и политиков.</p>
       </div>
       <div class="hero-sky" data-sky="clusters" data-sky-scale=".86" role="img" aria-label="Пять небольших созвездий — по одному на каждый кейс"></div>
     </div>
@@ -175,130 +172,133 @@
 
   <section class="section" style="padding-top:0">
     <div class="wrap">
-      <div class="filter" role="group" aria-label="Показать кейсы по услуге">
+      <div class="filter" role="group" aria-label="Показать кейсы по теме">
         <button type="button" data-f="all" aria-pressed="true">Все</button>
-        <button type="button" data-f="sites" aria-pressed="false">AI-сайты</button>
-        <button type="button" data-f="agents" aria-pressed="false">ИИ-агенты</button>
-        <button type="button" data-f="avatars" aria-pressed="false">Аватары</button>
-        <button type="button" data-f="geo" aria-pressed="false">SEO и GEO</button>
-        <button type="button" data-f="orm" aria-pressed="false">Нейро-ORM</button>
-        <button type="button" data-f="content" aria-pressed="false">Контент-завод</button>
-        <button type="button" data-f="os" aria-pressed="false">AI Growth OS</button>
+        <button type="button" data-f="ai" aria-pressed="false">ИИ и аналитика</button>
+        <button type="button" data-f="content" aria-pressed="false">Контент</button>
+        <button type="button" data-f="brand" aria-pressed="false">Личный бренд</button>
+        <button type="button" data-f="kol" aria-pressed="false">Лидеры мнений</button>
+        <button type="button" data-f="rep" aria-pressed="false">Репутация</button>
       </div>
       <p class="count" id="count" aria-live="polite">Показаны все 5 кейсов</p>
 
       <div class="cases">
-        <article class="case" data-tags="agents sites">
+        <article class="case" data-tags="ai kol">
           <div class="case-side">
-            <span class="ind">Логистика, B2B, Москва</span>
-            <h2>Ответ на заявку за 3 минуты вместо 4 часов</h2>
+            <span class="client">Мостуризм, 2023–2024</span>
+            <h2>Реклама Москвы в пятнадцати странах: блогеров выбирал ИИ, а не рейтинги агентств</h2>
             <dl>
-              <div><dt>Срок</dt><dd>10 недель</dd></div>
-              <div><dt>Услуги</dt><dd><a class="link" href="/social-stars-demo/ai/agents/">ИИ-агенты</a><a class="link" href="/social-stars-demo/ai/sites/">AI-сайт</a></dd></div>
+              <div><dt>Страны</dt><dd>Китай, Индия, Турция, арабские страны, СНГ, Иран</dd></div>
+              <div><dt>Масштаб</dt><dd>более 300 блогеров</dd></div>
             </dl>
           </div>
           <div class="case-body">
-            <div><h3>Задача</h3><p>Грузоперевозчик получал до 300 заявок в неделю из почты, сайта и Telegram. Менеджеры отвечали в среднем через четыре часа, часть заявок терялась, а в CRM попадала половина данных.</p></div>
-            <div><h3>Что сделали</h3><p>Запустили агента продаж: он разбирает входящие, находит клиента в amoCRM, проверяет тарифы и свободный транспорт в 1С и готовит коммерческое предложение. Менеджер подтверждает и отправляет в один клик. На сайт добавили консультанта, который считает стоимость доставки.</p></div>
+            <div><h3>Задача</h3><p>Показать Москву туристам из дружественных стран современным, комфортным и культурным городом. Блогеры из местных рейтингов и подборок стоят дороже рынка, и не видно, кто из них действительно влияет на аудиторию.</p></div>
+            <div><h3>Что сделали</h3><p>Для каждой страны собрали фокус-группы от 10 000 до 100 000 человек: подписчиков статусных брендов, студентов ведущих университетов, сообществ изучающих русский язык. Платформа Follower AI проанализировала их подписки и активность и нашла блогеров с реальным влиянием и высокой вовлечённостью. Аналитики проверяли тематику, замеряли ролики и тон комментариев.</p></div>
             <div><h3>Результат</h3>
               <div class="metrics">
-                <div><s>4 часа</s><b>3 минуты</b><span>среднее время первого ответа</span></div>
-                <div><s>18%</s><b>24%</b><span>конверсия заявки в сделку</span></div>
-                <div><b>2,1</b><span>ставки менеджеров освободились для крупных клиентов</span></div>
+                <div><b>×10</b><span>оптимизация затрат на международную рекламу</span></div>
+                <div><b>до 15 раз</b><span>разница в цене за охват у блогеров, которую помог увидеть ИИ</span></div>
+                <div><b>988 млн</b><span>потенциальных контактов только в Китае, ещё 670 млн в Индии</span></div>
               </div>
             </div>
+            <p class="today">Тот же принцип — искать тех, кому аудитория действительно доверяет, — мы применяем в <a class="link" href="/social-stars-demo/ai/seo-geo/">SEO и GEO</a></p>
           </div>
         </article>
 
-        <article class="case" data-tags="orm geo">
+        <article class="case" data-tags="ai kol">
           <div class="case-side">
-            <span class="ind">Сеть стоматологических клиник, Санкт-Петербург</span>
-            <h2>Старый скандал исчез из ответов пяти нейросетей из шести</h2>
+            <span class="client">Московская неделя интерьера и дизайна</span>
+            <h2>Охват блогеров втрое больше при том же бюджете</h2>
             <dl>
-              <div><dt>Срок</dt><dd>6 месяцев</dd></div>
-              <div><dt>Услуги</dt><dd><a class="link" href="/social-stars-demo/ai/neuro-orm/">Нейро-ORM</a><a class="link" href="/social-stars-demo/ai/seo-geo/">SEO и GEO</a></dd></div>
+              <div><dt>Инструмент</dt><dd>Follower AI и данные соцсетей</dd></div>
+              <div><dt>Признание</dt><dd><span class="award">Премия Brand Analytics «Хрустальный шар»</span></dd></div>
             </dl>
           </div>
           <div class="case-body">
-            <div><h3>Задача</h3><p>На вопрос «какую клинику выбрать» нейросети пересказывали жалобу трёхлетней давности, путали адреса и почти не упоминали врачей. Пациенты приходили на консультацию с вопросами о давно закрытой истории.</p></div>
-            <div><h3>Что сделали</h3><p>Проверили ответы шести моделей на 340 вопросов и построили карту источников. Исправили данные в справочниках и на картах, переписали страницы врачей и услуг под ответы нейросетей, опубликовали материалы с главврачом в отраслевых изданиях.</p></div>
+            <div><h3>Задача</h3><p>Увеличить охват блогеров по сравнению с прошлым годом без роста бюджета и привести платёжеспособных посетителей из Москвы и Подмосковья. Профильные блогеры по интерьерам — самые дорогие.</p></div>
+            <div><h3>Что сделали</h3><p>Собрали аудиторию крупных мебельных брендов — первая фокус-группа в 250 000 человек. Follower AI определил, на каких крупных блогеров подписаны эти люди, и отсеял блогеров с накрученной аудиторией. Вместо дорогих нишевых авторов пригласили популярных блогеров с нужной аудиторией. После выставки сопоставили гостей с подписками и выяснили, какие блогеры сработали лучше.</p></div>
             <div><h3>Результат</h3>
               <div class="metrics">
-                <div><s>38</s><b>71</b><span>индекс AI-видимости</span></div>
-                <div><s>6 из 6</s><b>1 из 6</b><span>моделей упоминают старую жалобу</span></div>
-                <div><b>+24%</b><span>записей на приём из поиска и нейросетей</span></div>
+                <div><b>+268%</b><span>ценовая эффективность отобранных блогеров</span></div>
+                <div><b>×3</b><span>охват блогеров при прежнем бюджете</span></div>
+                <div><b>+26%</b><span>больше посетителей привели блогеры с юмором — одна из находок для следующих кампаний</span></div>
               </div>
             </div>
+            <p class="today">Этот же подход к данным мы используем в <a class="link" href="/social-stars-demo/ai/neuro-orm/">нейро-ORM</a>, когда ищем источники, из которых нейросети собирают ответ</p>
           </div>
         </article>
 
-        <article class="case" data-tags="avatars content">
+        <article class="case" data-tags="content brand">
           <div class="case-side">
-            <span class="ind">Производство оборудования, экспорт в СНГ и ОАЭ</span>
-            <h2>Генеральный директор говорит на пяти языках — без единой съёмки</h2>
+            <span class="client">Максим Петренчук, вице-президент Федерации блогеров</span>
+            <h2>110 000 подписчиков в Telegram у эксперта, у которого нет времени вести канал</h2>
             <dl>
-              <div><dt>Срок</dt><dd>3 месяца</dd></div>
-              <div><dt>Услуги</dt><dd><a class="link" href="/social-stars-demo/ai/avatars/">Цифровые аватары</a><a class="link" href="/social-stars-demo/ai/content/">Контент-завод</a></dd></div>
+              <div><dt>Срок</dt><dd>первые 100 000 — за полгода</dd></div>
+              <div><dt>Формат</dt><dd>автор — главный редактор, команда ведёт процесс</dd></div>
             </dl>
           </div>
           <div class="case-body">
-            <div><h3>Задача</h3><p>Выход на рынки Казахстана, Узбекистана и ОАЭ требовал видео на местных языках. Директор — лучший спикер компании, но на съёмки у него не было времени, а каждый ролик с подрядчиком стоил как небольшой проект.</p></div>
-            <div><h3>Что сделали</h3><p>Записали образ и голос директора за один день, собрали редакцию на агентах: темы, сценарии и версии для каждой площадки. Ролики переводили на казахский, узбекский, английский и арабский тем же голосом, перевод проверяли носители языка.</p></div>
+            <div><h3>Задача</h3><p>Создать личный канал с нуля для эксперта, которого цитируют Forbes, РБК и «Ведомости». Плотный график не оставляет времени на ежедневные публикации, а аудитория не прощает формальных постов.</p></div>
+            <div><h3>Что сделали</h3><p>Выстроили контент-процесс: план, сбор идей с лекций и мероприятий, помощь с композицией и заголовками, публикация. Автор сохранил свой голос и контроль над смыслами. Каждое выступление в Госдуме, на БРИКС или в СМИ превращали в пост с экспертным разбором. Аудиторию растили через обмен публикациями с профильными каналами, без закупки рекламы.</p></div>
             <div><h3>Результат</h3>
               <div class="metrics">
-                <div><b>48</b><span>роликов за квартал на пяти языках</span></div>
-                <div><b>−80%</b><span>стоимость одного ролика</span></div>
-                <div><b>×2</b><span>заявок из Казахстана и Узбекистана</span></div>
+                <div><b>110 000+</b><span>подписчиков: маркетологи, топ-менеджеры, эксперты по коммуникациям</span></div>
+                <div><b>1 млн ₽+</b><span>стабильный оборот от рекламы в месяц</span></div>
+                <div><b>Органика</b><span>канал растёт без постоянных вложений в рекламу</span></div>
               </div>
             </div>
+            <p class="today">Сегодня это <a class="link" href="/social-stars-demo/ai/content/">контент-завод</a>: агенты берут на себя процесс, автор — смыслы</p>
           </div>
         </article>
 
-        <article class="case" data-tags="agents">
+        <article class="case" data-tags="content brand ai">
           <div class="case-side">
-            <span class="ind">Региональный центр обслуживания граждан</span>
-            <h2>Шесть обращений из десяти решаются без оператора</h2>
+            <span class="client">Мозголёт, настольная игра по истории</span>
+            <h2>4 миллиона просмотров: история как сериал, основатель — в кадре</h2>
             <dl>
-              <div><dt>Срок</dt><dd>4 месяца</dd></div>
-              <div><dt>Услуги</dt><dd><a class="link" href="/social-stars-demo/ai/agents/">ИИ-агенты</a><a class="link" href="/social-stars-demo/ai/transformation/">AI-трансформация</a></dd></div>
+              <div><dt>Площадки</dt><dd>Instagram*, YouTube, VK, TikTok</dd></div>
             </dl>
           </div>
           <div class="case-body">
-            <div><h3>Задача</h3><p>Горячая линия и чат не справлялись с сезонными пиками: ответ по типовому вопросу о документах занимал до двух дней. Данные граждан нельзя было передавать во внешние сервисы.</p></div>
-            <div><h3>Что сделали</h3><p>Развернули агента поддержки на открытой модели внутри инфраструктуры заказчика, подключили базу регламентов и статусы заявлений. Сложные обращения агент передаёт специалисту вместе с кратким пересказом. Обучили сотрудников работе с агентом.</p></div>
+            <div><h3>Задача</h3><p>Запустить в соцсетях новый образовательный продукт — игру, которая учит истории через карточки и умную колонку, — и превратить основателя в узнаваемое лицо проекта.</p></div>
+            <div><h3>Что сделали</h3><p>Вместо рекламы игры построили медиа об истории, которое затягивает как сериал. Снимали видео с основателем в формате «говорящая голова», делали моушн-графику и контент с помощью нейросетей, запускали коллаборации с блогерами и отдельно работали с мамами-блогерами — они решают, что подарить ребёнку.</p></div>
             <div><h3>Результат</h3>
               <div class="metrics">
-                <div><b>62%</b><span>обращений решено без оператора</span></div>
-                <div><s>2 дня</s><b>4 минуты</b><span>среднее время ответа</span></div>
-                <div><b>0</b><span>передач данных за пределы контура</span></div>
+                <div><b>4 млн</b><span>просмотров коротких видео</span></div>
+                <div><b>25 000</b><span>подписчиков за три месяца</span></div>
+                <div><b>42</b><span>ролика: 24 с основателем и 18 с моушн-графикой</span></div>
               </div>
             </div>
+            <p class="today">Сегодня основатель мог бы говорить через <a class="link" href="/social-stars-demo/ai/avatars/">видеоклон</a> — без съёмочных дней</p>
           </div>
         </article>
 
-        <article class="case" data-tags="os sites agents avatars geo orm">
+        <article class="case" data-tags="content brand rep">
           <div class="case-side">
-            <span class="ind">Девелопер жилья, Московская область</span>
-            <h2>Одна система вместо пяти подрядчиков — и лид дешевле на четверть</h2>
+            <span class="client">Депутат Государственной Думы</span>
+            <h2>Telegram-канал политика с нуля: 20 000 подписчиков без серых методов</h2>
             <dl>
-              <div><dt>Срок</dt><dd>6 месяцев</dd></div>
-              <div><dt>Услуги</dt><dd><a class="link" href="/social-stars-demo/ai/growth-os/">AI Growth OS</a></dd></div>
+              <div><dt>Старт</dt><dd>канала не было</dd></div>
+              <div><dt>Партнёры</dt><dd>более 50 Telegram-каналов</dd></div>
             </dl>
           </div>
           <div class="case-body">
-            <div><h3>Задача</h3><p>Сайт, реклама, SMM, колл-центр и работа с отзывами были у разных подрядчиков. Никто не видел общую картину, стоимость лида росла, а нейросети советовали покупателям соседние жилые комплексы.</p></div>
-            <div><h3>Что сделали</h3><p>Собрали AI Growth OS: новый сайт проекта с консультантом, агентов для первичной обработки заявок и записи на показ, видео от лица основателя, GEO по запросам о районе и нейро-ORM. Все показатели свели в одну панель.</p></div>
+            <div><h3>Задача</h3><p>Создать для политика личный канал и выстроить узнаваемый образ. Сложности: широкий круг занятий размывает позиционирование, а в политике много негатива и недоверия к формальным сообщениям.</p></div>
+            <div><h3>Что сделали</h3><p>Разработали стратегию с тоном, рубриками и оформлением: спорт, городские инициативы, законотворчество, личная позиция. Настроили постоянный мониторинг упоминаний и корректную работу с негативом. Аудиторию растили через совместные публикации с каналами со схожей аудиторией.</p></div>
             <div><h3>Результат</h3>
               <div class="metrics">
-                <div><b>−27%</b><span>стоимость лида</span></div>
-                <div><b>+18%</b><span>сделок за полгода</span></div>
-                <div><s>29</s><b>64</b><span>индекс AI-видимости</span></div>
+                <div><b>20 000+</b><span>органических подписчиков</span></div>
+                <div><b>50+</b><span>каналов-партнёров для регулярного обмена публикациями</span></div>
+                <div><b>Топ</b><span>самых цитируемых представителей партии в соцсетях</span></div>
               </div>
             </div>
+            <p class="today">Сегодня мониторинг дополняет <a class="link" href="/social-stars-demo/ai/neuro-orm/">нейро-ORM</a>: что о политике отвечают нейросети</p>
           </div>
         </article>
       </div>
-      <p class="empty" id="empty" hidden>По этой услуге кейсов пока нет — расскажем о похожих проектах на звонке.</p>
+
+      <p class="foot">* Instagram принадлежит компании Meta, признанной экстремистской и запрещённой в России.</p>
 
       <a class="next" href="/social-stars-demo/ai/" style="margin-top:clamp(64px,8vw,112px)"><span>Все направления</span><strong>Social Stars AI</strong></a>
     </div>
@@ -357,7 +357,7 @@
   <div class="wrap">
     <div class="ftr-grid">
       <div class="about">
-        <a class="brand" href="/social-stars-demo/ai/" aria-label="Social Stars AI — на главную направления"><svg class="brand-star" viewBox="0 0 100 91.2" aria-hidden="true"><use href="#ss-star"/></svg><span class="brand-word" aria-hidden="true"><svg class="bw-social" viewBox="0 0 66.97 11.77"><use href="#ss-social"/></svg><svg class="bw-stars" viewBox="0 0 61.26 11.78"><use href="#ss-stars"/></svg></span><span class="brand-sep" aria-hidden="true"></span><svg class="brand-ai" viewBox="0 0 15.95 11.78" aria-hidden="true"><use href="#ss-ai"/></svg></a>
+        <a class="brand" href="/social-stars-demo/ai/" aria-label="Social Stars AI — на главную направления"><svg class="brand-star" viewBox="0 0 100 91.2" aria-hidden="true"><use href="#ss-star"/></svg><span class="brand-word" aria-hidden="true"><svg class="bw-social" viewBox="0 0 66.97 11.77"><use href="#ss-social"/></svg><svg class="bw-stars" viewBox="0 0 61.26 11.78"><use href="#ss-stars"/></svg></span><span class="brand-sep" aria-hidden="true"></span><svg class="brand-ai" viewBox="0 0 15.95 11.78" aria-hidden="true"><use href="#ss-ai"/></svg></a>
         <p>Направление Social Stars. 12 лет в репутации и продвижении — теперь с ИИ в каждой услуге.</p>
       </div>
       <div>
@@ -401,14 +401,13 @@
 <script>
 (() => {
   const btns = [...document.querySelectorAll('.filter button')], cases = [...document.querySelectorAll('.case')];
-  const count = document.getElementById('count'), empty = document.getElementById('empty');
+  const count = document.getElementById('count');
   const word = n => n % 10 === 1 && n % 100 !== 11 ? 'кейс' : [2, 3, 4].includes(n % 10) && ![12, 13, 14].includes(n % 100) ? 'кейса' : 'кейсов';
   btns.forEach(b => b.addEventListener('click', () => {
     const f = b.dataset.f;
     btns.forEach(x => x.setAttribute('aria-pressed', x === b));
     let n = 0;
     cases.forEach(c => { const on = f === 'all' || c.dataset.tags.split(' ').includes(f); c.hidden = !on; if (on) n++; });
-    empty.hidden = n > 0;
     count.textContent = f === 'all' ? `Показаны все ${n} ${word(n)}` : `Показано: ${n} ${word(n)}`;
   }));
 })();
