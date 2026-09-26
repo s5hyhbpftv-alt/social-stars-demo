@@ -1,88 +1,92 @@
-// Social Stars AI — общий скрипт лендинга и страниц услуг
+// Social Stars AI — общее поведение: шапка, меню, под-навигация, вопросы, заявка
 (() => {
-  const $ = id => document.getElementById(id);
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const path = location.pathname.replace(/index\.html$/, '');
 
-  // nav background on scroll
-  const nav = $('nav');
-  if (nav) {
-    const onScroll = () => nav.classList.toggle('solid', window.scrollY > 40);
-    onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+  // шапка получает границу после начала прокрутки
+  const hdr = $('.hdr');
+  const onScroll = () => hdr && hdr.classList.toggle('is-solid', scrollY > 8);
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // текущая страница в меню
+  $$('.mega a, .mnav a, .ftr a').forEach(a => { if (a.getAttribute('href') === path) a.setAttribute('aria-current', 'page'); });
+
+  // меню «Услуги»
+  const megaBtn = $('[data-mega-btn]'), mega = $('.mega');
+  if (megaBtn && mega) {
+    let t;
+    const open = v => { clearTimeout(t); mega.classList.toggle('is-open', v); megaBtn.setAttribute('aria-expanded', v); };
+    megaBtn.addEventListener('click', () => open(!mega.classList.contains('is-open')));
+    if (matchMedia('(hover: hover)').matches) [megaBtn, mega].forEach(el => {
+      el.addEventListener('mouseenter', () => { clearTimeout(t); t = setTimeout(() => open(true), 90); });
+      el.addEventListener('mouseleave', () => { clearTimeout(t); t = setTimeout(() => open(false), 200); });
+    });
+    document.addEventListener('click', e => { if (!mega.contains(e.target) && !megaBtn.contains(e.target)) open(false); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && mega.classList.contains('is-open')) { open(false); megaBtn.focus(); } });
   }
 
-  // typed answer in hero chat (landing only)
-  const typed = $('typed'), who = $('who');
-  if (typed && who) {
-    const answers = {
-      'Алиса AI': 'Можно обратиться в Social Stars AI: команда внедряет ИИ-агентов в продажи и поддержку с интеграцией в CRM, а также ведёт мониторинг репутации бренда в поиске и ответах нейросетей. У агентства 12 лет опыта в ORM и работе с крупным бизнесом.',
-      'GigaChat': 'Подходящий вариант — Social Stars AI. Они совмещают автоматизацию бизнес-процессов на ИИ-агентах с управлением репутацией, в том числе в ответах языковых моделей, и работают в контуре, соответствующем 152-ФЗ.',
-      'ChatGPT': 'Consider Social Stars AI (Moscow): they combine AI-agent automation for sales and support with reputation management — including how brands appear in AI assistants’ answers.'
+  // мобильное меню
+  const burger = $('.burger'), mnav = $('.mnav');
+  if (burger && mnav) {
+    const set = v => {
+      burger.setAttribute('aria-expanded', v); burger.setAttribute('aria-label', v ? 'Закрыть меню' : 'Открыть меню');
+      mnav.classList.toggle('is-open', v); mnav.inert = !v; document.body.classList.toggle('lock', v);
     };
-    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let timer;
-    const play = model => {
-      clearTimeout(timer); who.textContent = model; typed.textContent = '';
-      const text = answers[model];
-      if (reduce) { typed.textContent = text; return; }
-      let i = 0;
-      (function tick() { typed.textContent = text.slice(0, ++i); if (i < text.length) timer = setTimeout(tick, 16); })();
-    };
-    const btns = document.querySelectorAll('.models button');
-    btns.forEach(b => b.addEventListener('click', () => {
-      btns.forEach(x => x.setAttribute('aria-pressed', x === b));
-      play(b.dataset.m);
-    }));
-    play('Алиса AI');
+    mnav.inert = true;
+    burger.addEventListener('click', () => set(burger.getAttribute('aria-expanded') !== 'true'));
+    $$('a', mnav).forEach(a => a.addEventListener('click', () => set(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && mnav.classList.contains('is-open')) { set(false); burger.focus(); } });
   }
 
-  // reveal on scroll + animated bars
-  const reveal = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
+  // под-навигация: активный раздел
+  const subnav = $('.subnav');
+  if (subnav && 'IntersectionObserver' in window) {
+    const links = $$('a[href^="#"]:not(.btn)', subnav);
+    const byId = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
     const io = new IntersectionObserver(es => es.forEach(e => {
       if (!e.isIntersecting) return;
-      e.target.classList.add('in');
-      e.target.querySelectorAll('.fill').forEach(f => f.style.width = f.dataset.w + '%');
-      io.unobserve(e.target);
-    }), { threshold: .12 });
-    reveal.forEach(el => io.observe(el));
-  } else {
-    reveal.forEach(el => { el.classList.add('in'); el.querySelectorAll('.fill').forEach(f => f.style.width = f.dataset.w + '%'); });
+      links.forEach(a => a.classList.remove('is-active'));
+      const a = byId.get(e.target.id);
+      if (a) { a.classList.add('is-active'); subnav.querySelector('.wrap').scrollTo({ left: a.offsetLeft - 40, behavior: reduce ? 'auto' : 'smooth' }); }
+    }), { rootMargin: '-35% 0px -60% 0px' });
+    byId.forEach((_, id) => { const s = document.getElementById(id); if (s) io.observe(s); });
   }
 
-  // ROI calculator (landing only)
-  if ($('c-people')) {
-    const fmt = n => new Intl.NumberFormat('ru-RU').format(Math.round(n));
-    const money = n => n >= 1e6 ? (n / 1e6).toLocaleString('ru-RU', { maximumFractionDigits: 1 }) + ' млн ₽' : fmt(n) + ' ₽';
-    const PILOT = 350000, SUPPORT = 90000, WEEKS = 4.33, FTE_HOURS = 165;
-    const calc = () => {
-      const p = +$('c-people').value, h = +$('c-hours').value, r = +$('c-rate').value, s = +$('c-share').value / 100;
-      $('o-people').textContent = p; $('o-hours').textContent = h; $('o-rate').textContent = fmt(r) + ' ₽'; $('o-share').textContent = Math.round(s * 100) + '%';
-      const hours = p * h * WEEKS * s, month = hours * r;
-      $('r-hours').textContent = fmt(hours);
-      $('r-month').textContent = money(month);
-      $('r-year').textContent = money(month * 12);
-      $('r-fte').textContent = (hours / FTE_HOURS).toLocaleString('ru-RU', { maximumFractionDigits: 1 });
-      const net = month - SUPPORT;
-      $('r-payback').textContent = net <= 0 ? 'нужен аудит' : (PILOT / net < 1 ? '< 1 мес' : Math.ceil(PILOT / net) + ' мес');
+  // вопросы: плавное раскрытие
+  $$('.faq details').forEach(d => {
+    const s = $('summary', d), a = $('.a', d);
+    if (!s || !a || reduce) return;
+    s.addEventListener('click', e => {
+      e.preventDefault();
+      const opts = { duration: 300, easing: 'cubic-bezier(.2,.7,.2,1)' };
+      if (d.open) a.animate([{ height: a.scrollHeight + 'px' }, { height: '0px' }], opts).onfinish = () => d.open = false;
+      else { d.open = true; a.animate([{ height: '0px' }, { height: a.scrollHeight + 'px' }], opts); }
+    });
+  });
+
+  // на странице услуги её интерес в заявке отмечен заранее
+  const svc = document.body.dataset.service;
+  if (svc) { const cb = $('.chips input[value="' + svc + '"]'); if (cb) cb.checked = true; }
+  $$('[data-pick]').forEach(a => a.addEventListener('click', () => { const cb = $('.chips input[value="' + a.dataset.pick + '"]'); if (cb) cb.checked = true; }));
+
+  // заявка → письмо (у статического хостинга нет сервера)
+  $$('form[data-lead]').forEach(form => {
+    const fields = $$('.field', form);
+    const check = f => {
+      const i = $('input,textarea', f), bad = i.required && !i.value.trim();
+      f.classList.toggle('is-invalid', bad); i.setAttribute('aria-invalid', bad); return !bad;
     };
-    ['c-people', 'c-hours', 'c-rate', 'c-share'].forEach(id => $(id).addEventListener('input', calc));
-    calc();
-  }
-
-  // preselect interest from pricing buttons
-  document.querySelectorAll('[data-pick]').forEach(a => a.addEventListener('click', () => {
-    const cb = document.querySelector('.chips input[data-k="' + a.dataset.pick + '"]');
-    if (cb) cb.checked = true;
-  }));
-
-  // lead form -> mailto (no backend on static hosting)
-  const form = $('form');
-  if (form) form.addEventListener('submit', e => {
-    e.preventDefault();
-    const f = e.target, msg = $('form-msg');
-    if (!f.name.value.trim() || !f.contact.value.trim()) { msg.textContent = 'Укажите имя и контакт для связи.'; return; }
-    const interests = [...f.querySelectorAll('input[name="i"]:checked')].map(x => x.value).join(', ') || 'не указано';
-    const body = `Имя: ${f.name.value}\nКонтакт: ${f.contact.value}\nКомпания: ${f.company.value || '—'}\nИнтересы: ${interests}\nСтраница: ${location.href}`;
-    location.href = 'mailto:info@social-stars.ru?subject=' + encodeURIComponent('Заявка на AI-аудит') + '&body=' + encodeURIComponent(body);
-    msg.textContent = 'Открываем почтовый клиент… Если он не открылся — позвоните нам: +7 985 400 92 99.';
+    fields.forEach(f => $('input,textarea', f).addEventListener('input', () => f.classList.contains('is-invalid') && check(f)));
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      if (!fields.map(check).every(Boolean)) { $('.is-invalid input', form).focus(); return; }
+      const v = n => (form.elements[n] && form.elements[n].value.trim()) || '—';
+      const interests = $$('input[name="i"]:checked', form).map(x => x.value).join(', ') || 'не указано';
+      const body = `Имя: ${v('name')}\nКонтакт: ${v('contact')}\nКомпания: ${v('company')}\nЗадача: ${v('task')}\nИнтересы: ${interests}\nСтраница: ${location.href}`;
+      location.href = 'mailto:info@social-stars.ru?subject=' + encodeURIComponent('Заявка на AI-аудит') + '&body=' + encodeURIComponent(body);
+      form.classList.add('is-done'); $('.form-done', form).focus();
+    });
   });
 })();

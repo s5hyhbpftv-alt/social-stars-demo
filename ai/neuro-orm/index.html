@@ -2,147 +2,489 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>Нейро-ORM: репутация бренда в ответах нейросетей — Social Stars AI</title>
-  <meta name="description" content="Мониторинг и управление тем, что ChatGPT, Алиса AI, GigaChat, YandexGPT, DeepSeek и Perplexity отвечают о компании и первых лицах. Индекс AI-видимости, работа с источниками, антикризис." />
-  <link rel="icon" type="image/svg+xml" href="/social-stars-demo/favicon.svg" />
+  <meta name="theme-color" content="#f3f5f8" />
+  <title>Нейро-ORM — репутация в ответах нейросетей · Social Stars AI</title>
+  <meta name="description" content="Следим и управляем тем, что ChatGPT, Алиса AI, GigaChat, YandexGPT, DeepSeek и Perplexity отвечают о компании и первых лицах: карта источников, исправление фактов, ежемесячный индекс AI-видимости." />
   <link rel="canonical" href="https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/neuro-orm/" />
+  <link rel="icon" type="image/svg+xml" href="/social-stars-demo/favicon.svg" />
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Social Stars" />
-  <meta property="og:title" content="Нейро-ORM: репутация бренда в ответах нейросетей — Social Stars AI" />
-  <meta property="og:description" content="Мониторинг и управление тем, что ChatGPT, Алиса AI, GigaChat, YandexGPT, DeepSeek и Perplexity отвечают о компании и первых лицах. Индекс AI-видимости, работа с источниками, антикризис." />
+  <meta property="og:title" content="Нейро-ORM — Social Stars AI" />
+  <meta property="og:description" content="Что нейросети говорят о вашей компании — и как это изменить." />
   <meta property="og:url" content="https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/neuro-orm/" />
   <meta property="og:image" content="https://s5hyhbpftv-alt.github.io/social-stars-demo/media/og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Нейро-ORM", "description": "Мониторинг и управление тем, что ChatGPT, Алиса AI, GigaChat, YandexGPT, DeepSeek и Perplexity отвечают о компании и первых лицах. Индекс AI-видимости, работа с источниками, антикризис.", "url": "https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/neuro-orm/", "areaServed": "RU", "provider": {"@id": "https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/#service"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Social Stars", "item": "https://s5hyhbpftv-alt.github.io/social-stars-demo/"}, {"@type": "ListItem", "position": 2, "name": "Social Stars AI", "item": "https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/"}, {"@type": "ListItem", "position": 3, "name": "Нейро-ORM", "item": "https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/neuro-orm/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Можно ли удалить информацию из нейросети?", "acceptedAnswer": {"@type": "Answer", "text": "Напрямую — нет. Но ответы моделей строятся на источниках. Когда меняются источники и их вес, меняется и ответ. Мы работаем именно с этим."}}, {"@type": "Question", "name": "Чем нейро-ORM отличается от обычного ORM?", "acceptedAnswer": {"@type": "Answer", "text": "Классический ORM работает со страницей поисковой выдачи. Нейро-ORM — с готовым ответом модели, который пользователь видит без переходов на сайты. Инструменты частично совпадают, метрики — другие."}}, {"@type": "Question", "name": "Работаете с персональной репутацией?", "acceptedAnswer": {"@type": "Answer", "text": "Да: первые лица, эксперты, публичные персоны. Это одно из основных направлений Social Stars."}}, {"@type": "Question", "name": "Насколько это конфиденциально?", "acceptedAnswer": {"@type": "Answer", "text": "Работаем по NDA, отчёты доступны только согласованному кругу лиц."}}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Нейро-ORM: репутация в ответах нейросетей","url":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/neuro-orm/","areaServed":"RU","provider":{"@type":"Organization","name":"Social Stars","url":"https://s5hyhbpftv-alt.github.io/social-stars-demo/"},"offers":{"@type":"Offer","priceCurrency":"RUB","price":"250000","description":"Ежемесячное сопровождение"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Social Stars AI","item":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/"},{"@type":"ListItem","position":2,"name":"Нейро-ORM","item":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/neuro-orm/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Можно ли удалить информацию из нейросети?","acceptedAnswer":{"@type":"Answer","text":"Напрямую — нет. Ответы моделей строятся на источниках. Когда меняются источники и их вес, меняется и ответ. Мы работаем именно с этим."}},{"@type":"Question","name":"Чем нейро-ORM отличается от обычного ORM?","acceptedAnswer":{"@type":"Answer","text":"Классический ORM работает со страницей поисковой выдачи. Нейро-ORM — с готовым ответом модели, который человек читает, не переходя на сайты."}},{"@type":"Question","name":"Как быстро меняются ответы?","acceptedAnswer":{"@type":"Answer","text":"Модели с поиском в реальном времени реагируют за недели, модели без поиска — после обновления своих данных. Обычно первые изменения видны через 1–3 месяца."}}]}]}</script>
   <link rel="stylesheet" href="/social-stars-demo/ai/ai.css" />
+  <style>
+    /* как рождается ответ */
+    .birth{display:grid;grid-template-columns:1fr 1.35fr 1fr;gap:32px;align-items:center}
+    .card{background:var(--white);border:1px solid var(--mist);border-radius:var(--r-lg);padding:24px 26px}
+    .card small{display:block;font-size:14px;color:var(--slate);margin-bottom:10px}
+    .card p{font-size:19px;letter-spacing:-.01em;line-height:1.45}
+    .card.answer{background:var(--ink);border-color:var(--ink);color:#eef1f6}
+    .card.answer small{color:#a9b1c0}
+    .card.answer p{font-size:16.5px;line-height:1.6;color:#d3d9e3}
+    .card.answer mark{background:rgba(194,87,75,.28);color:#ffd2cc;padding:0 3px;border-radius:3px}
+    .card.answer sup{color:#e0c3a4;font-size:11px}
+    .srcs{list-style:none;display:grid;gap:8px}
+    .srcs li{display:grid;grid-template-columns:1fr 96px 40px;gap:14px;align-items:center;padding:12px 16px;border-radius:var(--r-md);background:var(--white);border:1px solid var(--mist);font-size:15px}
+    .srcs li small{display:block;font-size:13px;color:var(--slate)}
+    .srcs li.neg{border-color:#e7b3ab;background:#fbf1ef}
+    .srcs .w{height:4px;border-radius:2px;background:var(--porcelain-2);overflow:hidden}
+    .srcs .w i{display:block;height:100%;background:var(--ink)}
+    .srcs li.neg .w i{background:var(--bad)}
+    .srcs .p{font-size:14px;color:var(--slate);text-align:right;font-variant-numeric:tabular-nums}
+    .note{margin-top:24px;font-size:14.5px;color:var(--slate);max-width:44em}
+
+    /* до и после */
+    .ba{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .ba .card p{font-size:18px;line-height:1.65;color:var(--ink-2)}
+    .ba .card small{display:flex;justify-content:space-between}
+    .ba mark{background:transparent;color:inherit;border-radius:3px;padding:0 2px;transition:background .3s}
+    .ba.hl .before mark{background:#f6dcd7}
+    .ba.hl .after mark{background:#dbeee3}
+    .ba-bar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center;margin-top:18px;font-size:14.5px;color:var(--slate)}
+    .switch{display:inline-flex;align-items:center;gap:12px;cursor:pointer;color:var(--ink-2)}
+    .switch input{appearance:none;-webkit-appearance:none;width:42px;height:24px;border-radius:12px;background:var(--mist-2);position:relative;cursor:pointer;margin:0;transition:background .2s}
+    .switch input::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:transform .25s var(--ease)}
+    .switch input:checked{background:var(--ink)}
+    .switch input:checked::after{transform:translateX(18px)}
+    .diff{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:48px;padding-top:28px;border-top:1px solid var(--mist)}
+    .diff dt{font-size:14px;color:var(--slate)}
+    .diff dd{margin-top:6px;font-size:17px}
+    .diff s{color:var(--bad);text-decoration-thickness:1px}
+
+    /* сканер */
+    .scan-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,5vw,80px);align-items:center}
+    .scan-q{margin:16px 16px 4px;padding:14px 16px;border-radius:var(--r-md);background:#1c2231;font-size:15.5px}
+    .scan-q small{display:block;color:#8a93a5;font-size:13px;margin-bottom:2px}
+    .scan-rows{list-style:none;padding:4px 0 8px}
+    .scan-rows li{display:grid;grid-template-columns:110px 1fr 104px;align-items:center;gap:14px;padding:13px 18px;border-top:1px solid #262d3d;font-size:15px}
+    .scan-rows .bar{height:4px;border-radius:2px;background:#262d3d;overflow:hidden}
+    .scan-rows .bar i{display:block;height:100%;width:0;background:#c7a47f;transition:width 1s var(--ease)}
+    .st{justify-self:end;font-size:13px;padding:5px 9px;border-radius:var(--r-sm);color:#8a93a5;background:#1c2231;white-space:nowrap}
+    .st.ok{color:#8fd3a6;background:rgba(95,181,132,.12)}.st.warn{color:#f0d49c;background:rgba(227,178,92,.12)}.st.bad{color:#f5a99f;background:rgba(194,87,75,.16)}
+    .scan-foot{padding:12px 18px 16px;font-size:13.5px;color:#8a93a5;border-top:1px solid #262d3d}
+
+    /* отчёт */
+    .report{display:grid;grid-template-columns:1.15fr .85fr;gap:24px}
+    .ix{display:grid;grid-template-columns:120px 1fr 36px 44px;gap:14px;align-items:center;padding:9px 0;font-size:15px}
+    .ix .tr{height:6px;border-radius:3px;background:var(--porcelain-2);overflow:hidden}
+    .ix .tr i{display:block;height:100%;background:var(--ink)}
+    .ix .v{text-align:right;font-variant-numeric:tabular-nums}
+    .ix .d{text-align:right;font-size:13.5px;color:var(--ok);font-variant-numeric:tabular-nums}
+    .spark{width:100%;height:auto;margin:6px 0 10px}
+    .spark line{stroke:var(--mist)}
+    .spark .ln{fill:none;stroke:var(--bronze);stroke-width:2}
+    .spark .ar{fill:var(--bronze-soft)}
+    .spark text{fill:var(--slate);font:12px var(--font)}
+    .kp{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding-top:16px;border-top:1px solid var(--mist)}
+    .kp b{display:block;font-size:30px;font-weight:300;letter-spacing:-.03em}
+    .kp span{font-size:13.5px;color:var(--slate)}
+
+    .who{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+    .who h3{font-size:22px;font-weight:400;letter-spacing:-.015em;margin-bottom:12px}
+    .who ul{list-style:none;display:grid;gap:8px;color:var(--ink-2)}
+    .who li{padding-left:18px;position:relative}
+    .who li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--mist-2)}
+
+    @media (max-width:1024px){ .birth,.scan-grid,.report{grid-template-columns:1fr} }
+    @media (max-width:860px){ .ba,.who{grid-template-columns:1fr} .diff{grid-template-columns:1fr 1fr} }
+    @media (max-width:600px){
+      .srcs li{grid-template-columns:1fr 56px 36px;gap:10px;padding:12px}
+      .scan-rows li{grid-template-columns:90px 1fr;gap:8px 12px}
+      .st{grid-column:1/-1;justify-self:start}
+      .ix{grid-template-columns:90px 1fr 30px 40px;gap:10px}
+      .diff{grid-template-columns:1fr}
+    }
+  </style>
 </head>
-<body>
-<!-- Сгенерировано tools/build_ai_pages.py — правьте контент там, а не здесь. -->
-<header class="nav" id="nav">
+<body data-service="Нейро-ORM">
+<!-- @header -->
+<a class="skip" href="#main">Перейти к содержимому</a>
+<header class="hdr">
   <div class="wrap">
-    <a class="logo" href="/social-stars-demo/ai/" aria-label="Social Stars AI — главная"><img src="/social-stars-demo/favicon.svg" alt="" width="26" height="27" />Social Stars <b>AI</b></a>
-    <nav aria-label="Разделы">
-      <ul class="nav-links">
-        <li><a href="/social-stars-demo/ai/#services">Все услуги</a></li>
-        <li><a href="#includes">Что входит</a></li>
-        <li><a href="#pricing">Цены</a></li>
-        <li><a href="#faq">FAQ</a></li>
+    <a class="brand" href="/social-stars-demo/ai/"><img src="/social-stars-demo/favicon.svg" alt="" width="22" height="23" /><span>Social Stars <em>AI</em></span></a>
+    <nav aria-label="Основное меню">
+      <ul class="menu">
+        <li><button type="button" data-mega-btn aria-expanded="false" aria-controls="mega">Услуги <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m3 4.5 3 3 3-3"/></svg></button></li>
+        <li><a href="/social-stars-demo/ai/neuro-orm/">Нейро-ORM</a></li>
+        <li><a href="/social-stars-demo/cases/">Кейсы</a></li>
+        <li><a href="/social-stars-demo/contacts/">Контакты</a></li>
       </ul>
     </nav>
-    <a class="btn btn-gold" href="#lead">Бесплатный AI-аудит</a>
+    <a class="btn btn-primary btn-desk" href="#lead">Получить аудит</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Открыть меню"><span></span><span></span></button>
+    <div class="mega" id="mega">
+      <a class="feature" href="/social-stars-demo/ai/growth-os/"><b>AI Growth OS</b><span>Сайт, агенты, аватар, поиск и репутация — одна система роста с оплатой за результат</span></a>
+      <a href="/social-stars-demo/ai/sites/"><b>AI-сайты</b><span>Сайт, который находят люди и цитируют нейросети</span></a>
+      <a href="/social-stars-demo/ai/agents/"><b>ИИ-агенты</b><span>Рутина продаж, поддержки и документов — агентам</span></a>
+      <a href="/social-stars-demo/ai/avatars/"><b>Цифровые аватары</b><span>Эксперт говорит каждый день без съёмок</span></a>
+      <a href="/social-stars-demo/ai/seo-geo/"><b>SEO и GEO</b><span>В поиске и в ответе нейросети</span></a>
+      <a href="/social-stars-demo/ai/neuro-orm/"><b>Нейро-ORM</b><span>Что нейросети говорят о компании</span></a>
+      <a href="/social-stars-demo/ai/content/"><b>Контент-завод</b><span>Регулярный контент без раздувания штата</span></a>
+      <a href="/social-stars-demo/ai/transformation/"><b>AI-трансформация</b><span>Стратегия, правила и обучение команд</span></a>
+      <a href="/social-stars-demo/ai/"><b>Все направления</b><span>Обзор, калькулятор и сравнение с рынком</span></a>
+    </div>
   </div>
 </header>
+<div class="mnav" id="mnav">
+  <ul>
+    <li><a href="/social-stars-demo/ai/">Все направления</a></li>
+    <li><a href="/social-stars-demo/ai/growth-os/">AI Growth OS</a></li>
+    <li><a href="/social-stars-demo/ai/sites/">AI-сайты</a></li>
+    <li><a href="/social-stars-demo/ai/agents/">ИИ-агенты</a></li>
+    <li><a href="/social-stars-demo/ai/avatars/">Цифровые аватары</a></li>
+    <li><a href="/social-stars-demo/ai/seo-geo/">SEO и GEO</a></li>
+    <li><a href="/social-stars-demo/ai/neuro-orm/">Нейро-ORM</a></li>
+    <li><a href="/social-stars-demo/ai/content/">Контент-завод</a></li>
+    <li><a href="/social-stars-demo/ai/transformation/">AI-трансформация</a></li>
+  </ul>
+  <div class="mnav-foot">
+    <a class="btn btn-primary btn-block" href="#lead">Получить аудит</a>
+    <a href="tel:+79854009299">+7 985 400 92 99</a>
+    <a href="mailto:info@social-stars.ru">info@social-stars.ru</a>
+  </div>
+</div>
+<!-- /@header -->
 
-<main>
-  <section class="hero page">
-    <div class="orb a"></div><div class="orb b"></div>
+<main id="main">
+  <section class="hero">
     <div class="wrap">
-      <nav class="crumbs" aria-label="Хлебные крошки"><a href="/social-stars-demo/">Social Stars</a><span>/</span><a href="/social-stars-demo/ai/">Social Stars AI</a><span>/</span><span aria-current="page">Нейро-ORM</span></nav>
-      <span class="eyebrow">Social Stars AI · Нейро-ORM</span>
-      <h1>Нейро-ORM: <em>что нейросети говорят о вас</em></h1>
-      <p class="hero-lead">Нейросеть собирает ответ о компании из десятков источников — включая устаревшие и негативные. Мы находим эти источники, исправляем факты и делаем так, чтобы ответ работал на вас. Это развитие нашей 12-летней экспертизы в ORM и SERM.</p>
-      <div class="hero-cta">
-        <a class="btn btn-gold" href="#lead">Обсудить задачу</a>
-        <a class="btn btn-ghost" href="#pricing">Смотреть цены</a>
-      </div>
-      <div class="facts"><div><span>Мониторинг</span><b>6+ нейросетей</b></div><div><span>Стоимость</span><b>от 250 000 ₽/мес</b></div><div><span>Для кого</span><b>бренды · первые лица · госсектор</b></div></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Задачи</span><h2>Когда нужен нейро-ORM</h2></div></div>
-      <div class="cards"><div class="card reveal"><h3>В ответе — старый скандал</h3><p>Модель пересказывает историю, которая давно закрыта.</p></div><div class="card reveal"><h3>Неверные факты</h3><p>Неправильные цены, руководители, адреса или продукты.</p></div><div class="card reveal"><h3>Вас путают с другими</h3><p>Похожее название — и модель приписывает вам чужие проблемы.</p></div><div class="card reveal"><h3>Персональная репутация</h3><p>Первое лицо описывают по одному давнему материалу.</p></div></div>
-    </div>
-  </section>
-
-  <section class="alt" id="includes">
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Что входит</span><h2>Всё, что нужно для результата</h2></div><p>Работаем под ключ: от стратегии до поддержки. Состав адаптируем под задачу после аудита.</p></div>
-      <div class="cards c3"><div class="card reveal"><span class="k">01</span><h3>Сканирование</h3><p>Сотни запросов о бренде и персонах к Алисе AI, GigaChat, YandexGPT, ChatGPT, DeepSeek и Perplexity.</p></div><div class="card reveal"><span class="k">02</span><h3>Карта источников</h3><p>Какие сайты, СМИ, отзывы и форумы формируют ответ модели.</p></div><div class="card reveal"><span class="k">03</span><h3>Исправление фактов</h3><p>Работа с первоисточниками, справочниками и официальными страницами.</p></div><div class="card reveal"><span class="k">04</span><h3>Позитивные упоминания</h3><p>Публикации в авторитетных СМИ и у лидеров мнений.</p></div><div class="card reveal"><span class="k">05</span><h3>Вытеснение негатива</h3><p>Классический ORM и SERM под новые правила игры.</p></div><div class="card reveal"><span class="k">06</span><h3>Алерты</h3><p>Уведомления, когда в ответах появляется новый негатив.</p></div></div>
-    </div>
-  </section>
-
-  <section class="alt">
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Пример отчёта</span><h2>Индекс AI-видимости</h2></div><p>Каждый месяц: упоминаемость, точность и тональность ответов по каждой модели. На схеме — демо-данные.</p></div>
-      <div class="radar reveal" style="max-width:720px;color:var(--ink)" aria-label="Пример отчёта: индекс AI-видимости"><h4>Индекс AI-видимости</h4><p class="sub">Пример формата отчёта · демо-данные</p><div class="bar"><span>Алиса AI</span><div class="track"><div class="fill" data-w="72"></div></div><span class="v">72</span></div><div class="bar"><span>GigaChat</span><div class="track"><div class="fill" data-w="64"></div></div><span class="v">64</span></div><div class="bar"><span>YandexGPT</span><div class="track"><div class="fill" data-w="58"></div></div><span class="v">58</span></div><div class="bar"><span>ChatGPT</span><div class="track"><div class="fill" data-w="47"></div></div><span class="v">47</span></div><div class="bar"><span>DeepSeek</span><div class="track"><div class="fill" data-w="39"></div></div><span class="v">39</span></div><div class="bar"><span>Perplexity</span><div class="track"><div class="fill" data-w="51"></div></div><span class="v">51</span></div><div class="legend"><span>Упоминаемость · точность · тональность</span><span>0–100</span></div></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Как работаем</span><h2>Этапы и сроки</h2></div></div>
-      <div class="process"><div class="step reveal"><h3>Сканирование</h3><p>Запросы к моделям о бренде, продуктах и первых лицах.</p><span class="t">1 неделя</span></div><div class="step reveal"><h3>Диагностика</h3><p>Карта источников, список неточностей и рисков.</p><span class="t">1 неделя</span></div><div class="step reveal"><h3>Работа с источниками</h3><p>Исправление, публикации, вытеснение негатива.</p><span class="t">ежемесячно</span></div><div class="step reveal"><h3>Контроль</h3><p>Индекс AI-видимости и алерты.</p><span class="t">ежемесячно</span></div></div>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Метрики</span><h2>Что мы измеряем</h2></div><p>Фиксируем значения «до» на старте и показываем динамику в ежемесячном отчёте.</p></div>
-      <div class="metrics"><div class="reveal"><b>Упоминаемость</b><span>как часто модель называет бренд</span></div><div class="reveal"><b>Точность</b><span>доля ответов без фактических ошибок</span></div><div class="reveal"><b>Тональность</b><span>позитив, нейтраль, негатив</span></div><div class="reveal"><b>Источники</b><span>доля ваших и лояльных источников в ответах</span></div><div class="reveal"><b>Негатив в выдаче</b><span>классический SERM</span></div><div class="reveal"><b>Скорость реакции</b><span>от появления негатива до ответа</span></div></div>
-    </div>
-  </section>
-
-  <section class="pricing" id="pricing">
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Цены</span><h2>Пакеты</h2></div><p>Ориентиры для старта. Итоговая смета — после бесплатного аудита.</p></div>
-      <div class="plans p3"><div class="plan reveal"><h3>Аудит упоминаний</h3><div class="price">от 120 000 ₽</div><p>Разово: полная картина по 6+ моделям.</p><ul><li>300+ запросов</li><li>Карта источников</li><li>Список рисков</li><li>План работ</li></ul><a class="btn btn-dark" href="#lead">Обсудить</a></div><div class="plan hot reveal"><span class="badge">Популярный</span><h3>Нейро-ORM</h3><div class="price">от 250 000 ₽/мес</div><p>Постоянная работа с репутацией в нейросетях.</p><ul><li>Мониторинг и алерты</li><li>Работа с источниками</li><li>Публикации</li><li>Индекс AI-видимости</li></ul><a class="btn btn-gold" href="#lead">Обсудить</a></div><div class="plan reveal"><h3>Антикризис</h3><div class="price">от 600 000 ₽</div><p>Когда негатив нужно остановить быстро.</p><ul><li>Штаб 24/7</li><li>Нейро-ORM + SERM</li><li>Работа со СМИ</li><li>Лидеры мнений</li></ul><a class="btn btn-dark" href="#lead">Обсудить</a></div></div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="wrap">
-      <div class="sec-head" style="justify-content:center;text-align:center"><div><span class="eyebrow">FAQ</span><h2>Частые вопросы</h2></div></div>
-      <div class="faq"><details><summary>Можно ли удалить информацию из нейросети?</summary><p>Напрямую — нет. Но ответы моделей строятся на источниках. Когда меняются источники и их вес, меняется и ответ. Мы работаем именно с этим.</p></details><details><summary>Чем нейро-ORM отличается от обычного ORM?</summary><p>Классический ORM работает со страницей поисковой выдачи. Нейро-ORM — с готовым ответом модели, который пользователь видит без переходов на сайты. Инструменты частично совпадают, метрики — другие.</p></details><details><summary>Работаете с персональной репутацией?</summary><p>Да: первые лица, эксперты, публичные персоны. Это одно из основных направлений Social Stars.</p></details><details><summary>Насколько это конфиденциально?</summary><p>Работаем по NDA, отчёты доступны только согласованному кругу лиц.</p></details></div>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="wrap">
-      <div class="sec-head"><div><span class="eyebrow">Другие направления</span><h2>Сильнее вместе</h2></div><p>Модули Social Stars AI усиливают друг друга. Комплекс — <a href="/social-stars-demo/ai/growth-os/">AI Growth OS</a>.</p></div>
-      <div class="xlinks"><a href="/social-stars-demo/ai/sites/"><b>AI-сайты</b><span>от 290 000 ₽</span></a><a href="/social-stars-demo/ai/agents/"><b>ИИ-агенты</b><span>от 350 000 ₽</span></a><a href="/social-stars-demo/ai/avatars/"><b>Цифровые аватары</b><span>от 150 000 ₽</span></a><a href="/social-stars-demo/ai/seo-geo/"><b>SEO + GEO</b><span>от 180 000 ₽/мес</span></a><a href="/social-stars-demo/ai/content/"><b>AI-контент-завод</b><span>от 200 000 ₽/мес</span></a><a href="/social-stars-demo/ai/transformation/"><b>AI-трансформация</b><span>от 500 000 ₽</span></a><a href="/social-stars-demo/ai/growth-os/"><b>AI Growth OS</b><span>от 1,5 млн ₽ + ретейнер</span></a></div>
-    </div>
-  </section>
-
-  <section class="lead" id="lead">
-    <div class="orb a"></div>
-    <div class="wrap lead-grid">
-      <div>
-        <span class="eyebrow">Бесплатный AI-аудит</span>
-        <h2>Обсудим вашу задачу</h2>
-        <p class="lead-lead">За 48 часов пришлём отчёт: как вас видят нейросети и какие процессы дадут быстрый эффект от ИИ.</p>
-        <div class="contacts">
-          <a href="tel:+79854009299">+7 985 400 92 99</a>
-          <a href="mailto:info@social-stars.ru">info@social-stars.ru</a>
-          <span style="color:rgba(255,255,255,.5);font-size:15px">Москва, ул. Лесная, 57, стр. 4</span>
+      <div class="hero-text">
+        <nav class="crumbs" aria-label="Вы здесь"><a href="/social-stars-demo/ai/">Social Stars AI</a><span aria-hidden="true">/</span><span aria-current="page">Нейро-ORM</span></nav>
+        <h1 class="t-hero">Что нейросети говорят о вас — и как это изменить</h1>
+        <p class="t-lead">Клиенты, журналисты и партнёры спрашивают о компании у Алисы AI и ChatGPT. Модель собирает ответ из десятков источников, включая устаревшие и негативные. Мы делаем так, чтобы ответ был точным.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#lead">Проверить мою компанию</a>
+          <a class="btn btn-line" href="#before-after">Пример до и после</a>
         </div>
       </div>
-      <form id="form" novalidate>
-        <input class="inp" name="name" placeholder="Имя" autocomplete="name" required aria-label="Имя" />
-        <input class="inp" name="contact" placeholder="Телефон или Telegram" autocomplete="tel" required aria-label="Телефон или Telegram" />
-        <input class="inp" name="company" placeholder="Компания и сайт" aria-label="Компания и сайт" />
-        <fieldset>
-          <legend>Что интересно</legend>
-          <div class="chips"><label><input type="checkbox" name="i" value="AI-сайт" data-k="site" /><span>AI-сайт</span></label><label><input type="checkbox" name="i" value="ИИ-агенты" data-k="agents" /><span>ИИ-агенты</span></label><label><input type="checkbox" name="i" value="Аватар" data-k="avatar" /><span>Аватар</span></label><label><input type="checkbox" name="i" value="SEO + GEO" data-k="geo" /><span>SEO + GEO</span></label><label><input type="checkbox" name="i" value="Нейро-ORM" data-k="orm" checked /><span>Нейро-ORM</span></label><label><input type="checkbox" name="i" value="Контент-завод" data-k="content" /><span>Контент-завод</span></label><label><input type="checkbox" name="i" value="AI-трансформация" data-k="transform" /><span>AI-трансформация</span></label><label><input type="checkbox" name="i" value="AI Growth OS" data-k="os" /><span>AI Growth OS</span></label></div>
-        </fieldset>
-        <button class="btn btn-gold" type="submit">Получить аудит</button>
-        <p class="form-msg" id="form-msg" role="status"></p>
-        <p class="consent">Нажимая кнопку, вы соглашаетесь с <a href="/social-stars-demo/privacy-policy/">политикой конфиденциальности</a>.</p>
-      </form>
+      <div class="hero-sky" data-sky="cleanse" data-sky-scale=".82" role="img" aria-label="Созвездие: негативные упоминания теряют вес и уходят, кольцо репутации светлеет"></div>
+    </div>
+    <div class="wrap hero-facts">
+      <dl class="facts">
+        <div><dt>Следим за</dt><dd>шестью нейросетями и поиском</dd></div>
+        <div><dt>Аудит</dt><dd>от 120 000 ₽ за две недели</dd></div>
+        <div><dt>Для кого</dt><dd>компании, первые лица, госсектор</dd></div>
+      </dl>
     </div>
   </section>
+
+  <nav class="subnav" aria-label="Разделы страницы">
+    <div class="wrap">
+      <a href="#how">Как появляется ответ</a>
+      <a href="#before-after">До и после</a>
+      <a href="#scan">Проверка</a>
+      <a href="#who">Для кого</a>
+      <a href="#includes">Состав работ</a>
+      <a href="#report">Отчёт</a>
+      <a href="#pricing">Цены</a>
+      <a href="#faq">Вопросы</a>
+      <a class="btn btn-ink" href="#lead">Обсудить</a>
+    </div>
+  </nav>
+
+  <section class="section" id="how">
+    <div class="wrap">
+      <div class="head">
+        <h2 class="t-h2">Нейросеть не думает о вас. Она пересказывает источники</h2>
+        <p class="t-lead">Одна старая статья с большим весом может определять ответ годами. Поэтому работать нужно не с моделью, а с тем, на что она опирается.</p>
+      </div>
+      <div class="birth">
+        <div class="card"><small>Вопрос человека</small><p>«Что известно о компании „Альфа Логистик“?»</p></div>
+        <ol class="srcs" aria-label="Источники ответа и их вес">
+          <li class="neg"><span>Статья о судебном споре, 2019<small>деловое издание</small></span><span class="w"><i style="width:82%"></i></span><span class="p">32%</span></li>
+          <li><span>Официальный сайт<small>устаревшая страница о компании</small></span><span class="w"><i style="width:55%"></i></span><span class="p">21%</span></li>
+          <li><span>Сайт отзывов<small>рейтинг 3,1</small></span><span class="w"><i style="width:48%"></i></span><span class="p">18%</span></li>
+          <li><span>Справочник компаний<small>старый адрес</small></span><span class="w"><i style="width:40%"></i></span><span class="p">15%</span></li>
+          <li><span>Отраслевой форум<small>обсуждения</small></span><span class="w"><i style="width:34%"></i></span><span class="p">14%</span></li>
+        </ol>
+        <div class="card answer"><small>Ответ модели</small><p>«Альфа Логистик — транспортная компания из Москвы. <mark>В 2019 году была ответчиком в суде</mark><sup>1</sup>, отзывы клиентов смешанные<sup>3</sup>. Офис на <mark>ул. Старая, 5</mark><sup>4</sup>».</p></div>
+      </div>
+      <p class="note">Компания и источники вымышлены, веса условные. На аудите мы строим такую карту для каждой модели и каждого важного вопроса о вас.</p>
+    </div>
+  </section>
+
+  <section class="section band" id="before-after">
+    <div class="wrap">
+      <div class="head split">
+        <h2 class="t-h2">Тот же вопрос через полгода</h2>
+        <p class="t-lead">Факты актуальны, старый спор потерял вес, в ответе появились сильные стороны.</p>
+      </div>
+      <div class="ba hl" id="ba">
+        <div class="card before"><small><span>До</span><span>январь</span></small><p>«Альфа Логистик — транспортная компания из Москвы. <mark>В 2019 году была ответчиком в суде по делу о срыве поставок.</mark> Отзывы клиентов <mark>смешанные, встречаются жалобы на сроки</mark>. Офис на <mark>ул. Старая, 5</mark>. Руководитель — <mark>И. Петров</mark>».</p></div>
+        <div class="card after"><small><span>После</span><span>июнь</span></small><p>«Альфа Логистик — транспортная компания из Москвы, <mark>входит в двадцатку крупнейших по B2B-перевозкам</mark>. <mark>Спор 2019 года закрыт мировым соглашением.</mark> Средняя оценка клиентов — <mark>4,6 из 5</mark>. Офис на <mark>Пресненской набережной, 12</mark>. Генеральный директор — <mark>А. Смирнова</mark>».</p></div>
+      </div>
+      <div class="ba-bar"><label class="switch"><input type="checkbox" id="hl" checked /> Подсветить изменения</label><span>Вымышленная компания, пример для наглядности</span></div>
+      <dl class="diff">
+        <div><dt>Негатив</dt><dd><s>судебный спор</s> — закрыт</dd></div>
+        <div><dt>Отзывы</dt><dd><s>смешанные</s> — 4,6 из 5</dd></div>
+        <div><dt>Факты</dt><dd><s>старый адрес</s> — актуальный</dd></div>
+        <div><dt>Сильные стороны</dt><dd><s>не упоминались</s> — в ответе</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="scan">
+    <div class="wrap scan-grid">
+      <div class="head" style="margin:0">
+        <h2 class="t-h2">С чего начинается работа</h2>
+        <p class="t-lead">Задаём моделям сотни вопросов о компании, её продуктах и руководителях — и смотрим, где ответы точные, где устарели, а где звучит негатив.</p>
+        <p><button class="btn btn-line" type="button" id="rescan">Запустить пример проверки</button></p>
+      </div>
+      <div class="ui" aria-label="Пример проверки: вопрос отправлен в шесть нейросетей, по каждой показан результат">
+        <div class="ui-top"><i></i><i></i><i></i><span>Проверка компании — пример</span><span style="margin-left:auto" id="sc-count">0 из 6</span></div>
+        <div class="scan-q"><small>Вопрос</small>«Стоит ли работать с „Альфа Логистик“?»</div>
+        <ol class="scan-rows" id="sc-rows">
+          <li><span>Алиса AI</span><span class="bar"><i data-w="78"></i></span><span class="st" data-st="ok" data-t="Точно">—</span></li>
+          <li><span>GigaChat</span><span class="bar"><i data-w="64"></i></span><span class="st" data-st="warn" data-t="Устарело">—</span></li>
+          <li><span>YandexGPT</span><span class="bar"><i data-w="70"></i></span><span class="st" data-st="ok" data-t="Точно">—</span></li>
+          <li><span>ChatGPT</span><span class="bar"><i data-w="41"></i></span><span class="st" data-st="bad" data-t="Негатив">—</span></li>
+          <li><span>DeepSeek</span><span class="bar"><i data-w="35"></i></span><span class="st" data-st="warn" data-t="Путает">—</span></li>
+          <li><span>Perplexity</span><span class="bar"><i data-w="58"></i></span><span class="st" data-st="ok" data-t="Точно">—</span></li>
+        </ol>
+        <p class="scan-foot">Вымышленная компания и демонстрационные данные</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band" id="who">
+    <div class="wrap">
+      <div class="head"><h2 class="t-h2">Когда ответ нейросети стоит денег</h2></div>
+      <div class="who">
+        <div><h3>Компании и продукты</h3><ul><li>В ответе — давно закрытая история</li><li>Неверные цены, адреса, продукты</li><li>Модель советует конкурентов</li></ul></div>
+        <div><h3>Первые лица и эксперты</h3><ul><li>Биография по одному старому материалу</li><li>Путаница с однофамильцами</li><li>Нет упоминаний достижений</li></ul></div>
+        <div><h3>Ведомства и проекты</h3><ul><li>Искажённые факты о программах</li><li>Устаревшие контакты и правила</li><li>Информационные атаки</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="includes">
+    <div class="wrap">
+      <div class="head">
+        <h2 class="t-h2">Что входит в работу</h2>
+        <p class="t-lead">12 лет Social Stars занимается репутацией в поиске и СМИ. Нейро-ORM использует тот же опыт, но с другими метриками.</p>
+      </div>
+      <ul class="rows">
+        <li><h3>Проверка ответов</h3><p>Сотни вопросов о компании и руководителях к Алисе AI, GigaChat, YandexGPT, ChatGPT, DeepSeek и Perplexity.</p></li>
+        <li><h3>Карта источников</h3><p>Какие сайты, издания, отзывы и форумы формируют ответ каждой модели и с каким весом.</p></li>
+        <li><h3>Исправление фактов</h3><p>Работа с первоисточниками, справочниками, официальными страницами и разметкой сайта.</p></li>
+        <li><h3>Сильные упоминания</h3><p>Публикации в авторитетных изданиях и у лидеров мнений из сети Social Stars.</p></li>
+        <li><h3>Вытеснение негатива</h3><p>Устаревшие материалы теряют вес — и в поиске, и в ответах моделей.</p></li>
+        <li><h3>Оповещения</h3><p>Сообщаем, когда в ответах появляется новый негатив или ошибка.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section band" id="report">
+    <div class="wrap">
+      <div class="head split">
+        <h2 class="t-h2">Индекс AI-видимости каждый месяц</h2>
+        <p class="t-lead">Одна цифра для руководства и подробности для команды: как часто модель упоминает вас, насколько точно и в каком тоне.</p>
+      </div>
+      <div class="report">
+        <div class="card">
+          <small>Индекс по моделям, от 0 до 100 — демонстрационные данные</small>
+          <div class="ix"><span>Алиса AI</span><span class="tr"><i style="width:78%"></i></span><span class="v">78</span><span class="d">+21</span></div>
+          <div class="ix"><span>GigaChat</span><span class="tr"><i style="width:71%"></i></span><span class="v">71</span><span class="d">+18</span></div>
+          <div class="ix"><span>YandexGPT</span><span class="tr"><i style="width:69%"></i></span><span class="v">69</span><span class="d">+12</span></div>
+          <div class="ix"><span>ChatGPT</span><span class="tr"><i style="width:62%"></i></span><span class="v">62</span><span class="d">+24</span></div>
+          <div class="ix"><span>DeepSeek</span><span class="tr"><i style="width:54%"></i></span><span class="v">54</span><span class="d">+19</span></div>
+          <div class="ix"><span>Perplexity</span><span class="tr"><i style="width:66%"></i></span><span class="v">66</span><span class="d">+9</span></div>
+        </div>
+        <div class="card">
+          <small>Общий индекс за полгода — демонстрационные данные</small>
+          <svg class="spark" viewBox="0 0 400 170" role="img" aria-label="Общий индекс вырос с 42 до 67 за шесть месяцев">
+            <line x1="0" y1="30" x2="400" y2="30"/><line x1="0" y1="80" x2="400" y2="80"/><line x1="0" y1="130" x2="400" y2="130"/>
+            <path class="ar" d="M10 122 L86 114 L162 98 L238 80 L314 60 L390 42 L390 150 L10 150 Z"/>
+            <path class="ln" d="M10 122 L86 114 L162 98 L238 80 L314 60 L390 42"/>
+            <text x="10" y="168">янв</text><text x="86" y="168">фев</text><text x="162" y="168">мар</text><text x="238" y="168">апр</text><text x="314" y="168">май</text><text x="366" y="168">июн</text>
+          </svg>
+          <div class="kp"><div><b>67</b><span>индекс</span></div><div><b>94%</b><span>точных ответов</span></div><div><b>0</b><span>негатива в первых ответах</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band" id="process" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><h2 class="t-h2">Первый отчёт — через две недели</h2></div>
+      <ol class="steps">
+        <li><span class="when">1 неделя</span><h3>Проверка</h3><p>Задаём моделям вопросы о компании, продуктах и руководителях.</p></li>
+        <li><span class="when">1 неделя</span><h3>Диагностика</h3><p>Карта источников, ошибки, риски и план.</p></li>
+        <li><span class="when">Каждый месяц</span><h3>Работа с источниками</h3><p>Исправления, публикации, вытеснение негатива.</p></li>
+        <li><span class="when">Каждый месяц</span><h3>Контроль</h3><p>Индекс AI-видимости и оповещения.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <div class="wrap">
+      <div class="head"><h2 class="t-h2">Цены</h2></div>
+      <div class="plans">
+        <article class="plan">
+          <h3>Аудит</h3>
+          <div class="price">от 120 000 ₽<small>разово, две недели</small></div>
+          <p>Полная картина по шести моделям.</p>
+          <ul><li>300 и больше вопросов к моделям</li><li>Карта источников</li><li>Список рисков</li><li>План работ</li></ul>
+          <a class="btn btn-line" href="#lead" data-pick="Нейро-ORM">Заказать аудит</a>
+        </article>
+        <article class="plan main">
+          <span class="badge">Основной формат</span>
+          <h3>Сопровождение</h3>
+          <div class="price">от 250 000 ₽<small>в месяц</small></div>
+          <p>Постоянная работа с репутацией в нейросетях.</p>
+          <ul><li>Мониторинг и оповещения</li><li>Работа с источниками</li><li>Публикации в СМИ</li><li>Индекс AI-видимости</li></ul>
+          <a class="btn btn-primary" href="#lead" data-pick="Нейро-ORM">Обсудить сопровождение</a>
+        </article>
+        <article class="plan">
+          <h3>Антикризис</h3>
+          <div class="price">от 600 000 ₽<small>когда нужно быстро</small></div>
+          <p>Остановить волну негатива в поиске и ответах.</p>
+          <ul><li>Штаб без выходных</li><li>Поиск и нейросети вместе</li><li>Работа со СМИ</li><li>Лидеры мнений</li></ul>
+          <a class="btn btn-line" href="#lead" data-pick="Нейро-ORM">Срочно связаться</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="head"><h2 class="t-h2">Вопросы</h2></div>
+      <div class="faq">
+        <details><summary>Можно ли удалить информацию из нейросети?</summary><div class="a"><p>Напрямую — нет, и мы честно об этом говорим. Но ответы моделей строятся на источниках. Когда меняются источники и их вес, меняется и ответ. Мы работаем именно с этим.</p></div></details>
+        <details><summary>Чем нейро-ORM отличается от обычного ORM?</summary><div class="a"><p>Классический ORM работает со страницей поисковой выдачи. Нейро-ORM — с готовым ответом модели, который человек читает, не переходя на сайты. Инструменты частично совпадают, метрики другие.</p></div></details>
+        <details><summary>Как быстро меняются ответы?</summary><div class="a"><p>Модели с поиском в реальном времени реагируют за недели, модели без поиска — после обновления своих данных. Обычно первые изменения видны через 1–3 месяца.</p></div></details>
+        <details><summary>Насколько это конфиденциально?</summary><div class="a"><p>Работаем по соглашению о неразглашении, отчёты видит только согласованный круг людей. Для персон и госзаказчиков — отдельный порядок работы.</p></div></details>
+      </div>
+      <a class="next" href="/social-stars-demo/ai/content/" style="margin-top:clamp(64px,8vw,112px)"><span>Следующее направление</span><strong>Контент-завод</strong></a>
+    </div>
+  </section>
+
+<!-- @cta -->
+<section class="cta" id="lead" aria-labelledby="lead-title">
+  <div class="wrap cta-grid">
+    <div>
+      <h2 class="t-h2" id="lead-title">Бесплатный AI‑аудит за 48 часов</h2>
+      <ul>
+        <li>Что о вас отвечают Алиса AI, GigaChat, ChatGPT и ещё три модели</li>
+        <li>Три процесса, где ИИ даст эффект быстрее всего</li>
+        <li>Сроки и бюджет — без обязательств</li>
+      </ul>
+      <div class="contacts">
+        <a href="tel:+79854009299">+7 985 400 92 99</a>
+        <a href="mailto:info@social-stars.ru">info@social-stars.ru</a>
+        <span>Москва, ул. Лесная, 57, стр. 4</span>
+      </div>
+    </div>
+    <form class="form" data-lead novalidate>
+      <div class="two">
+        <div class="field"><label for="f-name">Имя</label><input id="f-name" name="name" autocomplete="name" required /><p class="err">Напишите, как к вам обращаться</p></div>
+        <div class="field"><label for="f-contact">Телефон или Telegram</label><input id="f-contact" name="contact" autocomplete="tel" required /><p class="err">Оставьте контакт, чтобы мы прислали аудит</p></div>
+      </div>
+      <div class="field"><label for="f-company">Компания и сайт</label><input id="f-company" name="company" autocomplete="organization" /></div>
+      <div class="field"><label for="f-task">Задача</label><textarea id="f-task" name="task" placeholder="Например: нас путают с конкурентом в ответах нейросетей"></textarea></div>
+      <fieldset>
+        <legend>Что интересно</legend>
+        <div class="chips">
+          <label><input type="checkbox" name="i" value="AI-сайт" /><span>AI-сайт</span></label>
+          <label><input type="checkbox" name="i" value="ИИ-агенты" /><span>ИИ-агенты</span></label>
+          <label><input type="checkbox" name="i" value="Аватар" /><span>Аватар</span></label>
+          <label><input type="checkbox" name="i" value="SEO и GEO" /><span>SEO и GEO</span></label>
+          <label><input type="checkbox" name="i" value="Нейро-ORM" /><span>Нейро-ORM</span></label>
+          <label><input type="checkbox" name="i" value="Контент-завод" /><span>Контент-завод</span></label>
+          <label><input type="checkbox" name="i" value="AI-трансформация" /><span>AI-трансформация</span></label>
+          <label><input type="checkbox" name="i" value="AI Growth OS" /><span>AI Growth OS</span></label>
+        </div>
+      </fieldset>
+      <button class="btn btn-primary btn-block" type="submit">Получить аудит</button>
+      <p class="consent">Отправляя заявку, вы соглашаетесь с <a class="link" href="/social-stars-demo/privacy-policy/">политикой конфиденциальности</a>.</p>
+      <div class="form-done" tabindex="-1" role="status">
+        <h3 class="t-h3">Письмо с заявкой готово</h3>
+        <p class="t-small">Мы открыли его в вашем почтовом приложении — осталось нажать «Отправить». Если приложение не открылось, позвоните: <a class="link" href="tel:+79854009299">+7 985 400 92 99</a>.</p>
+      </div>
+    </form>
+  </div>
+</section>
+<!-- /@cta -->
 </main>
 
-<footer>
+<!-- @footer -->
+<footer class="ftr">
   <div class="wrap">
-    <span>© Social Stars AI · направление <a href="/social-stars-demo/">Social Stars</a></span>
-    <span><a href="/social-stars-demo/ai/">Все услуги</a> · <a href="/social-stars-demo/contacts/">Контакты</a> · <a href="/social-stars-demo/privacy-policy/">Политика конфиденциальности</a></span>
+    <div class="ftr-grid">
+      <div class="about">
+        <a class="brand" href="/social-stars-demo/ai/"><img src="/social-stars-demo/favicon.svg" alt="" width="22" height="23" /><span>Social Stars <em>AI</em></span></a>
+        <p>Направление Social Stars. 12 лет в репутации и продвижении — теперь с ИИ в каждой услуге.</p>
+      </div>
+      <div>
+        <h4>Услуги</h4>
+        <ul>
+          <li><a href="/social-stars-demo/ai/sites/">AI-сайты</a></li>
+          <li><a href="/social-stars-demo/ai/agents/">ИИ-агенты</a></li>
+          <li><a href="/social-stars-demo/ai/avatars/">Цифровые аватары</a></li>
+          <li><a href="/social-stars-demo/ai/seo-geo/">SEO и GEO</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>&nbsp;</h4>
+        <ul>
+          <li><a href="/social-stars-demo/ai/neuro-orm/">Нейро-ORM</a></li>
+          <li><a href="/social-stars-demo/ai/content/">Контент-завод</a></li>
+          <li><a href="/social-stars-demo/ai/transformation/">AI-трансформация</a></li>
+          <li><a href="/social-stars-demo/ai/growth-os/">AI Growth OS</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Связаться</h4>
+        <ul>
+          <li><a href="tel:+79854009299">+7 985 400 92 99</a></li>
+          <li><a href="mailto:info@social-stars.ru">info@social-stars.ru</a></li>
+          <li>Москва, ул. Лесная, 57, стр. 4</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ftr-bottom">
+      <span>© Social Stars, 2026</span>
+      <span><a href="/social-stars-demo/">Сайт Social Stars</a>&nbsp;&nbsp;&nbsp;<a href="/social-stars-demo/privacy-policy/">Политика конфиденциальности</a></span>
+    </div>
   </div>
 </footer>
+<!-- /@footer -->
+
+<script src="/social-stars-demo/ai/sky.js" defer></script>
 <script src="/social-stars-demo/ai/ai.js" defer></script>
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // подсветка изменений
+  const ba = document.getElementById('ba');
+  document.getElementById('hl').addEventListener('change', e => ba.classList.toggle('hl', e.target.checked));
+
+  // пример проверки — запускается кнопкой и при первом показе блока
+  const rows = [...document.querySelectorAll('#sc-rows li')], count = document.getElementById('sc-count');
+  let timers = [];
+  const run = () => {
+    timers.forEach(clearTimeout); timers = [];
+    rows.forEach(r => { r.querySelector('i').style.width = 0; const s = r.querySelector('.st'); s.className = 'st'; s.textContent = 'ждёт'; });
+    count.textContent = '0 из ' + rows.length;
+    rows.forEach((r, i) => {
+      const s = r.querySelector('.st'), bar = r.querySelector('i');
+      const done = () => { bar.style.width = bar.dataset.w + '%'; s.textContent = s.dataset.t; s.classList.add(s.dataset.st); count.textContent = (i + 1) + ' из ' + rows.length; };
+      if (reduce) return done();
+      timers.push(setTimeout(() => { s.textContent = 'проверяю'; }, 300 + i * 700));
+      timers.push(setTimeout(done, 800 + i * 700));
+    });
+  };
+  document.getElementById('rescan').addEventListener('click', run);
+  const io = new IntersectionObserver(es => { if (es[0].isIntersecting) { run(); io.disconnect(); } }, { threshold: .4 });
+  io.observe(document.getElementById('sc-rows'));
+})();
+</script>
 </body>
 </html>
