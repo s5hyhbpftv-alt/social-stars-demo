@@ -191,6 +191,24 @@
         for (const p of P) if (p.orb) { const a = p.ph + t * p.w; p.tx = Math.cos(a) * p.orb * 1.15; p.ty = Math.sin(a) * p.orb * .8; }
       } };
     },
+
+    clusters(R) { // кейсы: пять небольших созвездий
+      const P = [], E = [];
+      const centers = [[-.3, -.26], [.2, -.32], [.36, .08], [-.08, .12], [-.34, .34]];
+      centers.forEach(([cx, cy], k) => {
+        const core = P.push({ x: cx, y: cy, s: 3.4, c: 'accent', halo: 1 }) - 1;
+        const n = 5 + (R() * 4 | 0);
+        let prev = core;
+        for (let i = 0; i < n; i++) {
+          const a = i / n * Math.PI * 2 + R() * .6, r = .06 + R() * .07;
+          const p = P.push({ x: cx + Math.cos(a) * r, y: cy + Math.sin(a) * r * .85, s: 1 + R() * 1.1, c: 'ink' }) - 1;
+          E.push([R() < .55 ? core : prev, p]); prev = p;
+        }
+        if (k) E.push([core, 0, 'faint']);
+      });
+      for (let i = 0; i < 26; i++) { const a = R() * TAU, r = .56 + R() * .38; P.push({ x: Math.cos(a) * r, y: Math.sin(a) * r * .85, s: .7 + R(), c: 'ink' }); }
+      return { P, E };
+    },
   };
 
   // ---------- рендер
