@@ -16,6 +16,8 @@
     const tl = g.timeline({ paused: true });
     build(tl);
     ScrollTrigger.create({ trigger: el, start, once: true, onEnter: () => tl.play() });
+    // уже на экране при загрузке — играем сразу
+    if (el.getBoundingClientRect().top < innerHeight * .86) tl.play();
   };
 
   // ——— числа: считаем от нуля, сохраняя формат («316 млрд ₽», «1,5 млн», «+21», «94%»)

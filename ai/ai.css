@@ -103,7 +103,7 @@ ul,ol,dl,dd{margin:0;padding:0}
 .mega a:hover,.mega a[aria-current="page"]{background:var(--porcelain)}
 .mega b{font-weight:500;font-size:15.5px}
 .mega span{font-size:13.5px;color:var(--slate);line-height:1.4}
-.mega a.feature{grid-column:span 1;grid-row:span 3;align-content:end;background:var(--ink);color:#fff}
+.mega a.feature{grid-column:span 1;grid-row:span 4;align-content:end;background:var(--ink);color:#fff}
 .mega a.feature span{color:#a9b1c0}
 .mega a.feature:hover,.mega a.feature[aria-current="page"]{background:var(--ink-2)}
 
@@ -447,3 +447,57 @@ mark.hl,[data-marks] mark{background:linear-gradient(rgba(194,87,75,.16),rgba(19
 .uph.t6{--c1:#f4e3c3;--c2:#d0a458;--c3:#6b5530;--c4:#2a2114;--cl:#7a5a2c}
 .uph .media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--op,50% 40%);display:block;background:var(--c4)}
 .uph .scr:has(.media)::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(10,12,18,.34),transparent 20%,transparent 56%,rgba(10,12,18,.62))}
+
+/* ——— Карточка товара маркетплейса ——— */
+.mcard{container-type:inline-size;width:100%;flex:none}
+.mc-in{color:var(--ink);background:#fff;border-radius:5cqw;padding:3cqw;box-shadow:0 30px 60px -40px rgba(17,21,31,.45)}
+.mc-ph{position:relative;aspect-ratio:3/4;border-radius:3.5cqw;overflow:hidden;background:var(--porcelain-2)}
+.mc-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.mc-chips{position:absolute;left:4cqw;top:4cqw;right:4cqw;display:grid;gap:2cqw;justify-items:start}
+.mc-chips span{font:600 5cqw/1.2 var(--font);background:rgba(255,255,255,.94);color:var(--ink);padding:2cqw 3.2cqw;border-radius:2.4cqw}
+.mc-tag{position:absolute;left:4cqw;bottom:4cqw;font:500 4cqw/1 var(--font);color:#fff;background:rgba(10,12,18,.55);padding:2cqw 3cqw;border-radius:99px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.mc-price{font:600 7.6cqw/1 var(--font);margin:5cqw 1.5cqw 2cqw;color:var(--ink);letter-spacing:-.01em}
+.mc-price s{font-weight:400;color:var(--slate);font-size:5cqw;margin-left:2cqw}
+.mc-name{font:400 5cqw/1.3 var(--font);color:var(--slate);margin:0 1.5cqw 1.5cqw}
+
+/* ——— Звонок: окно разговора и карточка CRM ——— */
+.call{container-type:inline-size;width:100%}
+.call-in{background:#141925;color:#eef1f6;border-radius:6cqw;padding:6cqw;display:grid;gap:5cqw;box-shadow:0 40px 70px -40px rgba(17,21,31,.6)}
+.call-top{display:flex;align-items:center;gap:3cqw;font:500 4.4cqw/1.2 var(--font)}
+.call-top b{font-weight:500}
+.call-top .call-t{margin-left:auto;font-variant-numeric:tabular-nums;color:#a9b1c0}
+.call-dot{width:3cqw;height:3cqw;border-radius:50%;background:#5ec27a;box-shadow:0 0 0 1.6cqw rgba(94,194,122,.18)}
+.call-wave{display:flex;align-items:center;gap:1cqw;height:14cqw}
+.call-wave i{flex:1;height:100%;border-radius:1cqw;background:var(--bronze);transform:scaleY(.18);transform-origin:50% 50%}
+.call-log{display:grid;gap:2.6cqw;align-content:start;min-height:62cqw}
+.call-log .b{max-width:86%;font:400 4.2cqw/1.4 var(--font);padding:3cqw 4cqw;border-radius:4cqw}
+.call-log .b.cl{justify-self:end;background:#262d3d;border-bottom-right-radius:1cqw}
+.call-log .b.ai{background:rgba(176,138,99,.18);border:1px solid rgba(176,138,99,.35);border-bottom-left-radius:1cqw}
+.call-log .b small{display:block;font-size:3.4cqw;color:#8f99ab;margin-bottom:1cqw}
+.crm{container-type:inline-size;width:100%}
+.crm-in{color:var(--ink);background:#fff;border:1px solid var(--mist);border-radius:5cqw;padding:6cqw;display:grid;gap:4cqw;box-shadow:0 30px 60px -44px rgba(17,21,31,.4)}
+.crm-in h4{font:500 5cqw/1.2 var(--font);display:flex;align-items:center;gap:3cqw}
+.crm-in h4 .ic{width:6cqw;height:6cqw;color:var(--bronze-2)}
+.crm-in dl{display:grid;gap:0}
+.crm-in dl div{display:flex;justify-content:space-between;gap:4cqw;padding:3cqw 0;border-bottom:1px solid var(--mist);font:400 4.4cqw/1.3 var(--font)}
+.crm-in dt{color:var(--slate)}
+.crm-in dd{font-weight:500;text-align:right}
+.crm-st{justify-self:start;font:500 4cqw/1 var(--font);padding:2.6cqw 4cqw;border-radius:99px;background:var(--bronze-soft);color:var(--bronze-2)}
+
+/* ——— Тренажёр: ИИ-клиент и оценка ——— */
+.persona{container-type:inline-size;width:100%}
+.ps-in{color:var(--ink);background:#fff;border:1px solid var(--mist);border-radius:5cqw;padding:5cqw;display:grid;gap:4cqw}
+.ps-head{display:flex;align-items:center;gap:4cqw}
+.ps-head img{width:20cqw;height:20cqw;border-radius:50%;object-fit:cover;object-position:50% 20%;flex:none}
+.ps-head b{display:block;font:500 5.4cqw/1.2 var(--font)}
+.ps-head span{font:400 4.2cqw/1.3 var(--font);color:var(--slate)}
+.ps-tags{display:flex;flex-wrap:wrap;gap:2cqw}
+.ps-tags span{font:400 3.8cqw/1 var(--font);padding:2.2cqw 3cqw;border-radius:99px;background:var(--porcelain);color:var(--ink-2)}
+.ps-tags span.ai{background:var(--bronze-soft);color:var(--bronze-2)}
+.skills{display:grid;gap:14px}
+.sk{display:grid;grid-template-columns:minmax(120px,190px) 1fr 44px;gap:14px;align-items:center;font-size:15px}
+.sk span:first-child{color:var(--slate)}
+.sk .tr{height:8px;border-radius:4px;background:var(--porcelain-2);overflow:hidden}
+.sk .tr i{display:block;height:100%;border-radius:4px;background:var(--ink)}
+.sk.lo .tr i{background:var(--bronze)}
+.sk b{font-weight:500;text-align:right;font-variant-numeric:tabular-nums}
