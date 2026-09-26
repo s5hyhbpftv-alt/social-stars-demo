@@ -37,7 +37,7 @@
       // упоминания вокруг — часть из них «цитируется» звездой
       for (let i = 0; i < 70; i++) {
         const a = R() * TAU, r = .5 + R() * .55;
-        const p = P.push({ x: Math.cos(a) * r * 1.15, y: Math.sin(a) * r * .9, s: .8 + R() * 1.6, c: 'ink' }) - 1;
+        const p = P.push({ x: Math.cos(a) * r * 1.15, y: Math.sin(a) * r * .9, s: .8 + R() * 1.6, c: 'ink', amb: 1 }) - 1;
         if (r < .72 && R() < .55) {
           let best = k0, bd = 9;
           for (let j = k0; j < k0 + 40; j += 4) { const d = Math.hypot(P[j].x - P[p].x, P[j].y - P[p].y); if (d < bd) { bd = d; best = j; } }
@@ -62,7 +62,7 @@
       rect(-.38, .08, .22, .18, 4, { s: 1, c: 'ink' }); rect(-.11, .08, .22, .18, 4, { s: 1, c: 'ink' }); rect(.16, .08, .22, .18, 4, { s: 1, c: 'ink' });
       const ai = P.push({ x: .38, y: .3, s: 3.4, c: 'accent', halo: 1 }) - 1;    // ИИ-консультант
       E.push([ai, P.length - 3, 'faint']);
-      for (let i = 0; i < 26; i++) { const a = R() * TAU, r = .55 + R() * .4; P.push({ x: Math.cos(a) * r, y: Math.sin(a) * r * .8, s: .7 + R(), c: 'ink' }); }
+      for (let i = 0; i < 26; i++) { const a = R() * TAU, r = .55 + R() * .4; P.push({ x: Math.cos(a) * r, y: Math.sin(a) * r * .8, s: .7 + R(), c: 'ink', amb: 1 }); }
       return { P, E };
     },
 
@@ -81,7 +81,7 @@
           E.push([t, l]);
         }
       }
-      for (let i = 0; i < 24; i++) { const a = R() * TAU, r = .58 + R() * .35; P.push({ x: Math.cos(a) * r, y: Math.sin(a) * r * .85, s: .7 + R(), c: 'ink' }); }
+      for (let i = 0; i < 24; i++) { const a = R() * TAU, r = .58 + R() * .35; P.push({ x: Math.cos(a) * r, y: Math.sin(a) * r * .85, s: .7 + R(), c: 'ink', amb: 1 }); }
       return { P, E, pulses: true };
     },
 
@@ -93,7 +93,7 @@
         chain(E, s, n);
       }
       for (let i = 0; i < n; i += 3) E.push([i, i + n, 'faint']);
-      for (let i = 0; i < 30; i++) { const a = R() * TAU, r = .55 + R() * .4; P.push({ x: Math.cos(a) * r, y: Math.sin(a) * r * .8, s: .7 + R(), c: 'ink' }); }
+      for (let i = 0; i < 30; i++) { const a = R() * TAU, r = .55 + R() * .4; P.push({ x: Math.cos(a) * r, y: Math.sin(a) * r * .8, s: .7 + R(), c: 'ink', amb: 1 }); }
       return { P, E, update(P, t) {
         for (const p of P) if (p.wave) {
           const env = Math.sin(p.u * Math.PI) ** 1.5;
@@ -115,7 +115,7 @@
       }
       const ans = P.push({ x: .36, y: -.3, s: 5, c: 'accent', halo: 1 }) - 1;
       E.push([10, ans, 'accent']);
-      for (let i = 0; i < 30; i++) { const a = R() * TAU, r = .55 + R() * .4; P.push({ x: Math.cos(a) * r, y: Math.sin(a) * r * .8, s: .7 + R(), c: 'ink' }); }
+      for (let i = 0; i < 30; i++) { const a = R() * TAU, r = .55 + R() * .4; P.push({ x: Math.cos(a) * r, y: Math.sin(a) * r * .8, s: .7 + R(), c: 'ink', amb: 1 }); }
       return { P, E };
     },
 
@@ -129,7 +129,7 @@
         const p = P.push({ x: Math.cos(a) * r, y: Math.sin(a) * r, s: bad ? 2.4 : 1.2, c: bad ? 'bad' : 'ink', bad }) - 1;
         if (R() < .5) E.push([p, s + (Math.round((a / TAU) * n) % n), 'faint']);
       }
-      for (let i = 0; i < 26; i++) { const a = R() * TAU, r = .58 + R() * .38; P.push({ x: Math.cos(a) * r, y: Math.sin(a) * r * .85, s: .7 + R(), c: 'ink' }); }
+      for (let i = 0; i < 26; i++) { const a = R() * TAU, r = .58 + R() * .38; P.push({ x: Math.cos(a) * r, y: Math.sin(a) * r * .85, s: .7 + R(), c: 'ink', amb: 1 }); }
       return { P, E, update(P, t) {
         const k = Math.min(1, Math.max(0, (t - 2.6) / 3));
         for (const p of P) {
@@ -172,7 +172,7 @@
       }
       const star = P.push({ x: .38, y: -.42, s: 5, c: 'accent', halo: 1 }) - 1;
       E.push([star - 1, star, 'accent']);
-      for (let i = 0; i < 30; i++) { const a = R() * TAU, r = .55 + R() * .4; P.push({ x: Math.cos(a) * r, y: Math.sin(a) * r * .8, s: .7 + R(), c: 'ink' }); }
+      for (let i = 0; i < 30; i++) { const a = R() * TAU, r = .55 + R() * .4; P.push({ x: Math.cos(a) * r, y: Math.sin(a) * r * .8, s: .7 + R(), c: 'ink', amb: 1 }); }
       return { P, E };
     },
 
@@ -186,7 +186,7 @@
         for (let i = s; i < s + n; i++) E.push([i, i + 1 < s + n ? i + 1 : s, 'faint']);
         E.push([core, s, 'pulse']);
       });
-      for (let i = 0; i < 22; i++) { const a = R() * TAU, r = .56 + R() * .38; P.push({ x: Math.cos(a) * r, y: Math.sin(a) * r * .85, s: .7 + R(), c: 'ink' }); }
+      for (let i = 0; i < 22; i++) { const a = R() * TAU, r = .56 + R() * .38; P.push({ x: Math.cos(a) * r, y: Math.sin(a) * r * .85, s: .7 + R(), c: 'ink', amb: 1 }); }
       return { P, E, pulses: true, update(P, t) {
         for (const p of P) if (p.orb) { const a = p.ph + t * p.w; p.tx = Math.cos(a) * p.orb * 1.15; p.ty = Math.sin(a) * p.orb * .8; }
       } };
@@ -206,7 +206,7 @@
         }
         if (k) E.push([core, 0, 'faint']);
       });
-      for (let i = 0; i < 26; i++) { const a = R() * TAU, r = .56 + R() * .38; P.push({ x: Math.cos(a) * r, y: Math.sin(a) * r * .85, s: .7 + R(), c: 'ink' }); }
+      for (let i = 0; i < 26; i++) { const a = R() * TAU, r = .56 + R() * .38; P.push({ x: Math.cos(a) * r, y: Math.sin(a) * r * .85, s: .7 + R(), c: 'ink', amb: 1 }); }
       return { P, E };
     },
   };
@@ -222,7 +222,9 @@
       const R = rng(7919 + this.kind.length * 131);
       const sh = SHAPES[this.kind](R);
       this.P = sh.P; this.E = sh.E; this.update = sh.update; this.pulses = sh.pulses;
-      this.P.forEach(p => { p.base = p.y; p.tx = p.x; p.ty = p.y; p.sx = (R() - .5) * 1.6; p.sy = (R() - .5) * 1.6; p.d = R() * .45; p.ph = p.ph ?? R() * TAU; p.fade = p.fade ?? 1; });
+      this.mini = el.dataset.skyMini !== undefined;
+      if (this.mini) this.P.forEach(p => { if (p.amb) p.hide = 1; });
+      this.P.forEach(p => { p.base = p.y; p.tx = p.x; p.ty = p.y; p.sx = (R() - .5) * 1.6; p.sy = (R() - .5) * 1.6; p.d = R() * .45; p.ph = p.ph ?? R() * TAU; p.fade = p.hide ? 0 : (p.fade ?? 1); });
       this.pl = this.E.filter(e => e[2] === 'pulse').map((e, i) => ({ e, k: i * .37 % 1 }));
       this.mouse = { x: -1e4, y: -1e4 };
       this.t0 = performance.now(); this.last = this.t0; this.running = false;
@@ -288,10 +290,11 @@
       }
       // точки
       for (const p of P) {
+        if (p.hide) continue;
         const tw = .85 + .15 * Math.sin(t * 1.3 + p.ph * 3);
         let col = C[p.c] || C.ink, a = (p.c === 'ink' ? .55 : .95) * tw * p.fade * Math.max(.15, p.k);
         if (p.glow) col = C.accent, a = lerp(.55, .95, p.glow) * tw;
-        if (p.halo) { ctx.globalAlpha = .16 * p.k; ctx.fillStyle = C.accent; ctx.beginPath(); ctx.arc(p.px, p.py, p.s * 4.2, 0, TAU); ctx.fill(); }
+        if (p.halo) { ctx.globalAlpha = .16 * p.k; ctx.fillStyle = C.accent; ctx.beginPath(); ctx.arc(p.px, p.py, p.s * (this.mini ? 2.4 : 4.2), 0, TAU); ctx.fill(); }
         ctx.globalAlpha = a; ctx.fillStyle = col;
         ctx.beginPath(); ctx.arc(p.px, p.py, p.s * (p.glow ? 1 + p.glow * .4 : 1), 0, TAU); ctx.fill();
       }
