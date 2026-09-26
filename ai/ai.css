@@ -302,3 +302,62 @@ html.intro-on .intro.is-leaving{opacity:0}
 @keyframes ss-sheen{from{transform:skewX(-18deg) translateX(0)}to{transform:skewX(-18deg) translateX(190px)}}
 @keyframes ss-reveal{from{clip-path:inset(0 50% 0 50%);opacity:0;filter:blur(5px)}to{clip-path:inset(0 0 0 0);opacity:1;filter:blur(0)}}
 @keyframes ss-fade{to{opacity:1}}
+
+/* ==========================================================================
+   Визуальные блоки: иконки, логотипы, команда, фото, телефоны, мини-небо
+   ========================================================================== */
+.ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.ic-box{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:var(--bronze-soft);color:var(--bronze-2);margin-bottom:18px}
+.ic-box.ink{background:var(--white);color:var(--ink);border:1px solid var(--mist)}
+.section.band .ic-box.ink{background:var(--porcelain)}
+
+.feats{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:44px 48px}
+.feats h3{font-size:21px;font-weight:400;letter-spacing:-.015em;margin-bottom:8px}
+.feats p{color:var(--slate);font-size:16px}
+
+.logos{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:28px 44px;padding:36px 0;border-top:1px solid var(--mist);border-bottom:1px solid var(--mist)}
+.logos img{height:24px;width:auto;filter:brightness(0);opacity:.42;transition:opacity .2s}
+.logos img:hover{opacity:.8}
+.logos-cap{font-size:14.5px;color:var(--slate);margin-bottom:18px}
+
+.awards{display:flex;flex-wrap:wrap;gap:32px 48px;align-items:center}
+.awards figure{margin:0;display:flex;align-items:center;gap:14px;max-width:230px}
+.awards img{height:48px;width:auto;flex:none}
+.awards figcaption{font-size:14.5px;color:var(--ink-2);line-height:1.35}
+
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.team figure{margin:0}
+.team img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r-lg);background:var(--porcelain-2);filter:grayscale(1) contrast(1.02);transition:filter .4s}
+.team figure:hover img{filter:none}
+.team figcaption{margin-top:14px;display:grid;gap:2px}
+.team b{font-weight:500;font-size:17px}
+.team span{font-size:14.5px;color:var(--slate)}
+
+.mosaic{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:12px;height:clamp(360px,42vw,560px)}
+.mosaic figure{margin:0;position:relative;overflow:hidden;border-radius:var(--r-lg);background:var(--porcelain-2)}
+.mosaic figure:first-child{grid-row:span 2}
+.mosaic img{width:100%;height:100%;object-fit:cover;display:block}
+.mosaic figcaption{position:absolute;left:14px;bottom:14px;right:14px;font-size:13.5px;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+
+.phones{display:flex;gap:16px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+.phone{flex:1 0 150px;max-width:240px;margin:0}
+.phone .scr{aspect-ratio:420/912;border-radius:26px;border:6px solid var(--ink);overflow:hidden;background:var(--ink)}
+.phone img{width:100%;height:100%;object-fit:cover;display:block}
+.phone figcaption{margin-top:10px;font-size:13.5px;color:var(--slate)}
+
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gallery img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:14px;background:var(--porcelain-2);display:block}
+
+.next{position:relative}
+.next .mini{position:absolute;right:0;top:50%;transform:translateY(-50%);width:clamp(160px,22vw,280px);height:clamp(120px,14vw,180px);pointer-events:none}
+
+@media (max-width:1024px){ .team{grid-template-columns:1fr 1fr} .feats{grid-template-columns:1fr 1fr} }
+@media (max-width:760px){
+  .feats{grid-template-columns:1fr;gap:32px}
+  .mosaic{grid-template-columns:1fr 1fr;grid-template-rows:auto;height:auto}
+  .mosaic figure{aspect-ratio:4/3}
+  .mosaic figure:first-child{grid-column:span 2;grid-row:auto}
+  .gallery{grid-template-columns:1fr 1fr}
+  .next .mini{display:none}
+  .logos{justify-content:flex-start}
+}
