@@ -1,5 +1,4 @@
 <div class="intro" id="intro" role="presentation">
-  <div class="intro-sky" aria-hidden="true"></div>
   <div class="intro-stage" aria-hidden="true">
     <div class="intro-star">
       <svg viewBox="0 0 100 91.2">
@@ -11,12 +10,11 @@
         <g clip-path="url(#ss-clip)"><rect class="intro-sheen" x="-40" y="-10" width="34" height="120" fill="url(#ss-sheen)" transform="skewX(-18)"/></g>
       </svg>
     </div>
-    <div class="intro-floor"></div>
     <div class="intro-word">
       <svg class="iw-social" viewBox="0 0 66.97 11.77"><use href="#ss-social"/></svg>
       <svg class="iw-stars" viewBox="0 0 61.26 11.78"><use href="#ss-stars"/></svg>
     </div>
-    <div class="intro-sub"><span class="intro-line"></span><svg class="intro-ai" viewBox="0 0 15.95 11.78"><use href="#ss-ai"/></svg><span class="intro-line"></span></div>
+    <svg class="intro-ai" viewBox="0 0 15.95 11.78"><use href="#ss-ai"/></svg>
   </div>
   <button class="intro-skip" type="button">Пропустить</button>
 </div>
@@ -32,10 +30,11 @@
   const leave = () => {
     if (done) return; done = true;
     el.classList.add('is-leaving');
-    setTimeout(() => { root.classList.remove('intro-on'); el.remove(); }, reduce ? 300 : 1100);
+    dispatchEvent(new Event('ss-intro-done'));
+    setTimeout(() => { root.classList.remove('intro-on'); el.remove(); }, reduce ? 300 : 850);
     ['keydown', 'wheel', 'touchstart'].forEach(t => removeEventListener(t, leave));
   };
-  const t = setTimeout(leave, reduce ? 1000 : 3900);
+  const t = setTimeout(leave, reduce ? 900 : 3700);
   el.addEventListener('click', () => { clearTimeout(t); leave(); });
   ['keydown', 'wheel', 'touchstart'].forEach(ev => addEventListener(ev, () => { clearTimeout(t); leave(); }, { passive: true, once: true }));
 })();

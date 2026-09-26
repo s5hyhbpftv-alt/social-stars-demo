@@ -213,6 +213,11 @@
       el.addEventListener('pointermove', e => { const r = this.cv.getBoundingClientRect(); this.mouse = { x: e.clientX - r.left, y: e.clientY - r.top }; });
       el.addEventListener('pointerleave', () => this.mouse = { x: -1e4, y: -1e4 });
       if (reduce) { this.t0 -= 1e5; this.frame(performance.now()); return; }
+      // пока идёт интро, созвездие ждёт — и собирается, когда интро растворяется
+      if (document.documentElement.classList.contains('intro-on')) {
+        this.t0 = Infinity;
+        addEventListener('ss-intro-done', () => { this.t0 = performance.now() + 250; }, { once: true });
+      }
       new IntersectionObserver(es => es.forEach(x => x.isIntersecting ? this.start() : this.stop())).observe(el);
     }
     colors() {
@@ -232,7 +237,7 @@
     stop() { this.running = false; }
     map(x, y) { return [this.W * this.cx + x * this.S, this.H * this.cy + y * this.S]; }
     frame(now) {
-      const { ctx, dpr, P, E, C } = this; const t = (now - this.t0) / 1000, dt = Math.min(.05, (now - this.last) / 1000); this.last = now;
+      const { ctx, dpr, P, E, C } = this; const t = Math.max(0, (now - this.t0) / 1000), dt = Math.min(.05, (now - this.last) / 1000); this.last = now;
       if (this.update) this.update(P, t, dt);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, this.W, this.H);
       // позиции
