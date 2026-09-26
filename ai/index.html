@@ -34,269 +34,7 @@
       {"@type":"Question","name":"Сколько длится внедрение ИИ-агента?","acceptedAnswer":{"@type":"Answer","text":"Аудит — до 48 часов, пилот на одном процессе — 2–4 недели, масштабирование — по дорожной карте."}}]}
   ]}
   </script>
-  <style>
-    @font-face{font-family:"Geologica Variable";font-style:normal;font-display:swap;font-weight:100 900;src:url(/social-stars-demo/assets/geologica-cyrillic-wght-normal-DbeVG3Ps.woff2) format("woff2-variations");unicode-range:U+301,U+400-45F,U+490-491,U+4B0-4B1,U+2116}
-    @font-face{font-family:"Geologica Variable";font-style:normal;font-display:swap;font-weight:100 900;src:url(/social-stars-demo/assets/geologica-cyrillic-ext-wght-normal-C8B9Chlh.woff2) format("woff2-variations");unicode-range:U+460-52F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
-    @font-face{font-family:"Geologica Variable";font-style:normal;font-display:swap;font-weight:100 900;src:url(/social-stars-demo/assets/geologica-latin-wght-normal-BBL8hQxZ.woff2) format("woff2-variations");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-
-    :root{
-      --ink:#111;--ink-2:#333;--muted:#6b6f76;--line:#e3e5e8;--bg:#fff;--bg-2:#f3f4f5;
-      --bronze:#b38d69;--sand:#cca88a;--gold:#dfbea5;--deep:#0c0b0a;--deep-2:#171513;--deep-line:#2b2622;
-      --radius:20px;--radius-sm:12px;
-      --max:1240px;
-      --font:"Geologica Variable","Geologica",system-ui,-apple-system,"Segoe UI",sans-serif;
-    }
-    *,*::before,*::after{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-    a{color:inherit}
-    img,svg{display:block;max-width:100%}
-    h1,h2,h3{font-weight:500;letter-spacing:-.02em;margin:0}
-    p{margin:0}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-    .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);font-weight:500}
-    .eyebrow::before{content:"";width:18px;height:1px;background:currentColor}
-    section{padding:110px 0}
-    .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:56px;flex-wrap:wrap}
-    .sec-head h2{font-size:clamp(32px,4.4vw,56px);line-height:1.05;max-width:680px;margin-top:14px}
-    .sec-head p{max-width:400px;color:var(--muted)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:18px 28px;border-radius:12px;font:500 16px/1 var(--font);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .2s,background .2s,border-color .2s,color .2s}
-    .btn:hover{transform:translateY(-2px)}
-    .btn-gold{background:linear-gradient(135deg,var(--gold),var(--bronze));color:#1a130c}
-    .btn-ghost{border-color:rgba(255,255,255,.22);color:#fff}
-    .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
-    .btn-dark{background:var(--ink);color:#fff}
-    :focus-visible{outline:2px solid var(--bronze);outline-offset:3px}
-
-    /* nav */
-    .nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
-    .nav.solid{background:rgba(12,11,10,.95);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--deep-line)}
-    .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
-    .logo{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-weight:500;font-size:18px;white-space:nowrap}
-    .logo img{width:26px;height:auto}
-    .logo b{font-weight:500;background:linear-gradient(135deg,var(--gold),var(--bronze));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0}
-    .nav-links a{color:rgba(255,255,255,.72);text-decoration:none;font-size:15px}
-    .nav-links a:hover{color:#fff}
-    .nav .btn{padding:13px 20px;font-size:15px}
-    @media (max-width:980px){.nav-links{display:none}}
-
-    /* hero */
-    .hero{position:relative;background:var(--deep);color:#fff;padding:170px 0 90px;overflow:hidden;isolation:isolate}
-    .hero::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at 60% 40%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 60% 40%,#000 20%,transparent 75%)}
-    .orb{position:absolute;border-radius:50%;filter:blur(90px);z-index:-1;opacity:.55;animation:float 16s ease-in-out infinite}
-    .orb.a{width:520px;height:520px;background:#8a6340;top:-160px;right:-120px}
-    .orb.b{width:380px;height:380px;background:#3b2c20;bottom:-140px;left:-80px;animation-delay:-6s}
-    @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-40px,30px)}}
-    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
-    .hero h1{font-size:clamp(40px,6.2vw,84px);line-height:1;margin:22px 0 26px}
-    .hero h1 em{font-style:normal;background:linear-gradient(120deg,var(--gold),var(--bronze) 60%,#8a6a4b);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .hero-lead{font-size:20px;color:rgba(255,255,255,.72);max-width:600px}
-    .hero-cta{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap}
-    .hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:40px}
-    .hero-tags span{font-size:13px;padding:8px 14px;border:1px solid var(--deep-line);border-radius:100px;color:rgba(255,255,255,.66)}
-
-    .chat{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--deep-line);border-radius:24px;padding:22px;backdrop-filter:blur(8px);box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
-    .chat-top{display:flex;align-items:center;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:18px}
-    .dots{display:flex;gap:6px}.dots i{width:9px;height:9px;border-radius:50%;background:var(--deep-line)}
-    .msg{padding:14px 16px;border-radius:16px;font-size:15px;line-height:1.5;margin-bottom:12px}
-    .msg.q{background:rgba(255,255,255,.08);margin-left:40px}
-    .msg.a{background:rgba(179,141,105,.1);border:1px solid rgba(179,141,105,.28);min-height:176px}
-    .msg.a .who{font-size:12px;color:var(--sand);margin-bottom:6px;letter-spacing:.06em;text-transform:uppercase}
-    .caret{display:inline-block;width:8px;height:1.1em;background:var(--gold);vertical-align:-3px;margin-left:2px;animation:blink 1s steps(1) infinite}
-    @keyframes blink{50%{opacity:0}}
-    .chat-note{font-size:12px;color:rgba(255,255,255,.4);margin-top:6px}
-    .models{display:flex;gap:6px;flex-wrap:wrap}
-    .models button{font:500 12px/1 var(--font);padding:7px 10px;border-radius:100px;border:1px solid var(--deep-line);background:transparent;color:rgba(255,255,255,.6);cursor:pointer}
-    .models button[aria-pressed="true"]{background:var(--bronze);border-color:var(--bronze);color:#1a130c}
-
-    .ticker{border-top:1px solid var(--deep-line);margin-top:80px;padding-top:28px;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
-    .ticker-track{display:flex;gap:56px;width:max-content;animation:scroll 40s linear infinite}
-    .ticker span{color:rgba(255,255,255,.42);font-size:18px;white-space:nowrap}
-    @keyframes scroll{to{transform:translateX(-50%)}}
-
-    /* why now */
-    .why{background:var(--deep-2);color:#fff;padding:90px 0}
-    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--deep-line);border:1px solid var(--deep-line);border-radius:var(--radius);overflow:hidden}
-    .stat{background:var(--deep-2);padding:36px 30px}
-    .stat b{display:block;font-size:clamp(34px,4vw,52px);font-weight:500;line-height:1;background:linear-gradient(135deg,var(--gold),var(--bronze));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px}
-    .stat p{color:rgba(255,255,255,.66);font-size:15px}
-    .stat small{display:block;margin-top:12px;color:rgba(255,255,255,.35);font-size:12px}
-    .why h2{font-size:clamp(28px,3.4vw,44px);line-height:1.1;max-width:880px;margin:14px 0 48px}
-
-    /* services */
-    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .svc{position:relative;background:var(--bg-2);border-radius:var(--radius);padding:34px 32px 30px;display:flex;flex-direction:column;gap:14px;transition:transform .25s,box-shadow .25s;overflow:hidden}
-    .svc:hover{transform:translateY(-4px);box-shadow:0 24px 50px -24px rgba(0,0,0,.25)}
-    .svc .ico{width:52px;height:52px;border-radius:14px;background:#fff;display:grid;place-items:center;color:var(--bronze)}
-    .svc h3{font-size:24px;line-height:1.15;margin-top:8px}
-    .svc p{color:var(--muted);font-size:15.5px}
-    .svc ul{margin:4px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
-    .svc li{font-size:12.5px;background:#fff;padding:6px 10px;border-radius:100px;color:var(--ink-2)}
-    .svc .num{position:absolute;top:26px;right:30px;font-size:14px;color:#b9bcc1}
-    .svc.flag{grid-column:span 2;background:var(--deep);color:#fff}
-    .svc.flag p{color:rgba(255,255,255,.66)}
-    .svc.flag .ico{background:rgba(179,141,105,.16);color:var(--gold)}
-    .svc.flag li{background:rgba(255,255,255,.08);color:rgba(255,255,255,.8)}
-    .svc.flag .num{color:var(--bronze)}
-    .svc.flag h3{font-size:32px}
-    .svc .more{margin-top:auto;padding-top:14px;font-size:14px;color:var(--bronze);text-decoration:none}
-
-    /* neuro-orm */
-    .norm{background:var(--bg-2)}
-    .norm-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-    .norm h2{font-size:clamp(32px,4.2vw,54px);line-height:1.05;margin:14px 0 22px}
-    .norm-lead{color:var(--muted);font-size:18px}
-    .steps{list-style:none;padding:0;margin:34px 0 0;display:grid;gap:14px;counter-reset:s}
-    .steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
-    .steps li::before{content:counter(s,decimal-leading-zero);font-size:14px;color:var(--bronze);border:1px solid var(--sand);border-radius:10px;height:36px;display:grid;place-items:center}
-    .steps b{font-weight:500;display:block}
-    .steps span{color:var(--muted);font-size:15px}
-    .radar{background:#fff;border-radius:24px;padding:28px;box-shadow:0 30px 60px -30px rgba(0,0,0,.2)}
-    .radar h4{margin:0 0 4px;font-weight:500;font-size:18px}
-    .radar .sub{color:var(--muted);font-size:13px;margin-bottom:22px}
-    .bar{display:grid;grid-template-columns:120px 1fr 44px;gap:12px;align-items:center;margin-bottom:14px;font-size:14px}
-    .bar .track{height:10px;border-radius:10px;background:var(--bg-2);overflow:hidden}
-    .bar .fill{height:100%;width:0;border-radius:10px;background:linear-gradient(90deg,var(--sand),var(--bronze));transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
-    .bar .v{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
-    .radar .legend{display:flex;justify-content:space-between;border-top:1px solid var(--line);margin-top:20px;padding-top:16px;font-size:13px;color:var(--muted)}
-
-    /* compare */
-    .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius)}
-    table{width:100%;border-collapse:collapse;min-width:760px;font-size:15px}
-    th,td{padding:18px 22px;text-align:left;border-bottom:1px solid var(--line)}
-    thead th{font-weight:500;color:var(--muted);font-size:13px;letter-spacing:.06em;text-transform:uppercase;background:var(--bg-2)}
-    thead th.us{background:var(--deep);color:var(--gold)}
-    td.us{background:#fbf7f3;font-weight:500}
-    tbody tr:last-child td{border-bottom:0}
-    .y{color:#2f7d4f}.n{color:#b9bcc1}.p{color:#b07d2a}
-
-    /* calc */
-    .calc{background:var(--deep);color:#fff}
-    .calc .sec-head p{color:rgba(255,255,255,.6)}
-    .calc-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
-    .panel{border:1px solid var(--deep-line);border-radius:var(--radius);padding:34px;background:var(--deep-2)}
-    .field{margin-bottom:28px}
-    .field label{display:flex;justify-content:space-between;font-size:15px;color:rgba(255,255,255,.78);margin-bottom:12px}
-    .field output{color:var(--gold);font-variant-numeric:tabular-nums}
-    input[type=range]{width:100%;appearance:none;-webkit-appearance:none;height:4px;border-radius:4px;background:var(--deep-line);outline-offset:6px}
-    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--gold);border:4px solid var(--deep);box-shadow:0 0 0 1px var(--bronze);cursor:pointer}
-    input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--gold);border:4px solid var(--deep);cursor:pointer}
-    .result{display:flex;flex-direction:column;gap:22px;background:linear-gradient(160deg,#2a1f16,var(--deep-2))}
-    .result .big{font-size:clamp(40px,5vw,62px);font-weight:500;line-height:1;background:linear-gradient(135deg,var(--gold),var(--bronze));-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums}
-    .result .lbl{font-size:14px;color:rgba(255,255,255,.55);margin-bottom:8px}
-    .result .row{display:grid;grid-template-columns:1fr 1fr;gap:16px;border-top:1px solid var(--deep-line);padding-top:20px}
-    .result .row b{display:block;font-size:26px;font-weight:500;font-variant-numeric:tabular-nums}
-    .result .fine{font-size:12px;color:rgba(255,255,255,.4);line-height:1.5}
-
-    /* process */
-    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:p}
-    .step{border-top:2px solid var(--ink);padding-top:24px;counter-increment:p}
-    .step::before{content:"0" counter(p);display:block;font-size:14px;color:var(--bronze);margin-bottom:20px}
-    .step h3{font-size:22px;margin-bottom:10px}
-    .step p{color:var(--muted);font-size:15px}
-    .step .t{display:inline-block;margin-top:16px;font-size:13px;background:var(--bg-2);padding:6px 12px;border-radius:100px}
-
-    /* pricing */
-    .pricing{background:var(--bg-2)}
-    .plans{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-    .plan{background:#fff;border-radius:var(--radius);padding:30px 26px;display:flex;flex-direction:column;gap:14px;border:1px solid transparent}
-    .plan h3{font-size:20px}
-    .plan .price{font-size:30px;font-weight:500;letter-spacing:-.02em}
-    .plan .price small{font-size:14px;color:var(--muted);font-weight:400}
-    .plan p{color:var(--muted);font-size:14.5px}
-    .plan ul{list-style:none;padding:0;margin:4px 0 8px;display:grid;gap:9px;font-size:14.5px}
-    .plan li{padding-left:24px;position:relative}
-    .plan li::before{content:"";position:absolute;left:0;top:7px;width:12px;height:7px;border-left:2px solid var(--bronze);border-bottom:2px solid var(--bronze);transform:rotate(-45deg)}
-    .plan .btn{margin-top:auto}
-    .plan.hot{background:var(--deep);color:#fff;border-color:var(--bronze);position:relative}
-    .plan.hot p,.plan.hot .price small{color:rgba(255,255,255,.6)}
-    .plan.hot .badge{position:absolute;top:-12px;left:26px;background:var(--bronze);color:#1a130c;font-size:12px;padding:5px 12px;border-radius:100px}
-    .note{margin-top:22px;font-size:13px;color:var(--muted)}
-
-    /* legacy */
-    .legacy-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:start}
-    .legacy h2{font-size:clamp(30px,3.8vw,48px);line-height:1.08;margin:14px 0 20px}
-    .legacy-lead{color:var(--muted)}
-    .kpis{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
-    .kpis div{background:var(--bg-2);border-radius:var(--radius-sm);padding:22px}
-    .kpis b{display:block;font-size:40px;font-weight:500;line-height:1;margin-bottom:6px}
-    .kpis span{font-size:14px;color:var(--muted)}
-    .links{display:grid;gap:10px}
-    .links a{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 26px;border:1px solid var(--line);border-radius:var(--radius-sm);text-decoration:none;transition:border-color .2s,background .2s}
-    .links a:hover{border-color:var(--bronze);background:#fbf7f3}
-    .links b{font-weight:500;display:block}
-    .links span{font-size:14px;color:var(--muted)}
-    .links i{font-style:normal;color:var(--bronze);font-size:20px}
-
-    /* faq */
-    .faq{max-width:900px;margin:0 auto}
-    details{border-bottom:1px solid var(--line);padding:24px 0}
-    summary{list-style:none;cursor:pointer;font-size:20px;font-weight:500;display:flex;justify-content:space-between;gap:20px}
-    summary::-webkit-details-marker{display:none}
-    summary::after{content:"+";color:var(--bronze);font-size:26px;line-height:1;transition:transform .2s}
-    details[open] summary::after{transform:rotate(45deg)}
-    details p{color:var(--muted);margin-top:14px;max-width:760px}
-
-    /* lead */
-    .lead{background:var(--deep);color:#fff;position:relative;overflow:hidden;isolation:isolate}
-    .lead .orb.a{top:auto;bottom:-260px;right:-160px}
-    .lead-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
-    .lead h2{font-size:clamp(34px,4.6vw,60px);line-height:1.02;margin:14px 0 22px}
-    .lead-lead{color:rgba(255,255,255,.66);font-size:18px}
-    .contacts{margin-top:36px;display:grid;gap:8px;font-size:18px}
-    .contacts a{text-decoration:none;color:var(--gold)}
-    form{display:grid;gap:14px}
-    .inp{width:100%;padding:18px 20px;border-radius:12px;border:1px solid var(--deep-line);background:rgba(255,255,255,.04);color:#fff;font:400 16px var(--font)}
-    .inp::placeholder{color:rgba(255,255,255,.4)}
-    .inp:focus{outline:none;border-color:var(--bronze)}
-    fieldset{border:0;padding:0;margin:4px 0}
-    legend{font-size:14px;color:rgba(255,255,255,.6);margin-bottom:10px}
-    .chips{display:flex;flex-wrap:wrap;gap:8px}
-    .chips label{cursor:pointer}
-    .chips input{position:absolute;opacity:0;pointer-events:none}
-    .chips span{display:inline-block;padding:10px 14px;border-radius:100px;border:1px solid var(--deep-line);font-size:14px;color:rgba(255,255,255,.72);transition:.2s}
-    .chips input:checked+span{background:var(--bronze);border-color:var(--bronze);color:#1a130c}
-    .chips input:focus-visible+span{outline:2px solid var(--gold);outline-offset:2px}
-    .consent{font-size:12px;color:rgba(255,255,255,.4)}
-    .consent a{color:rgba(255,255,255,.6)}
-    .form-msg{font-size:14px;color:var(--gold);min-height:1.2em}
-
-    footer{background:#070605;color:rgba(255,255,255,.45);padding:40px 0;font-size:14px}
-    footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-    footer a{color:rgba(255,255,255,.65);text-decoration:none}
-
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
-    .reveal.in{opacity:1;transform:none}
-
-    @media (max-width:1080px){
-      .services{grid-template-columns:1fr 1fr}
-      .svc.flag{grid-column:span 2}
-      .plans{grid-template-columns:1fr 1fr}
-      .stats{grid-template-columns:1fr 1fr}
-      .process{grid-template-columns:1fr 1fr;row-gap:44px}
-    }
-    @media (max-width:860px){
-      section{padding:80px 0}
-      .hero{padding:130px 0 70px}
-      .hero-grid,.norm-grid,.calc-grid,.legacy-grid,.lead-grid{grid-template-columns:1fr;gap:40px}
-      .services,.plans,.process{grid-template-columns:1fr}
-      .svc.flag{grid-column:auto}
-      .nav .btn{display:none}
-    }
-    @media (max-width:520px){
-      .wrap{padding:0 16px}
-      .stats{grid-template-columns:1fr}
-      .kpis{grid-template-columns:1fr 1fr}
-      .bar{grid-template-columns:92px 1fr 40px}
-      .panel{padding:24px}
-      .msg.q{margin-left:0}
-    }
-    @media (prefers-reduced-motion:reduce){
-      *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-      .reveal{opacity:1;transform:none}
-    }
-  </style>
+  <link rel="stylesheet" href="/social-stars-demo/ai/ai.css" />
 </head>
 <body>
 
@@ -399,6 +137,7 @@
           <h3>AI Growth OS</h3>
           <p>Комплекс «под ключ»: AI-сайт + ИИ-агенты продаж и поддержки + аватар основателя + SEO/GEO + нейро-ORM. Единый дашборд, KPI по лидам, видимости в нейросетях и экономии ФОТ.</p>
           <ul><li>Стратегия</li><li>Внедрение</li><li>Контент</li><li>Аналитика</li><li>Поддержка 24/7</li></ul>
+          <a class="more" href="/social-stars-demo/ai/growth-os/">Подробнее о комплексе →</a>
         </article>
         <article class="svc reveal">
           <span class="num">01</span>
@@ -406,6 +145,7 @@
           <h3>AI-сайты</h3>
           <p>Сайты, спроектированные сразу под поиск и нейросети: GEO-разметка, встроенный ИИ-консультант, связка с CRM и A/B-тесты.</p>
           <ul><li>schema.org</li><li>llms.txt</li><li>ИИ-консультант</li></ul>
+          <a class="more" href="/social-stars-demo/ai/sites/">Подробнее →</a>
         </article>
         <article class="svc reveal">
           <span class="num">02</span>
@@ -413,7 +153,7 @@
           <h3>ИИ-агенты и автоматизация</h3>
           <p>Агенты для продаж, поддержки, документов и HR. RAG по базе знаний, интеграция с amoCRM, Битрикс24, 1С и Telegram.</p>
           <ul><li>n8n</li><li>LangGraph</li><li>RAG</li><li>On-prem</li></ul>
-          <a class="more" href="/social-stars-demo/razrabotka_chat-botov/">Наш опыт в чат-ботах →</a>
+          <a class="more" href="/social-stars-demo/ai/agents/">Подробнее →</a>
         </article>
         <article class="svc reveal">
           <span class="num">03</span>
@@ -421,7 +161,7 @@
           <h3>Цифровые аватары</h3>
           <p>Видеоклон эксперта или CEO, AI-блогер с нуля, интерактивный аватар-консультант на сайте и в мессенджерах. Только с согласия прототипа.</p>
           <ul><li>Видеоклон</li><li>Голос</li><li>Интерактив</li></ul>
-          <a class="more" href="/social-stars-demo/sozdanie-blogera/">Создание блогера с нуля →</a>
+          <a class="more" href="/social-stars-demo/ai/avatars/">Подробнее →</a>
         </article>
         <article class="svc reveal">
           <span class="num">04</span>
@@ -429,6 +169,7 @@
           <h3>SEO + GEO</h3>
           <p>Классическое SEO и продвижение в ответах Алисы AI, Яндекс Нейро, GigaChat, ChatGPT и Perplexity.</p>
           <ul><li>Яндекс</li><li>Google</li><li>Нейровыдача</li></ul>
+          <a class="more" href="/social-stars-demo/ai/seo-geo/">Подробнее →</a>
         </article>
         <article class="svc reveal">
           <span class="num">05</span>
@@ -436,7 +177,7 @@
           <h3>Нейро-ORM</h3>
           <p>Управляем тем, что нейросети отвечают о бренде и первых лицах. Продолжение нашей 12-летней экспертизы в ORM и SERM.</p>
           <ul><li>Мониторинг 6+ моделей</li><li>Источники</li><li>Антикризис</li></ul>
-          <a class="more" href="#neuro-orm">Как это работает →</a>
+          <a class="more" href="/social-stars-demo/ai/neuro-orm/">Подробнее →</a>
         </article>
         <article class="svc reveal">
           <span class="num">06</span>
@@ -444,7 +185,7 @@
           <h3>AI-контент-завод</h3>
           <p>Посты, видео и рассылки на потоке: агенты готовят, аватары озвучивают, редактор утверждает.</p>
           <ul><li>Telegram</li><li>VK</li><li>YouTube</li><li>Email</li></ul>
-          <a class="more" href="/social-stars-demo/avtomatizaciya_social_setey/">Автоматизация соцсетей →</a>
+          <a class="more" href="/social-stars-demo/ai/content/">Подробнее →</a>
         </article>
         <article class="svc reveal">
           <span class="num">07</span>
@@ -452,6 +193,7 @@
           <h3>AI-трансформация</h3>
           <p>Аудит процессов, дорожная карта, обучение команд и внутренняя библиотека агентов — как в AI-native компаниях мирового уровня.</p>
           <ul><li>Стратегия</li><li>Обучение</li><li>Governance</li></ul>
+          <a class="more" href="/social-stars-demo/ai/transformation/">Подробнее →</a>
         </article>
       </div>
     </div>
@@ -470,6 +212,7 @@
           <li><div><b>Исправляем и наращиваем</b><span>Контент, разметка, публикации в авторитетных СМИ и у лидеров мнений.</span></div></li>
           <li><div><b>Контролируем</b><span>Ежемесячный индекс AI-видимости и алерты на новый негатив.</span></div></li>
         </ol>
+        <a class="btn btn-dark" style="margin-top:32px" href="/social-stars-demo/ai/neuro-orm/">Подробнее о нейро-ORM</a>
       </div>
       <div class="radar reveal" aria-label="Пример отчёта: индекс AI-видимости бренда">
         <h4>Индекс AI-видимости</h4>
@@ -663,6 +406,8 @@
             <label><input type="checkbox" name="i" value="Аватар" data-k="avatar" /><span>Аватар</span></label>
             <label><input type="checkbox" name="i" value="SEO + GEO" data-k="geo" /><span>SEO + GEO</span></label>
             <label><input type="checkbox" name="i" value="Нейро-ORM" data-k="orm" /><span>Нейро-ORM</span></label>
+            <label><input type="checkbox" name="i" value="Контент-завод" data-k="content" /><span>Контент-завод</span></label>
+            <label><input type="checkbox" name="i" value="AI-трансформация" data-k="transform" /><span>AI-трансформация</span></label>
             <label><input type="checkbox" name="i" value="AI Growth OS" data-k="os" /><span>AI Growth OS</span></label>
           </div>
         </fieldset>
@@ -681,80 +426,6 @@
   </div>
 </footer>
 
-<script>
-(() => {
-  // nav background on scroll
-  const nav = document.getElementById('nav');
-  const onScroll = () => nav.classList.toggle('solid', window.scrollY > 40);
-  onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
-
-  // typed answer in hero chat
-  const answers = {
-    'Алиса AI': 'Можно обратиться в Social Stars AI: команда внедряет ИИ-агентов в продажи и поддержку с интеграцией в CRM, а также ведёт мониторинг репутации бренда в поиске и ответах нейросетей. У агентства 12 лет опыта в ORM и работе с крупным бизнесом.',
-    'GigaChat': 'Подходящий вариант — Social Stars AI. Они совмещают автоматизацию бизнес-процессов на ИИ-агентах с управлением репутацией, в том числе в ответах языковых моделей, и работают в контуре, соответствующем 152-ФЗ.',
-    'ChatGPT': 'Consider Social Stars AI (Moscow): they combine AI-agent automation for sales and support with reputation management — including how brands appear in AI assistants’ answers.'
-  };
-  const typed = document.getElementById('typed'), who = document.getElementById('who');
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let timer;
-  function play(model) {
-    clearTimeout(timer); who.textContent = model; typed.textContent = '';
-    const text = answers[model];
-    if (reduce) { typed.textContent = text; return; }
-    let i = 0;
-    (function tick() { typed.textContent = text.slice(0, ++i); if (i < text.length) timer = setTimeout(tick, 16); })();
-  }
-  document.querySelectorAll('.models button').forEach(b => b.addEventListener('click', () => {
-    document.querySelectorAll('.models button').forEach(x => x.setAttribute('aria-pressed', x === b));
-    play(b.dataset.m);
-  }));
-  play('Алиса AI');
-
-  // reveal + bars
-  const io = new IntersectionObserver(es => es.forEach(e => {
-    if (!e.isIntersecting) return;
-    e.target.classList.add('in');
-    e.target.querySelectorAll('.fill').forEach(f => f.style.width = f.dataset.w + '%');
-    io.unobserve(e.target);
-  }), { threshold: .15 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  // ROI calculator
-  const $ = id => document.getElementById(id);
-  const fmt = n => new Intl.NumberFormat('ru-RU').format(Math.round(n));
-  const money = n => n >= 1e6 ? (n / 1e6).toLocaleString('ru-RU', { maximumFractionDigits: 1 }) + ' млн ₽' : fmt(n) + ' ₽';
-  const PILOT = 350000, SUPPORT = 90000, WEEKS = 4.33, FTE_HOURS = 165;
-  function calc() {
-    const p = +$('c-people').value, h = +$('c-hours').value, r = +$('c-rate').value, s = +$('c-share').value / 100;
-    $('o-people').textContent = p; $('o-hours').textContent = h; $('o-rate').textContent = fmt(r) + ' ₽'; $('o-share').textContent = Math.round(s * 100) + '%';
-    const hours = p * h * WEEKS * s, month = hours * r;
-    $('r-hours').textContent = fmt(hours);
-    $('r-month').textContent = money(month);
-    $('r-year').textContent = money(month * 12);
-    $('r-fte').textContent = (hours / FTE_HOURS).toLocaleString('ru-RU', { maximumFractionDigits: 1 });
-    const net = month - SUPPORT;
-    $('r-payback').textContent = net <= 0 ? 'нужен аудит' : (PILOT / net < 1 ? '< 1 мес' : Math.ceil(PILOT / net) + ' мес');
-  }
-  ['c-people', 'c-hours', 'c-rate', 'c-share'].forEach(id => $(id).addEventListener('input', calc));
-  calc();
-
-  // preselect interest from pricing buttons
-  document.querySelectorAll('[data-pick]').forEach(a => a.addEventListener('click', () => {
-    const cb = document.querySelector('.chips input[data-k="' + a.dataset.pick + '"]');
-    if (cb) cb.checked = true;
-  }));
-
-  // lead form -> mailto (no backend on static hosting)
-  $('form').addEventListener('submit', e => {
-    e.preventDefault();
-    const f = e.target, msg = $('form-msg');
-    if (!f.name.value.trim() || !f.contact.value.trim()) { msg.textContent = 'Укажите имя и контакт для связи.'; return; }
-    const interests = [...f.querySelectorAll('input[name="i"]:checked')].map(x => x.value).join(', ') || 'не указано';
-    const body = `Имя: ${f.name.value}\nКонтакт: ${f.contact.value}\nКомпания: ${f.company.value || '—'}\nИнтересы: ${interests}`;
-    location.href = 'mailto:info@social-stars.ru?subject=' + encodeURIComponent('Заявка на AI-аудит') + '&body=' + encodeURIComponent(body);
-    msg.textContent = 'Открываем почтовый клиент… Если он не открылся — позвоните нам: +7 985 400 92 99.';
-  });
-})();
-</script>
+<script src="/social-stars-demo/ai/ai.js" defer></script>
 </body>
 </html>
