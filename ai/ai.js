@@ -90,3 +90,14 @@
     });
   });
 })();
+
+// ролики в макетах телефонов играют только на экране; при «уменьшении движения» — обложка
+(() => {
+  const vids = document.querySelectorAll('video.media');
+  if (!vids.length || matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    const v = e.target;
+    if (e.isIntersecting) { v.preload = 'auto'; const p = v.play(); if (p) p.catch(() => {}); } else v.pause();
+  }), { threshold: .25 });
+  vids.forEach(v => io.observe(v));
+})();
