@@ -103,7 +103,7 @@ ul,ol,dl,dd{margin:0;padding:0}
 .mega a:hover,.mega a[aria-current="page"]{background:var(--porcelain)}
 .mega b{font-weight:500;font-size:15.5px}
 .mega span{font-size:13.5px;color:var(--slate);line-height:1.4}
-.mega a.feature{grid-column:span 2;grid-row:span 2;align-content:end;background:var(--ink);color:#fff}
+.mega a.feature{grid-column:span 1;grid-row:span 3;align-content:end;background:var(--ink);color:#fff}
 .mega a.feature span{color:#a9b1c0}
 .mega a.feature:hover,.mega a.feature[aria-current="page"]{background:var(--ink-2)}
 
@@ -131,6 +131,7 @@ ul,ol,dl,dd{margin:0;padding:0}
 .facts dt{font-size:14px;color:var(--slate)}
 .facts dd{font-size:clamp(19px,1.6vw,22px);letter-spacing:-.01em;margin-top:4px}
 .hero-facts{padding-bottom:clamp(56px,7vw,96px)}
+.hero .wrap.hero-facts{display:block;min-height:0;padding-top:0}
 
 /* ---------- под-навигация ---------- */
 .subnav{position:sticky;top:var(--hdr);z-index:60;background:rgba(243,245,248,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--mist);border-top:1px solid var(--mist)}
@@ -417,3 +418,30 @@ mark.hl,[data-marks] mark{background:linear-gradient(rgba(194,87,75,.16),rgba(19
 .team .ph{aspect-ratio:4/5;border-radius:var(--r-lg);background:var(--ink);display:grid;place-items:center}
 .team .ph svg{width:34%;height:auto;aspect-ratio:100/91.2}
 @media (max-width:600px){ .team-lead{grid-template-columns:1fr 1fr;gap:14px} }
+
+/* ——— Макет UGC-ролика в телефоне ——— */
+.uph{--c1:#e9c9a8;--c2:#8b6f5a;--c3:#3a4152;--c4:#1d2230;--sk:255,226,204;--cl:#2c3345;
+  container-type:inline-size;width:100%;aspect-ratio:9/19;flex:none}
+.uph .scr{position:relative;height:100%;border:3cqw solid #11151f;border-radius:15cqw;overflow:hidden;background:var(--c4);isolation:isolate;box-shadow:0 40px 70px -40px rgba(17,21,31,.55)}
+.uph .bg{position:absolute;inset:-25%;background:radial-gradient(28% 22% at 24% 22%,var(--c1),transparent 70%),radial-gradient(34% 26% at 80% 34%,var(--c2),transparent 72%),radial-gradient(40% 30% at 60% 88%,var(--c2),transparent 70%),linear-gradient(170deg,var(--c3),var(--c4));filter:blur(6cqw)}
+.uph .who{position:absolute;left:50%;top:21%;width:58%;aspect-ratio:3/4;transform:translateX(-50%);border-radius:50%;
+  background:radial-gradient(50% 50% at 50% 42%,rgba(var(--sk),.95),rgba(var(--sk),.55) 55%,transparent 72%);filter:blur(3.4cqw)}
+.uph .who::after{content:"";position:absolute;left:50%;top:92%;width:190%;height:120%;transform:translateX(-50%);border-radius:48% 48% 0 0;background:var(--cl);filter:blur(3cqw);opacity:.95}
+.uph .top{position:absolute;left:6cqw;top:6cqw;right:6cqw;display:flex;gap:2cqw;z-index:2}
+.uph .top span{font:500 4.2cqw/1 var(--font);color:#fff;padding:2cqw 3cqw;border-radius:99px;background:rgba(10,12,18,.42);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.uph .top span:first-child{background:rgba(176,138,99,.85)}
+.uph .hook{position:absolute;left:8cqw;right:8cqw;top:52%;text-align:center;z-index:2;font:600 7.4cqw/1.55 var(--font);letter-spacing:-.01em}
+.uph .hook span{background:#fff;color:#11151f;padding:.12em .4em;border-radius:1.8cqw;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.uph .sub{position:absolute;left:6cqw;right:20cqw;bottom:11cqw;z-index:2;color:#fff;font:400 4.4cqw/1.35 var(--font);text-shadow:0 1px 6px rgba(0,0,0,.45)}
+.uph .sub b{display:block;font-weight:600;margin-bottom:1cqw}
+.uph .side{position:absolute;right:4.5cqw;bottom:14cqw;display:grid;gap:5cqw;z-index:2}
+.uph .side i{display:block;width:9cqw;height:9cqw;border-radius:50%;background:rgba(255,255,255,.28);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.uph .bar{position:absolute;left:6cqw;right:6cqw;bottom:5.5cqw;height:1.1cqw;border-radius:1cqw;background:rgba(255,255,255,.3);z-index:2;overflow:hidden}
+.uph .bar i{display:block;height:100%;width:var(--p,40%);background:#fff}
+/* палитры кадров */
+.uph.t1{--c1:#f0cfae;--c2:#b08a63;--c3:#5a4a3f;--c4:#2a2420;--cl:#3b2f27}
+.uph.t2{--c1:#cfe0ea;--c2:#6f8fa6;--c3:#3a5163;--c4:#1c2733;--cl:#26384a;--sk:246,220,200}
+.uph.t3{--c1:#f3d9d0;--c2:#c98f86;--c3:#6a4a50;--c4:#2b1f25;--cl:#5a3a44}
+.uph.t4{--c1:#e3e6c7;--c2:#8e9a6a;--c3:#48503a;--c4:#20241b;--cl:#3c4430;--sk:240,214,190}
+.uph.t5{--c1:#e8e2f3;--c2:#8d86b3;--c3:#46425f;--c4:#1e1c2c;--cl:#34304c;--sk:250,228,210}
+.uph.t6{--c1:#f4e3c3;--c2:#d0a458;--c3:#6b5530;--c4:#2a2114;--cl:#7a5a2c}
