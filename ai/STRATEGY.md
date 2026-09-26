@@ -103,3 +103,49 @@
 Принцип «честного UGC»: ролики маркируются как реклама, на экране пометка «ИИ-аватар», ведущий не выдаёт себя за покупателя и не пишет отзывы.
 
 Запуск — кампания «Кастинг отменяется», материалы на странице `/ai/ugc/campaign/`: идея, заголовки, баннеры (PNG в `ai/ugc/campaign/creatives/`), сценарии роликов, медиаплан на 600 000 ₽, воронка, календарь на 6 недель, UTM и маркировка.
+
+## Мировые практики 2026: второй проход и новые направления
+
+### Что изменилось за год
+
+- **Генеративный ИИ стал нормой, деньги ушли во внедрение.** В 2026 году 87% маркетологов используют генеративный ИИ хотя бы в одном процессе (в 2024 — 51%), 34% крупных маркетинговых команд держат в работе хотя бы одного автономного агента. Разрыв теперь не в доступе к инструментам, а в измеримом эффекте и контроле качества: на контент тратят 22% бюджета, на управление и проверку — 3%. Вывод для нас: продавать не генерацию, а результат с контролем и отчётом.
+- **Агентства переходят на подписку и оплату за результат.** Почасовая оплата уступает ретейнерам и value-based модели; спрос на младших копирайтеров падает, на стратегов растёт. Вывод: все новые направления — пакеты с фиксированной ценой в месяц.
+- **Голосовые агенты — самый быстрорастущий сегмент.** Gartner оценивает сокращение затрат контакт-центров за счёт разговорного ИИ в $80 млрд в 2026 году; PolyAI вырос по выручке почти в 10 раз за год, Vapi обрабатывает 62 млн звонков в месяц. В России рынок разговорного ИИ растёт на 20–25% в год и может превысить 10 млрд ₽ в 2026 году; ИИ-боты со свободным диалогом — от 12 ₽ за минуту.
+- **E-commerce визуал: студийная съёмка заменяется генерацией.** Botika обслуживает 3 000+ модных брендов и заявляет снижение затрат на визуал до 90%; Photoroom добавил виртуальных моделей и пакетную обработку. В России нейросети для карточек Wildberries и Ozon — массовая практика, конкуренция идёт за главное фото и инфографику.
+- **Тренажёры продаж на ИИ-клиентах.** Hyperbound и Second Nature задали стандарт: голосовые ролевые игры, персонажи из данных CRM, оценка реальных звонков. В России появились Вербо и SkillsTrainer — рынок ранний, сильного лидера нет.
+- **ИИ-SDR — осторожно.** 41% крупных B2B-команд держат ИИ-SDR, но 50–70% внедрений отключают в течение года. В России холодные рекламные звонки и рассылки без согласия — штраф до 1 млн ₽. Это направление мы не запускаем.
+
+### Российская специфика
+
+- **41-ФЗ, с 1 сентября 2025:** звонки организаций маркируются (на экране видно, кто и зачем звонит), рекламный обзвон — только с явного согласия, анонимные номера вне закона. Голосовой оператор строим от входящих звонков и исходящих по согласию.
+- **Маркировка рекламы (erid) и пометка ИИ-контента** — стандарт во всех наших креативах.
+- **Маркетплейсы** — основной канал e-commerce: главное фото и инфографика решают клик в выдаче.
+
+### Новые направления
+
+| Направление | Мировой ориентир | Что делаем иначе | Цена |
+|---|---|---|---|
+| ИИ-фотостудия для маркетплейсов `/ai/marketplace/` | Botika, Photoroom, Lamina | Под ключ: виртуальные модели, инфографика, тексты и A/B главного фото под WB, Ozon и Яндекс Маркет | от 2 900 ₽ за карточку, подписка от 89 000 ₽ |
+| Голосовой ИИ-оператор `/ai/voice/` | PolyAI, Retell, Vapi | Входящие 24/7 с записью в CRM, исходящие только по согласию, маркировка по 41-ФЗ, данные в РФ | запуск от 190 000 ₽, минута от 14 ₽ |
+| ИИ-тренажёр продаж `/ai/trainer/` | Hyperbound, Second Nature | Персонажи из ваших реальных звонков, русская речь, разбор звонков по чек-листу | запуск от 150 000 ₽, от 2 900 ₽ за менеджера в месяц |
+
+У каждого направления — своя кампания: `/ai/marketplace/campaign/`, `/ai/voice/campaign/`, `/ai/trainer/campaign/`.
+
+### Источники второго прохода
+
+- Digital Applied, AI Marketing Statistics 2026 — https://www.digitalapplied.com/blog/ai-marketing-statistics-2026-adoption-data-points
+- Improvado, AI Marketing Trends 2026 — https://improvado.io/blog/ai-marketing-trends
+- AI Insights News, AI и модель агентств — https://aiinsightsnews.net/ai-marketing-agency-business-model/
+- Gartner, conversational AI и контакт-центры — https://www.gartner.com/en/newsroom/press-releases/2022-08-31-gartner-predicts-conversational-ai-will-reduce-contac
+- MarketsandMarkets, Voice Agents Market — https://www.marketsandmarkets.com/Market-Reports/voice-agents-market-174295232.html
+- CallSphere, Retell / Vapi / PolyAI 2026 — https://callsphere.ai/blog/top-ai-agent-voice-platforms-ranked-retell-vapi-polyai-2026
+- ЦИПР, рынок разговорного ИИ в России — https://cipr.ru/izdanie-2025/golos-bez-granicz-kak-razvivaetsya-rynok-razgovornogo-ii-v-rossii/
+- VoiceLogic, стоимость голосового робота в 2026 — https://voicelogic.ru/blog/skolko-stoit-golosovoj-robot/
+- Mango Office, 41-ФЗ для бизнеса — https://www.mango-office.ru/journal/newsletter/novyy-zakon-o-kibermoshennichestve-i-spamzvonkakh-razbiraemsya-chto-delat-biznesu/
+- Скорозвон, автообзвон по закону в 2026 — https://skorozvon.ru/articles/avtoobzvon-zakon-soglasie-shtrafy
+- Photoroom, AI fashion model generators — https://www.photoroom.com/blog/ai-fashion-model-generators
+- Nightjar, AI Fashion Models 2026 — https://nightjar.so/blog/ai-fashion-models-best-tools
+- Sostav, нейросети для карточек WB и Ozon 2026 — https://www.sostav.ru/blogs/289033/91791
+- Hyperbound — https://www.hyperbound.ai/
+- vc.ru, ИИ-тренажёры для B2B-продаж — https://vc.ru/tweekly/2944401-ii-trenazhery-dlya-b2b-prodazh
+- Fortune Business Insights, AI SDR Market — https://www.fortunebusinessinsights.com/ai-sdr-market-114112
