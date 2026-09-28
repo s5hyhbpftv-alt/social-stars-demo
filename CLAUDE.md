@@ -64,6 +64,7 @@ node tools/qa/check-pages.mjs voice/ voice/campaign/       # выборочно
 node tools/qa/export-banners.mjs voice                     # баннеры кампании → ai/voice/campaign/creatives/
 node tools/qa/shots.mjs '{"voice/":[".vo-hero","#loss"]}'  # скриншоты блоков → tools/qa/out/ (смотреть их глазами)
 node tools/qa/crop-media.mjs <фото> <out.webp> 9x19 .55 420   # кадр для телефона (9x19), карточки (3x4), портрета (4x5)
+node tools/qa/og.mjs                                       # превью ссылок 1200×630 → ai/og/<страница>.jpg (кадры — в MEDIA внутри скрипта)
 ```
 
 `PW_CHROMIUM=/путь/к/chrome` — свой Chromium (в облаке Claude Code находится сам); `SS_BASE=…` — другой адрес сайта. Видео не пережимаем (нет ffmpeg) — берём готовые сжатые файлы до 3 МБ.

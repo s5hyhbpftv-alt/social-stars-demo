@@ -12,6 +12,22 @@ def money(n):
     return f'{n:,}'.replace(',', NB) + NB + '₽'
 
 
+
+def og_image(s, path):
+    """Своя картинка превью для страницы: /ai/<раздел>/… → ai/og/<раздел>.jpg (кампании — картинка направления)."""
+    parts = [x for x in path.strip('/').split('/') if x]
+    slug = parts[1] if len(parts) > 1 and parts[0] == 'ai' else 'index'
+    url = f'{BASE}/ai/og/{slug}.jpg'
+    t = re.search(r'<meta property="og:title" content="([^"]*)" />', s)
+    alt = t.group(1) if t else 'Social Stars AI'
+    s = re.sub(r'\n\s*<meta property="og:image:(width|height|alt)" content="[^"]*" />', '', s)
+    s = re.sub(r'\n\s*<meta name="twitter:image" content="[^"]*" />', '', s)
+    return re.sub(r'( *)<meta property="og:image" content="[^"]*" />',
+                  lambda m: (f'{m.group(1)}<meta property="og:image" content="{url}" />\n{m.group(1)}<meta property="og:image:width" content="1200" />\n'
+                             f'{m.group(1)}<meta property="og:image:height" content="630" />\n{m.group(1)}<meta property="og:image:alt" content="{alt}" />\n'
+                             f'{m.group(1)}<meta name="twitter:image" content="{url}" />'), s, count=1)
+
+
 def build(template, out, *, title, desc, path, og_title, og_desc, ld, style, main, script='', service=None, extra_css=None):
     s = open(R + template).read()
     s = re.sub(r'<title>.*?</title>', lambda m: f'<title>{title}</title>', s)
@@ -20,6 +36,7 @@ def build(template, out, *, title, desc, path, og_title, og_desc, ld, style, mai
     s = re.sub(r'<meta property="og:url" content="[^"]*" />', lambda m: f'<meta property="og:url" content="{BASE}{path}" />', s)
     s = re.sub(r'<meta property="og:title" content="[^"]*" />', lambda m: f'<meta property="og:title" content="{og_title}" />', s)
     s = re.sub(r'<meta property="og:description" content="[^"]*" />', lambda m: f'<meta property="og:description" content="{og_desc}" />', s)
+    s = og_image(s, path)
     s = re.sub(r'  <script type="application/ld\+json">.*?</script>\n', '', s, flags=re.S)
     if ld:
         s = s.replace('  <link rel="stylesheet" href="/social-stars-demo/ai/ai.css" />',
