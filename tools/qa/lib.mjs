@@ -11,7 +11,16 @@ export const BASE = (process.env.SS_BASE || 'http://localhost:8123/social-stars-
 export const ORIGIN = new URL(BASE).origin;
 export const OUT = path.join(ROOT, 'tools/qa/out');
 
-export const launch = () => chromium.launch(process.env.PW_CHROMIUM ? { executablePath: process.env.PW_CHROMIUM } : {});
+// свой Chromium: PW_CHROMIUM, иначе предустановленный в облаке Claude Code, иначе браузер Playwright
+const chromiumPath = () => {
+  if (process.env.PW_CHROMIUM) return process.env.PW_CHROMIUM;
+  const base = '/opt/pw-browsers';
+  if (!fs.existsSync(base)) return undefined;
+  const dir = fs.readdirSync(base).filter(d => /^chromium-\d+$/.test(d)).sort().pop();
+  const exe = dir && path.join(base, dir, 'chrome-linux/chrome');
+  return exe && fs.existsSync(exe) ? exe : undefined;
+};
+export const launch = () => { const p = chromiumPath(); return chromium.launch(p ? { executablePath: p } : {}); };
 
 // все страницы направления: ai/**/index.html → 'sites/', 'ugc/campaign/' …
 export const pages = () => {
