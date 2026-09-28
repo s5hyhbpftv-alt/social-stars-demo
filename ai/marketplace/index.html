@@ -31,7 +31,10 @@
     .shelf .mcard:nth-child(2){transform:translateY(34px)}
     .shelf .mcard:nth-child(4){transform:translateY(34px)}
     .mc-ph .scan{position:absolute;left:0;right:0;top:0;height:2px;background:var(--bronze);box-shadow:0 0 18px 4px rgba(176,138,99,.55);opacity:0;z-index:3}
-    .scenes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);max-width:860px}
+    .scenes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,56px)}
+    .sw{display:flex;flex-wrap:wrap;gap:10px;padding:4px 0}
+    .sw button{width:36px;height:36px;border-radius:50%;border:3px solid var(--white);background:var(--c);box-shadow:0 0 0 1px var(--mist-2);cursor:pointer;padding:0}
+    .sw button[aria-pressed="true"]{box-shadow:0 0 0 2px var(--ink)}
     .scene{display:grid;gap:16px;justify-items:start}
     .scene .mc-ph img{position:absolute;inset:0;opacity:0;transition:opacity .6s var(--ease)}
     .scene .mc-ph img.on{opacity:1}
@@ -56,7 +59,7 @@
     .ab .win .mc-in{box-shadow:0 0 0 2px var(--bronze),0 30px 60px -40px rgba(17,21,31,.45)}
     .ab-t h3{font-size:clamp(22px,2.2vw,28px);font-weight:300;letter-spacing:-.02em;margin-bottom:12px}
     .ab-t p{color:var(--slate)}
-    @media (max-width:1024px){ .shelf{justify-self:start;max-width:440px} .anat{grid-template-columns:1fr} .anat .wires{display:none} .anat-card{max-width:340px} .anat-col:first-child .call-out{text-align:left} .anat-col{gap:14px} .ab{grid-template-columns:1fr 1fr} .ab-t{grid-column:1 / -1} }
+    @media (max-width:1024px){ .scenes{grid-template-columns:1fr 1fr} .shelf{justify-self:start;max-width:440px} .anat{grid-template-columns:1fr} .anat .wires{display:none} .anat-card{max-width:340px} .anat-col:first-child .call-out{text-align:left} .anat-col{gap:14px} .ab{grid-template-columns:1fr 1fr} .ab-t{grid-column:1 / -1} }
     @media (max-width:600px){ .scenes{grid-template-columns:1fr} .scene .mcard{max-width:320px} .shelf{gap:10px} .ab{gap:14px} .ab figcaption b{font-size:18px} }
   </style>
 </head>
@@ -237,7 +240,7 @@
     <a class="btn btn-primary btn-desk" href="#lead">Получить аудит</a>
     <button class="burger" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Открыть меню"><span></span><span></span></button>
     <div class="mega" id="mega">
-      <a class="feature" href="/social-stars-demo/ai/growth-os/"><b>AI Growth OS</b><span>Сайт, агенты, аватар, поиск и репутация — одна система роста с оплатой за результат</span></a>
+      <a class="feature" href="/social-stars-demo/ai/growth-os/"><b>AI Apogee OS</b><span>Сайт, агенты, аватар, поиск и репутация — одна система роста с оплатой за результат</span></a>
       <a href="/social-stars-demo/ai/sites/"><b>AI-сайты</b><span>Сайт, который находят люди и цитируют нейросети</span></a>
       <a href="/social-stars-demo/ai/agents/"><b>ИИ-агенты</b><span>Рутина продаж, поддержки и документов — агентам</span></a>
       <a href="/social-stars-demo/ai/avatars/"><b>Цифровые аватары</b><span>Эксперт говорит каждый день без съёмок</span></a>
@@ -259,7 +262,7 @@
 <div class="mnav" id="mnav">
   <ul>
     <li><a href="/social-stars-demo/ai/">Все направления</a></li>
-    <li><a href="/social-stars-demo/ai/growth-os/">AI Growth OS</a></li>
+    <li><a href="/social-stars-demo/ai/growth-os/">AI Apogee OS</a></li>
     <li><a href="/social-stars-demo/ai/sites/">AI-сайты</a></li>
     <li><a href="/social-stars-demo/ai/agents/">ИИ-агенты</a></li>
     <li><a href="/social-stars-demo/ai/avatars/">Цифровые аватары</a></li>
@@ -306,7 +309,7 @@
 
   <section class="section" id="scene">
     <div class="wrap">
-      <div class="head split"><h2 class="t-h2">Одна вещь — любая сцена</h2><p class="t-lead">Фото товара с телефона превращаем в кадры на модели: ателье, улица, отпуск, вечер.</p></div>
+      <div class="head split"><h2 class="t-h2">Одна вещь — любая сцена и цвет</h2><p class="t-lead">Фото товара с телефона превращаем в кадры на модели: ателье, улица, отпуск, вечер — и все цвета линейки в одной позе и свете.</p></div>
       <div class="scenes"><div class="scene" data-scene>
           <div class="mcard"><div class="mc-in"><div class="mc-ph"><img src="/social-stars-demo/ai/img/ugc/m65.webp" alt="" loading="lazy" class="on" /><img src="/social-stars-demo/ai/img/ugc/m35.webp" alt="" loading="lazy" />
           <div class="mc-chips"><span>Посадка по фигуре</span></div><span class="mc-tag">ИИ‑модель</span></div>
@@ -317,8 +320,13 @@
           <div class="mc-chips"><span>250 мл</span></div><span class="mc-tag">ИИ‑кадр</span></div>
           <p class="mc-price">1 290 ₽</p><p class="mc-name">Пена для объёма волос</p></div></div>
           <div class="seg" role="group" aria-label="Сцена"><button type="button" aria-pressed="true">Предметка</button><button type="button" aria-pressed="false">На модели</button></div>
+        </div><div class="scene" data-scene>
+          <div class="mcard"><div class="mc-in"><div class="mc-ph"><img src="/social-stars-demo/ai/img/ugc/look-black.webp" alt="" loading="lazy" class="on" /><img src="/social-stars-demo/ai/img/ugc/look-blue.webp" alt="" loading="lazy" /><img src="/social-stars-demo/ai/img/ugc/look-pink.webp" alt="" loading="lazy" /><img src="/social-stars-demo/ai/img/ugc/look-red.webp" alt="" loading="lazy" /><img src="/social-stars-demo/ai/img/ugc/look-silver.webp" alt="" loading="lazy" /><img src="/social-stars-demo/ai/img/ugc/look-white.webp" alt="" loading="lazy" />
+          <div class="mc-chips"><span>6 цветов</span></div><span class="mc-tag">ИИ‑модель</span></div>
+          <p class="mc-price">3 490 ₽</p><p class="mc-name">Платье мини, <span data-cname>чёрное</span></p></div></div>
+          <div class="sw" role="group" aria-label="Цвет"><button type="button" aria-pressed="true" aria-label="Чёрное" data-name="чёрное" style="--c:#1d1f26"></button><button type="button" aria-pressed="false" aria-label="Голубое" data-name="голубое" style="--c:#9dbde6"></button><button type="button" aria-pressed="false" aria-label="Розовое" data-name="розовое" style="--c:#e8aeb7"></button><button type="button" aria-pressed="false" aria-label="Бордовое" data-name="бордовое" style="--c:#8e1b26"></button><button type="button" aria-pressed="false" aria-label="Серебристое" data-name="серебристое" style="--c:#c3c7cc"></button><button type="button" aria-pressed="false" aria-label="Белое" data-name="белое" style="--c:#f7f7f5"></button></div>
         </div></div>
-      <p class="note">Кадры сгенерированы ИИ: платье — для нашего проекта сети ателье «Пчёлка», средство для волос — демонстрационная съёмка. Одна и та же вещь в разных сценах.</p>
+      <p class="note">Кадры сгенерированы ИИ: платье — для нашего проекта сети ателье «Пчёлка», средство для волос и платья в шести цветах — демонстрационная съёмка. Одна и та же вещь в разных сценах.</p>
     </div>
   </section>
 
@@ -457,7 +465,7 @@
           <label><input type="checkbox" name="i" value="Нейро-ORM" /><span>Нейро-ORM</span></label>
           <label><input type="checkbox" name="i" value="Контент-завод" /><span>Контент-завод</span></label>
           <label><input type="checkbox" name="i" value="AI-трансформация" /><span>AI-трансформация</span></label>
-          <label><input type="checkbox" name="i" value="AI Growth OS" /><span>AI Growth OS</span></label>
+          <label><input type="checkbox" name="i" value="AI Apogee OS" /><span>AI Apogee OS</span></label>
         </div>
       </fieldset>
       <button class="btn btn-primary btn-block" type="submit">Получить аудит</button>
@@ -502,7 +510,7 @@
           <li><a href="/social-stars-demo/ai/neuro-orm/">Нейро-ORM</a></li>
           <li><a href="/social-stars-demo/ai/content/">Контент-завод</a></li>
           <li><a href="/social-stars-demo/ai/transformation/">AI-трансформация</a></li>
-          <li><a href="/social-stars-demo/ai/growth-os/">AI Growth OS</a></li>
+          <li><a href="/social-stars-demo/ai/growth-os/">AI Apogee OS</a></li>
         </ul>
       </div>
       <div>
@@ -537,10 +545,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const g = window.gsap, reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   // одна вещь — любая сцена
   document.querySelectorAll('[data-scene]').forEach(sc => {
-    const imgs = sc.querySelectorAll('.mc-ph img'), btns = sc.querySelectorAll('.seg button');
+    const imgs = sc.querySelectorAll('.mc-ph img'), btns = sc.querySelectorAll('.seg button, .sw button'), nm = sc.querySelector('[data-cname]');
     btns.forEach((b, i) => b.addEventListener('click', () => {
       btns.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
       imgs.forEach((im, j) => im.classList.toggle('on', i === j));
+      if (nm && b.dataset.name) nm.textContent = b.dataset.name;
     }));
   });
   // витрина: кадры «проявляются», как при генерации

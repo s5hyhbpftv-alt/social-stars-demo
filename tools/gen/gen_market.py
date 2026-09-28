@@ -22,7 +22,20 @@ def scene(pair, labels, chips, price, name, tag='ИИ‑модель'):
           <div class="seg" role="group" aria-label="Сцена"><button type="button" aria-pressed="true">{labels[0]}</button><button type="button" aria-pressed="false">{labels[1]}</button></div>
         </div>'''
 
-scenes = '<div class="scenes">' + scene(('m65', 'm35'), ('Ателье', 'Причал'), ['Посадка по фигуре'], '4 990 ₽', 'Платье‑футляр, красное') + scene(('mb-set', 'mb-jar'), ('Предметка', 'На модели'), ['250 мл'], '1 290 ₽', 'Пена для объёма волос', tag='ИИ‑кадр') + '</div>'
+COLORS = [('black', 'чёрное', '#1d1f26'), ('blue', 'голубое', '#9dbde6'), ('pink', 'розовое', '#e8aeb7'),
+          ('red', 'бордовое', '#8e1b26'), ('silver', 'серебристое', '#c3c7cc'), ('white', 'белое', '#f7f7f5')]
+
+def colors():
+    imgs = ''.join(f'<img src="{IMG}look-{k}.webp" alt="" loading="lazy"{' class="on"' if i == 0 else ''} />' for i, (k, n, c) in enumerate(COLORS))
+    sw = ''.join(f'<button type="button" aria-pressed="{str(i == 0).lower()}" aria-label="{n.capitalize()}" data-name="{n}" style="--c:{c}"></button>' for i, (k, n, c) in enumerate(COLORS))
+    return f'''<div class="scene" data-scene>
+          <div class="mcard"><div class="mc-in"><div class="mc-ph">{imgs}
+          <div class="mc-chips"><span>6 цветов</span></div><span class="mc-tag">ИИ‑модель</span></div>
+          <p class="mc-price">3 490 ₽</p><p class="mc-name">Платье мини, <span data-cname>{COLORS[0][1]}</span></p></div></div>
+          <div class="sw" role="group" aria-label="Цвет">{sw}</div>
+        </div>'''
+
+scenes = '<div class="scenes">' + scene(('m65', 'm35'), ('Ателье', 'Причал'), ['Посадка по фигуре'], '4 990 ₽', 'Платье‑футляр, красное') + scene(('mb-set', 'mb-jar'), ('Предметка', 'На модели'), ['250 мл'], '1 290 ₽', 'Пена для объёма волос', tag='ИИ‑кадр') + colors() + '</div>'
 
 anatomy = f'''<div class="anat" data-wires="l1>c:h l2>c:h c>r1:h c>r2:h">
         <div class="anat-col">
@@ -47,7 +60,7 @@ main = '<main id="main">\n' + hero('Фотостудия для маркетпл
     [('btn-primary', '#lead', '3 тестовые карточки', CHIP), ('btn-line', '#pricing', 'Смотреть тарифы', '')], shelf,
     [('Карточка', 'от 2 900 ₽'), ('Тестовые карточки', 'за 48 часов'), ('Сцены и модели', 'под вашу аудиторию')], 'mk-hero') + '\n\n' + \
     subnav([('scene', 'Сцены'), ('anatomy', 'Карточка'), ('ab', 'A/B‑тест'), ('week', 'Этапы'), ('honest', 'Правила'), ('pricing', 'Тарифы'), ('faq', 'Вопросы')], '3 тестовые карточки', CHIP) + '\n\n' + \
-    section('scene', scenes + '\n      <p class="note">Кадры сгенерированы ИИ: платье — для нашего проекта сети ателье «Пчёлка», средство для волос — демонстрационная съёмка. Одна и та же вещь в разных сценах.</p>', head='Одна вещь — любая сцена', lead='Фото товара с телефона превращаем в кадры на модели: ателье, улица, отпуск, вечер.', split=True) + '\n\n' + \
+    section('scene', scenes + '\n      <p class="note">Кадры сгенерированы ИИ: платье — для нашего проекта сети ателье «Пчёлка», средство для волос и платья в шести цветах — демонстрационная съёмка. Одна и та же вещь в разных сценах.</p>', head='Одна вещь — любая сцена и цвет', lead='Фото товара с телефона превращаем в кадры на модели: ателье, улица, отпуск, вечер — и все цвета линейки в одной позе и свете.', split=True) + '\n\n' + \
     section('anatomy', anatomy, cls='band', head='Из чего состоит карточка, которая продаёт') + '\n\n' + \
     section('ab', ab, head='Главное фото решает клик') + '\n\n' + \
     section('week', steps([('День 1', 'Бриф и фото товара', 'Хватит снимков на телефон на ровном фоне или манекене.'),
@@ -75,7 +88,10 @@ style = SERVICE_CSS + '''    .shelf{display:grid;grid-template-columns:1fr 1fr;g
     .shelf .mcard:nth-child(2){transform:translateY(34px)}
     .shelf .mcard:nth-child(4){transform:translateY(34px)}
     .mc-ph .scan{position:absolute;left:0;right:0;top:0;height:2px;background:var(--bronze);box-shadow:0 0 18px 4px rgba(176,138,99,.55);opacity:0;z-index:3}
-    .scenes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);max-width:860px}
+    .scenes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,56px)}
+    .sw{display:flex;flex-wrap:wrap;gap:10px;padding:4px 0}
+    .sw button{width:36px;height:36px;border-radius:50%;border:3px solid var(--white);background:var(--c);box-shadow:0 0 0 1px var(--mist-2);cursor:pointer;padding:0}
+    .sw button[aria-pressed="true"]{box-shadow:0 0 0 2px var(--ink)}
     .scene{display:grid;gap:16px;justify-items:start}
     .scene .mc-ph img{position:absolute;inset:0;opacity:0;transition:opacity .6s var(--ease)}
     .scene .mc-ph img.on{opacity:1}
@@ -100,7 +116,7 @@ style = SERVICE_CSS + '''    .shelf{display:grid;grid-template-columns:1fr 1fr;g
     .ab .win .mc-in{box-shadow:0 0 0 2px var(--bronze),0 30px 60px -40px rgba(17,21,31,.45)}
     .ab-t h3{font-size:clamp(22px,2.2vw,28px);font-weight:300;letter-spacing:-.02em;margin-bottom:12px}
     .ab-t p{color:var(--slate)}
-    @media (max-width:1024px){ .shelf{justify-self:start;max-width:440px} .anat{grid-template-columns:1fr} .anat .wires{display:none} .anat-card{max-width:340px} .anat-col:first-child .call-out{text-align:left} .anat-col{gap:14px} .ab{grid-template-columns:1fr 1fr} .ab-t{grid-column:1 / -1} }
+    @media (max-width:1024px){ .scenes{grid-template-columns:1fr 1fr} .shelf{justify-self:start;max-width:440px} .anat{grid-template-columns:1fr} .anat .wires{display:none} .anat-card{max-width:340px} .anat-col:first-child .call-out{text-align:left} .anat-col{gap:14px} .ab{grid-template-columns:1fr 1fr} .ab-t{grid-column:1 / -1} }
     @media (max-width:600px){ .scenes{grid-template-columns:1fr} .scene .mcard{max-width:320px} .shelf{gap:10px} .ab{gap:14px} .ab figcaption b{font-size:18px} }
 '''
 
@@ -109,10 +125,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const g = window.gsap, reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   // одна вещь — любая сцена
   document.querySelectorAll('[data-scene]').forEach(sc => {
-    const imgs = sc.querySelectorAll('.mc-ph img'), btns = sc.querySelectorAll('.seg button');
+    const imgs = sc.querySelectorAll('.mc-ph img'), btns = sc.querySelectorAll('.seg button, .sw button'), nm = sc.querySelector('[data-cname]');
     btns.forEach((b, i) => b.addEventListener('click', () => {
       btns.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
       imgs.forEach((im, j) => im.classList.toggle('on', i === j));
+      if (nm && b.dataset.name) nm.textContent = b.dataset.name;
     }));
   });
   // витрина: кадры «проявляются», как при генерации

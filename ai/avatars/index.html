@@ -48,6 +48,20 @@
       .formats article,.formats article:nth-child(even){padding:28px 0;border-left:0}
       .ethics{grid-template-columns:1fr;gap:28px}
     }
+      /* кастинг ИИ‑персонажа */
+    .cast{display:grid;grid-template-columns:repeat(4,1fr) .85fr;gap:14px;align-items:end}
+    .cast figure{margin:0}
+    .cast img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:14px;background:var(--porcelain-2);display:block}
+    .cast figcaption{margin-top:10px;font-size:13.5px;color:var(--slate)}
+    .cast-v .scr{position:relative;aspect-ratio:9/16;border-radius:22px;border:5px solid var(--ink);overflow:hidden;background:var(--ink)}
+    .cast-v video{width:100%;height:100%;object-fit:cover;display:block}
+    .cast-v .tag{position:absolute;left:8px;top:8px;padding:3px 8px;border-radius:999px;background:rgba(27,33,48,.72);color:#fff;font-size:11px}
+    @media (max-width:800px){ .cast{grid-template-columns:1fr 1fr} .cast-v{grid-column:1 / -1;max-width:230px} }
+      .types{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+    .types figure{margin:0}
+    .types img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:14px;background:var(--porcelain-2);display:block}
+    .types figcaption{margin-top:8px;font-size:13.5px;color:var(--slate)}
+    @media (max-width:900px){ .types{grid-template-columns:repeat(3,1fr)} }
   </style>
 </head>
 <body data-service="Аватар">
@@ -227,7 +241,7 @@
     <a class="btn btn-primary btn-desk" href="#lead">Получить аудит</a>
     <button class="burger" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Открыть меню"><span></span><span></span></button>
     <div class="mega" id="mega">
-      <a class="feature" href="/social-stars-demo/ai/growth-os/"><b>AI Growth OS</b><span>Сайт, агенты, аватар, поиск и репутация — одна система роста с оплатой за результат</span></a>
+      <a class="feature" href="/social-stars-demo/ai/growth-os/"><b>AI Apogee OS</b><span>Сайт, агенты, аватар, поиск и репутация — одна система роста с оплатой за результат</span></a>
       <a href="/social-stars-demo/ai/sites/"><b>AI-сайты</b><span>Сайт, который находят люди и цитируют нейросети</span></a>
       <a href="/social-stars-demo/ai/agents/"><b>ИИ-агенты</b><span>Рутина продаж, поддержки и документов — агентам</span></a>
       <a href="/social-stars-demo/ai/avatars/"><b>Цифровые аватары</b><span>Эксперт говорит каждый день без съёмок</span></a>
@@ -249,7 +263,7 @@
 <div class="mnav" id="mnav">
   <ul>
     <li><a href="/social-stars-demo/ai/">Все направления</a></li>
-    <li><a href="/social-stars-demo/ai/growth-os/">AI Growth OS</a></li>
+    <li><a href="/social-stars-demo/ai/growth-os/">AI Apogee OS</a></li>
     <li><a href="/social-stars-demo/ai/sites/">AI-сайты</a></li>
     <li><a href="/social-stars-demo/ai/agents/">ИИ-агенты</a></li>
     <li><a href="/social-stars-demo/ai/avatars/">Цифровые аватары</a></li>
@@ -324,6 +338,10 @@
       </div>
       <div class="head" style="margin:clamp(64px,8vw,104px) 0 28px"><h3 class="t-h3">Ролики с экспертом в кадре — наш привычный формат</h3><p class="t-small">Кадры из проектов Social Stars для Мозголёта и Мостуризма, снятые с живыми авторами. Видеоклон делает такие ролики без съёмочных дней.</p></div>
       <div class="phones"><figure class="phone"><div class="scr"><img src="/social-stars-demo/ai/img/mozg-34.webp" alt="Основатель Мозголёта в вертикальном видео" loading="lazy" width="420" height="912" /></div><figcaption>Мозголёт: основатель в кадре</figcaption></figure><figure class="phone"><div class="scr"><img src="/social-stars-demo/ai/img/mozg-32.webp" alt="Ролик Мозголёта в ленте" loading="lazy" width="420" height="912" /></div><figcaption>Мозголёт: серия роликов</figcaption></figure><figure class="phone"><div class="scr"><img src="/social-stars-demo/ai/img/mos-3.webp" alt="Ролик блогера о Москве" loading="lazy" width="420" height="912" /></div><figcaption>Мостуризм: ролик блогера</figcaption></figure><figure class="phone"><div class="scr"><img src="/social-stars-demo/ai/img/mos-5.webp" alt="Ролик блогера о прогулке по Москве" loading="lazy" width="420" height="912" /></div><figcaption>Мостуризм: прогулка по Москве</figcaption></figure><figure class="phone"><div class="scr"><img src="/social-stars-demo/ai/img/mos-6.webp" alt="Ролик блогера из Москвы" loading="lazy" width="420" height="912" /></div><figcaption>Мостуризм: блогер в Москве</figcaption></figure></div>
+      <div class="head" style="margin:clamp(64px,8vw,104px) 0 28px"><h3 class="t-h3">ИИ‑персонаж узнаётся с любого ракурса</h3><p class="t-small">Перед роликами собираем «кастинг» персонажа: фас, профиль, три четверти, улыбка. По этим кадрам лицо остаётся тем же в каждом видео. Пример — ИИ‑модель из демонстрационной съёмки средства для волос.</p></div>
+      <div class="cast"><figure><img src="/social-stars-demo/ai/img/ugc/cast-front.webp" alt="ИИ‑модель: фас" loading="lazy" width="600" height="800" /><figcaption>Фас</figcaption></figure><figure><img src="/social-stars-demo/ai/img/ugc/cast-profile.webp" alt="ИИ‑модель: профиль" loading="lazy" width="600" height="800" /><figcaption>Профиль</figcaption></figure><figure><img src="/social-stars-demo/ai/img/ugc/cast-three.webp" alt="ИИ‑модель: три четверти" loading="lazy" width="600" height="800" /><figcaption>Три четверти</figcaption></figure><figure><img src="/social-stars-demo/ai/img/ugc/cast-smile.webp" alt="ИИ‑модель: с улыбкой" loading="lazy" width="600" height="800" /><figcaption>С улыбкой</figcaption></figure><figure class="cast-v"><div class="scr"><video class="media" src="/social-stars-demo/ai/video/jar-show.mp4" poster="/social-stars-demo/ai/img/ugc/v-jar-show.webp" muted loop playsinline preload="none" aria-label="Ролик с той же ИИ‑моделью"></video><span class="tag">ИИ‑модель</span></div><figcaption>Она же в ролике</figcaption></figure></div>
+      <div class="head" style="margin:clamp(56px,7vw,88px) 0 28px"><h3 class="t-h3">Типаж — под вашу аудиторию</h3><p class="t-small">Внешность, возраст, стиль и манеру персонажа подбираем под тех, кому продаёте. Все героини — ИИ‑модели из той же демонстрационной съёмки.</p></div>
+      <div class="types"><figure><img src="/social-stars-demo/ai/img/ugc/type-brunette.webp" alt="ИИ‑модель: брюнетка, кудри" loading="lazy" width="600" height="800" /><figcaption>Брюнетка, кудри</figcaption></figure><figure><img src="/social-stars-demo/ai/img/ugc/type-auburn.webp" alt="ИИ‑модель: рыжая, салон" loading="lazy" width="600" height="800" /><figcaption>Рыжая, салон</figcaption></figure><figure><img src="/social-stars-demo/ai/img/ugc/type-dark.webp" alt="ИИ‑модель: короткая стрижка" loading="lazy" width="600" height="800" /><figcaption>Короткая стрижка</figcaption></figure><figure><img src="/social-stars-demo/ai/img/ugc/type-platinum.webp" alt="ИИ‑модель: платиновая блондинка" loading="lazy" width="600" height="800" /><figcaption>Платиновая блондинка</figcaption></figure><figure><img src="/social-stars-demo/ai/img/ugc/type-noir.webp" alt="ИИ‑модель: деловой образ" loading="lazy" width="600" height="800" /><figcaption>Деловой образ</figcaption></figure><figure><img src="/social-stars-demo/ai/img/ugc/type-red.webp" alt="ИИ‑модель: вечерний образ" loading="lazy" width="600" height="800" /><figcaption>Вечерний образ</figcaption></figure></div>
     </div>
   </section>
 
@@ -465,7 +483,7 @@
           <label><input type="checkbox" name="i" value="Нейро-ORM" /><span>Нейро-ORM</span></label>
           <label><input type="checkbox" name="i" value="Контент-завод" /><span>Контент-завод</span></label>
           <label><input type="checkbox" name="i" value="AI-трансформация" /><span>AI-трансформация</span></label>
-          <label><input type="checkbox" name="i" value="AI Growth OS" /><span>AI Growth OS</span></label>
+          <label><input type="checkbox" name="i" value="AI Apogee OS" /><span>AI Apogee OS</span></label>
         </div>
       </fieldset>
       <button class="btn btn-primary btn-block" type="submit">Получить аудит</button>
@@ -510,7 +528,7 @@
           <li><a href="/social-stars-demo/ai/neuro-orm/">Нейро-ORM</a></li>
           <li><a href="/social-stars-demo/ai/content/">Контент-завод</a></li>
           <li><a href="/social-stars-demo/ai/transformation/">AI-трансформация</a></li>
-          <li><a href="/social-stars-demo/ai/growth-os/">AI Growth OS</a></li>
+          <li><a href="/social-stars-demo/ai/growth-os/">AI Apogee OS</a></li>
         </ul>
       </div>
       <div>
