@@ -151,6 +151,20 @@ def section(id_, inner, cls='', head=None, lead=None, split=False):
   </section>'''
 
 
+def demo(id_, media, title, text, points, tag='ИИ‑модель', label='', cls=''):
+    """Пример на практике: вертикальный кадр (видео .mp4 или картинка) + сценарий."""
+    src = f'/social-stars-demo/ai/video/{media}' if media.endswith('.mp4') else f'{IMG}{media}'
+    if media.endswith('.mp4'):
+        m = (f'<video class="media" src="{src}" poster="{IMG}v-{media[:-4]}.webp" muted loop playsinline preload="none" aria-label="{label}"></video>')
+    else:
+        m = f'<img src="{src}" alt="{label}" loading="lazy" width="540" height="960" />'
+    pts = ''.join(f'<li>{p}</li>' for p in points)
+    inner = (f'<div class="demo"><div class="demo-m">{m}<span class="tag">{tag}</span></div>'
+             f'<div class="demo-t"><h2 class="t-h2">{title}</h2><p class="t-lead">{text}</p><ul class="demo-pts">{pts}</ul>'
+             f'<p class="demo-note">Пример на демонстрационной ИИ‑съёмке, сценарий условный.</p></div></div>')
+    return section(id_, inner, cls=cls)
+
+
 SERVICE_CSS = '''    .ethics{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
     .ethics .ic-box{margin-bottom:18px}
     .ethics h3{font-size:21px;font-weight:400;letter-spacing:-.015em;margin-bottom:10px}
