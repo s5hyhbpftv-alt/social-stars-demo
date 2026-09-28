@@ -1,0 +1,41 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/tools/session-start.sh\"",
+            "timeout": 120
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(python tools/serve.py*)",
+      "Bash(python3 tools/serve.py*)",
+      "Bash(python3 tools/include.py)",
+      "Bash(python3 tools/gen/*)",
+      "Bash(python tools/include.py)",
+      "Bash(python tools/gen/*)",
+      "Bash(bash tools/session-start.sh)",
+      "Bash(node tools/qa/*)",
+      "Bash(npm --prefix tools/qa *)",
+      "Bash(npx playwright install chromium)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git add*)",
+      "Bash(git commit*)",
+      "Bash(git checkout -b *)",
+      "Bash(git switch -c *)",
+      "Bash(git pull*)",
+      "Bash(git fetch*)",
+      "Bash(ls*)",
+      "Bash(find export*)",
+      "Bash(curl -s http://localhost:8123/*)"
+    ]
+  }
+}

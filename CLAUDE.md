@@ -4,12 +4,28 @@
 
 Всё, что вне `ai/` (главная, `contacts/`, `assets/*.js`), — собранный бандл старого сайта. Его не пересобираем, правим точечно, если нужно (например, контакты).
 
+## Старт новой сессии
+
+При старте каждой сессии хук `tools/session-start.sh` (`.claude/settings.json`) сам:
+- подтягивает свежую версию с GitHub, если нет своих изменений;
+- копирует медиа из `~/Downloads/export` (или `~/Загрузки/export`, `~/Desktop/export`) в `export/` и печатает список файлов;
+- ставит зависимости проверок и браузер для них;
+- запускает локальный сервер: http://localhost:8123/social-stars-demo/ai/
+
+Его вывод — в начале сессии. **Если пользователь пишет коротко — «поехали», «продолжай», «запусти» или что угодно без конкретной задачи — это значит: выполняй «Открытые задачи» ниже по порядку, без лишних вопросов.** Задачу, для которой нужны данные от пользователя (реквизиты, цены), пропусти и в конце одним списком спроси, чего не хватает. Работай в ветке, после проверок — PR в `main` и squash-merge (пользователь разрешил выкладывать самостоятельно), затем коротко отчитайся по-русски со ссылкой на сайт.
+
+Первый запуск на новом компьютере — одна команда:
+- macOS, Linux: `curl -fsSL https://raw.githubusercontent.com/s5hyhbpftv-alt/social-stars-demo/main/tools/start-local.sh | bash`
+- Windows (PowerShell): `irm https://raw.githubusercontent.com/s5hyhbpftv-alt/social-stars-demo/main/tools/start-local.ps1 | iex`
+
+Скрипт скачивает проект в `~/social-stars-demo`, при необходимости ставит Claude Code и открывает сессию с сообщением «Поехали».
+
 ## Запуск локально
 
 ```bash
-./tools/serve.sh                  # http://localhost:8123/social-stars-demo/ai/  (папка репозитория должна называться social-stars-demo)
-cd tools/qa && npm install        # один раз; браузер: npx playwright install chromium
-npm run check                     # вёрстка, ссылки и JS на всех страницах /ai/
+python3 tools/serve.py            # http://localhost:8123/social-stars-demo/ai/  (при старте сессии запускается сам)
+npm --prefix tools/qa install     # один раз (делает хук); браузер: npx playwright install chromium
+npm --prefix tools/qa run check   # вёрстка, ссылки и JS на всех страницах /ai/
 ```
 
 Сборки нет: страницы — обычный HTML. После правки общих блоков запустите `python3 tools/include.py`.
@@ -32,24 +48,25 @@ npm run check                     # вёрстка, ссылки и JS на вс
 | `tools/include.py` | вставляет партиалы между маркерами `<!-- @имя -->…<!-- /@имя -->` во все `ai/**/index.html` |
 | `tools/gen/` | генераторы шести последних направлений и их кампаний (`gen_market`, `gen_voice`, `gen_trainer`, `gen_dub`, `gen_know`, `gen_proc`) |
 | `tools/qa/` | проверки, скриншоты, выгрузка баннеров, нарезка кадров |
+| `tools/serve.py`, `tools/session-start.sh`, `.claude/settings.json` | локальный сервер, подготовка сессии, хук и разрешения Claude Code |
+| `tools/start-local.sh`, `tools/start-local.ps1` | первый запуск на новом компьютере одной командой |
 | `ai/DESIGN.md`, `ai/STRATEGY.md` | дизайн-план и стратегия с анализом мировых практик и источниками |
 
 Страницы маркетплейсов, голоса, тренажёра, перевода, поиска и закупок **генерируются**: правьте генератор в `tools/gen/`, а не HTML, иначе следующий запуск затрёт правку. Остальные страницы (главная, первые 8 услуг, кейсы, UGC и её кампания) правятся вручную.
 
-## Команды
+## Команды (из корня репозитория)
 
 ```bash
-python3 tools/include.py                          # после правки tools/partials/*
-python3 tools/gen/gen_voice.py                    # пересобрать страницу и кампанию направления
-cd tools/qa
-npm run check                                     # все страницы: десктоп и 390px, ссылки, JS, «уменьшение движения»
-node check-pages.mjs voice/ voice/campaign/       # выборочно
-node export-banners.mjs voice                     # баннеры кампании → ai/voice/campaign/creatives/
-node shots.mjs '{"voice/":[".vo-hero","#loss"]}'  # скриншоты блоков → tools/qa/out/
-node crop-media.mjs <фото> <out.webp> 9x19 .55 420   # кадр для телефона (9x19), карточки (3x4), портрета (4x5)
+python3 tools/include.py                                   # после правки tools/partials/*
+python3 tools/gen/gen_voice.py                             # пересобрать страницу и кампанию направления
+npm --prefix tools/qa run check                            # все страницы: десктоп и 390px, ссылки, JS, «уменьшение движения»
+node tools/qa/check-pages.mjs voice/ voice/campaign/       # выборочно
+node tools/qa/export-banners.mjs voice                     # баннеры кампании → ai/voice/campaign/creatives/
+node tools/qa/shots.mjs '{"voice/":[".vo-hero","#loss"]}'  # скриншоты блоков → tools/qa/out/ (смотреть их глазами)
+node tools/qa/crop-media.mjs <фото> <out.webp> 9x19 .55 420   # кадр для телефона (9x19), карточки (3x4), портрета (4x5)
 ```
 
-`PW_CHROMIUM=/путь/к/chrome` — если нужен свой Chromium; `SS_BASE=…` — другой адрес сайта.
+`PW_CHROMIUM=/путь/к/chrome` — свой Chromium (в облаке Claude Code находится сам); `SS_BASE=…` — другой адрес сайта. Видео не пережимаем (нет ffmpeg) — берём готовые сжатые файлы до 3 МБ.
 
 ## Выкладка
 
@@ -80,10 +97,11 @@ GitHub Pages публикует ветку `main`. Работа идёт в ве
 
 ## Открытые задачи
 
-1. **Медиа из `~/Downloads/export`.** Скопировать папку в `export/` в корне репозитория (она в `.gitignore`), просмотреть и:
-   - портрет Марии Дроздовой: `node tools/qa/crop-media.mjs export/<фото> ai/img/team-maria.webp 4x5 .5 520`, затем в `ai/index.html` заменить `<div class="ph" …>…</div>` в блоке `.team-lead` на `<img src="/social-stars-demo/ai/img/team-maria.webp" alt="Мария Дроздова" loading="lazy" width="520" height="650" />`;
+1. **Медиа из `~/Downloads/export`.** Хук сам копирует папку в `export/` (она в `.gitignore`). Просмотреть файлы и:
+   - портрет Марии Дроздовой: `node tools/qa/crop-media.mjs export/<фото> ai/img/team-maria.webp 4x5 .5 520` (фокус по горизонтали подобрать по скриншоту), затем в `ai/index.html` заменить `<div class="ph" …>…</div>` в блоке `.team-lead` на `<img src="/social-stars-demo/ai/img/team-maria.webp" alt="Мария Дроздова" loading="lazy" width="520" height="650" />`;
    - вертикальные видео и кадры героинь — заменить стоп-кадры в `ai/img/ugc/` и видео в `ai/video/` (стена роликов на `/ai/ugc/`, «Форматы», «Пять начал», карточки маркетплейсов, плеер перевода);
-   - после замены — пересобрать генераторы, выгрузить баннеры (`node export-banners.mjs`) и прогнать проверки.
+   - после замены — пересобрать генераторы, выгрузить баннеры (`node tools/qa/export-banners.mjs`), посмотреть скриншоты и прогнать проверки.
+   Если в `export/` непонятно, кто на фото, — показать пользователю варианты, а не угадывать.
 2. **Реквизиты для рекламы:** юрлицо, ИНН, erid. Заглушки — функция `legal()` в `tools/gen/gen_common.py` и баннеры в `ai/ugc/campaign/index.html`.
 3. **Подтвердить цены** всех направлений (сейчас рыночные ориентиры) и воронки кампаний (ориентиры для планирования).
 4. **Ещё визуализации** вместо текста: «Где компании теряют время» (агенты), «Один сайт — три способа прочитать» (сайты), «Модули системы» (Growth OS), «Для кого» (нейро-ORM).
