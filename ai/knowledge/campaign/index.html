@@ -5,61 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#f3f5f8" />
-  <title>Голосовой ИИ-оператор: звонки 24/7 с записью в CRM — Social Stars AI</title>
-  <meta name="description" content="Голосовой ИИ-оператор отвечает на звонки круглосуточно, записывает клиентов, сообщает статус заказа и передаёт заявки в CRM. Маркировка по 41-ФЗ, данные в РФ. Запуск от 190 000 ₽, минута от 12 ₽." />
-  <link rel="canonical" href="https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/voice/" />
+  <title>Кампания «Спросите у компании» — ИИ‑поиск по документам — Social Stars AI</title>
+  <meta name="description" content="Рекламная кампания направления «ИИ‑поиск по документам»: идея, заголовки, креативы, сценарии роликов, медиаплан, воронка и календарь на 6 недель." />
+  <link rel="canonical" href="https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/knowledge/campaign/" />
   <link rel="icon" type="image/svg+xml" href="/social-stars-demo/favicon.svg" />
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Social Stars" />
-  <meta property="og:title" content="На звонок уже ответили — голосовой ИИ-оператор" />
-  <meta property="og:description" content="Ответ с первого гудка, днём и ночью, с записью в CRM." />
-  <meta property="og:url" content="https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/voice/" />
+  <meta property="og:title" content="Кампания «Спросите у компании»" />
+  <meta property="og:description" content="Запуск ИИ‑поиска по документам для средних и крупных компаний: идея, креативы, сценарии роликов и медиаплан на 6 недель." />
+  <meta property="og:url" content="https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/knowledge/campaign/" />
   <meta property="og:image" content="https://s5hyhbpftv-alt.github.io/social-stars-demo/media/og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Голосовой ИИ-оператор", "url": "https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/voice/", "areaServed": "RU", "provider": {"@type": "Organization", "name": "Social Stars", "url": "https://s5hyhbpftv-alt.github.io/social-stars-demo/"}, "offers": {"@type": "Offer", "price": "190000", "priceCurrency": "RUB"}}]}</script>
-  <link rel="stylesheet" href="/social-stars-demo/ai/ai.css" />
+    <link rel="stylesheet" href="/social-stars-demo/ai/ai.css" />
+  <link rel="stylesheet" href="/social-stars-demo/ai/campaign.css" />
   <style>
-    .ethics{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
-    .ethics .ic-box{margin-bottom:18px}
-    .ethics h3{font-size:21px;font-weight:400;letter-spacing:-.015em;margin-bottom:10px}
-    .ethics p{color:var(--slate);font-size:15.5px}
-    .note{font-size:14px;color:var(--slate);margin-top:18px}
-    @media (max-width:1024px){ .ethics{grid-template-columns:1fr 1fr} }
-    @media (max-width:600px){ .ethics{grid-template-columns:1fr;gap:28px} }
-    .vdemo{position:relative;display:grid;grid-template-columns:1fr .78fr;gap:18px;align-items:start;max-width:560px;justify-self:end;width:100%}
-    .vdemo .crm{margin-top:120px}
-    .scen{display:grid;grid-template-columns:1fr minmax(280px,380px);gap:clamp(32px,6vw,96px);align-items:start}
-    .sc-tabs{display:grid;gap:10px;align-content:start}
-    .sc-tab{text-align:left;padding:18px 20px;border-radius:var(--r-md);border:1px solid var(--mist);background:var(--white);font:400 18px/1.3 var(--font);color:var(--ink);cursor:pointer;transition:border-color .2s,box-shadow .2s}
-    .sc-tab:hover{border-color:var(--mist-2)}
-    .sc-tab[aria-pressed="true"]{border-color:var(--bronze);box-shadow:0 0 0 3px var(--bronze-soft)}
-    .hand{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:clamp(40px,7vw,120px);align-items:center}
-    .hcol{display:grid;gap:18px}
-    .hnode{display:grid;gap:4px;padding:18px 20px;border-radius:var(--r-md);background:var(--white);border:1px solid var(--mist)}
-    .hnode .ic{color:var(--bronze-2);margin-bottom:6px}
-    .hnode b{font-weight:500;font-size:17px}
-    .hnode span{color:var(--slate);font-size:14.5px}
-    .hnode.hub{background:var(--ink);border-color:var(--ink);color:#fff}
-    .hnode.hub span{color:#a9b1c0}.hnode.hub .ic{color:var(--bronze)}
-    .loss{display:grid;grid-template-columns:6fr 5fr;gap:24px}
-    .loss-in,.loss-out{background:var(--white);border:1px solid var(--mist);border-radius:var(--r-lg);padding:clamp(24px,3vw,36px)}
-    .rng{display:grid;gap:10px;margin-bottom:26px}.rng:last-child{margin-bottom:0}
-    .rng label{display:flex;justify-content:space-between;gap:12px;font-size:15.5px}
-    .rng output{font-weight:500;font-variant-numeric:tabular-nums}
-    .rng input{width:100%;accent-color:var(--ink);height:24px}
-    .loss-out{display:grid;gap:18px;align-content:start}
-    .loss-out small{font-size:14px;color:var(--slate)}
-    .loss-out .big{font-size:clamp(40px,5vw,64px);font-weight:200;letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
-    .loss-bar{height:10px;border-radius:5px;background:var(--porcelain-2);overflow:hidden}
-    .loss-bar i{display:block;height:100%;width:30%;background:var(--bronze);border-radius:5px;transition:width .4s var(--ease)}
-    .loss-out p{color:var(--slate)}
-    .loss-out p b{color:var(--ink);font-weight:500}
-    @media (max-width:1024px){ .vdemo{justify-self:start} .scen,.loss{grid-template-columns:1fr} .sc-phone{max-width:380px} .hand{grid-template-columns:1fr;gap:16px} .hand .wires{display:none} }
-    @media (max-width:600px){ .vdemo{grid-template-columns:1fr} .vdemo .crm{margin-top:0;max-width:300px} }
+    .camp-hero .camp-key{max-width:520px;justify-self:end;width:100%}
+    .b-sq h3{font-size:124px}
+    .b-sq .bn-lead{top:470px;width:420px}
+    .b-sq .bn-cta{top:740px;font-size:26px}
+    .b-sq .kv{position:absolute;right:44px;top:450px;width:520px}
+    .b-sq2 h3{font-size:74px;width:980px}
+    .b-sq2 .kv2{position:absolute;left:64px;top:380px;width:640px}
+    .b-sq2 .bn-cta{left:760px;top:420px}
+    .b-st h3{font-size:132px;top:250px}
+    .b-st .kv3{position:absolute;left:80px;right:80px;top:760px}
+    .b-st .bn-lead{top:1420px;width:900px;font-size:42px}
+    .b-st .bn-cta{top:1680px}
+    .b-wd h3{font-size:62px}
+    .b-wd .bn-lead{top:320px;width:420px}
+    .b-wd .kv4{position:absolute;right:44px;top:60px;width:540px}
+    .bn .qs-q::after{display:none}
   </style>
 </head>
-<body data-service="Голосовой оператор">
+<body data-service="UGC по подписке">
 <!-- @intro -->
 <div class="intro" id="intro" role="presentation">
   <div class="intro-bg"></div>
@@ -284,138 +263,112 @@
 <!-- /@header -->
 
 <main id="main">
-  <section class="hero vo-hero">
+  <section class="hero camp-hero">
     <div class="wrap">
       <div class="hero-text">
-        <nav class="crumbs" aria-label="Вы здесь"><a href="/social-stars-demo/ai/">Social Stars AI</a><span aria-hidden="true">/</span><span aria-current="page">Голосовой ИИ‑оператор</span></nav>
-        <h1 class="t-hero">На звонок уже ответили</h1>
-        <p class="t-lead">Голосовой ИИ‑оператор принимает звонки круглосуточно: отвечает на вопросы, записывает, сообщает статус и передаёт заявку в CRM. Сложное — сразу человеку.</p>
-        <div class="hero-actions"><a class="btn btn-primary" href="#lead" data-pick="Голосовой оператор">Послушать демо‑звонок</a><a class="btn btn-line" href="#loss">Посчитать потери</a></div>
+        <nav class="crumbs" aria-label="Вы здесь"><a href="/social-stars-demo/ai/">Social Stars AI</a><span aria-hidden="true">/</span><a href="/social-stars-demo/ai/knowledge/">ИИ‑поиск по документам</a><span aria-hidden="true">/</span><span aria-current="page">Кампания</span></nav>
+        <h1 class="t-hero">Кампания «Спросите у компании»</h1>
+        <p class="t-lead">Запуск ИИ‑поиска по документам для средних и крупных компаний: идея, креативы, сценарии роликов и медиаплан на 6 недель.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#creatives">Смотреть креативы</a><a class="btn btn-line" href="/social-stars-demo/ai/knowledge/?utm_source=campaign_kit&amp;utm_medium=internal&amp;utm_campaign=knowledge_2026">Посадочная страница</a></div>
       </div>
-      <div class="vdemo" data-vdemo role="img" aria-label="Пример звонка: ИИ-оператор записывает клиентку на приём, данные сразу появляются в CRM">
-        <div class="call"><div class="call-in"><div class="call-top"><span class="call-dot"></span><b>Входящий звонок</b><span class="call-t">00:00</span></div><div class="call-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="call-log"><p class="b cl"><small>Клиент</small>Здравствуйте, хочу записаться к стоматологу</p><p class="b ai"><small>ИИ‑оператор</small>Здравствуйте! Клиника «Улыбка», я ИИ‑ассистент. Есть время завтра в 10:30 или в 16:00 — как удобнее?</p><p class="b cl"><small>Клиент</small>Давайте в 16:00. Меня зовут Анна</p><p class="b ai"><small>ИИ‑оператор</small>Записала вас, Анна, на завтра в 16:00. Напоминание придёт в СМС.</p></div></div></div>
-        <div class="crm"><div class="crm-in"><h4><svg class="ic"><use href="#i-inbox"/></svg>Карточка в CRM</h4><dl><div><dt>Имя</dt><dd>Анна</dd></div><div><dt>Услуга</dt><dd>Консультация стоматолога</dd></div><div><dt>Время</dt><dd>Завтра, 16:00</dd></div><div><dt>Источник</dt><dd>Входящий звонок</dd></div></dl><span class="crm-st">Запись создана</span></div></div>
-      </div>
+      <div class="camp-key"><div class="bn-frame" style="--w:1080;--h:1080"><div class="bn b-sq ink"><span class="bn-logo"><svg class="s" viewBox="0 0 100 91.2"><use href="#ss-star"/></svg><span class="w"><svg viewBox="0 0 66.97 11.77"><use href="#ss-social"/></svg><svg viewBox="0 0 61.26 11.78"><use href="#ss-stars"/></svg></span><i></i><svg class="ai" viewBox="0 0 15.95 11.78"><use href="#ss-ai"/></svg></span><h3>Спросите<br>у компании</h3>
+      <p class="bn-lead">ИИ отвечает по вашим документам — со ссылкой на источник.</p>
+      <span class="bn-cta">Демо на ваших документах</span>
+      <div class="kv"><div class="qs"><div class="qs-in"><div class="qs-bar"><svg class="ic"><use href="#i-search"/></svg><span class="qs-q">Какая отсрочка платежа в договоре с «Вектором»?</span></div><div class="qs-ans"><small><svg class="ic"><use href="#i-sparkle"/></svg>Ответ по вашим документам</small><p>30 календарных дней с даты поставки<sup>1</sup>. Для заказов больше 1 млн ₽ — 45 дней по допсоглашению от 12 марта<sup>2</sup>.</p></div><div class="qs-src"><div><i>1</i><svg class="ic"><use href="#i-doc"/></svg><b>Договор поставки № 14, Вектор.pdf</b><span>стр. 3, п. 5.1</span></div><div><i>2</i><svg class="ic"><use href="#i-doc"/></svg><b>Допсоглашение № 2.docx</b><span>п. 1</span></div></div><span class="qs-acc"><svg class="ic"><use href="#i-lock"/></svg>Доступно отделу закупок</span></div></div></div><p class="bn-legal">Реклама. [Рекламодатель], ИНН [—]. erid: [—].</p></div></div></div>
     </div>
-    <div class="wrap hero-facts">
-      <dl class="facts"><div><dt>Ответ</dt><dd>с первого гудка</dd></div><div><dt>Работает</dt><dd>круглосуточно</dd></div><div><dt>Минута разговора</dt><dd>от 14 ₽</dd></div></dl>
-    </div>
+    <div class="wrap hero-facts"><dl class="facts"><div><dt>Цель</dt><dd>9 договоров за 6 недель</dd></div><div><dt>Аудитория</dt><dd>ИТ‑директора, операционные и HR‑руководители</dd></div><div><dt>Бюджет</dt><dd>600 000 ₽ — пример</dd></div></dl></div>
   </section>
 
   <nav class="subnav" aria-label="Разделы страницы">
-    <div class="wrap"><a href="#scenarios">Сценарии</a><a href="#handoff">Люди</a><a href="#loss">Потери</a><a href="#law">Закон</a><a href="#week">Этапы</a><a href="#pricing">Тарифы</a><a href="#faq">Вопросы</a><a class="btn btn-ink" href="#lead" data-pick="Голосовой оператор">Демо‑звонок</a></div>
+    <div class="wrap"><a href="#idea">Идея</a><a href="#messages">Заголовки</a><a href="#creatives">Креативы</a><a href="#scripts">Сценарии</a><a href="#media">Медиаплан</a><a href="#funnel">Воронка</a><a href="#calendar">Календарь</a><a href="#tech">Метки</a></div>
   </nav>
 
-  <section class="section" id="scenarios">
+  <section class="section" id="idea"><div class="wrap"><div class="head"><h2 class="t-h2">Идея в пяти строках</h2></div><dl class="brief"><div><dt>Инсайт</dt><dd>Ответы есть в документах, но их никто не может найти: новички дёргают коллег, а опытные сотрудники тратят часы на поиск в папках и чатах.</dd></div><div><dt>Идея</dt><dd>Спросите у компании: у каждой компании появляется собеседник, который знает все её документы.</dd></div><div><dt>Обещание</dt><dd>Ответ за секунды со ссылкой на документ и с учётом прав доступа.</dd></div><div><dt>Почему верить</dt><dd>Демо на 20–30 ваших документах до договора; облако в РФ или ваш контур; журнал запросов для безопасности.</dd></div><div><dt>Тон</dt><dd>Спокойно и точно, без магии: конкретные вопросы сотрудников и ссылки на пункты документов.</dd></div></dl></div></section>
+
+  <section class="section band" id="messages"><div class="wrap"><div class="head"><h2 class="t-h2">Заголовки</h2></div><ol class="msgs"><li><b>Спросите у компании</b><span>главный — все каналы</span></li><li><b>Ответ за секунды — со ссылкой на документ</b><span>ИТ‑директора</span></li><li><b>Новичку не нужно дёргать коллег</b><span>HR, истории и клипы</span></li><li><b>Регламенты, которые читают</b><span>РСЯ, операционные директора</span></li><li><b>Каждый видит только свои документы</b><span>служба безопасности, ретаргетинг</span></li></ol></div></section>
+
+  <section class="section" id="creatives">
     <div class="wrap">
-      <div class="head split"><h2 class="t-h2">Что оператор делает сам</h2><p class="t-lead">Выберите сценарий — звонок проиграется заново.</p></div>
-      <div class="scen">
-        <div class="sc-tabs" role="group" aria-label="Сценарии"><button type="button" class="sc-tab" aria-pressed="true" data-i="0">Запись на приём</button><button type="button" class="sc-tab" aria-pressed="false" data-i="1">Статус заказа</button><button type="button" class="sc-tab" aria-pressed="false" data-i="2">Квалификация заявки</button><button type="button" class="sc-tab" aria-pressed="false" data-i="3">Подтверждение визита</button><p class="note">Компании и диалоги условные. Исходящий звонок — только клиенту, который дал согласие.</p></div>
-        <div class="sc-phone"><div class="call"><div class="call-in"><div class="call-top"><span class="call-dot"></span><b>Звонок</b><span class="call-t">00:00</span></div><div class="call-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="call-log"><p class="b cl"><small>Клиент</small>Можно записаться на стрижку в субботу?</p><p class="b ai"><small>ИИ‑оператор</small>Да, в субботу свободно в 12:00 и в 15:30. Какое время удобно?</p><p class="b cl"><small>Клиент</small>В 12</p><p class="b ai"><small>ИИ‑оператор</small>Готово: суббота, 12:00, мастер Ольга. Пришлю напоминание накануне.</p></div></div></div></div>
+      <div class="head split"><h2 class="t-h2">Креативы</h2><p class="t-lead">Готовые макеты в размерах площадок. Перед запуском впишите рекламодателя и erid.</p></div>
+      <div class="bn-grid">
+        <figure class="bn-card">
+          <div class="bn-frame" style="--w:1080;--h:1080" data-bn="square-ask"><div class="bn b-sq ink"><span class="bn-logo"><svg class="s" viewBox="0 0 100 91.2"><use href="#ss-star"/></svg><span class="w"><svg viewBox="0 0 66.97 11.77"><use href="#ss-social"/></svg><svg viewBox="0 0 61.26 11.78"><use href="#ss-stars"/></svg></span><i></i><svg class="ai" viewBox="0 0 15.95 11.78"><use href="#ss-ai"/></svg></span><h3>Спросите<br>у компании</h3>
+      <p class="bn-lead">ИИ отвечает по вашим документам — со ссылкой на источник.</p>
+      <span class="bn-cta">Демо на ваших документах</span>
+      <div class="kv"><div class="qs"><div class="qs-in"><div class="qs-bar"><svg class="ic"><use href="#i-search"/></svg><span class="qs-q">Какая отсрочка платежа в договоре с «Вектором»?</span></div><div class="qs-ans"><small><svg class="ic"><use href="#i-sparkle"/></svg>Ответ по вашим документам</small><p>30 календарных дней с даты поставки<sup>1</sup>. Для заказов больше 1 млн ₽ — 45 дней по допсоглашению от 12 марта<sup>2</sup>.</p></div><div class="qs-src"><div><i>1</i><svg class="ic"><use href="#i-doc"/></svg><b>Договор поставки № 14, Вектор.pdf</b><span>стр. 3, п. 5.1</span></div><div><i>2</i><svg class="ic"><use href="#i-doc"/></svg><b>Допсоглашение № 2.docx</b><span>п. 1</span></div></div><span class="qs-acc"><svg class="ic"><use href="#i-lock"/></svg>Доступно отделу закупок</span></div></div></div><p class="bn-legal">Реклама. [Рекламодатель], ИНН [—]. erid: [—].</p></div></div>
+          <figcaption><b>Квадрат 1080×1080 — Telegram Ads, VK Реклама</b><a class="link" href="creatives/square-ask.png" download>Скачать PNG</a></figcaption>
+        </figure>
+        <figure class="bn-card">
+          <div class="bn-frame" style="--w:1080;--h:1080" data-bn="square-link"><div class="bn b-sq2"><span class="bn-logo"><svg class="s" viewBox="0 0 100 91.2"><use href="#ss-star"/></svg><span class="w"><svg viewBox="0 0 66.97 11.77"><use href="#ss-social"/></svg><svg viewBox="0 0 61.26 11.78"><use href="#ss-stars"/></svg></span><i></i><svg class="ai" viewBox="0 0 15.95 11.78"><use href="#ss-ai"/></svg></span><h3>Ответ за секунды —<br>со ссылкой на документ</h3>
+      <div class="kv2"><div class="qs"><div class="qs-in"><div class="qs-bar"><svg class="ic"><use href="#i-search"/></svg><span class="qs-q">Какую скидку я могу дать без согласования?</span></div><div class="qs-ans"><small><svg class="ic"><use href="#i-sparkle"/></svg>Ответ по вашим документам</small><p>До 7% для клиентов с оборотом от 500 тыс. ₽ в квартал; больше — через коммерческого директора<sup>1</sup>.</p></div><div class="qs-src"><div><i>1</i><svg class="ic"><use href="#i-doc"/></svg><b>Регламент скидок 2026.docx</b><span>п. 3.2</span></div></div><span class="qs-acc"><svg class="ic"><use href="#i-lock"/></svg>Доступно отделу продаж</span></div></div></div>
+      <span class="bn-cta">Демо</span><p class="bn-legal">Реклама. [Рекламодатель], ИНН [—]. erid: [—].</p></div></div>
+          <figcaption><b>Квадрат 1080×1080 — ИТ‑директора и операционные руководители</b><a class="link" href="creatives/square-link.png" download>Скачать PNG</a></figcaption>
+        </figure>
+        <figure class="bn-card">
+          <div class="bn-frame" style="--w:1080;--h:1920" data-bn="story-newbie"><div class="bn b-st ink"><span class="bn-logo"><svg class="s" viewBox="0 0 100 91.2"><use href="#ss-star"/></svg><span class="w"><svg viewBox="0 0 66.97 11.77"><use href="#ss-social"/></svg><svg viewBox="0 0 61.26 11.78"><use href="#ss-stars"/></svg></span><i></i><svg class="ai" viewBox="0 0 15.95 11.78"><use href="#ss-ai"/></svg></span><h3>Новичку<br>не нужно<br>дёргать коллег</h3>
+      <div class="kv3"><div class="qs"><div class="qs-in"><div class="qs-bar"><svg class="ic"><use href="#i-search"/></svg><span class="qs-q">Сколько дней отпуска у новичка в первый год?</span></div><div class="qs-ans"><small><svg class="ic"><use href="#i-sparkle"/></svg>Ответ по вашим документам</small><p>28 календарных дней; первые 14 можно взять после шести месяцев работы<sup>1</sup>.</p></div><div class="qs-src"><div><i>1</i><svg class="ic"><use href="#i-doc"/></svg><b>Положение об отпусках.pdf</b><span>п. 2.3</span></div></div><span class="qs-acc"><svg class="ic"><use href="#i-lock"/></svg>Доступно всем сотрудникам</span></div></div></div>
+      <p class="bn-lead">Регламенты, договоры и базы — в одном ответе.</p>
+      <span class="bn-cta">Демо на ваших документах</span><p class="bn-legal">Реклама. [Рекламодатель], ИНН [—]. erid: [—].</p></div></div>
+          <figcaption><b>Вертикаль 1080×1920 — истории и клипы</b><a class="link" href="creatives/story-newbie.png" download>Скачать PNG</a></figcaption>
+        </figure>
+        <figure class="bn-card">
+          <div class="bn-frame" style="--w:1200;--h:628" data-bn="wide-rules"><div class="bn b-wd"><span class="bn-logo"><svg class="s" viewBox="0 0 100 91.2"><use href="#ss-star"/></svg><span class="w"><svg viewBox="0 0 66.97 11.77"><use href="#ss-social"/></svg><svg viewBox="0 0 61.26 11.78"><use href="#ss-stars"/></svg></span><i></i><svg class="ai" viewBox="0 0 15.95 11.78"><use href="#ss-ai"/></svg></span><h3>Регламенты,<br>которые читают</h3>
+      <p class="bn-lead">Сотрудники спрашивают — ИИ отвечает по документам.</p>
+      <span class="bn-cta">Демо</span>
+      <div class="kv4"><div class="qs"><div class="qs-in"><div class="qs-bar"><svg class="ic"><use href="#i-search"/></svg><span class="qs-q">Какие договоры нужно согласовывать с юристом?</span></div><div class="qs-ans"><small><svg class="ic"><use href="#i-sparkle"/></svg>Ответ по вашим документам</small><p>Все договоры от 300 тыс. ₽, любые с иностранными контрагентами и все с отсрочкой больше 60 дней<sup>1</sup>.</p></div><div class="qs-src"><div><i>1</i><svg class="ic"><use href="#i-doc"/></svg><b>Порядок согласования договоров.docx</b><span>п. 1.4</span></div></div></div></div></div><p class="bn-legal">Реклама. [Рекламодатель], ИНН [—]. erid: [—].</p></div></div>
+          <figcaption><b>Горизонталь 1200×628 — Яндекс РСЯ, VK Реклама</b><a class="link" href="creatives/wide-rules.png" download>Скачать PNG</a></figcaption>
+        </figure>
       </div>
-<script type="application/json" id="sc-data">[[["cl", "Можно записаться на стрижку в субботу?"], ["ai", "Да, в субботу свободно в 12:00 и в 15:30. Какое время удобно?"], ["cl", "В 12"], ["ai", "Готово: суббота, 12:00, мастер Ольга. Пришлю напоминание накануне."]], [["cl", "Где мой заказ? Номер 48213"], ["ai", "Заказ 48213 передан курьеру, доставка сегодня с 14 до 18. Прислать ссылку на отслеживание в СМС?"], ["cl", "Да, пришлите"], ["ai", "Отправила. Что‑нибудь ещё подсказать?"]], [["cl", "Нам нужна поставка упаковки, большой объём"], ["ai", "Подскажите, какой объём в месяц и в какой город?"], ["cl", "Около 20 тысяч коробок, Казань"], ["ai", "Передаю менеджеру по крупным клиентам — он перезвонит в течение 15 минут с расчётом."]], [["ai", "Здравствуйте, это ИИ‑ассистент автосервиса «Мотор». Вы записаны на завтра на 9:00 — подтверждаете?"], ["cl", "Нет, давайте перенесём на пятницу"], ["ai", "В пятницу свободно в 9:00 и в 13:00."], ["cl", "В 13"], ["ai", "Перенесла на пятницу, 13:00. Спасибо!"]]]</script>
     </div>
   </section>
 
-  <section class="section band" id="handoff">
+  <section class="section band" id="scripts"><div class="wrap"><div class="head"><h2 class="t-h2">Сценарии роликов</h2></div><div class="scripts">
+        <article class="script"><h3>«Первый день» · 20 секунд</h3><table><thead><tr><th scope="col">Время</th><th scope="col">В кадре</th><th scope="col">Текст</th></tr></thead><tbody><tr><th scope="row">0–5 с</th><td>Новичок за столом, вокруг занятые коллеги.</td><td>«Первый день. Вопросов — сорок, спросить — некого»</td></tr><tr><th scope="row">5–15 с</th><td>Окно поиска: вопрос, ответ со ссылкой на пункт регламента.</td><td>«Спросите у компании. Ответ — за секунды, со ссылкой на документ»</td></tr><tr><th scope="row">15–20 с</th><td>Логотип и кнопка.</td><td>«ИИ‑поиск по документам Social Stars AI»</td></tr></tbody></table></article>
+        <article class="script"><h3>«Права» · 15 секунд</h3><table><thead><tr><th scope="col">Время</th><th scope="col">В кадре</th><th scope="col">Текст</th></tr></thead><tbody><tr><th scope="row">0–5 с</th><td>Два сотрудника задают один и тот же вопрос.</td><td>«Один вопрос — два сотрудника»</td></tr><tr><th scope="row">5–11 с</th><td>Бухгалтер получает ответ, менеджер — «нет доступа, спросите руководителя».</td><td>«Каждый видит только то, что ему положено»</td></tr><tr><th scope="row">11–15 с</th><td>Логотип.</td><td>«Демо на ваших документах — до договора»</td></tr></tbody></table></article>
+      </div></div></section>
+
+  <section class="section" id="media">
     <div class="wrap">
-      <div class="head"><h2 class="t-h2">Когда подключается человек</h2></div>
-      <div class="hand" data-wires="c>ai ai>o1:2 ai>o2 ai>o3">
-        <div class="hcol"><div class="hnode" data-n="c"><svg class="ic"><use href="#i-bell"/></svg><b>Звонок клиента</b><span>днём, ночью, в выходные</span></div></div>
-        <div class="hcol"><div class="hnode hub" data-n="ai"><svg class="ic"><use href="#i-assistant"/></svg><b>ИИ‑оператор</b><span>отвечает с первого гудка</span></div></div>
-        <div class="hcol outs">
-          <div class="hnode" data-n="o1"><svg class="ic"><use href="#i-inbox"/></svg><b>Решил сам</b><span>запись, ответ, статус — сразу в CRM</span></div>
-          <div class="hnode" data-n="o2"><svg class="ic"><use href="#i-people"/></svg><b>Сложный вопрос</b><span>переводит на сотрудника с кратким пересказом</span></div>
-          <div class="hnode" data-n="o3"><svg class="ic"><use href="#i-alert"/></svg><b>Недовольный клиент</b><span>сразу к руководителю смены</span></div>
+      <div class="head split"><h2 class="t-h2">Медиаплан</h2><p class="t-lead">Пример распределения 600 000 ₽ на 6 недель. Доли пересматриваем после первой недели.</p></div>
+      <div class="tbl" data-bars><table class="mp"><thead><tr><th scope="col">Канал</th><th scope="col">Кому показываем</th><th scope="col">Форматы</th><th scope="col">Доля</th><th scope="col">Бюджет</th><th scope="col">Главная метрика</th></tr></thead><tbody><tr><th scope="row">Яндекс Директ</th><td>поиск: «корпоративный поиск ИИ», «база знаний с нейросетью», «RAG внедрение»; РСЯ</td><td>текст + горизонталь</td><td class="num"><span class="mbar"><i data-bar style="width:100%"></i></span>35%</td><td class="num">210 000 ₽</td><td>цена заявки</td></tr><tr><th scope="row">Telegram Ads</th><td>каналы для ИТ‑директоров, HR и операционных руководителей</td><td>квадрат, текст</td><td class="num"><span class="mbar"><i data-bar style="width:60%"></i></span>20%</td><td class="num">120 000 ₽</td><td>цена клика</td></tr><tr><th scope="row">Посевы и подкасты</th><td>отраслевые медиа и подкасты о цифровизации</td><td>статья‑кейс + ролик «Права»</td><td class="num"><span class="mbar"><i data-bar style="width:60%"></i></span>20%</td><td class="num">120 000 ₽</td><td>переходы, запросы бренда</td></tr><tr><th scope="row">VK Реклама</th><td>руководители среднего и крупного бизнеса</td><td>квадрат, вертикальное видео</td><td class="num"><span class="mbar"><i data-bar style="width:45%"></i></span>15%</td><td class="num">90 000 ₽</td><td>цена заявки</td></tr><tr><th scope="row">Ретаргетинг</th><td>посетители страницы и тарифов</td><td>квадрат «Ответ со ссылкой»</td><td class="num"><span class="mbar"><i data-bar style="width:30%"></i></span>10%</td><td class="num">60 000 ₽</td><td>возврат на демо</td></tr></tbody></table></div>
+    </div>
+  </section>
+
+  <section class="section band" id="funnel">
+    <div class="wrap fn">
+      <div>
+        <h2 class="t-h2">Воронка</h2>
+        <p class="t-lead">Ориентиры для планирования, а не обещание. Уточняем после первой недели.</p>
+        <dl class="fn-kpi"><div><dt>Цена заявки</dt><dd>до 4 000 ₽</dd></div><div><dt>Заявка → демо</dt><dd>40%</dd></div><div><dt>Демо → пилот</dt><dd>30%</dd></div><div><dt>Пилот → договор</dt><dd>50%</dd></div></dl>
+      </div>
+      <div class="fn-chart" data-bars><div class="fn-row"><span>Бюджет</span><span class="fn-bar"><i data-bar style="width:100%"></i></span><b>600 000 ₽</b></div><div class="fn-row"><span>Заявки</span><span class="fn-bar"><i data-bar style="width:100%"></i></span><b>150</b></div><div class="fn-row"><span>Демо</span><span class="fn-bar"><i data-bar style="width:40%"></i></span><b>60</b></div><div class="fn-row"><span>Пилоты</span><span class="fn-bar"><i data-bar style="width:12%"></i></span><b>18</b></div><div class="fn-row"><span>Договоры</span><span class="fn-bar"><i data-bar style="width:6%"></i></span><b>9</b></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="calendar">
+    <div class="wrap">
+      <div class="head"><h2 class="t-h2">Календарь</h2></div>
+      <div class="cal" data-bars>
+        <div class="cl-row cl-head"><span></span><span class="cl-track"><b>Неделя 1</b><b>Неделя 2</b><b>Неделя 3</b><b>Неделя 4</b><b>Неделя 5</b><b>Неделя 6</b></span></div>
+        <div class="cl-row"><span>Подготовка: креативы, ролики, маркировка</span><span class="cl-track"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div><div class="cl-row"><span>Яндекс Директ: поиск и РСЯ</span><span class="cl-track"><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><div class="cl-row"><span>Telegram Ads и VK Реклама</span><span class="cl-track"><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><div class="cl-row"><span>Посевы и подкасты</span><span class="cl-track"><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></div><div class="cl-row"><span>Ретаргетинг</span><span class="cl-track"><i class=""></i><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><div class="cl-row"><span>Демо и пилоты у первых клиентов</span><span class="cl-track"><i class=""></i><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><div class="cl-row"><span>Итоги и решение о масштабе</span><span class="cl-track"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band" id="tech">
+    <div class="wrap">
+      <div class="head"><h2 class="t-h2">Метки и маркировка</h2></div>
+      <div class="tech">
+        <div>
+          <h3>UTM</h3>
+          <ul class="utm"><li><code>utm_source</code> yandex, telegram, vk, seeding</li><li><code>utm_medium</code> cpc, cpm, post</li><li><code>utm_campaign</code> knowledge_2026</li><li><code>utm_content</code> ask, link, newbie, rules</li></ul>
+          <p class="ex"><code>…/ai/knowledge/?utm_source=yandex&amp;utm_medium=cpc&amp;utm_campaign=knowledge_2026&amp;utm_content=ask</code></p>
+        </div>
+        <div>
+          <h3>Маркировка</h3>
+          <ul class="utm"><li>Каждый креатив регистрируем в ОРД и получаем erid</li><li>На макете — «Реклама», рекламодатель и erid</li><li>В роликах с ИИ — пометка об этом</li><li>Отчёты в ЕРИР — ежемесячно</li></ul>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section" id="loss">
-    <div class="wrap">
-      <div class="head"><h2 class="t-h2">Сколько стоит пропущенный звонок</h2></div>
-      <div class="loss" data-loss>
-        <div class="loss-in">
-          <div class="rng"><label>Звонков в день <output>80</output></label><input type="range" min="10" max="500" step="10" value="80" data-k="calls" /></div>
-          <div class="rng"><label>Пропущено или без ответа <output>15%</output></label><input type="range" min="2" max="40" step="1" value="15" data-k="miss" /></div>
-          <div class="rng"><label>Звонок превращается в продажу <output>25%</output></label><input type="range" min="5" max="60" step="1" value="25" data-k="conv" /></div>
-          <div class="rng"><label>Средний чек <output>6 000 ₽</output></label><input type="range" min="1000" max="100000" step="1000" value="6000" data-k="check" /></div>
-        </div>
-        <div class="loss-out">
-          <small>Недополученная выручка в месяц</small>
-          <div class="big" data-o="money">2 160 000 ₽</div>
-          <div class="loss-bar"><i data-o="bar"></i></div>
-          <p><b data-o="clients">90</b> клиентов в месяц звонили, но не дошли до покупки. Расчёт по вашим цифрам, 30 дней.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section band" id="law">
-    <div class="wrap">
-      <div class="head"><h2 class="t-h2">По закону</h2></div>
-      <div class="ethics">
-        <div><span class="ic-box" aria-hidden="true"><svg class="ic"><use href="#i-tag"/></svg></span><h3>Маркировка звонков</h3><p>Исходящие звонки идут с маркировкой по 41‑ФЗ: клиент видит компанию и цель звонка.</p></div>
-        <div><span class="ic-box" aria-hidden="true"><svg class="ic"><use href="#i-sign"/></svg></span><h3>Исходящие — по согласию</h3><p>Рекламный обзвон — только тем, кто явно согласился. Без согласия не звоним.</p></div>
-        <div><span class="ic-box" aria-hidden="true"><svg class="ic"><use href="#i-assistant"/></svg></span><h3>Честно представляется</h3><p>Ассистент сразу говорит, что он ИИ, и переводит на человека по первой просьбе.</p></div>
-        <div><span class="ic-box" aria-hidden="true"><svg class="ic"><use href="#i-lock"/></svg></span><h3>Данные в России</h3><p>Записи и расшифровки хранятся на серверах в РФ, по 152‑ФЗ.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="week">
-    <div class="wrap">
-      <div class="head"><h2 class="t-h2">Запуск за месяц</h2></div>
-      <ol class="steps">
-        <li><span class="when">Неделя 1</span><h3>Слушаем 100 звонков</h3><p>Находим частые вопросы и где теряются клиенты.</p></li>
-        <li><span class="when">Неделя 2</span><h3>Сценарии и голос</h3><p>Пишем диалоги, выбираем голос, настраиваем паузы.</p></li>
-        <li><span class="when">Неделя 3</span><h3>Телефония и CRM</h3><p>Подключаем ваши номера, CRM и расписание.</p></li>
-        <li><span class="when">Недели 4–5</span><h3>Пилот</h3><p>Оператор работает на части звонков, сравниваем с людьми.</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="section band" id="pricing">
-    <div class="wrap">
-      <div class="head split"><h2 class="t-h2">Тарифы</h2><p class="t-lead">Минуты считаем по факту разговора. Пилот на части звонков — до подписания основного договора.</p></div>
-      <div class="plans">
-        <article class="plan">
-          <h3>Старт</h3>
-          <div class="price">190 000 ₽<small>запуск, минута от 14 ₽</small></div>
-          <p>Один сценарий на входящих.</p>
-          <ul><li>Запись или ответы на вопросы</li><li>Телефония и CRM</li><li>Перевод на сотрудника</li><li>Отчёт раз в неделю</li></ul>
-          <a class="btn btn-line" href="#lead" data-pick="Голосовой оператор">Выбрать «Старт»</a>
-        </article>
-        <article class="plan main">
-          <span class="badge">Чаще выбирают</span><h3>Бизнес</h3>
-          <div class="price">390 000 ₽<small>запуск, минута от 12 ₽</small></div>
-          <p>Для компаний с потоком звонков.</p>
-          <ul><li>До 5 сценариев</li><li>Исходящие по согласию</li><li>Аналитика разговоров</li><li>Доработка каждую неделю</li></ul>
-          <a class="btn btn-primary" href="#lead" data-pick="Голосовой оператор">Выбрать «Бизнес»</a>
-        </article>
-        <article class="plan">
-          <h3>Контакт‑центр</h3>
-          <div class="price">от 900 000 ₽<small>запуск</small></div>
-          <p>Для банков, сетей и госсектора.</p>
-          <ul><li>Голос бренда</li><li>Развёртывание в вашем контуре</li><li>Интеграция с 1С и АТС</li><li>Поддержка 24/7</li></ul>
-          <a class="btn btn-line" href="#lead" data-pick="Голосовой оператор">Обсудить проект</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="faq">
-    <div class="wrap">
-      <div class="head"><h2 class="t-h2">Вопросы</h2></div>
-      <div class="faq">
-        <details><summary>Клиенты поймут, что говорят с ИИ?</summary><div class="a"><p>Да — ассистент представляется сразу. Это честно, и так спокойнее для клиента: он знает, что может попросить человека в любой момент.</p></div></details>
-        <details><summary>Что, если оператор не понял вопрос?</summary><div class="a"><p>Переспросит один раз, а если не поможет — переведёт на сотрудника и передаст краткий пересказ разговора, чтобы клиенту не пришлось повторять.</p></div></details>
-        <details><summary>С какой телефонией и CRM работаете?</summary><div class="a"><p>Облачные АТС (Манго, Мегафон, Билайн, Телфин и другие), Битрикс24, amoCRM, 1С, YCLIENTS и собственные системы через API.</p></div></details>
-        <details><summary>Можно ли продавать исходящими звонками?</summary><div class="a"><p>Только клиентам, которые явно согласились на звонки, и с маркировкой по 41‑ФЗ. Холодный рекламный обзвон мы не делаем — это штрафы до 1 млн ₽ и потеря доверия.</p></div></details>
-        <details><summary>Где хранятся записи разговоров?</summary><div class="a"><p>На серверах в России. Для банков и госсектора разворачиваем оператора в вашем контуре.</p></div></details>
-      </div>
-      <a class="next" href="/social-stars-demo/ai/trainer/" style="margin-top:clamp(64px,8vw,112px)"><span class="mini" data-sky="stairs" data-sky-mini data-sky-scale=".95" aria-hidden="true"></span><span>Следующее направление</span><strong>ИИ‑тренажёр продаж</strong></a>
     </div>
   </section>
 
@@ -535,60 +488,12 @@
 <script src="/social-stars-demo/ai/motion.js" defer></script>
 <!-- /@scripts -->
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const g = window.gsap, reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const fmt = n => Math.round(n).toLocaleString('ru-RU').replace(/\u202f/g, '\u00a0');
-  const mmss = s => String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(Math.floor(s % 60)).padStart(2, '0');
-  // проигрыш звонка: реплики по очереди, волна говорит, таймер идёт, CRM заполняется
-  const play = (call, crmEl, loop) => {
-    const bubbles = [...call.querySelectorAll('.call-log .b')], bars = call.querySelectorAll('.call-wave i'), t = call.querySelector('.call-t');
-    const dds = crmEl ? [...crmEl.querySelectorAll('dd')] : [], vals = dds.map(d => d.textContent), st = crmEl && crmEl.querySelector('.crm-st');
-    if (!g || reduce) return null;
-    const clock = { s: 0 };
-    const tl = g.timeline({ repeat: loop ? -1 : 0, repeatDelay: 2.4, onRepeat: () => {} });
-    tl.set(bubbles, { opacity: 0, y: 10 }).set(bars, { scaleY: .18 }).set(clock, { s: 0 });
-    if (crmEl) { tl.add(() => dds.forEach(d => { d.textContent = '—'; })).set(st, { opacity: 0 }); }
-    tl.to(clock, { s: 4 + bubbles.length * 6, duration: .8 + bubbles.length * 1.9, ease: 'none', onUpdate: () => { t.textContent = mmss(clock.s); } }, 0);
-    bubbles.forEach((b, i) => {
-      const at = .5 + i * 1.9;
-      tl.to(b, { opacity: 1, y: 0, duration: .45, ease: 'power2.out' }, at)
-        .to(bars, { scaleY: () => .2 + Math.random() * .8, duration: .14, ease: 'sine.inOut', stagger: { each: .015, repeat: 5, yoyo: true } }, at)
-        .to(bars, { scaleY: .18, duration: .3 }, at + 1.4);
-      if (crmEl && b.classList.contains('ai') && i > 1) tl.add(() => dds.forEach((d, j) => { d.textContent = vals[j]; g.fromTo(d, { opacity: 0 }, { opacity: 1, duration: .4, delay: j * .12 }); }), at + .4);
-    });
-    if (crmEl) tl.to(st, { opacity: 1, duration: .4 }, '>-.2');
-    return tl;
-  };
-  const demo = document.querySelector('[data-vdemo]');
-  if (demo) {
-    const tl = play(demo.querySelector('.call'), demo.querySelector('.crm'), true);
-    if (tl && window.ScrollTrigger) ScrollTrigger.create({ trigger: demo, start: 'top bottom', end: 'bottom top', onToggle: s => s.isActive ? tl.resume() : tl.pause() });
-  }
-  // сценарии
-  const data = JSON.parse(document.getElementById('sc-data').textContent), phone = document.querySelector('.sc-phone .call'), tabs = [...document.querySelectorAll('.sc-tab')];
-  let cur = null;
-  const show = i => {
-    tabs.forEach((b, j) => b.setAttribute('aria-pressed', String(i === j)));
-    phone.querySelector('.call-log').innerHTML = data[i].map(([w, t]) => `<p class="b ${w}"><small>${w === 'ai' ? 'ИИ‑оператор' : 'Клиент'}</small>${t}</p>`).join('');
-    phone.querySelector('.call-top b').textContent = data[i][0][0] === 'ai' ? 'Исходящий звонок' : 'Входящий звонок';
-    if (cur) cur.kill(); cur = play(phone, null, false);
-  };
-  tabs.forEach((b, i) => b.addEventListener('click', () => show(i)));
-  if (window.ScrollTrigger && g && !reduce) ScrollTrigger.create({ trigger: phone, start: 'top 80%', once: true, onEnter: () => show(0) });
-  // калькулятор потерь
-  const box = document.querySelector('[data-loss]');
-  if (box) {
-    const inp = [...box.querySelectorAll('input')], o = k => box.querySelector(`[data-o="${k}"]`);
-    const upd = () => {
-      const v = Object.fromEntries(inp.map(i => [i.dataset.k, +i.value]));
-      inp.forEach(i => { const out = i.closest('.rng').querySelector('output'); out.textContent = i.dataset.k === 'check' ? fmt(+i.value) + '\u00a0₽' : (i.dataset.k === 'calls' ? i.value : i.value + '%'); });
-      const clients = v.calls * 30 * v.miss / 100 * v.conv / 100, money = clients * v.check;
-      o('money').textContent = fmt(money) + '\u00a0₽'; o('clients').textContent = fmt(clients);
-      o('bar').style.width = Math.min(100, v.miss / 40 * 100) + '%';
-    };
-    inp.forEach(i => i.addEventListener('input', upd)); upd();
-  }
-});
+(() => {
+  if (/[?&]export\b/.test(location.search)) document.documentElement.classList.add('export');
+  const fit = f => { const b = f.firstElementChild; if (b) b.style.setProperty('--s', f.clientWidth / +getComputedStyle(f).getPropertyValue('--w')); };
+  const ro = new ResizeObserver(es => es.forEach(e => fit(e.target)));
+  document.querySelectorAll('.bn-frame').forEach(f => { fit(f); ro.observe(f); });
+})();
 </script>
 </body>
 </html>
