@@ -85,7 +85,7 @@
       const v = n => (form.elements[n] && form.elements[n].value.trim()) || '—';
       const interests = $$('input[name="i"]:checked', form).map(x => x.value).join(', ') || 'не указано';
       const body = `Имя: ${v('name')}\nКонтакт: ${v('contact')}\nКомпания: ${v('company')}\nЗадача: ${v('task')}\nИнтересы: ${interests}\nСтраница: ${location.href}`;
-      location.href = 'mailto:info@social-stars.ru?subject=' + encodeURIComponent('Заявка на AI-аудит') + '&body=' + encodeURIComponent(body);
+      location.href = 'mailto:info@social-stars.ai?subject=' + encodeURIComponent('Заявка на AI-аудит') + '&body=' + encodeURIComponent(body);
       form.classList.add('is-done'); $('.form-done', form).focus();
     });
   });
