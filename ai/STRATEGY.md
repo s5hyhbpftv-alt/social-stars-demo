@@ -149,3 +149,22 @@
 - Hyperbound — https://www.hyperbound.ai/
 - vc.ru, ИИ-тренажёры для B2B-продаж — https://vc.ru/tweekly/2944401-ii-trenazhery-dlya-b2b-prodazh
 - Fortune Business Insights, AI SDR Market — https://www.fortunebusinessinsights.com/ai-sdr-market-114112
+
+### Третья волна: перевод видео, поиск по документам, закупки
+
+| Направление | Мировой ориентир | Что делаем иначе | Цена |
+|---|---|---|---|
+| Перевод и озвучка видео `/ai/dubbing/` | HeyGen, ElevenLabs, Rask AI: ИИ-перевод стоит $2–20 за минуту против $500–2 000 у студии | Клон голоса спикера, синхронизация губ и обязательная проверка носителем; фокус на рынки СНГ, Турции, Ближнего Востока и Китая | ролик от 9 000 ₽, пакет 60 минут — 149 000 ₽ в месяц |
+| ИИ-поиск по документам `/ai/knowledge/` | Glean: $300 млн годовой выручки к маю 2026, оценка $7,2 млрд; в России — RAG на GigaChat и YandexGPT (пример Teboil: точность выше 90%) | Права доступа переносим из 1С и Битрикс24, облако РФ или закрытый контур, журнал запросов для безопасности | от 290 000 ₽ + 39 000 ₽ в месяц |
+| ИИ-ассистент закупок `/ai/procurement/` | Pactum: Walmart получил в среднем 3% выгоды и +35 дней отсрочки, больше 60% поставщиков принимают предложение агента; Fairmarkit — «хвост» закупок | Сравнение КП с учётом доставки и отсрочки, проверка договоров по вашим правилам, выгрузка в 1С; решение и подпись — за закупщиком, для 44-ФЗ и 223-ФЗ — только подготовка документов | от 250 000 ₽ + 29 000 ₽ в месяц |
+
+Кампании: «Один ролик — десять рынков» (`/ai/dubbing/campaign/`), «Спросите у компании» (`/ai/knowledge/campaign/`), «Три КП к обеду» (`/ai/procurement/campaign/`).
+
+Источники третьей волны:
+- HeyGen, лучшие инструменты ИИ-дубляжа 2026 — https://www.heygen.com/blog/best-ai-dubbing-tools
+- TechCrunch, Glean — $300M ARR — https://techcrunch.com/2026/05/28/gleans-top-line-crosses-300m-as-ai-budget-cutting-becomes-its-major-selling-point/
+- Sacra, Glean — https://sacra.com/c/glean/
+- vc.ru, корпоративный ИИ-поиск с RAG и закрытым контуром — https://vc.ru/ai/2909938-korporativnyy-ai-poisk-s-rag-i-zakrytym-konturom
+- Cleverbots, RAG как стандарт корпоративного поиска — https://cleverbots.ru/rag-novyj-standart-korporativnogo-poiska-i-raboty-s-dokumentami/
+- Pactum, агентный ИИ в закупках — https://pactum.com/blog/understanding-agentic-ai-in-procurement-how-autonomous-ai-has-been-transforming-supplier-deals
+- Procurement AI Agents, обзор Pactum — https://procurementaiagents.com/agents/pactum-ai
