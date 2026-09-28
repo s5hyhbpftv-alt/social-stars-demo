@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#f3f5f8" />
-  <title>AI Growth OS — система роста на ИИ · Social Stars AI</title>
+  <title>AI Apogee OS — система роста на ИИ · Social Stars AI</title>
   <meta name="description" content="Флагманский комплекс Social Stars AI: сайт, ИИ-агенты продаж и поддержки, аватар основателя, SEO и GEO, нейро-ORM. Одна команда, одна панель показателей, оплата с привязкой к результату." />
   <link rel="canonical" href="https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/growth-os/" />
   <link rel="icon" type="image/svg+xml" href="/social-stars-demo/favicon.svg" />
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Social Stars" />
-  <meta property="og:title" content="AI Growth OS — Social Stars AI" />
+  <meta property="og:title" content="AI Apogee OS — Social Stars AI" />
   <meta property="og:description" content="Сайт, агенты, аватар, поиск и репутация — одна система роста." />
   <meta property="og:url" content="https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/growth-os/" />
   <meta property="og:image" content="https://s5hyhbpftv-alt.github.io/social-stars-demo/media/og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"AI Growth OS","url":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/growth-os/","areaServed":"RU","provider":{"@type":"Organization","name":"Social Stars","url":"https://s5hyhbpftv-alt.github.io/social-stars-demo/"},"offers":{"@type":"Offer","priceCurrency":"RUB","price":"1500000","description":"Запуск системы"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Social Stars AI","item":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/"},{"@type":"ListItem","position":2,"name":"AI Growth OS","item":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/growth-os/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Можно ли начать с одного модуля?","acceptedAnswer":{"@type":"Answer","text":"Да. Многие начинают с аудита или пилота агента и подключают остальные модули позже — вложения сохраняются."}},{"@type":"Question","name":"Как оплата связана с результатом?","acceptedAnswer":{"@type":"Answer","text":"На старте фиксируем исходные значения: заявки, стоимость клиента, AI-видимость, часы рутины. Часть оплаты может зависеть от их роста."}}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"AI Apogee OS","url":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/growth-os/","areaServed":"RU","provider":{"@type":"Organization","name":"Social Stars","url":"https://s5hyhbpftv-alt.github.io/social-stars-demo/"},"offers":{"@type":"Offer","priceCurrency":"RUB","price":"1500000","description":"Запуск системы"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Social Stars AI","item":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/"},{"@type":"ListItem","position":2,"name":"AI Apogee OS","item":"https://s5hyhbpftv-alt.github.io/social-stars-demo/ai/growth-os/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Можно ли начать с одного модуля?","acceptedAnswer":{"@type":"Answer","text":"Да. Многие начинают с аудита или пилота агента и подключают остальные модули позже — вложения сохраняются."}},{"@type":"Question","name":"Как оплата связана с результатом?","acceptedAnswer":{"@type":"Answer","text":"На старте фиксируем исходные значения: заявки, стоимость клиента, AI-видимость, часы рутины. Часть оплаты может зависеть от их роста."}}]}]}</script>
   <link rel="stylesheet" href="/social-stars-demo/ai/ai.css" />
   <style>
     .journey{list-style:none;display:grid;grid-template-columns:repeat(6,1fr);gap:0;counter-reset:j;border-top:1px solid var(--mist)}
@@ -63,9 +63,27 @@
       .modules a{grid-template-columns:1fr;gap:6px}
       .modules span{text-align:left}
     }
+      /* один бренд во всех модулях */
+    .oneb{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .oneb figure{margin:0}
+    .ob-m{position:relative;aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:var(--porcelain-2)}
+    .ob-m img,.ob-m video{width:100%;height:100%;object-fit:cover;display:block}
+    .ob-m .tag{position:absolute;left:10px;top:10px;padding:4px 9px;border-radius:999px;background:rgba(27,33,48,.72);color:#fff;font-size:12px}
+    .ob-m .price{position:absolute;left:10px;bottom:10px;padding:5px 11px;border-radius:10px;background:var(--white);font-weight:500;font-size:15px}
+    .ob-ai{display:flex;flex-direction:column;gap:6px;padding:20px;background:var(--white);border:1px solid var(--mist)}
+    .ob-ai small{font-size:12.5px;color:var(--slate)}
+    .ob-ai .q{padding:10px 14px;border-radius:12px;background:var(--porcelain);font-size:15px;margin-bottom:8px}
+    .ob-ai p{font-size:15px;line-height:1.5;color:var(--ink-2)}
+    .ob-ai sup{color:var(--bronze-2)}
+    .ob-ai .src{margin-top:auto;font-size:12px;color:var(--slate)}
+    .oneb figcaption{margin-top:12px}
+    .oneb figcaption b{display:block;font-weight:500}
+    #brand .note{margin-top:20px;font-size:14px;color:var(--slate)}
+    .oneb figcaption span{font-size:14px;color:var(--slate)}
+    @media (max-width:900px){ .oneb{grid-template-columns:1fr 1fr} .oneb figure:last-child{grid-column:1 / -1} .ob-ai{aspect-ratio:auto} }
   </style>
 </head>
-<body data-service="AI Growth OS">
+<body data-service="AI Apogee OS">
 <!-- @intro -->
 <div class="intro" id="intro" role="presentation">
   <div class="intro-bg"></div>
@@ -242,7 +260,7 @@
     <a class="btn btn-primary btn-desk" href="#lead">Получить аудит</a>
     <button class="burger" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Открыть меню"><span></span><span></span></button>
     <div class="mega" id="mega">
-      <a class="feature" href="/social-stars-demo/ai/growth-os/"><b>AI Growth OS</b><span>Сайт, агенты, аватар, поиск и репутация — одна система роста с оплатой за результат</span></a>
+      <a class="feature" href="/social-stars-demo/ai/growth-os/"><b>AI Apogee OS</b><span>Сайт, агенты, аватар, поиск и репутация — одна система роста с оплатой за результат</span></a>
       <a href="/social-stars-demo/ai/sites/"><b>AI-сайты</b><span>Сайт, который находят люди и цитируют нейросети</span></a>
       <a href="/social-stars-demo/ai/agents/"><b>ИИ-агенты</b><span>Рутина продаж, поддержки и документов — агентам</span></a>
       <a href="/social-stars-demo/ai/avatars/"><b>Цифровые аватары</b><span>Эксперт говорит каждый день без съёмок</span></a>
@@ -264,7 +282,7 @@
 <div class="mnav" id="mnav">
   <ul>
     <li><a href="/social-stars-demo/ai/">Все направления</a></li>
-    <li><a href="/social-stars-demo/ai/growth-os/">AI Growth OS</a></li>
+    <li><a href="/social-stars-demo/ai/growth-os/">AI Apogee OS</a></li>
     <li><a href="/social-stars-demo/ai/sites/">AI-сайты</a></li>
     <li><a href="/social-stars-demo/ai/agents/">ИИ-агенты</a></li>
     <li><a href="/social-stars-demo/ai/avatars/">Цифровые аватары</a></li>
@@ -293,7 +311,7 @@
   <section class="hero">
     <div class="wrap">
       <div class="hero-text">
-        <nav class="crumbs" aria-label="Вы здесь"><a href="/social-stars-demo/ai/">Social Stars AI</a><span aria-hidden="true">/</span><span aria-current="page">AI Growth OS</span></nav>
+        <nav class="crumbs" aria-label="Вы здесь"><a href="/social-stars-demo/ai/">Social Stars AI</a><span aria-hidden="true">/</span><span aria-current="page">AI Apogee OS</span></nav>
         <h1 class="t-hero">Сайт, агенты, аватар, поиск и репутация — одна система</h1>
         <p class="t-lead">Спрос приходит из поиска и нейросетей, аватар основателя вызывает доверие, агенты обрабатывают заявки, нейро-ORM защищает репутацию. Одна команда, одна панель показателей, оплата с привязкой к результату.</p>
         <div class="hero-actions">
@@ -317,6 +335,7 @@
       <a href="#journey">Путь клиента</a>
       <a href="#dashboard">Панель показателей</a>
       <a href="#modules">Модули</a>
+      <a href="#brand">Пример</a>
       <a href="#process">Этапы</a>
       <a href="#pricing">Цены</a>
       <a href="#faq">Вопросы</a>
@@ -348,7 +367,7 @@
         <p class="t-lead">Руководитель видит заявки, стоимость клиента, видимость в нейросетях и сэкономленные часы в одном месте.</p>
       </div>
       <div class="dash">
-        <div class="dash-top"><b>Панель AI Growth OS</b><span>Пример интерфейса, демонстрационные данные за месяц</span></div>
+        <div class="dash-top"><b>Панель AI Apogee OS</b><span>Пример интерфейса, демонстрационные данные за месяц</span></div>
         <div class="tiles">
           <div><small>Заявки</small><b>1 284</b><span>+38% к исходному</span></div>
           <div><small>Стоимость клиента</small><b>4 120 ₽</b><span>−22%</span></div>
@@ -380,6 +399,19 @@
     </div>
   </section>
 
+  <section class="section band" id="brand">
+    <div class="wrap">
+      <div class="head split"><h2 class="t-h2">Один бренд — во всех модулях сразу</h2><p class="t-lead">Одна ИИ‑съёмка питает всё: ролики, карточки, лицо бренда и ответы нейросетей говорят одним языком.</p></div>
+      <div class="oneb">
+        <figure><div class="ob-m"><video class="media" src="/social-stars-demo/ai/video/salon-flip.mp4" poster="/social-stars-demo/ai/img/ugc/v-salon-flip.webp" muted loop playsinline preload="none" aria-label="UGC‑ролик из салона"></video><span class="tag">ИИ‑модель</span></div><figcaption><b>UGC‑ролики</b><span>Процесс, хуки и акции каждую неделю</span></figcaption></figure>
+        <figure><div class="ob-m"><img src="/social-stars-demo/ai/img/ugc/type-brunette.webp" alt="Лицо бренда — ИИ‑модель" loading="lazy" width="600" height="800" /><span class="tag">ИИ‑модель</span></div><figcaption><b>Лицо бренда</b><span>Один персонаж во всех роликах и постах</span></figcaption></figure>
+        <figure><div class="ob-m"><img src="/social-stars-demo/ai/img/ugc/mb-jar.webp" alt="Карточка товара с ИИ‑моделью" loading="lazy" width="600" height="800" /><span class="tag">ИИ‑модель</span><span class="price">1 290 ₽</span></div><figcaption><b>Карточки маркетплейсов</b><span>Товар на модели в нужной сцене</span></figcaption></figure>
+        <figure><div class="ob-m ob-ai"><small>Вопрос к нейросети</small><p class="q">Чем поднять объём тонких волос?</p><small>Ответ</small><p>Подойдёт лёгкая пена для объёма: её наносят у корней на влажные волосы и сушат феном<sup>1</sup>.</p><span class="src"><sup>1</sup> сайт бренда, карточка товара</span></div><figcaption><b>Ответы нейросетей</b><span>Факты о продукте, на которые ссылаются модели</span></figcaption></figure>
+      </div>
+      <p class="note">Пример на демонстрационной съёмке средства для волос. Героини — ИИ‑модели, ответ нейросети показан условно.</p>
+    </div>
+  </section>
+
   <section class="section" id="process">
     <div class="wrap">
       <div class="head"><h2 class="t-h2">Запуск за 6–10 недель</h2></div>
@@ -401,7 +433,7 @@
           <div class="price">от 1 500 000 ₽<small>и от 350 000 ₽ в месяц</small></div>
           <p>Ядро системы.</p>
           <ul><li>AI-сайт</li><li>Агент продаж</li><li>SEO и GEO</li><li>Панель показателей</li></ul>
-          <a class="btn btn-line" href="#lead" data-pick="AI Growth OS">Обсудить старт</a>
+          <a class="btn btn-line" href="#lead" data-pick="AI Apogee OS">Обсудить старт</a>
         </article>
         <article class="plan main">
           <span class="badge">Все модули</span>
@@ -409,14 +441,14 @@
           <div class="price">от 3 000 000 ₽<small>и ежемесячное сопровождение</small></div>
           <p>Полная система для среднего бизнеса.</p>
           <ul><li>Всё из «Старта»</li><li>Агент поддержки</li><li>Аватар основателя</li><li>Нейро-ORM</li></ul>
-          <a class="btn btn-primary" href="#lead" data-pick="AI Growth OS">Обсудить систему</a>
+          <a class="btn btn-primary" href="#lead" data-pick="AI Apogee OS">Обсудить систему</a>
         </article>
         <article class="plan">
           <h3>Для крупных компаний</h3>
           <div class="price">индивидуально<small>после аудита</small></div>
           <p>Для крупного бизнеса и госсектора.</p>
           <ul><li>Собственный контур</li><li>Несколько брендов</li><li>Лидеры мнений</li><li>Выделенная команда</li></ul>
-          <a class="btn btn-line" href="#lead" data-pick="AI Growth OS">Обсудить</a>
+          <a class="btn btn-line" href="#lead" data-pick="AI Apogee OS">Обсудить</a>
         </article>
       </div>
     </div>
@@ -475,7 +507,7 @@
           <label><input type="checkbox" name="i" value="Нейро-ORM" /><span>Нейро-ORM</span></label>
           <label><input type="checkbox" name="i" value="Контент-завод" /><span>Контент-завод</span></label>
           <label><input type="checkbox" name="i" value="AI-трансформация" /><span>AI-трансформация</span></label>
-          <label><input type="checkbox" name="i" value="AI Growth OS" /><span>AI Growth OS</span></label>
+          <label><input type="checkbox" name="i" value="AI Apogee OS" /><span>AI Apogee OS</span></label>
         </div>
       </fieldset>
       <button class="btn btn-primary btn-block" type="submit">Получить аудит</button>
@@ -520,7 +552,7 @@
           <li><a href="/social-stars-demo/ai/neuro-orm/">Нейро-ORM</a></li>
           <li><a href="/social-stars-demo/ai/content/">Контент-завод</a></li>
           <li><a href="/social-stars-demo/ai/transformation/">AI-трансформация</a></li>
-          <li><a href="/social-stars-demo/ai/growth-os/">AI Growth OS</a></li>
+          <li><a href="/social-stars-demo/ai/growth-os/">AI Apogee OS</a></li>
         </ul>
       </div>
       <div>
