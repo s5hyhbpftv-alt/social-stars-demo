@@ -1,0 +1,7 @@
+# зависимости и результаты проверок
+tools/qa/node_modules/
+tools/qa/out/
+# исходные фото и видео (например, из ~/Downloads/export) — в репозиторий идут только сжатые версии в ai/img и ai/video
+export/
+.DS_Store
+__pycache__/
