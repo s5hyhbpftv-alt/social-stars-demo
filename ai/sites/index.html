@@ -34,7 +34,18 @@
     .p-human h3{font-size:clamp(28px,3vw,40px);font-weight:300;letter-spacing:-.03em;margin-bottom:14px}
     .p-human p{color:var(--slate)}
     .p-human .fake{display:inline-block;margin-top:22px;padding:13px 20px;border-radius:var(--r-md);background:var(--ink);color:#fff;font-size:15px}
-    .p-human .shot{aspect-ratio:4/3;border-radius:14px;background:linear-gradient(160deg,var(--porcelain-2),var(--mist))}
+    .p-human .shot{position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:var(--porcelain);border:1px solid var(--mist)}
+    .shot svg{display:block;width:100%;height:100%}
+    .shot .st{fill:none;stroke:var(--mist);stroke-width:2;stroke-linecap:round}
+    .shot .rv{fill:none;stroke:#dce4ee;stroke-width:14;stroke-linecap:round}
+    .shot .rg{fill:none;stroke:var(--mist-2);stroke-width:2;stroke-dasharray:2 7;stroke-linecap:round}
+    .shot .rt{fill:none;stroke:var(--ink);stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
+    .shot .lb{font:500 13px var(--font);fill:var(--slate)}
+    .shot .chip{position:absolute;display:flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:var(--white);border:1px solid var(--mist);font-size:13px;color:var(--ink-2);box-shadow:0 6px 16px -10px rgba(27,33,48,.4)}
+    .shot .live{left:12px;top:12px}
+    .shot .live i{width:8px;height:8px;border-radius:50%;background:var(--ok)}
+    .shot .rate{right:12px;bottom:12px}
+    .shot .rate b{font-weight:500;color:var(--ink)}
     .serp{display:grid;gap:24px;max-width:660px}
     .serp .q{height:44px;line-height:44px;padding:0 20px;border:1px solid var(--mist-2);border-radius:22px;color:var(--ink-2)}
     .serp small{display:block;font-size:13px;color:#2f6b4a}
@@ -348,7 +359,21 @@
         <div class="bar"><i></i><i></i><i></i><span id="url">company.ru</span></div>
         <div class="pane p-human" id="p1" role="tabpanel" aria-labelledby="a1">
           <div><h3>Доставка грузов по Москве за 24 часа</h3><p>Фиксированная цена, страховка груза и отслеживание онлайн. Нам доверяют 12 000 клиентов с 2014 года.</p><span class="fake">Рассчитать стоимость</span></div>
-          <div class="shot" aria-hidden="true"></div>
+          <div class="shot" aria-hidden="true">
+            <svg viewBox="0 0 400 300" data-draw>
+              <path class="rv" d="M-10 120 C 60 90, 110 170, 190 150 S 320 60, 410 95" />
+              <ellipse class="rg" cx="200" cy="150" rx="118" ry="92" />
+              <path class="st" d="M20 40 L 180 70 L 380 30 M40 280 L 150 200 L 260 210 L 390 270 M90 10 L 150 200 M300 10 L 260 210 M0 200 L 150 200 M260 210 L 400 180" />
+              <path class="rt" data-line d="M70 244 C 110 222, 138 212, 150 200 S 210 176, 236 150 S 268 112, 318 84" />
+              <circle data-pop cx="70" cy="244" r="7" fill="var(--ink)" />
+              <circle data-pop cx="318" cy="84" r="10" fill="var(--white)" stroke="var(--ink)" stroke-width="3" />
+              <circle data-pop cx="318" cy="84" r="3.5" fill="var(--ink)" />
+              <text class="lb" x="86" y="262">Склад</text>
+              <text class="lb" x="262" y="58">Получатель</text>
+            </svg>
+            <span class="chip live"><i></i>Груз в пути</span>
+            <span class="chip rate"><b>★ 4,8</b>1 240 отзывов</span>
+          </div>
         </div>
         <div class="pane" id="p2" role="tabpanel" aria-labelledby="a2" hidden>
           <div class="serp">
